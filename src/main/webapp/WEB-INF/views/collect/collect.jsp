@@ -7,14 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>회원 관리</h1>
-	<ul>
-		<li><a href="allCustomer">전체회원보기</a></li>
-	</ul>
-
-<h1>수거 신청 페이지</h1>
-	<ul>
-		<li><a href="collectPage">페이지 이동</a></li>
-	</ul>
+	<h2>수거 신청</h2>
+		<ul>
+			<li><a href="showAllCollect">전체 수거 신청 정보 보기</a></li>
+			<li><a href="registerCollect">수거 신청 하기</a></li>
+		</ul>
 </body>
 </html>

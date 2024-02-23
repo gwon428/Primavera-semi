@@ -6,10 +6,12 @@
 	
 	<typeAliases>
 		<typeAlias type="com.semi.model.vo.Customer" alias="Customer"/>
+		<typeAlias type="com.semi.model.vo.Collect" alias="Collect"/>
 	</typeAliases>
 	
 	<!-- 쿼리문 -->
 	<mappers>
 		<mapper resource="mappers/customer-mapper.xml"/>
+		<mapper resource="mappers/collect-mapper.xml"/>
 	</mappers>
 </configuration>

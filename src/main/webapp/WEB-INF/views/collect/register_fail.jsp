@@ -7,14 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>회원 관리</h1>
-	<ul>
-		<li><a href="allCustomer">전체회원보기</a></li>
-	</ul>
-
-<h1>수거 신청 페이지</h1>
-	<ul>
-		<li><a href="collectPage">페이지 이동</a></li>
-	</ul>
+	<h3>수거 신청 실패하였습니다.</h3>
+	<a href="collect/fegisterCollect.jsp">신청 페이지 돌아가기</a>
 </body>
 </html>

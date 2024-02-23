@@ -7,14 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>회원 관리</h1>
-	<ul>
-		<li><a href="allCustomer">전체회원보기</a></li>
-	</ul>
-
-<h1>수거 신청 페이지</h1>
-	<ul>
-		<li><a href="collectPage">페이지 이동</a></li>
-	</ul>
+	<h3>신청 완료되었습니다.</h3>
+	<a href="index.jsp">처음으로 돌아가기</a>
 </body>
 </html>
