@@ -74,26 +74,26 @@
 		</tr>
 		<tr>
 			<th>이름</th>
-			<td><input type="text" name="name" ></td>
+			<td><input type="text" name="name" required></td>
 		</tr>
 		<tr>
 			<th>전화번호</th>
-			<td><input type="text" name="phone" ></td>
+			<td><input type="text" name="phone" required></td>
 		</tr>
 		<tr>
 			<th rowspan="3">주소</th>
-			<td><input type="text" name="postCode" id="postCode" placeholder="우편번호" size=15>
+			<td><input type="text" name="postCode" id="postCode" placeholder="우편번호" size=15 required>
 			<input type="button" onclick="daumPostCode()" value="우편번호 찾기"></td>
 		</tr>
 		<tr>
-			<td><input type="text" name="roadAddress" id="roadAddress" placeholder="주소" size=40></td>
+			<td><input type="text" name="roadAddress" id="roadAddress" placeholder="주소" size=40 required></td>
 		</tr>
 		<tr>
-			<td><input type="text" name="detailAddress" id="detailAddress" placeholder="상세 주소" size=40></td>
+			<td><input type="text" name="detailAddress" id="detailAddress" placeholder="상세 주소" size=40 required></td>
 		</tr>
 		<tr>
 			<th>수거일</th>
-			<td><input type="date" name="collectionDate" max="2025-12-31" min="2024-02-22"></td>
+			<td><input type="date" name="collectionDate" max="2025-12-31" min="2024-02-22" required></td>
 		</tr>
 		<tr>
 			<th>공동 현관 비밀번호</th>
@@ -102,6 +102,12 @@
 		<tr>
 			<th>요청사항</th>
 			<td><textarea name="request" id="request" cols="30" rows="10" style="resize:none" placeholder="요청사항을 있으신 경우, 입력해주세요"></textarea></td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<span> * 수거 신청을 위해 </span><strong><u>이용약관</u></strong> <span>및</span> <strong><u>개인정보 수집</u></strong><span>에 동의합니다.</span><br>
+				<input type="radio" name="agree" id="agree" required>네, 동의합니다.</input>
+			</td>
 		</tr>
 		<tr>
 			<td colspan="2" align="center">
