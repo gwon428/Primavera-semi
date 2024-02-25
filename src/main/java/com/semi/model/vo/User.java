@@ -4,7 +4,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data @NoArgsConstructor
-public class Customer {
+public class User {
 	private String id;
 	private String password;
 	private String name;
@@ -15,4 +15,5 @@ public class Customer {
 	private String email;
 	private String bankName;
 	private String account;
+	private String auth;
 }

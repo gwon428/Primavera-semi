@@ -5,11 +5,11 @@
 	</settings>
 	
 	<typeAliases>
-		<typeAlias type="com.semi.model.vo.Customer" alias="Customer"/>
+		<typeAlias type="com.semi.model.vo.User" alias="User"/>
 	</typeAliases>
 	
 	<!-- 쿼리문 -->
 	<mappers>
-		<mapper resource="mappers/customer-mapper.xml"/>
+		<mapper resource="mappers/user-mapper.xml"/>
 	</mappers>
 </configuration>
