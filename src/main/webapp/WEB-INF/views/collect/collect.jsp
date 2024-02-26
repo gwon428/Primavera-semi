@@ -13,17 +13,18 @@ pageEncoding="UTF-8"%>
       crossorigin="anonymous"
     ></script>
     <script>
-      const navIcons = document.querySelectAll("i");
-      const aList = document.querySelectorAll(".image-content");
+     const navIcons = document.querySelectorAll("i");
+     const aList = document.querySelectorAll(".image-content");
 
-      navIcons[0].addEventListener("click", function () {
-        aList.forEach((a) => {
-          a.classList.remove("header-main-bottom-right");
-        });
+     navIcons[0].addEventListener("click", function(){
+      aList.forEach((img)=>{
+        img.classList.remove("header-main-bottom-right");
       });
+     });
+     
       navIcons[1].addEventListener("click", function () {
         aList.forEach((a) => {
-          a.classList.add("header-main-bottom-right");
+          img.classList.add("header-main-bottom-right");
         });
       });
     </script>
@@ -41,7 +42,7 @@ pageEncoding="UTF-8"%>
         <div class="heading-content">
           <div class="heading-contents">
             <div id="contents">
-              <i class="fa-solid fa-chevron-left"></i>
+              <i class="fa-solid fa-chevron-left" id="di"></i>
               <div class="image-content">
                 <img src="../../../resources/images/heading1.jpg" id="main1" />
                 <p>내용1</p>
@@ -55,7 +56,7 @@ pageEncoding="UTF-8"%>
                 <p>내용3</p>
               </div>
              
-              <i class="fa-solid fa-chevron-right"></i>
+              <i class="fa-solid fa-chevron-right" id="di"></i>
             </div>
             <!--   <a href="showAllCollect">전체 수거 신청 정보 보기</a> -->
             <a href="registerCollect" id="registerPage">수거 신청</a>
