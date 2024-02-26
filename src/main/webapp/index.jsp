@@ -9,6 +9,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<a href="myPage">마이페이지</a>
 </body>
 </html>

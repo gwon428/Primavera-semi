@@ -2,4 +2,38 @@
 
 <mapper namespace="userMapper">
 	
+	<insert id="registerUser" parameterType="User">
+		INSERT INTO user(id, password, name, phone, post_code, road_address, detail_address, email, bank_name, account)
+		VALUES(#{id}, #{password}, #{name}, #{phone}, #{postCode}, #{roadAddress}, #{detailAddress}, #{email}, #{bankName}, #{account})
+	</insert>
+	
+	<select id="getMemberById" parameterType="String" resultType="User">
+		SELECT * FROM user
+		WHERE id=#{id}
+	</select>
+	
+	<update id="updateUser" parameterType="User">
+		UPDATE user
+		<trim prefix="SET" suffixOverrides=",">
+			<if test="password != null">
+				password=#{password},
+			</if>
+			<if test="name != null">
+				name=#{name},
+			</if>
+			<if test="phone != null">
+				phone=#{phone},
+			</if>
+			<if test="email != null">
+				email=#{email}
+			</if>
+			</trim>
+			WHERE id=#{id}
+	</update>
+	
+	<delete id="deleteUser">
+		DELETE FROM user
+		WHERE id=#{id}
+			AND password=#{password}
+	</delete>
 </mapper>
