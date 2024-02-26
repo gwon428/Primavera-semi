@@ -8,27 +8,21 @@ pageEncoding="UTF-8"%>
     <link rel="stylesheet" href="../../../resources/css/reset.css" />
     <link rel="stylesheet" href="../../../resources/css/collect.css" />
 
-    <style>
-      #contents img.header-main-bottom-right {
-        transform: translateX(-375);
-      }
-    </style>
-
     <script
       src="https://kit.fontawesome.com/4602e82315.js"
       crossorigin="anonymous"
     ></script>
     <script>
-      const navIcons = document.querySelectAll("#contents i");
-      const aList = document.querySelectorAll("#contents img");
+      const navIcons = document.querySelectAll("i");
+      const aList = document.querySelectorAll(".image-content");
 
       navIcons[0].addEventListener("click", function () {
-        aList.forEach((img) => {
+        aList.forEach((a) => {
           a.classList.remove("header-main-bottom-right");
         });
       });
       navIcons[1].addEventListener("click", function () {
-        aList.forEach((img) => {
+        aList.forEach((a) => {
           a.classList.add("header-main-bottom-right");
         });
       });
@@ -60,10 +54,11 @@ pageEncoding="UTF-8"%>
                 <img src="../../../resources/images/heading1.jpg" id="main3" />
                 <p>내용3</p>
               </div>
+             
               <i class="fa-solid fa-chevron-right"></i>
             </div>
             <!--   <a href="showAllCollect">전체 수거 신청 정보 보기</a> -->
-            <a href="registerCollect" id="registerPage">수거 신청 하기</a>
+            <a href="registerCollect" id="registerPage">수거 신청</a>
           </div>
         </div>
       </section>

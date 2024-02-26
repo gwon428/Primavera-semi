@@ -66,7 +66,7 @@
       	align-items:center;
       }
       i, .image-content{
-      	margin:0 50px;
+      	margin:0 35px;
       }
       .img-content{
       	display: flex;
@@ -76,8 +76,8 @@
         
       }
 	img {
-		width: 400px;
-		height : 400px;
+		width: 350px;
+		height : 350px;
 		margin-bottom : 20px;
 	}
 	
@@ -90,12 +90,22 @@
 		font-size : 50px;
 	}
       
+        #contents {
+        overflow: hidden;
+      }
+      .image-content {
+        transform: translateX(30px);
+        transition: 2s;
+      }
 
+      .image-content.header-main-bottom-right {
+        transform: translateX(-375);
+      }
       
-
-      #registerPage {
+      
+     #registerPage {
         background-color: black;
-        width: 300px;
+        width: 200px;
         height: 60px;
         color: white;
         text-decoration: none;
@@ -105,5 +115,5 @@
         display: flex;
         justify-content: center;
         align-items: center;
-      }
+     }
 
