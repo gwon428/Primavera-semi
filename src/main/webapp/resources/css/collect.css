@@ -13,7 +13,7 @@
         background-image: url(../../../resources/images/top-background.jpg);
         background-size: cover;
         background-position: center;
-        height: 100vh;
+        height: 85vh;
         width: 100%;
       }
       .blackbox {
@@ -44,28 +44,54 @@
         justify-content: center;
       }
 
-      #heading1Image,
-      #heading2Image {
-        width: 500px;
-        height: 350px;
-        margin: 40px 50px;
-      }
-
-      .heading-contents p {
+	#contents, a{
+		margin:50px 0;
+	}
+	#heading1{
+		display:flex;
+      	justify-content : center;
+      	align-items:center;
+	}
+	
+	.heading-contents {
         display: flex;
-        align-items: center;
-      }
-
-      #content1,
-      #content2 {
-        margin: 0 50px;
-      }
-
-      .heading-content {
-        display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
       }
+      
+      #contents{
+      	display:flex;
+      	justify-content : center;
+      	align-items:center;
+      }
+      i, .image-content{
+      	margin:0 50px;
+      }
+      .img-content{
+      	display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+      }
+	img {
+		width: 400px;
+		height : 400px;
+		margin-bottom : 20px;
+	}
+	
+    .heading-contents p {
+        display: flex;
+        align-items: center;
+     }
+	
+	i {
+		font-size : 50px;
+	}
+      
+
+      
 
       #registerPage {
         background-color: black;
