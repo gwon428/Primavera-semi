@@ -47,12 +47,17 @@ public class UserController {
 		return "user/updateUser";
 	}
 	
-	
 	@PostMapping("/updateUser")
 	public String update(User user, HttpServletRequest request) {
 		HttpSession session = request.getSession();
+
+		System.out.println("service.updateUser(user) = " + service.updateUser(user));
 		if(service.updateUser(user)==1) {
-			session.setAttribute("updateUser", user);
+			session.setAttribute("user", user);
+		} else {
+			System.out.println(user);
+			System.out.println(user.getPassword());
+			System.out.println("어벧이트 . .");
 		}
 		return "redirect:/";
 	}
