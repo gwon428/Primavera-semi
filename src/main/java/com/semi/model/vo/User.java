@@ -23,6 +23,7 @@ public class User implements UserDetails {
 	private String bankName;
 	private String account;
 	private String auth;
+	private int enabled;
 	
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -49,6 +50,10 @@ public class User implements UserDetails {
 	}
 	@Override
 	public boolean isEnabled() {
-		return true;
+		if(enabled == 0) {
+			return false;
+		} else {
+			return true;
+		}
 	}
 }

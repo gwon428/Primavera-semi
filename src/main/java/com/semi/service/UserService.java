@@ -32,16 +32,12 @@ public class UserService implements UserDetailsService{
 		return dao.registerUser(user);
 	}
 	
-	public int updateCheck(String inputPwd) {
-		return dao.updateCheck(inputPwd);
-	}
-	
 	public int updateUser(User user) {
 		return dao.updateUser(user);
 	}
-	
-	public int deleteCheck(String inputPwd) {
-		return dao.deleteCheck(inputPwd);
+
+	public int deleteUser(UserDetails userDetails) {
+		return dao.deleteUser(userDetails);
 	}
 
 	

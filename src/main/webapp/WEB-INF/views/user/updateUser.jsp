@@ -16,8 +16,7 @@
 <p> 기본 정보 </p>
 <p> 아이디 : ${user.id} </p>
 <input type="hidden" name="id" value="${user.id}">
-<p> 비밀번호 : <input type="password" name="password" id="userPwd" placeholder="수정할 비밀번호 혹은 기존 비밀번호"></p>
-<p> 비밀번호 확인 : <input type="password" name="password" id="pwdCheck">
+<p> 비밀번호 : <input type="password" name="password" id="userPwd" value="${user.password}"></p>
 <p> 이름 : <input type="text" name="name" id="userName" value="${user.name}"></p>
 <p> 휴대폰 번호 : <input type="text" name="phone" id="userPhone" value="${user.phone}"></p>
 <p> 이메일 : <input type="text" name="email" id="email" value="${user.email}"></p>

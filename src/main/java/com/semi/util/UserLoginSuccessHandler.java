@@ -22,7 +22,7 @@ public class UserLoginSuccessHandler implements AuthenticationSuccessHandler {
 			String auth = authority.getAuthority();
 			roleNames.add(auth);
 		});
-
+		
 		if (roleNames.contains("ADMIN")) {
 			response.sendRedirect("/admin");
 			return;

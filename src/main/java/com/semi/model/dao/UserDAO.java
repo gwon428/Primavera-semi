@@ -28,9 +28,9 @@ public class UserDAO {
 	public int updateUser(User user) {
 		return session.update("userMapper.updateUser", user);
 	}
-	
-	public int deleteCheck(String inputPwd) {
-		return session.delete("userMapper.deleteUser", inputPwd);
+
+	public int deleteUser(UserDetails userDetails) {
+		return session.update("userMapper.deleteUser", userDetails);
 	}
 
 }

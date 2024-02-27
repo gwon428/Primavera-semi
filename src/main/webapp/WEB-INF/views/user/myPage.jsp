@@ -34,7 +34,7 @@
 				<li><a href="qna">내 Q&A</a></li>
 				<li><a href="progress">진행상황</a></li>
 				<li><a href="deleteUser">회원 탈퇴</a></li>
-				<li><a href="logout">로그아웃</a></li>
+				<li><a href="/logout">로그아웃</a></li>
 			</ul>
 		</c:otherwise>
 	</c:choose>

@@ -2,6 +2,7 @@ package com.semi.controller;
 
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,9 +11,12 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.semi.model.vo.User;
 import com.semi.service.UserService;
@@ -88,30 +92,29 @@ public class UserController {
 	}
 	
 	@PostMapping("/deleteCheck")
-	public String deleteCheck(String inputPwd) {
+	public String deleteCheck(String password) {
 		
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		UserDetails userDetails = (UserDetails)principal;
 		System.out.println(userDetails);
-		
-		if(bcpe.matches(inputPwd, userDetails.getPassword())) {
-			System.out.println("회원 탈퇴");
-			service.deleteCheck(inputPwd);
-			return "redirect:/";
+		System.out.println(password);
+		if(bcpe.matches(password, userDetails.getPassword())) {
+			service.deleteUser(userDetails);
+			return "/logout";
 		} else {
-			return "user/updateCheck";
+			return "user/myPage";
 		}
 	}
 	
-	@PostMapping("/deleteUser")
-	public String delete(User user, HttpServletRequest request) {
-		System.out.println("delete : " + user);
-//		HttpSession session = request.getSession();
-//		session.setAttribute("deleteUser", service.deleteUser(user));
-		return "";
+	@RequestMapping(value="/logout", method= RequestMethod.GET)
+	public String logout(HttpServletRequest request, HttpServletResponse response) {
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		System.out.println("if문 전");
+		if(auth != null) {
+			new SecurityContextLogoutHandler().logout(request, response, auth);
+		}
+		return "user/myPage";
 	}
-	
-	
 	@GetMapping("/admin")
 	public void admin() {}
 }
