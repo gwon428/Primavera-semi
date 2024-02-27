@@ -22,6 +22,7 @@ public class UserService implements UserDetailsService{
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		User user = dao.getMemberById(username);
+		System.out.println(user);
 		return user;
 	}
 	
@@ -30,13 +31,19 @@ public class UserService implements UserDetailsService{
 		user.setPassword(encodePw);
 		return dao.registerUser(user);
 	}
-
+	
+	public int updateCheck(String inputPwd) {
+		return dao.updateCheck(inputPwd);
+	}
+	
 	public int updateUser(User user) {
 		return dao.updateUser(user);
 	}
 	
-	public int deleteUser(User user) {
-		return dao.deleteUser(user);
+	public int deleteCheck(String inputPwd) {
+		return dao.deleteCheck(inputPwd);
 	}
+
+	
 	
 }

@@ -1,8 +1,10 @@
 package com.semi.model.vo;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import lombok.Data;
@@ -24,12 +26,14 @@ public class User implements UserDetails {
 	
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		return null;
+		ArrayList<GrantedAuthority> authList = new ArrayList<>();
+		authList.add(new SimpleGrantedAuthority(auth));
+		return authList;
 	}
+	
 	@Override
 	public String getUsername() {
-		
-		return null;
+		return id;
 	}
 	@Override
 	public boolean isAccountNonExpired() {

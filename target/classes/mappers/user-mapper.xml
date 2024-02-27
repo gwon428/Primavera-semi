@@ -18,6 +18,8 @@
 			<if test="password != null">
 				password=#{password},
 			</if>
+			<if test="pwdCheck != null">
+			</if>
 			<if test="name != null">
 				name=#{name},
 			</if>
@@ -34,6 +36,5 @@
 	<delete id="deleteUser">
 		DELETE FROM user
 		WHERE id=#{id}
-			AND password=#{password}
 	</delete>
 </mapper>

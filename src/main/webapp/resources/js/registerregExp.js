@@ -29,11 +29,12 @@ function emailCheck(){
 
 function inputHandler(e, check, message){
 	if(check){
-		e.target.nextElementSibling.style.color="green";
-		e.target.nextElementSibling.innerHTML = "OK!";
+	    console.log(e.target.nextElementSibling);
+		e.target.nextElementSibling.nextElementSibling.style.color="green";
+		e.target.nextElementSibling.nextElementSibling.innerHTML = "OK!";
 	} else {
-		e.target.nextElementSibling.style.color="red";
-		e.target.nextElementSibling.innerHTML = message;
+		e.target.nextElementSibling.nextElementSibling.style.color="red";
+		e.target.nextElementSibling.nextElementSibling.innerHTML = message;
 	}
 }
 
