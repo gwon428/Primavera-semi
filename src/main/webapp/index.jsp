@@ -5,7 +5,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="../SemiProject/reset.css" />
+		<link rel="stylesheet" href="/resources/css/reset.css" />
 
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
 			integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -38,7 +38,7 @@
 				<div class="directivity">
 					<h1 class="h1">We are walking with</h1>
 					<h1 class="h2">the environment</h1>
-					<a href="">
+					<a href="collectPage">
 						<h1>Pick Up ></h1>
 					</a>
 				</div>
@@ -104,7 +104,7 @@
 			<section id="section4" class="category">
 				<p></p>
 				<div>
-					<a href="">Login</a>
+					<a href="myPage">Login</a>
 				</div>
 			</section>
 		</main>
@@ -131,7 +131,6 @@
 				</div>
 			</div>
 		</footer>
-		<script src="../SemiProject/front.js"></script>
 	</body>
 
 	</html>
