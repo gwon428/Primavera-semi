@@ -7,11 +7,13 @@
 	<typeAliases>
 		<typeAlias type="com.semi.model.vo.User" alias="User"/>
 		<typeAlias type="com.semi.model.vo.Collect" alias="Collect"/>
+		<typeAlias type="com.semi.model.vo.BoardVO" alias="BoardVO"/>
 	</typeAliases>
 	
 	<!-- 쿼리문 -->
 	<mappers>
 		<mapper resource="mappers/user-mapper.xml"/>
 		<mapper resource="mappers/collect-mapper.xml"/>
+		<mapper resource="mappers/board-mapper.xml"/>
 	</mappers>
 </configuration>
