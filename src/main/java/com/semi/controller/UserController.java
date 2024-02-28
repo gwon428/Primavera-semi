@@ -70,7 +70,6 @@ public class UserController {
 		
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		UserDetails userDetails = (UserDetails)principal;
-		System.out.println(userDetails);
 		
 		if(bcpe.matches(password, userDetails.getPassword())) {
 			return "user/updateUser";
@@ -109,6 +108,7 @@ public class UserController {
 			return "redirect:/";
 		} else {
 			System.out.println("탈퇴 안되염. . ");
+			
 			return "";
 		}
 	}
@@ -116,7 +116,6 @@ public class UserController {
 	@RequestMapping(value="/logout", method= RequestMethod.GET)
 	public String logout(HttpServletRequest request, HttpServletResponse response) {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		System.out.println("if문 전");
 		if(auth != null) {
 			new SecurityContextLogoutHandler().logout(request, response, auth);
 		}

@@ -1,0 +1,51 @@
+main{
+	padding-top:250px;
+	height:50vh;
+	background-color:pink;
+	justify-content:center;
+}
+
+main h1{
+	display:flex;
+	justify-content:center;
+	font-size:2.5rem;
+	margin-bottom:30px;	
+}
+
+main #login{
+	margin:auto;
+	width:500px;
+	text-align:center;
+	background-color:#e7e7e7;
+	height:300px;
+}
+
+/* 비밀번호 찾기, 아이디 찾기, 회원가입 */
+main #login div{
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	padding :40px;
+}
+
+.input{
+	text-align:center;
+}
+
+main #login input {
+	width: 300px;
+}
+
+main #login input #button{
+	width: 440px;
+    height: 70px;
+}
+
+
+div{
+	height:250px;
+}
+
+#emptyLogin {
+	text-align:center;
+}

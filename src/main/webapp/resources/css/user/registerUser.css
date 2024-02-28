@@ -1,0 +1,17 @@
+h1 {
+	/*헤더를 위해 높이 맞추기*/
+	padding-top:150px;
+	font-size:2.5rem;
+	font-weight:bolder;
+	text-align:center;
+}
+
+form{
+	border:1px solid;
+	margin-top:50px;
+	text-align:center;
+}
+
+form span{
+	
+}

@@ -3,11 +3,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="../../resources/css/register.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="/resources/css/reset.css" />
+<link href="../../resources/css/header.css" rel="stylesheet" type="text/css">
+<link href="../../resources/css/user/registerUser.css" rel="stylesheet" type="text/css">
 <meta charset="UTF-8">
+<script src="https://kit.fontawesome.com/4602e82315.js" crossorigin="anonymous"></script>
 <title>Insert title here</title>
 </head>
+<header>
+	<nav>
+		<a href="/">Primavera</a>
+	</nav>
+	<nav>
+		<a href="#">Store</a> <a href="#">Guid</a> <a href="collectPage">PickUp</a>
+		<a href="#">Board</a> <a href="myPage"><i class="fa-regular fa-user"></i></a>
+	</nav>
+</header>
 <body>
+
 <h1>회원가입</h1>
 	<form action="register" method="post" onsubmit="return validate()">
 		* 아이디 : <input type="text" name="id" id="userId" required><br>
@@ -31,6 +44,8 @@
 			<option value="WOORI"> 우리 </option>
 			<option value="SH"> 신한 </option>
 			<option value="IBK"> 기업 </option>
+			<option value="kakao"> 카카오 </option>
+			<option value="HANA"> 하나 </option>
 			</select>
 		계좌번호 : <input type="text" name="account" id="account"><br>
 		<!-- 
