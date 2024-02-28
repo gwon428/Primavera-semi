@@ -68,7 +68,7 @@
 			<input type="radio" name="agree" id="agree" required />네, 동의합니다.
 		</div>
 		<div>
-			<button type="submit" id="button">수거
+			<button type="submit" id="button" onclick="showAlert()">수거
 				신청 하기</button>
 		</div>
 	
@@ -111,13 +111,13 @@
 				경로 확보, 본인의사 확인 및 민원 등의 고충 처리, 분쟁 조정을 위한 기록 보존, ....<br>
 
 				</p>
-				<button type="button" class="btn_close">닫기</button>
+				<button type="button" class="btn_close" >닫기</button>
 			</div>
 		</div>
 
 	</form>
 	
-	<script src="/resources/js/collect.js"></script>
+	<script src="../../../resources/js/register.js"></script>
 	<script>
 		function showAlert() {
 			alert("수거 신청에\n 성공하였습니다.");
