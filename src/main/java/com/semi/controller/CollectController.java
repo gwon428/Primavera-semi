@@ -40,12 +40,8 @@ public class CollectController {
 	
 	@PostMapping("signUpCollect")
 	public String signUp(Collect vo) {		
-		if(service.registerCollect(vo)==1) {
-			return "collect/register_ok";
-		}
-		else {
-			return "collect/register_fail";
-		}
+		service.registerCollect(vo);
+		return "collect/collect";
 	}
 	
 	

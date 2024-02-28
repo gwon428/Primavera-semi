@@ -17,6 +17,7 @@ body {
   font-weight: bolder;
 }
 
+
 #pickUp {
   display: flex;
   flex-direction: column;
@@ -26,7 +27,8 @@ body {
 }
 
 h2 {
-  margin: 20px 0;
+  margin-top: 60px;
+  margin-bottom : 20px;
   font-style: italic;
   font-size: 1.2rem;
   /*
@@ -38,24 +40,40 @@ h2 {
   width: 60%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  column-gap: 20px;
+  column-gap: 75px;
   grid-template-rows: 100px 100px 100px 200px;
   border: 2px solid black;
   border-radius: 20px;
   grid-auto-flow: column;
   font-family: "Cafe24Oneprettynight";
+  padding: 35px;
 }
 
 p {
   margin-top: 20px;
   margin-bottom: 10px;
   margin-left: 20px;
+  font-size: 1.3rem;
 }
 
-input,
+input,button,
 textarea {
   margin-left: 20px;
   font-family: "Cafe24Oneprettynight";
+  font-weight:bolder;
+}
+
+.id input,
+.name input,
+.phone input,
+.collectDate input {
+  height: 35%;
+  width: 45%;
+}
+
+.addr input {
+  width: 44%;
+  height: 20%;
 }
 
 textarea {
@@ -72,54 +90,43 @@ textarea {
   font-family: "GangwonEdu_OTFBoldA";
 }
 
-span {
+a {
   font-weight: 700;
+  text-decoration-line : underline;
 }
 
-#button{
-	margin-top : 20px;
-	width: 90px;
-    height: 28px;
-}
-/*
-#pickUp {
-  display:flex;
-  flex-direction : column;
-  justify-content: center;
-  align-items: center;
-  background-color : pink;
-  position: absolute;
-  height:70%;
-  width : 60%;
-  border : 5px solid black;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+#button {
+  margin-top: 20px;
+  width: 90px;
+  height: 28px;
 }
 
-form{
-	height:100vh;
+.pop_wrap{
+	visibility: hidden;
+    border: 1px solid black;
+    position: fixed;
+    top: 12%;
+    left: 40%;
+    box-sizing: border-box;
+    width: 400px;
+    height: 550px;
+    background-color : white;
+    overflow : hidden;
+    border-radius: 10px;
 }
 
-#pickUpTable {
-  background-color: green;
-  position: absolute;
-top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width:100%;
-  height:50%;
-  border : 2px solid red;
+.dsc{
+	margin:0px 0px;
+	
 }
 
-#inputInfo{
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+.pop_inner{
+	line-height : 23px;
+	font-size : 13px;
+	margin: 0 8px;
 }
 
-td{
-	width : 100%
+.btn_close{
+    position: absolute;
+    left: 40%;
 }
-*/
