@@ -6,11 +6,28 @@
 <meta charset="UTF-8" />
 <title>Insert title here</title>
 <link rel="stylesheet" href="../../../resources/css/reset.css" />
+<link rel="stylesheet" href="../../../resources/css/header.css" />
 <link rel="stylesheet" href="../../../resources/css/collect.css" />
+<script src="https://kit.fontawesome.com/4602e82315.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
 	<main>
+	<div class="header-blackbox"></div>
+		<header>
+			<nav>
+				<a href="index.jsp">Primavera</a>
+			</nav>
+			<nav>
+				<a href="#">Store</a> 
+				<a href="#">Guid</a> 
+				<a href="collectPage">PickUp</a> 
+				<a href="#">Board</a> 
+				<a href="myPage"><i class="fa-regular fa-user" id="mypage"></i></a>
+			</nav>
+		</header>
+	
+	
 		<section id="top">
 			<div class="blackbox"></div>
 			<div class="top-content">
@@ -72,8 +89,6 @@
 
 	</main>
 
-	<script src="https://kit.fontawesome.com/4602e82315.js"
-		crossorigin="anonymous"></script>
 	<script src="../../../resources/js/collect.js"></script>
 </body>
 </html>

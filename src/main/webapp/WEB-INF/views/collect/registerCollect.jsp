@@ -9,9 +9,10 @@
 <link rel="stylesheet" href="../../../resources/css/reset.css" />
 <link rel="stylesheet" href="../../../resources/css/register.css" />
 <script
-	src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"
-	defer></script>
-<script src="../../../resources/js/registerCollectDaum.js"></script>
+		src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"
+		defer>
+	</script>
+	<script src="../../../resources/js/registerCollectDaum.js"></script>
 </head>
 <body>
 	<form action="signUpCollect" method="post" id="pickUp">
@@ -113,36 +114,13 @@
 				<button type="button" class="btn_close">닫기</button>
 			</div>
 		</div>
-		
-
 
 	</form>
-
-	<script src="../../../resources/js/register.js"></script>
+	
+	<script src="/resources/js/collect.js"></script>
 	<script>
 		function showAlert() {
 			alert("수거 신청에\n 성공하였습니다.");
-		}
-	</script>
-
-	<script>
-		var target = document.querySelectorAll('.btn_open');
-		var btnPopClose = document.querySelectorAll('.pop_wrap .btn_close');
-		var targetID;
-
-		// 팝업 열기
-		for (var i = 0; i < target.length; i++) {
-			target[i].addEventListener('click', function() {
-				targetID = this.getAttribute('href');
-				document.querySelector(targetID).style.visibility = 'visible';
-			});
-		}
-
-		// 팝업 닫기
-		for (var j = 0; j < target.length; j++) {
-			btnPopClose[j].addEventListener('click', function() {
-				this.parentNode.parentNode.style.visibility = 'hidden';
-			});
 		}
 	</script>
 
