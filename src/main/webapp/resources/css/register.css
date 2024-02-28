@@ -1,4 +1,132 @@
-form span {
-    color: white;
+@font-face {
+  font-family: "GangwonEdu_OTFBoldA";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
 }
 
+@font-face {
+  font-family: "Cafe24Oneprettynight";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff") format("woff");
+  font-style: normal;
+}
+
+body {
+  height: 100vh;
+  font-weight: bolder;
+}
+
+
+#pickUp {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+h2 {
+  margin-top: 60px;
+  margin-bottom: 20px;
+  font-style: italic;
+  font-size: 1.2rem;
+  /*
+  position: relative;
+  left: -230px;*/
+}
+
+#pickUpTable {
+  width: 60%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 75px;
+  grid-template-rows: 100px 100px 100px 200px;
+  border: 2px solid black;
+  border-radius: 20px;
+  grid-auto-flow: column;
+  font-family: "Cafe24Oneprettynight";
+  padding: 35px;
+}
+
+p {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  font-size: 1.3rem;
+}
+
+input,
+button,
+textarea {
+  margin-left: 20px;
+  font-family: "Cafe24Oneprettynight";
+  font-weight: bolder;
+}
+
+.id input,
+.name input,
+.phone input,
+.collectDate input {
+  height: 35%;
+  width: 45%;
+}
+
+.addr input {
+  width: 44%;
+  height: 20%;
+}
+
+textarea {
+  resize: none;
+}
+
+#postCode,
+#roadAddress,
+#detailAddress {
+  margin-bottom: 20px;
+}
+
+#agree {
+  font-family: "GangwonEdu_OTFBoldA";
+}
+
+a {
+  font-weight: 700;
+  text-decoration-line: underline;
+}
+
+#button {
+  margin-top: 20px;
+  width: 90px;
+  height: 28px;
+}
+
+.pop_wrap {
+  visibility: hidden;
+  border: 1px solid black;
+  position: fixed;
+  top: 12%;
+  left: 40%;
+  box-sizing: border-box;
+  width: 400px;
+  height: 550px;
+  background-color: white;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.dsc {
+  margin: 0px 0px;
+
+}
+
+.pop_inner {
+  line-height: 23px;
+  font-size: 13px;
+  margin: 0 8px;
+}
+
+.btn_close {
+  position: absolute;
+  left: 40%;
+}

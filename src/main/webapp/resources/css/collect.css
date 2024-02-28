@@ -1,0 +1,131 @@
+@font-face {
+    font-family: 'GangwonEdu_OTFBoldA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+body {
+	width: 100%;
+}
+
+#top {
+	background-image: url(../../../resources/images/top-background.jpg);
+	background-size: cover;
+	background-position: center;
+	height: 85vh;
+	width: 100%;
+}
+
+.blackbox {
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.top-content {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+h2 {
+	font-size: 4rem;
+	font-weight: boler;
+	font-style: italic;
+	color: white;
+	margin-left: 40px;
+}
+
+#main {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.main {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width : 75%;
+}
+
+#i-contents, a {
+	margin: 30px 0;
+}
+
+#i-contents {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width : 100%;
+}
+
+#contents{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow : hidden;
+	margin : 0 20px;
+}
+
+i {
+	cursor: pointer;
+	font-size: 50px;
+	z-index: 1;
+}
+
+.image-content {
+	overflow: hidden;
+	display: flex;
+	flex-direction : column;
+	justify-content: center;
+	align-items: center;
+	transform: translateX(0px);
+	transition: 2s;
+	margin : 0 20px;
+
+}
+
+.image-content.header-main-bottom-right {
+	transform: translateX(-100px);
+}
+
+
+img {
+	height:400px;
+	width:400px;
+	padding-bottom: 20px;
+	
+}
+
+.card-body{
+	display:flex;
+	justify-content: center;
+}
+
+p {
+	font-size : 1.7rem;
+	/*font-family: 'GangwonEdu_OTFBoldA';*/
+	font-style: italic;
+}
+
+#registerPage {
+	background-color: black;
+	width: 200px;
+	height: 60px;
+	color: white;
+	text-decoration: none;
+	font-size: 1.5rem;
+	font-weight: bolder;
+	border-radius: 45%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
