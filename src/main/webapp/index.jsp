@@ -13,7 +13,7 @@
 			integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
 			crossorigin="anonymous"></script>
 
-		<link rel="stylesheet" href="../SemiProject/front.css" />
+		<link rel="stylesheet" href="/resources/css/front.css" />
 		<script src="https://kit.fontawesome.com/4602e82315.js" crossorigin="anonymous"></script>
 		<title>Document</title>
 	</head>
@@ -32,7 +32,7 @@
 		<main>
 			<section id="section1">
 				<div>
-					<video src="../Project_Primavera/production_id_4919750 (1080p).mp4" id="background_video"
+					<video src="/resources/images/production_id_4919750 (1080p).mp4" id="background_video"
 						preload="auto" autoplay="autoplay" loop="loop" muted="muted" volume="0"></video>
 				</div>
 				<div class="directivity">
@@ -58,14 +58,14 @@
 							<p>"Primavera"는 이탈리아어로 "진정한 봄"으로 새로운 생명의 시작과 자연의 활기를 가지는 의미가지며
 								기후변화와 지구 온난화로 인한 피해를 줄일수 있는 방법을 모색하다 탄소 배출량을 줄일수있는 폐의류를 재사용하는
 								업사이클링을 시작하게 되었다 현 시점의 환경과 자연을 원모습을 되찾기위해 우리는 지금도 걷고있다</p>
-							<img src="../SemiProject/resources/front_img.jpg" class="" alt="...">
+							<img src="/resources/images/front_img.jpg" class="" alt="...">
 						</div>
 
 						<div class="carousel-item" id="container3">
 							<h1>Work_introduce</h1>
 							<p>일상이나 기업에서 버려지는 폐의류를 수거하여 분류한뒤 재사용가능한 의류들의 섬유들을 추출하여 새로운 의류를
 								만들며 추출이 불가능한 의류들은 업사이클링 제품으로 재탄생시켜 오프라인 매장에 판매중이다.</p>
-							<img src="../SemiProject/resources/Work_introduce.jpg" class="" alt="...">
+							<img src="/resources/images/Work_introduce.jpg" class="" alt="...">
 						</div>
 					</div>
 					<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
@@ -94,7 +94,7 @@
 				<p></p>
 				<div class="container2">
 					<h1>Map</h1>
-					<a href="#"><img src="../SemiProject/resources/map.PNG" alt=""></a>
+					<a href="#"><img src="/resources/images/map.PNG" alt=""></a>
 				</div>
 				<div class="Floor">
 					<p>Details of user</p>
