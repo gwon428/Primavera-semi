@@ -33,6 +33,8 @@ public class UserService implements UserDetailsService{
 	}
 	
 	public int updateUser(User user) {
+		String inputPw = bcpe.encode(user.getPassword());
+		user.setPassword(inputPw);
 		return dao.updateUser(user);
 	}
 

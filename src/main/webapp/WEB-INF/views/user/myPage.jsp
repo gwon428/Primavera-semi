@@ -25,7 +25,6 @@
 				<li><a href="register">회원가입</a></li>
 			</ul>
 		</c:when>
-		<c:when test="${message == false}">비밀번호가 맞지 않습니다.</c:when>
 		<c:otherwise>
 			user : ${user.id}
 			<ul>

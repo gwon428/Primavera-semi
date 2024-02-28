@@ -16,7 +16,7 @@ ${user}
 	<br>
 	<form action="deleteCheck" method="post">
 	비밀번호 : <input type="password" name="password">
-	<input type="submit" value="수정">
+	<input type="submit" value="탈퇴">
 	</form>
 </body>
 </html>

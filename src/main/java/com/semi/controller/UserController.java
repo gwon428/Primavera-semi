@@ -6,6 +6,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -78,7 +80,7 @@ public class UserController {
 	
 	@PostMapping("/updateUser")
 	public String update(@AuthenticationPrincipal User user, HttpServletRequest request, Authentication authentication) {
-
+		// 변경할 비밀번호를 다시 암호화해서 sql에 넣어야 함..!
 		HttpSession session = request.getSession();
 		if(service.updateUser(user)==1) {
 			session.setAttribute("user", user);
@@ -96,13 +98,20 @@ public class UserController {
 		
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		UserDetails userDetails = (UserDetails)principal;
-		System.out.println(userDetails);
-		System.out.println(password);
+//		System.out.println(userDetails);
+//		System.out.println(password);
 		if(bcpe.matches(password, userDetails.getPassword())) {
+//			System.out.println("탈퇴시켜줘 . . . .");
 			service.deleteUser(userDetails);
-			return "/logout";
+			SecurityContextHolder.clearContext();
+//			System.out.println(result);
+//			System.out.println("탈퇴 후 enabled : " + userDetails.isEnabled());
+//			System.out.println("비밀번호가 같아서 업데이트가 일어나야 되는데 . . .  " + userDetails);
+			
+			return "redirect:/";
 		} else {
-			return "user/myPage";
+			System.out.println("탈퇴 안되염. . ");
+			return "";
 		}
 	}
 	
