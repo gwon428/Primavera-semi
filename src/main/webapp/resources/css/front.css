@@ -1,0 +1,336 @@
+* {
+  margin: 0%;
+  padding: 0%;
+}
+
+section {
+  height: 100vh;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+/* ------------------------------------Main Section 1-------------------------------------- */
+
+.header-blackbox {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+header a {
+  color: white;
+  font-style: italic;
+}
+
+header nav:nth-child(1) {
+  margin-left: 50px;
+  font-size: 2.5rem;
+  font-weight: lighter;
+}
+header nav:nth-child(2) {
+  padding: 30px;
+}
+
+header nav:nth-child(2) a {
+  padding: 20px;
+  font-size: 1.5rem;
+}
+
+#section1 video {
+  position: absolute;
+  height: 100%;
+  z-index: -1;
+  width: 100%;
+  object-fit: cover;
+}
+
+.directivity .h1 {
+  position: absolute;
+  top: 600px;
+  left: 50px;
+  font-size: 5rem;
+  color: white;
+  animation: slide1 1.8s;
+}
+
+@keyframes slide1 {
+  from {
+    left: -300px;
+  }
+  to {
+    left: 50px;
+  }
+}
+
+.directivity .h2 {
+  position: absolute;
+  top: 700px;
+  left: 400px;
+  font-size: 5rem;
+  color: white;
+  animation: slide2 1.9s;
+}
+
+@keyframes slide2 {
+  from {
+    left: -200px;
+  }
+  to {
+    left: 400px;
+  }
+}
+
+.directivity a h1 {
+  position: absolute;
+  top: 850px;
+  left: 70px;
+  color: white;
+  line-height: inherit;
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+#section1 nav {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: last baseline;
+  flex-direction: column;
+  font-size: 2rem;
+  padding: 20px;
+  animation: slide3 2s;
+}
+
+#section1 nav a {
+  padding: 10px;
+  color: white;
+}
+
+#section1 nav i:hover {
+  color: black;
+}
+
+@keyframes slide3 {
+  from {
+    right: -60px;
+  }
+  to {
+    right: 0px;
+  }
+}
+/* ------------------------------------Main Section 2-------------------------------------- */
+#section2 {
+  background-color: #f5fffa;
+  width: 100%;
+  height: 100vh;
+}
+
+#section2 h1 {
+  position: absolute;
+  left: 1450px;
+  padding-top: 100px;
+  font-size: 3rem;
+  line-height: 1;
+  border-bottom: solid;
+}
+
+#section2 p {
+  width: 90%;
+  position: absolute;
+  font-size: 1.5rem;
+  padding-left: 950px;
+  padding-top: 300px;
+}
+
+#container3 img {
+  position: relative;
+  width: 45%;
+  height: 50%;
+  padding-top: 200px;
+  padding-left: 50px;
+  z-index: -1;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: black;
+  margin-top: 200px;
+}
+
+/* ------------------------------------Main Section 3-------------------------------------- */
+
+#section3 {
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(193, 193, 191);
+  border-radius: 25px;
+}
+
+.container1 h1 {
+  position: absolute;
+  padding-top: 60px;
+  border-bottom: solid;
+  font-size: 4rem;
+  padding-left: 200px;
+  animation: slide4 2s;
+}
+
+.container1 a {
+  position: relative;
+  font-size: 2rem;
+  left: 580px;
+  top: 380px;
+}
+
+@keyframes slide4 {
+  from {
+    left: -200px;
+  }
+  to {
+    left: 0px;
+  }
+}
+
+.container1 p {
+  position: absolute;
+  width: 550px;
+  font-size: 1.5rem;
+  padding-top: 150px;
+  padding-left: 20px;
+}
+
+.container2 h1 {
+  position: absolute;
+  padding-top: 370px;
+  font-size: 4rem;
+  padding-left: 1020px;
+  border-bottom: solid;
+  animation: slide5 2s;
+}
+
+@keyframes slide5 {
+  from {
+    left: -500px;
+  }
+  to {
+    left: 0px;
+  }
+}
+
+.container2 img {
+  position: relative;
+  width: 500px;
+  height: 350px;
+  left: 1300px;
+  top: 200px;
+}
+
+#section3 {
+  font-size: 2.5rem;
+}
+
+.Floor {
+  font-style: italic;
+}
+
+.Floor :nth-child(1) {
+  position: relative;
+  width: 100%;
+  font-size: 11rem;
+  padding-top: 250px;
+  top: -200px;
+  opacity: 50%;
+  animation: slide6 2s;
+}
+
+@keyframes slide6 {
+  from {
+    left: -500px;
+  }
+  to {
+    left: 0px;
+  }
+}
+
+.Floor :nth-child(2) {
+  position: relative;
+  width: 100%;
+  font-size: 11rem;
+  top: -300px;
+  left: 300px;
+  opacity: 50%;
+  animation: slide7 2s;
+}
+
+@keyframes slide7 {
+  from {
+    left: 1500px;
+  }
+  to {
+    left: 300px;
+  }
+}
+
+/* ------------------------------------Main Section 4-------------------------------------- */
+
+#section4 {
+  background-color: rgb(48, 45, 45);
+  width: 100%;
+  height: 80vh;
+}
+
+/* --------------------------------------- Footer -------------------------------------- */
+
+.footer top {
+  position: absolute;
+  width: 100%;
+  height: 20vh;
+  background-color: #f5fffa;
+}
+
+footer li {
+  font-size: 1.7rem;
+  font-weight: bold;
+  padding-top: 15px;
+  padding-left: 35px;
+  color: black;
+}
+
+footer p {
+  padding-left: 80px;
+  padding-top: 10px;
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: bold;
+}
+
+footer .personal a {
+  position: relative;
+  top: -50px;
+  font-size: 1.2rem;
+  padding-left: 1650px;
+  color: black;
+}
+
+footer .SNS {
+  font-size: 3rem;
+  padding-left: 1200px;
+  position: relative;
+  top: -100px;
+}
+
+.SNS a:hover i {
+  color: white;
+}
