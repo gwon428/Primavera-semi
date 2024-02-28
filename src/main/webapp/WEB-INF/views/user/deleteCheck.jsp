@@ -11,7 +11,6 @@
 </head>
 <body>
 <sec:authentication property="principal" var="user" />
-${user}
 	아이디 : ${user.id}
 	<br>
 	<form action="deleteCheck" method="post">

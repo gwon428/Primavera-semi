@@ -1,5 +1,6 @@
 package com.semi.service;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -25,6 +26,7 @@ public class UserService implements UserDetailsService{
 		System.out.println(user);
 		return user;
 	}
+	
 	
 	public int registerUser(User user) {
 		String encodePw = bcpe.encode(user.getPassword());

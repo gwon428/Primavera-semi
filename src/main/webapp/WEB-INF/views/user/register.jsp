@@ -3,26 +3,27 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link href="../../resources/css/register.css" rel="stylesheet" type="text/css">
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
 <h1>회원가입</h1>
 	<form action="register" method="post" onsubmit="return validate()">
-		* 아이디 : <input type="text" name="id" id="userId"><br>
+		* 아이디 : <input type="text" name="id" id="userId" required><br>
 		<span>첫 글자는 반드시 영문자로, 영문자, 숫자 포함하여 총 4~12자로 입력하세요.</span><br>
-		* 비밀번호 : <input type="password" name="password" id="userPwd"><br>
+		* 비밀번호 : <input type="password" name="password" id="userPwd" required><br>
 		<span>영문자, 숫자, 특수문자 포함하여 총 8~15자로 입력하세요.</span><br>
-		* 비밀번호 확인 : <input type="password" id="passwordcheck"><br>
+		* 비밀번호 확인 : <input type="password" id="passwordcheck" required><br>
 		<span>위의 비밀번호와 일치하게 입력하세요.</span><br>
-		* 이름 : <input 	type="text" name="name" id="userName"><br>
+		* 이름 : <input 	type="text" name="name" id="userName" required><br>
 		<span>한글로만 이루어져야되며, 2글자 이상으로 입력하세요.</span><br>
-		* 전화번호 : <input type="text" name="phone" id="userPhone"><br>
+		* 전화번호 : <input type="text" name="phone" id="userPhone" required><br>
 		<span>-를 생략한 숫자만 입력하세요.</span><br>
 		* 우편번호 : <input type="text" name="postCode" id="postCode" placeholder="우편번호"><input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
-		* 주소 : <input type="text" name="roadAddress" id="roadAddress" placeholder="주소"><br>
-		* 상세주소 : <input type="text" name="detailAddress" id="detailAddress" placeholder="상세주소"><br>
-		* 이메일 : <input type="text" name="email" id="email"><br>
+		* 주소 : <input type="text" name="roadAddress" id="roadAddress" placeholder="주소" required><br>
+		* 상세주소 : <input type="text" name="detailAddress" id="detailAddress" placeholder="상세주소" required><br>
+		* 이메일 : <input type="text" name="email" id="email" required><br>
 		<span>이메일 형식에 맞춰서 입력하세요.</span><br>
 		은행 : <select name=bankName>
 			<option value="NH"> 농협 </option>

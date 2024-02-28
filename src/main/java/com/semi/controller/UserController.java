@@ -6,8 +6,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -45,6 +43,11 @@ public class UserController {
 //		return "redirect:/";
 //	}
 	
+	@PostMapping("/loginFail")
+	public String loginFail() {
+		return "user/loginFail";
+	}
+	
 	@GetMapping("/register")
 	public String join() {
 		return "user/register";
@@ -70,7 +73,6 @@ public class UserController {
 		System.out.println(userDetails);
 		
 		if(bcpe.matches(password, userDetails.getPassword())) {
-			System.out.println("업데이트하자!!!");
 			return "user/updateUser";
 		} else {
 			return "user/updateCheck";
@@ -104,10 +106,6 @@ public class UserController {
 //			System.out.println("탈퇴시켜줘 . . . .");
 			service.deleteUser(userDetails);
 			SecurityContextHolder.clearContext();
-//			System.out.println(result);
-//			System.out.println("탈퇴 후 enabled : " + userDetails.isEnabled());
-//			System.out.println("비밀번호가 같아서 업데이트가 일어나야 되는데 . . .  " + userDetails);
-			
 			return "redirect:/";
 		} else {
 			System.out.println("탈퇴 안되염. . ");
@@ -124,6 +122,4 @@ public class UserController {
 		}
 		return "user/myPage";
 	}
-	@GetMapping("/admin")
-	public void admin() {}
 }

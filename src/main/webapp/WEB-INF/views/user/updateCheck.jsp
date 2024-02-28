@@ -12,7 +12,6 @@
 </head>
 <body>
 <sec:authentication property="principal" var="user" />
-${user}
 <form action="updateCheck" method="post">
 	아이디 : ${user.id}
 	<br>
