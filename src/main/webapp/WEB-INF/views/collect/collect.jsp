@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="sec"
+	uri="http://www.springframework.org/security/tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,6 +15,7 @@
 </head>
 
 <body>
+<sec:authentication property="principal" var="user" />
 	<main>
 	<div class="header-blackbox"></div>
 		<header>
@@ -68,7 +72,6 @@
 									<p class="card-text">Check</p>
 								</div>
 							</div>
-
 						</div>
 						<div class="image-content">
 							<div class="card" style="width: 18rem;">
@@ -83,7 +86,16 @@
 					</div>
 					<i class="fa-solid fa-chevron-right" id="direc"></i>
 				</div>
-				<a href="registerCollect" id="registerPage">Pick Up</a>
+			
+				<c:choose>
+					<c:when test="${user == 'anonymousUser'}">
+						<a href="../myPage" id="registerPage">Pick Up</a>
+					</c:when>
+					<c:otherwise>
+						<a href="registerCollect" id="registerPage">Pick Up</a>
+					</c:otherwise>
+				</c:choose>
+				
 			</div>
 		</section>
 

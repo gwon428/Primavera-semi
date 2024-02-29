@@ -15,7 +15,7 @@
 	</resultMap>
 
 	<!-- insert -->
-	<insert id="registerCollect" parameterType="Collect">
+	<insert id="registerCollect" parameterType="Collect" useGeneratedKeys="true" keyProperty="orderNum" keyColumn="order_num">
 		INSERT INTO collect(id, name, phone, post_code, road_address, detail_address, collection_date, door_pwd, request) 
 		VALUES(#{id}, #{name}, #{phone}, #{postCode}, 
 		#{roadAddress}, #{detailAddress}, #{collectionDate}, #{doorPwd}, #{request})
