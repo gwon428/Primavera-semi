@@ -1,4 +1,4 @@
-const navIcons = document.querySelectorAll("i");
+const navIcons = document.querySelectorAll("#direc");
 const list = document.querySelectorAll(".image-content");
      
 navIcons[0].addEventListener("click", function(){

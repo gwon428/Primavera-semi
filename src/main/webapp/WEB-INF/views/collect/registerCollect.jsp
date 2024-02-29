@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib prefix="sec"
+	uri="http://www.springframework.org/security/tags"%>
+     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,44 +11,47 @@
 
 <link rel="stylesheet" href="../../../resources/css/reset.css" />
 <link rel="stylesheet" href="../../../resources/css/register.css" />
+
 <script
-	src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"
-	defer></script>
-<script src="../../../resources/js/registerCollectDaum.js"></script>
+		src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"
+		defer>
+	</script>
+	<script src="../../../resources/js/registerCollectDaum.js"></script>
 </head>
 <body>
-	<form action="signUpCollect" method="post" id="pickUp">
+<sec:authentication property="principal" var="user" />
+	<form action="signUpCollect" method="post" id="pickUp" name="pickUp" onsubmit="return validate()">
 
 		<h2>Primavera</h2>
 		<div id="pickUpTable">
 			<!-- 아이디에 value값(로그인 아이디 불러오기)/ readonly 예정-->
 			<div class="id">
 				<p>아이디</p>
-				<input type="text" name="id" id="id" />
+				<input type="text" name="id" id="id" value="${user.id}"/>
 			</div>
 			<div class="name">
 				<p>이름</p>
-				<input type="text" name="name" required />
+				<input type="text" name="name" />
 			</div>
 			<div class="phone">
 				<p>전화번호</p>
-				<input type="text" name="phone" required />
+				<input type="text" name="phone" />
 			</div>
 
 			<div class="addr">
 				<p>주소</p>
 				<input type="text" name="postCode" id="postCode" placeholder="우편번호"
-					size="15" required /> <input type="button"
+					size="15"  /> <input type="button"
 					onclick="daumPostCode()" value="우편번호 찾기" /> <input type="text"
 					name="roadAddress" id="roadAddress" placeholder="주소" size="40"
-					required /> <input type="text" name="detailAddress"
-					id="detailAddress" placeholder="상세 주소" size="40" required />
+					 /> <input type="text" name="detailAddress"
+					id="detailAddress" placeholder="상세 주소" size="40"  />
 			</div>
 
 			<div class="collectDate">
 				<p>수거일</p>
 				<input type="date" name="collectionDate" max="2025-12-31"
-					min="2024-02-22" required />
+					min="2024-02-22" />
 			</div>
 			<div>
 				<p>공동 현관 비밀번호</p>
@@ -64,11 +70,10 @@
 				* 수거 신청을 위해 <a href="#pop_info_1" class="btn_open"> 이용약관 </a> 및 <a
 					href="#pop_info_2" class="btn_open">개인정보 수집 </a>에 동의합니다.
 			</p>
-			<input type="radio" name="agree" id="agree" required />네, 동의합니다.
+			<input type="radio" name="agree" id="agree"  />네, 동의합니다.
 		</div>
 		<div>
-			<button type="submit" id="button">수거
-				신청 하기</button>
+			<button type="submit" id="button">수거 신청 하기</button>
 		</div>
 	
 		<div id="pop_info_1" class="pop_wrap">
@@ -86,7 +91,6 @@
 				함은 회사의 서비스에 접속하여 이 약관과 개인정보처리방침에 따라 회사와 이용계약을 체결하고 회원 등록을 한 고객으로서
 				회사가 제공하는 서비스를 지속적으로 이용할 수 있는 고객을 의미합니다.<br> 3. “비회원”이라 함은 회원으로
 				가입하지 않고 회사가 제공하는 서비스를 이용하는 고객을 의미합니다.<br>
-
 				</p>
 				<button type="button" class="btn_close">닫기</button>
 			</div>
@@ -110,40 +114,43 @@
 				경로 확보, 본인의사 확인 및 민원 등의 고충 처리, 분쟁 조정을 위한 기록 보존, ....<br>
 
 				</p>
-				<button type="button" class="btn_close">닫기</button>
+				<button type="button" class="btn_close" >닫기</button>
 			</div>
 		</div>
-		
-
 
 	</form>
-
+	
 	<script src="../../../resources/js/register.js"></script>
 	<script>
-		function showAlert() {
-			alert("수거 신청에\n 성공하였습니다.");
-		}
-	</script>
-
-	<script>
-		var target = document.querySelectorAll('.btn_open');
-		var btnPopClose = document.querySelectorAll('.pop_wrap .btn_close');
-		var targetID;
-
-		// 팝업 열기
-		for (var i = 0; i < target.length; i++) {
-			target[i].addEventListener('click', function() {
-				targetID = this.getAttribute('href');
-				document.querySelector(targetID).style.visibility = 'visible';
-			});
-		}
-
-		// 팝업 닫기
-		for (var j = 0; j < target.length; j++) {
-			btnPopClose[j].addEventListener('click', function() {
-				this.parentNode.parentNode.style.visibility = 'hidden';
-			});
-		}
+		
+		function validate() {
+			let f = document.pickUp;
+	        if (f.name.value == '') {
+	         	f.name.focus();
+	          return false;
+	        } else if(f.phone.value == ''){
+	        	f.phone.focus();
+	        	return false;
+	        }else if(f.postCode.value == ''){
+	        	f.postCode.focus();
+	        	return false;
+	        }else if(f.roadAddress.value == ''){
+	        	f.roadAddress.focus();
+	        	return false;
+	        }else if(f.detailAddress.value == ''){
+	        	f.detailAddress.focus();
+	        	return false;
+	        }else if(f.CollectionDate.value == ''){
+	        	f.CollectionDate.focus();
+	        	return false;
+	        }else if(f.agree.value == ''){
+	        	f.agree.focus();
+	        	return false;
+	        }
+	        alert("수거 신청에\n 성공하였습니다.");
+	        return true; 
+	      }
+		
 	</script>
 
 </body>
