@@ -1,51 +1,82 @@
 main{
-	padding-top:250px;
-	height:50vh;
-	background-color:pink;
+	height:100vh;
+	display:flex;
+	flex-direction:column;
+	align-items:center;
 	justify-content:center;
 }
 
-main h1{
+h1 {
+	font-size: 2.3rem;
+	font-weight:bolder;
+	padding:20px;
+}
+
+form{
 	display:flex;
 	justify-content:center;
-	font-size:2.5rem;
-	margin-bottom:30px;	
+	align-items:center;
+	height:35vh;
+	width:600px;
+	border:0.5px solid #c0c0c0;
+	border-radius:20px;
+	margin: 20px;
 }
 
-main #login{
-	margin:auto;
-	width:500px;
+.idpwd{
+	height:120px;
+	width: 300px;
+	display:flex;
+	
+	flex-direction:column;
+	justify-content:space-between;
+	align-items:center;
+}
+
+.idpwd input{
+	justify-content: space-between;
+	width: 250px;
+	
+	height: 45px;
+}
+
+.loginbutton{
+	height: 120px;
+	width: 75px;
+}
+
+#adminLogin{
+	padding-top:20%;
+	height:50vh;
+}
+
+#memberLogin{
+	position: absolute;
+	align-items:center;
+	top:300px;
+	background-color:pink;
+	height:60vh;
+	width:800px;
+}
+
+h2{
+	font-size:1.8rem;
 	text-align:center;
-	background-color:#e7e7e7;
-	height:300px;
 }
 
-/* 비밀번호 찾기, 아이디 찾기, 회원가입 */
-main #login div{
+#memberMenu{
+	background-color:skyblue;
 	display:flex;
 	flex-direction:column;
 	justify-content:center;
-	padding :40px;
+	align-items:center;
+	width:500px;
+	height:45vh;
 }
 
-.input{
-	text-align:center;
-}
-
-main #login input {
-	width: 300px;
-}
-
-main #login input #button{
-	width: 440px;
-    height: 70px;
-}
-
-
-div{
-	height:250px;
-}
-
-#emptyLogin {
-	text-align:center;
+#memberMenuOne{
+	background-color:blue;
+	display:flex;
+	justify-content:center;
+	align-items:center;
 }

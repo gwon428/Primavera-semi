@@ -35,15 +35,15 @@
 		<c:when test="${user == 'anonymousUser'}">
 			<main>
 				<h1>로그인</h1>
-				<form action="/login" method="post" id="login">
-					<div class="input">
-						<input size="15" type="text" name="username" placeholder="아이디"><br>
-						<input type="password" name="password" placeholder="비밀번호"><br>
+				<form action="/login" method="post">
+					<div class="idpwd">
+						<input size="15" type="text" name="username" placeholder="아이디">
+						<input type="password" name="password" placeholder="비밀번호">
 					</div>
-					<input type="submit" value="로그인" id="button">
+					<input type="submit" value="Login" class="loginbutton">
 				</form>
 
-				<div id="emptyLogin">
+				<div>
 					<a href="findPwd">비밀번호 찾기 | </a> <a href="findId">아이디 찾기 | </a> <a
 						href="register">회원가입</a>
 				</div>
@@ -51,28 +51,33 @@
 		</c:when>
 		<c:otherwise>
 			<div id="adminLogin">
-				<c:if test="${user.auth == 'ADMIN'}">
-
-					<ul>
-						<li><a href="notice">공지 게시판 관리</a></li>
-						<li><a href="qna">Q&A 게시판 관리</a></li>
-						<li><a href="allUser">전체 회원 조회</a></li>
-						<li><a href="progressManager">progress 관리</a></li>
-						<li><a href="progressManager">수거 신청 현황</a></li>
-						<li><a href="/logout">로그아웃</a></li>
-					</ul>
+				<c:if test="${user.auth == '관리자'}">
+					<h2>${user.name}님은 ${user.auth}입니다.</h2>
+						<div id="adminMenu">
+							<a href="notice">공지 게시판 관리</a>
+							<a href="qna">Q&A 게시판 관리</a>
+							<a href="allUser">전체 회원 조회</a>>
+							<a href="progressManager">progress 관리</a>
+							<a href="progressManager">수거 신청 현황</a>
+							<a href="/logout">로그아웃</a>
+						</div>
 				</c:if>
 			</div>
 			<div id="memberLogin">
-				<c:if test="${user.auth == 'MEMBER'}">
-					<ul>
-						<li><a href="update">회원 정보 수정</a></li>
-						<li><a href="review">내가 적은 후기</a></li>
-						<li><a href="qna">내 Q&A</a></li>
-						<li><a href="progress">진행상황</a></li>
-						<li><a href="deleteUser">회원 탈퇴</a></li>
-						<li><a href="/logout">로그아웃</a></li>
-					</ul>
+				<c:if test="${user.auth == '회원'}">
+				<h2>${user.name}님은 ${user.auth}입니다.</h2>
+					<div id="memberMenu">
+						<div id="memberMenuOne">
+							<a href="review">내가 적은 후기</a>
+							<a href="qna">내 Q&A</a>
+							<a href="progress">진행상황</a>
+						</div>
+						<div id="memberMenuTwo">
+							<a href="update">회원 정보 수정</a>
+							<a href="deleteUser">회원 탈퇴</a>
+							<a href="/logout">로그아웃</a>
+						</div>
+					</div>
 				</c:if>
 			</div>
 		</c:otherwise>
