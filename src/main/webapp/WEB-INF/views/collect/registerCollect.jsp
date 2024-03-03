@@ -20,26 +20,29 @@
 </head>
 <body>
 <sec:authentication property="principal" var="user" />
+<div id="back">
+<div id="back_black"></div>
 	<form action="signUpCollect" method="post" id="pickUp" name="pickUp" onsubmit="return validate()">
-
+	<div id="header">
 		<h2>Primavera</h2>
+		<p id="ps">*는 필수 항목입니다.</p>
+	</div>
 		<div id="pickUpTable">
-			<!-- 아이디에 value값(로그인 아이디 불러오기)/ readonly 예정-->
 			<div class="id">
-				<p>아이디</p>
-				<input type="text" name="id" id="id" value="${user.id}"/>
+				<p>*아이디</p>
+				<input type="text" name="id" id="id" value="${user.id}" readonly/>
 			</div>
 			<div class="name">
-				<p>이름</p>
-				<input type="text" name="name" />
+				<p>*이름</p>
+				<input type="text" name="name" value="${user.name}"/>
 			</div>
 			<div class="phone">
-				<p>전화번호</p>
+				<p>*전화번호</p>
 				<input type="text" name="phone" />
 			</div>
 
 			<div class="addr">
-				<p>주소</p>
+				<p>*주소</p>
 				<input type="text" name="postCode" id="postCode" placeholder="우편번호"
 					size="15"  /> <input type="button"
 					onclick="daumPostCode()" value="우편번호 찾기" /> <input type="text"
@@ -49,8 +52,8 @@
 			</div>
 
 			<div class="collectDate">
-				<p>수거일</p>
-				<input type="date" name="collectionDate" max="2025-12-31"
+				<p>*수거일</p>
+				<input type="date" name="collectionDate" id="collectionDate" max="2025-12-31"
 					min="2024-02-22" />
 			</div>
 			<div>
@@ -65,12 +68,13 @@
 			</div>
 		</div>
 
-		<div id="agree">
-			<p>
+		<div id="agree_check">
+			<p id="agree_text">
 				* 수거 신청을 위해 <a href="#pop_info_1" class="btn_open"> 이용약관 </a> 및 <a
 					href="#pop_info_2" class="btn_open">개인정보 수집 </a>에 동의합니다.
 			</p>
-			<input type="radio" name="agree" id="agree"  />네, 동의합니다.
+			<input type="checkbox" name="agree" id="agree" value="yes" />네, 동의합니다.<br>
+			
 		</div>
 		<div>
 			<button type="submit" id="button">수거 신청 하기</button>
@@ -119,39 +123,8 @@
 		</div>
 
 	</form>
-	
+	</div>
 	<script src="../../../resources/js/register.js"></script>
-	<script>
-		
-		function validate() {
-			let f = document.pickUp;
-	        if (f.name.value == '') {
-	         	f.name.focus();
-	          return false;
-	        } else if(f.phone.value == ''){
-	        	f.phone.focus();
-	        	return false;
-	        }else if(f.postCode.value == ''){
-	        	f.postCode.focus();
-	        	return false;
-	        }else if(f.roadAddress.value == ''){
-	        	f.roadAddress.focus();
-	        	return false;
-	        }else if(f.detailAddress.value == ''){
-	        	f.detailAddress.focus();
-	        	return false;
-	        }else if(f.CollectionDate.value == ''){
-	        	f.CollectionDate.focus();
-	        	return false;
-	        }else if(f.agree.value == ''){
-	        	f.agree.focus();
-	        	return false;
-	        }
-	        alert("수거 신청에\n 성공하였습니다.");
-	        return true; 
-	      }
-		
-	</script>
-
+	
 </body>
 </html>

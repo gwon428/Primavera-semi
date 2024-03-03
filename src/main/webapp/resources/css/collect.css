@@ -36,11 +36,20 @@ body {
 
 h2 {
 	font-size: 4rem;
-	font-weight: boler;
 	font-style: italic;
 	color: white;
 	margin-left: 40px;
+	animation:slide1 1.8s;
 }
+
+@keyFrames slide1{
+	from{
+		left:-300px;
+	} to{
+		left:50px;
+	}
+}
+
 
 #main {
 	height: 100vh;
@@ -112,7 +121,6 @@ img {
 
 p {
 	font-size : 1.7rem;
-	/*font-family: 'GangwonEdu_OTFBoldA';*/
 	font-style: italic;
 }
 
@@ -128,4 +136,10 @@ p {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+#registerPage:hover {
+	background-color : white;
+	color : black;
+	border : 1px solid black;
 }
