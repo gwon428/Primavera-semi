@@ -4,14 +4,81 @@ h1 {
 	font-size:2.5rem;
 	font-weight:bolder;
 	text-align:center;
+	margin-bottom: 50px;
 }
 
-form{
-	border:1px solid;
-	margin-top:50px;
-	text-align:center;
+form {
+	height: 400px;
+	border: 1px solid #c0c0c0;
+	border-radius:20px;
+	width: 700px;
+	margin: 0 auto;
+}
+
+form p{
+	margin-bottom: 5px;
+	font-weight: bolder;
+}
+
+form select{
+	margin-bottom:15px;
+}
+#regist{
+	margin-top : 15px;
+	height: 350px;
+	display:flex;
+	flex-direction:row;
+	justify-content:center;
+	align-items:center;
+	width:700px;
+}
+
+#registerOne{
+	margin-top: 10px;
+	display: flex;
+	flex-direction:column;
+	width: 50vw;
+	align-items:center;
+	justify-content:center;
+}
+
+#register input{
+	width: 25vw;
+}
+
+#registerTwo{
+	display: flex;
+	flex-direction:column;
+	width: 50vw;
+	align-items:center;
+	justify-content:center;
+}
+
+.addr{
+	display:flex;	
+	flex-direction:column;
+}
+
+.addr input{
+	width: 200px;
+}
+
+.addrPost input{
+	width: 97px;
 }
 
 form span{
-	
+	color:white;
+}
+form input{
+	width: 200px;
+}
+#submit{
+	display:flex;
+	align-items:center;
+	justify-content:center;
+}
+#button{
+	width: 140px;
+	height:30px;
 }

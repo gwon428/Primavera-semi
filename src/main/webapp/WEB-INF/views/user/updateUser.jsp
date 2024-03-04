@@ -32,14 +32,22 @@
 <main>
 <h1>회원 정보 수정</h1>
 <form action="updateUser" method="post" onsubmit="return validate()">
-<p> 기본 정보 </p>
-<p> 아이디 : ${user.id} </p>
-<input type="hidden" name="id" value="${user.id}">
-<p> 비밀번호 : <input type="password" name="password" id="userPwd" value="${user.password}"></p>
-<p> 이름 : <input type="text" name="name" id="userName" value="${user.name}"></p>
-<p> 휴대폰 번호 : <input type="text" name="phone" id="userPhone" value="${user.phone}"></p>
-<p> 이메일 : <input type="text" name="email" id="email" value="${user.email}"></p>
-<input type="submit" value="수정">
+	<div id="updateUser">
+		<h2> 기본 정보 </h2>
+		<p> 아이디 : ${user.id} 
+		<input type="hidden" name="id" value="${user.id}"></p>
+		<p>비밀번호 : 
+		<input type="password" name="password" id="userPwd" value="${user.password}"></p>
+		<p>이름 : 
+		<input type="text" name="name" id="userName" value="${user.name}"></p>
+		<p>휴대폰 번호 : 
+		<input type="text" name="phone" id="userPhone" value="${user.phone}"></p>
+		<p>이메일 : 
+		<input type="text" name="email" id="email" value="${user.email}"></p>
+	</div>
+	<div id="submit">
+	<input type="submit" value="수정" id="updateButton">
+	</div>
 </form>
 </main>
 <script type="text/javascript" src="../../resources/js/updateregExp.js"></script>

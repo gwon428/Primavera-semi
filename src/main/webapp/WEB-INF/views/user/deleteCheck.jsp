@@ -32,10 +32,14 @@
 <body>
 	<main>
 		<sec:authentication property="principal" var="user" />
-		아이디 : ${user.id} <br>
+		<h1>회원 탈퇴</h1>
 		<form action="deleteCheck" method="post">
-			비밀번호 : <input type="password" name="password"> <input
-				type="submit" value="탈퇴">
+		<div class="idpwd">
+			<p>아이디 : ${user.id}</p>
+			<input type="password" name="password" placeholder="비밀번호">
+		</div>
+			<input type="submit" value="탈퇴" class="deleteButton">
+			
 		</form>
 	</main>
 </body>
