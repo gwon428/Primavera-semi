@@ -6,20 +6,32 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.semi.model.vo.BoardVO;
+import com.semi.model.vo.Board;
 
 @Repository
 public class BoardDAO {
 
 	@Autowired
 	private SqlSessionTemplate session;
-			
-	 public List<BoardVO> getAllBoard() {
-		 return session.selectList("boardMapper.getAllBoard");
-	    }
-	 
-	 public int writeBoard(BoardVO boardVO) {
-		 return session.insert("boardMapper.getAllBoard", boardVO);
-	    }
-	
+
+	public int insert(Board b) {
+		return session.insert("board.insert", b);
+	}
+
+	public List<Board> selectAll() {
+		return session.selectList("board.selectAll");
+	}
+
+	public Board select(int no) {
+		return session.selectOne("board.select", no);
+	}
+
+	public int update(Board b) {
+		return session.update("board.update", b);
+	}
+
+	public int delete(int no) {
+		return session.delete("board.delete", no);
+	}
+
 }
