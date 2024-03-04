@@ -23,8 +23,10 @@
 		<table class="table">
 			<thead>
 				<tr>
+					<th>PHOTO</th>
 					<th>#번호</th>
 					<th>제목</th>
+					<th>작성자</th>
 					<th>별점</th>
 					<th>작성일</th>
 				</tr>
@@ -32,8 +34,16 @@
 			<tbody>
 				<c:forEach items="${list}" var="board" varStatus="status">
 					<tr>
+						<div class="form-group">
+							<label>Content</label>
+							<textarea class="form-control" row="10" name="content"
+								style="resize: none;">${vo.content}</textarea>
+							<a href="/upload/${vo.url}" download><img
+								src="/upload/${vo.url}" /></a>
+						</div>
 						<td>${status.count}</td>
 						<td><a href="/board/view?no=${board.no}">${board.title}</a></td>
+						<td>${board.id}</td>
 						<td>${board.rating}</td>
 						<td><fmt:formatDate value="${board.date}"
 								pattern="yyyy-MM-dd" /></td>

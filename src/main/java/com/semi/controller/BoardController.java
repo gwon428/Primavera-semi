@@ -32,11 +32,12 @@ public class BoardController {
 	@PostMapping("/board/write")
 	public String write(Board b) throws IllegalStateException, IOException {	
 		
-		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-		UserDetails userDetails = (UserDetails)principal;
-		System.out.println(userDetails.getUsername());
-		//System.out.println(userDetails);
-		b.setId(userDetails.getUsername());
+		// 개발 끝나면 실제 로그인 아이디가 들어가도록 할 코드
+		//Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		//UserDetails userDetails = (UserDetails)principal;
+		//b.setId(userDetails.getUsername());
+		
+		b.setId("eodbs12");
 		
 		System.out.println("board  : " + b);
 	    if (b == null || b.getFile() == null) {

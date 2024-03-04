@@ -46,12 +46,13 @@ no INT PRIMARY KEY AUTO_INCREMENT,
 id VARCHAR(20) NOT NULL,		
 title VARCHAR(30) NOT NULL,
 content TEXT NOT NULL,	
-order_num INT NOT NULL,
+order_num INT,
 date DATE DEFAULT (current_date),
 url VARCHAR(200),
 rating INT
 );
    
+   SELECT * FROM user;
 
 CREATE TABLE qna (
 qna_num INT PRIMARY KEY AUTO_INCREMENT,
