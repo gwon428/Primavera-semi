@@ -28,6 +28,7 @@
 	</nav>
 </header>
 <body>
+	<div class="background">
 	<sec:authentication property="principal" var="user" />
 	<c:choose>
 		<c:when test="${user == 'anonymousUser'}">
@@ -42,18 +43,17 @@
 				</form>
 
 				<div>
-					<a href="findPwd">비밀번호 찾기 | </a> <a href="findId">아이디 찾기 | </a> <a
-						href="register">회원가입</a>
+					<a href="findPwd">비밀번호 찾기 | </a>
+					<a href="findId">아이디 찾기 | </a>
+					<a href="register">회원가입</a>
 				</div>
 			</main>
 		</c:when>
 		<c:otherwise>
-			<c:if test="${user.auth == '관리자'}">
+			<c:if test="${user.auth == 'ADMIN'}">
 				<div id="adminLogin">
-
 					<input type="hidden" id="auth"
 						value="<c:out value="${user.auth}"/>">
-					<h2>${user.name}님은${user.auth}입니다.</h2>
 					<div id="adminMenu">
 						<div id="adminMenuOne">
 							<a href="notice">공지 게시판 관리</a> <a href="qna">Q&A 게시판 관리</a> <a
@@ -64,32 +64,32 @@
 								href="progressManager">수거 신청 현황</a> <a href="/logout">로그아웃</a>
 						</div>
 					</div>
-
 				</div>
 			</c:if>
-			<c:if test="${user.auth == '회원'}">
+			<c:if test="${user.auth == 'MEMBER'}">
 				<div id="memberLogin">
 
 					<!--<c:set var="auth" value="${user.auth}"/>-->
 					<input type="hidden" id="auth"
 						value="<c:out value="${user.auth}"/>">
-					<h2>${user.name}님은${user.auth}입니다.</h2>
+						
 					<div id="memberMenu">
 						<div id="memberMenuOne">
-							<a href="review">내가 적은 후기</a> <a href="qna">내 Q&A</a> <a
-								href="progress">진행상황</a>
+							<a href="review">내가 적은 후기</a>
+							<a href="qna">내 Q&A</a>
+							<a href="progress">진행상황</a>
 						</div>
 						<div id="memberMenuTwo">
-							<a href="update">회원 정보 수정</a> <a href="deleteUser">회원 탈퇴</a> <a
-								href="/logout">로그아웃</a>
+							<a href="update">회원 정보 수정</a>
+							<a href="deleteUser">회원 탈퇴</a>
+							<a href="/logout">로그아웃</a>
 						</div>
 					</div>
-
 				</div>
 			</c:if>
 		</c:otherwise>
 	</c:choose>
-
+</div>
 </body>
 
 </html>

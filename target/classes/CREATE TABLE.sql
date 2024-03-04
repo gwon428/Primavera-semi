@@ -7,6 +7,12 @@ DROP TABLE qna;
 DROP TABLE user;
 DROP TABLE collect;
 
+SELECT * FROM user;
+SELECT * FROM collect;
+DELETE FROM user WHERE id='user03';
+UPDATE user SET auth='ADMIN'
+WHERE id = 'manager01';
+
 CREATE TABLE user(
     id VARCHAR(20) NOT NULL UNIQUE,
     password VARCHAR(200) NOT NULL,
@@ -36,14 +42,16 @@ request TEXT
 );
 
 CREATE TABLE review (
-review_num INT PRIMARY KEY AUTO_INCREMENT,
+no INT PRIMARY KEY AUTO_INCREMENT,
 id VARCHAR(20) NOT NULL UNIQUE,		
 title VARCHAR(30) NOT NULL,
 content TEXT NOT NULL,	
 order_num INT NOT NULL,
-write_date DATE DEFAULT (current_date),
-star_point INT NOT NULL
+date DATE DEFAULT (current_date),
+url VARCHAR(200),
+rating INT
 );
+   
 
 CREATE TABLE qna (
 qna_num INT PRIMARY KEY AUTO_INCREMENT,
@@ -52,6 +60,7 @@ title VARCHAR(30) NOT NULL,
 content TEXT NOT NULL,
 order_num INT NOT NULL,
 write_date DATE DEFAULT (current_date),
+url VARCHAR(200),
 status CHAR(1) CHECK(status IN('Y','N'))
 );
 
@@ -59,6 +68,7 @@ CREATE TABLE qna_answer(
 qna_num INT NOT NULL,
 manager VARCHAR(20) NOT NULL,
 content TEXT NOT NULL,
+url VARCHAR(200),
 answer_date DATE DEFAULT (current_date)
 );
 
@@ -67,16 +77,13 @@ notice_num INT PRIMARY KEY AUTO_INCREMENT,
 title VARCHAR(30) NOT NULL,
 content TEXT NOT NULL,
 manager VARCHAR(20) NOT NULL,
+url VARCHAR(200),
 write_date DATE DEFAULT (current_date)
 );
 
 CREATE TABLE progress (
 order_num INT NOT NULL,
-collect_req CHAR(1) check (collect_req IN ('Y', 'N')),
-collect_complete CHAR(1) check (collect_complete IN ('Y', 'N')),
-collect_check CHAR(1) check (collect_check IN ('Y', 'N')),
-deposit_ing CHAR(1) check (deposit_ing IN ('Y', 'N')),
-deposit_complete CHAR(1) check (deposit_complete IN ('Y', 'N'))
+prog VARCHAR(30)
 );
 
 CREATE TABLE list(

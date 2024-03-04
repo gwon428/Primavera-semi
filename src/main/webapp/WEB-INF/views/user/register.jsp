@@ -40,7 +40,7 @@
 				<input type="text" name="name" id="userName" required>
 				<span> 한글로만 이루어져야되며, 2글자 이상으로 입력하세요.</span>
 				<p> 휴대폰번호</p>
-				<input type="text" name="phone" id="userPhone" required>
+				<input type="text" name="phone" id="userPhone" required">
 				<span> 휴대폰 번호를 입력하세요.</span><br>
 			</div>
 			<div id="registerTwo">
@@ -51,7 +51,8 @@
 					<input type="button" onclick="DaumPostcode()" value="우편번호 찾기">
 					</div>
 					<input type="text" name="roadAddress" id="roadAddress" placeholder="주소"">
-					<input type="text" name="detailAddress" id="detailAddress" placeholder="상세주소" ><br>
+					<input type="text" name="detailAddress" id="detailAddress" placeholder="상세주소" >
+					<p></p>
 				</div>
 				<p>이메일</p>
 				<input type="text" name="email" id="email" required>

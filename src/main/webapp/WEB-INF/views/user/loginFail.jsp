@@ -6,6 +6,31 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style>
+#warning {
+font-size: 2.5rem;
+display: flex;
+justify-content: center;
+align-items:center;
+}
+
+ #button{
+ margin : 50px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ }
+ 
+#href {
+	width: 100px;
+	height: 50px;
+	border: 1px solid gray;
+	border-radius : 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+</style>
 <link rel="stylesheet" href="/resources/css/reset.css" />
 <link href="../../resources/css/header.css" rel="stylesheet"
 	type="text/css">
@@ -27,8 +52,13 @@
 </header>
 <body>
 <main>
+<div id="warning">
 ${requestScope.loginFailMsg}
-<a href="/myPage"> 로그인 </a>
+</div>
+<div id="button">
+	<a href="/myPage" id="href"> 로그인 </a>
+</div>
+
 </main>
 </body>
 </html>

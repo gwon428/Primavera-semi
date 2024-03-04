@@ -23,6 +23,7 @@ form {
 	margin: 20px;
 }
 
+
 .idpwd {
 	height: 120px;
 	width: 300px;
@@ -45,18 +46,17 @@ form {
 }
 
 #adminLogin {
-	padding-top: 150px;
+	padding-top: 190px;
 	margin: 0 auto;
 	height: 100vh;
-	width: 800px;
+	width: 1000px;
 }
 
 #memberLogin {
+	padding-top: 190px;
 	margin: 0 auto;
-	align-items: center;
-	background-color: pink;
-	height: 600px;
-	width: 800px;
+	height: 100vh;
+	width: 1000px;
 }
 
 h2 {
@@ -67,15 +67,15 @@ h2 {
 
 #memberMenu {
 	margin: 0 auto;
-	width: 600px;
+	width: 800px;
 	height: 300px;
 }
 
 #memberMenu a {
 	margin: 0 auto;
 	padding: 10px;
-	width: 150px;
-	height: 150px;
+	width: 180px;
+	height: 180px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -84,17 +84,17 @@ h2 {
 }
 
 #memberMenuOne {
-	width: 600px;
-	height: 150px;
+	width: 800px;
+	height: 200px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin-bottom: 25px;
+	margin-bottom: 45px;
 }
 
 #memberMenuTwo {
-	width: 600px;
-	height: 150px;
+	width: 800px;
+	height: 200px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -102,13 +102,12 @@ h2 {
 
 #adminMenu {
 	margin: 0 auto;
-	width: 600px;
+	width: 800px;
 	height: 300px;
 }
 
 #adminMenu a {
 	margin: 0 auto;
-	padding: 10px;
 	width: 150px;
 	height: 150px;
 	display: flex;
@@ -120,16 +119,16 @@ h2 {
 
 #adminMenuOne {
 	width: 600px;
-	height: 150px;
+	height: 200px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin-bottom: 25px;
+	margin-bottom: 50px;
 }
 
 #adminMenuTwo {
 	width: 600px;
-	height: 150px;
+	height: 200px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
