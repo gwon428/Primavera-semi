@@ -119,6 +119,7 @@
           </div>
           <div>
             <a href="myPage">Login</a>
+            <a href="#">Join Membership</a>
           </div>
         </div>
         <div class="line2"></div>
