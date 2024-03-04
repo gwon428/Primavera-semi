@@ -51,15 +51,16 @@
 		</c:when>
 		<c:otherwise>
 			<c:if test="${user.auth == 'ADMIN'}">
-				<div id="adminLogin">
+				<div id="Login">
 					<input type="hidden" id="auth"
 						value="<c:out value="${user.auth}"/>">
-					<div id="adminMenu">
-						<div id="adminMenuOne">
+						<div id="logo"><div class="logobox">Primavera</div></div>
+					<div id="Menu">
+						<div id="MenuOne">
 							<a href="notice">공지 게시판 관리</a> <a href="qna">Q&A 게시판 관리</a> <a
 								href="allUser">전체 회원 조회</a>
 						</div>
-						<div id="adminMenuTwo">
+						<div id="MenuTwo">
 							<a href="progressManager">progress 관리</a> <a
 								href="progressManager">수거 신청 현황</a> <a href="/logout">로그아웃</a>
 						</div>
@@ -67,19 +68,19 @@
 				</div>
 			</c:if>
 			<c:if test="${user.auth == 'MEMBER'}">
-				<div id="memberLogin">
-
+				<div id="Login">
 					<!--<c:set var="auth" value="${user.auth}"/>-->
 					<input type="hidden" id="auth"
 						value="<c:out value="${user.auth}"/>">
-						
-					<div id="memberMenu">
-						<div id="memberMenuOne">
+					<div id="logo"><div class="logobox">Primavera</div></div>
+					
+					<div id="Menu">
+						<div id="MenuOne">
 							<a href="review">내가 적은 후기</a>
 							<a href="qna">내 Q&A</a>
 							<a href="progress">진행상황</a>
 						</div>
-						<div id="memberMenuTwo">
+						<div id="MenuTwo">
 							<a href="update">회원 정보 수정</a>
 							<a href="deleteUser">회원 탈퇴</a>
 							<a href="/logout">로그아웃</a>

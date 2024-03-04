@@ -28,20 +28,15 @@
 		<div id="regist">
 			<div id="registerOne">
 				<p>아이디</p>
-				<input type="text" name="id" id="userId" required>
-				<span>첫 글자는 반드시 영문자로, 영문자, 숫자 포함하여 총 4~12자로 입력하세요.</span>
+				<input type="text" name="id" id="userId" required><span></span>
 				<p>비밀번호</p>
-				<input type="password" name="password" id="userPwd" required>
-				<span>영문자, 숫자, 특수문자 포함하여 총 8~15자로 입력하세요.</span>
+				<input type="password" name="password" id="userPwd" required><span></span>
 				<p>비밀번호 확인</p>
-				<input type="password" id="passwordcheck" required>
-				<span>위의 비밀번호와 일치하게 입력하세요.</span>
+				<input type="password" id="passwordcheck" required><span></span>
 				<p>이름</p>
-				<input type="text" name="name" id="userName" required>
-				<span> 한글로만 이루어져야되며, 2글자 이상으로 입력하세요.</span>
+				<input type="text" name="name" id="userName" required><span></span>
 				<p> 휴대폰번호</p>
-				<input type="text" name="phone" id="userPhone" required">
-				<span> 휴대폰 번호를 입력하세요.</span><br>
+				<input type="text" name="phone" id="userPhone" required"><span></span>
 			</div>
 			<div id="registerTwo">
 				<p>우편번호</p>
@@ -55,8 +50,7 @@
 					<p></p>
 				</div>
 				<p>이메일</p>
-				<input type="text" name="email" id="email" required>
-				<span>이메일 형식에 맞춰서 입력하세요.</span>
+				<input type="text" name="email" id="email" required><span></span>
 				<p>은행</p>
 					<select name=bankName>
 						<option value="NH">농협</option>
