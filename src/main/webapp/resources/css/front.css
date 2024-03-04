@@ -3,6 +3,10 @@
   padding: 0%;
 }
 
+a {
+  pointer-events: auto;
+}
+
 section {
   height: 100vh;
 }
@@ -15,16 +19,7 @@ header {
   justify-content: space-between;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.6);
-  z-index: 1;
-}
-
-/* ------------------------------------Main Section 1-------------------------------------- */
-
-.header-blackbox {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 2;
 }
 
 header a {
@@ -46,9 +41,18 @@ header nav:nth-child(2) a {
   font-size: 1.5rem;
 }
 
+/* -----------------------------------Main Section 1-------------------------------------- */
+
+.header-blackbox {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
 #section1 video {
   position: absolute;
-  height: 100%;
+  height: 100vh;
   z-index: -1;
   width: 100%;
   object-fit: cover;
@@ -92,18 +96,14 @@ header nav:nth-child(2) a {
 
 .directivity a h1 {
   position: absolute;
-  top: 850px;
-  left: 70px;
+  top: 828px;
+  left: 106px;
   color: white;
-  line-height: inherit;
-  cursor: pointer;
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 
 #section1 nav {
   position: fixed;
-  width: 100%;
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: last baseline;
@@ -111,6 +111,10 @@ header nav:nth-child(2) a {
   font-size: 2rem;
   padding: 20px;
   animation: slide3 2s;
+  z-index: 999;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 #section1 nav a {
@@ -132,41 +136,43 @@ header nav:nth-child(2) a {
 }
 /* ------------------------------------Main Section 2-------------------------------------- */
 #section2 {
-  background-color: #f5fffa;
+  background-color: rgb(229, 227, 219);
   width: 100%;
   height: 100vh;
 }
 
 #section2 h1 {
   position: absolute;
-  left: 1450px;
-  padding-top: 100px;
+  left: 1351px;
+  padding-top: 124px;
   font-size: 3rem;
   line-height: 1;
   border-bottom: solid;
 }
 
 #section2 p {
-  width: 90%;
+  width: 85%;
   position: absolute;
   font-size: 1.5rem;
-  padding-left: 950px;
-  padding-top: 300px;
+  padding-left: 1139px;
+  padding-top: 330px;
 }
 
 #container3 img {
   position: relative;
-  width: 45%;
-  height: 50%;
-  padding-top: 200px;
-  padding-left: 50px;
-  z-index: -1;
+  width: 50%;
+  padding-top: 228px;
+  padding-left: 200px;
 }
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
   background-color: black;
   margin-top: 200px;
+}
+
+.carousel-fade .carousel-item {
+  background-color: rgb(229, 227, 219);
 }
 
 /* ------------------------------------Main Section 3-------------------------------------- */
@@ -176,6 +182,7 @@ header nav:nth-child(2) a {
   height: 100vh;
   background-color: rgb(193, 193, 191);
   border-radius: 25px;
+  z-index: 2;
 }
 
 .container1 h1 {
@@ -188,6 +195,8 @@ header nav:nth-child(2) a {
 }
 
 .container1 a {
+  font-size: 2rem;
+  top: 380px;
   position: relative;
   font-size: 2rem;
   left: 580px;
@@ -213,11 +222,19 @@ header nav:nth-child(2) a {
 
 .container2 h1 {
   position: absolute;
-  padding-top: 370px;
+  top: 2400px;
   font-size: 4rem;
   padding-left: 1020px;
   border-bottom: solid;
-  animation: slide5 2s;
+  animation: slide5 1.5s;
+}
+
+.container2 li {
+  position: relative;
+  width: 580px;
+  font-size: 2rem;
+  left: 1300px;
+  bottom: 480px;
 }
 
 @keyframes slide5 {
@@ -229,12 +246,22 @@ header nav:nth-child(2) a {
   }
 }
 
+.container-blackbox {
+  position: relative;
+  left: 1126px;
+  width: 696px;
+  height: 451px;
+  top: -60px;
+  background-color: rgba(0, 0, 0, 0.245);
+  z-index: 1;
+}
+
 .container2 img {
   position: relative;
-  width: 500px;
-  height: 350px;
-  left: 1300px;
-  top: 200px;
+  width: 696px;
+  height: 451px;
+  left: 1126px;
+  bottom: 511px;
 }
 
 #section3 {
@@ -242,15 +269,16 @@ header nav:nth-child(2) a {
 }
 
 .Floor {
+  position: absolute;
   font-style: italic;
+  left: 20px;
 }
 
 .Floor :nth-child(1) {
   position: relative;
   width: 100%;
   font-size: 11rem;
-  padding-top: 250px;
-  top: -200px;
+  top: -550px;
   opacity: 50%;
   animation: slide6 2s;
 }
@@ -268,7 +296,7 @@ header nav:nth-child(2) a {
   position: relative;
   width: 100%;
   font-size: 11rem;
-  top: -300px;
+  top: -650px;
   left: 300px;
   opacity: 50%;
   animation: slide7 2s;
@@ -286,51 +314,117 @@ header nav:nth-child(2) a {
 /* ------------------------------------Main Section 4-------------------------------------- */
 
 #section4 {
-  background-color: rgb(48, 45, 45);
+  background-color: rgb(229, 227, 219);
   width: 100%;
-  height: 80vh;
+}
+
+.line1 {
+  left: 50px;
+  width: 93%;
+  border-bottom: 1px solid;
+  position: relative;
+  top: 90px;
+}
+
+.section4_login {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 270px;
+}
+
+#title {
+  position: relative;
+  left: 80px;
+  bottom: 80px;
+}
+
+#title h2 {
+  font-size: 3.5rem;
+  font-weight: bolder;
+}
+
+#title p {
+  font-size: 1.5rem;
+}
+
+.section4_login a {
+  position: relative;
+  right: 250px;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 20px;
+  color: black;
+  font-size: 3rem;
+  bottom: 90px;
+}
+
+.section4_login a:hover {
+  background-color: black;
+  color: white;
 }
 
 /* --------------------------------------- Footer -------------------------------------- */
 
-.footer top {
-  position: absolute;
-  width: 100%;
-  height: 20vh;
-  background-color: #f5fffa;
-}
-
-footer li {
-  font-size: 1.7rem;
-  font-weight: bold;
-  padding-top: 15px;
-  padding-left: 35px;
-  color: black;
-}
-
-footer p {
-  padding-left: 80px;
-  padding-top: 10px;
-  font-size: 1rem;
-  font-style: italic;
-  font-weight: bold;
-}
-
-footer .personal a {
+.line2 {
+  left: 50px;
+  width: 93%;
+  border-bottom: 1px solid;
   position: relative;
-  top: -50px;
+  top: 300px;
+}
+
+footer {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  top: 250px;
+}
+
+.row_left {
+  position: relative;
+  left: 120px;
+  top: 110px;
+}
+
+.row_left h3 {
+  width: 60%;
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.row_left a {
+  font-size: 2.5rem;
+}
+
+.row_left p {
+  position: relative;
+  font-size: 4rem;
+  right: 80px;
+  width: 10%;
+  left: -82px;
+}
+
+.row_center {
+  position: relative;
+  font-size: 2rem;
+  right: 200px;
+  top: 90px;
+}
+
+.row_SNS {
+  position: relative;
+  font-size: 2rem;
+  right: 200px;
+  top: 90px;
+}
+
+.impormation {
+  position: relative;
   font-size: 1.2rem;
-  padding-left: 1650px;
-  color: black;
-}
-
-footer .SNS {
-  font-size: 3rem;
-  padding-left: 1200px;
-  position: relative;
-  top: -100px;
-}
-
-.SNS a:hover i {
-  color: white;
+  font-weight: bold;
+  right: 100px;
+  top: 90px;
 }
