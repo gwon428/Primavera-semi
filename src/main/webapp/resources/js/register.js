@@ -45,3 +45,5 @@ for (var j = 0; j < target.length; j++) {
 		this.parentNode.parentNode.style.visibility = 'hidden';
 	});
 }
+
+

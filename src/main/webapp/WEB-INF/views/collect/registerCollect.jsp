@@ -79,7 +79,7 @@
 		<div>
 			<button type="submit" id="button">수거 신청 하기</button>
 		</div>
-	
+		 
 		<div id="pop_info_1" class="pop_wrap">
 			<div class="pop_inner">
 				<p class="dsc">
@@ -121,10 +121,10 @@
 				<button type="button" class="btn_close" >닫기</button>
 			</div>
 		</div>
-
+ 
 	</form>
 	</div>
 	<script src="../../../resources/js/register.js"></script>
-	
+	<!--<jsp:include page="/WEB-INF/views/collect/agree.jsp"></jsp:include>-->
 </body>
 </html>
