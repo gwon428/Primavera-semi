@@ -24,7 +24,7 @@
       </nav>
       <nav>
         <a href="#">Store</a>
-        <a href="#">Guid</a>
+        <a href="#">Guide</a>
         <a href="collectPage">PickUp</a>
         <a href="listpage">Board</a>
         <a href="myPage"><i class="fa-regular fa-user"></i></a>
@@ -34,7 +34,7 @@
       <section id="section1">
         <div>
           <video
-            src="../Project_Primavera/production_id_4919750 (1080p).mp4"
+            src="../../resources/images/production_id_4919750 (1080p).mp4"
             id="background_video"
             preload="auto"
             autoplay="autoplay"
@@ -68,7 +68,7 @@
               탄소 배출량을 줄일수있는 폐의류를 재사용하는 업사이클링을 시작하게 되었다
               현 시점의 환경과 자연을 원모습을 되찾기위해 우리는 지금도 걷고있다 
              </p>
-              <img src="../SemiProject/resources/front_img.jpg" class="" alt="...">
+              <img src="../resources/images/front_img.jpg" class="" alt="...">
             </div>
             <div class="carousel-item" id="container3">
               <h1>Work_introduce</h1>
@@ -77,7 +77,7 @@
                 섬유들을 추출하여 새로운 의류를 만들며 추출이 불가능한 의류들은 업사이클링 제품으로
                 재탄생시켜 오프라인 매장에 판매중이다. 
                </p>
-              <img src="../SemiProject/resources/Work_introduce.jpg" class="" alt="...">
+              <img src="../resources/images/Work_introduce.jpg" class="" alt="...">
             </div>
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
@@ -103,7 +103,7 @@
         <div class="container2">
            <div class="container-blackbox"></div>
             <h1>Map</h1>
-            <a href="#"><img src="../SemiProject/resources/서울지도 최종본 section3.jpg" alt=""></a>
+            <a href="#"><img src="../../resources/images/서울지도 최종본 section3.jpg" alt=""></a>
             <li>The service area is all over Seoul. For more information, click the map~~</li>
         </div>
         <div class="Floor">
