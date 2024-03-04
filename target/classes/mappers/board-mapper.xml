@@ -1,29 +1,47 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="BoardMapper">
+<mapper namespace="board">
 
-	<resultMap type="BoardVO" id="BoardMap">
-		<id property="reviewnum" column="review_num" />
-		<result property="id" column="id" />
-		<result property="title" column="title" />
-		<result property="content" column="content" />
-		<result property="ordernum" column="order_num" />
-		<result property="writedate" column="write_date" />
-		<result property="starpoint" column="star_point" />		
+	<resultMap type="Board" id="boardMap">
+		<id property="no" column="no"/>
+		<result property="id" column="id"/>
+		<result property="title" column="title"/>
+		<result property="content" column="content"/>
+		<result property="orderNum" column="order_num"/>
+		<result property="date" column="date"/>
+		<result property="url" column="url"/>
+		<result property="rating" column="rating"/>		
 	</resultMap>
 
-	<!-- 모든 게시글 조회 -->
-	<select id="getAllBoard" resultType="com.semi.model.vo.BoardVO">
-		SELECT review_num, title,
-		content, write_date
-		FROM review
-	</select>
-
-	<!-- 게시글 작성 -->
-	<insert id="writeBoard"
-		parameterType="com.semi.model.vo.BoardVO">
-		INSERT INTO review (title, content) VALUES (#{title},
-		#{content})
+	<insert id="insert" parameterType="Board"
+		useGeneratedKeys="true" keyProperty="no" keyColumn="no">
+		INSERT INTO
+		review(title, content, url, rating)
+		VALUES(#{title}, #{content},
+		#{url},
+		#{rating})
 	</insert>
 
+	<select id="selectAll" resultMap="boardMap">
+		SELECT * FROM review
+	</select>
+
+	<select id="select" parameterType="int" resultMap="boardMap">
+		SELECT * FROM
+		review
+		WHERE no=#{no}
+	</select>
+
+	<update id="update" parameterType="Board">
+		UPDATE review SET
+		title=#{title}, content=#{content}, url=#{url}, rating=#{rating}
+		WHERE
+		no=#{no}
+	</update>
+
+	<delete id="delete" parameterType="int">
+		DELETE FROM review
+		WHERE
+		no=#{no}
+	</delete>
+	
 </mapper>
