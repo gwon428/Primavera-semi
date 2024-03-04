@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    <%@ taglib prefix="sec"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="sec"
 	uri="http://www.springframework.org/security/tags"%>
-     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,10 +17,10 @@
 <script src="https://kit.fontawesome.com/4602e82315.js"
 	crossorigin="anonymous"></script>
 <title>Insert title here</title>
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script type="text/javascript"
+	src="https://code.jquery.com/jquery-3.7.1.js"></script>
 </head>
 <header>
-
 	<nav>
 		<a href="/">Primavera</a>
 	</nav>
@@ -31,14 +31,17 @@
 	</nav>
 </header>
 <body>
-<sec:authentication property="principal" var="user" />
-<main>
-<form action="updateCheck" method="post">
-	아이디 : ${user.id}
-	<br>
-	비밀번호 : <input type="password" name="password">
-	<input type="submit" value="수정">
-</form>
-</main>
+	<sec:authentication property="principal" var="user" />
+	<main>
+		<h2>정보를 안전하게 보호하기 위해 <p>비밀번호를 다시 한 번 확인</p>합니다.</h2>
+		<p id="desc">비밀번호가 타인에게 노출되지 않도록 항상 주의해주세요.</p>
+		<form action="updateCheck" method="post">
+			<div class="idpwd">
+				<p>아이디 : ${user.id}</p>
+				<input type="password" name="password" placeholder="기존 비밀번호">
+			</div>
+			<input type="submit" value="비밀번호 확인" id="checkbutton">
+		</form>
+	</main>
 </body>
 </html>

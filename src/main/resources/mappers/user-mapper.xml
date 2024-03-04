@@ -36,4 +36,8 @@
 		SET enabled = 0
 		WHERE id=#{id}
 	</update>
+	
+	<select id="showAllUser" parameterType="User" resultType="User">
+	SELECT * FROM user
+	</select>
 </mapper>

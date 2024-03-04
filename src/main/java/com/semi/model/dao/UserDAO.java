@@ -1,5 +1,7 @@
 package com.semi.model.dao;
 
+import java.util.List;
+
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -31,6 +33,10 @@ public class UserDAO {
 
 	public int deleteUser(UserDetails userDetails) {
 		return session.update("userMapper.deleteUser", userDetails);
+	}
+
+	public List<User> showAllUser() {
+		return session.selectList("userMapper.showAllUser");
 	}
 
 }

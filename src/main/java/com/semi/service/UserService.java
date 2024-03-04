@@ -1,6 +1,8 @@
 package com.semi.service;
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -27,7 +29,6 @@ public class UserService implements UserDetailsService{
 		return user;
 	}
 	
-	
 	public int registerUser(User user) {
 		String encodePw = bcpe.encode(user.getPassword());
 		user.setPassword(encodePw);
@@ -44,6 +45,9 @@ public class UserService implements UserDetailsService{
 		return dao.deleteUser(userDetails);
 	}
 
+	public List<User> showAllUser(){
+		return dao.showAllUser();
+	}
 	
 	
 }

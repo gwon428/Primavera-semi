@@ -1,81 +1,136 @@
-main{
-	height:100vh;
-	display:flex;
-	flex-direction:column;
-	align-items:center;
-	justify-content:center;
+main {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
 h1 {
 	font-size: 2.3rem;
-	font-weight:bolder;
-	padding:20px;
+	font-weight: bolder;
+	padding: 20px;
 }
 
-form{
-	display:flex;
-	justify-content:center;
-	align-items:center;
-	height:35vh;
-	width:600px;
-	border:0.5px solid #c0c0c0;
-	border-radius:20px;
+form {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 35vh;
+	width: 600px;
+	border: 0.5px solid #c0c0c0;
+	border-radius: 20px;
 	margin: 20px;
 }
 
-.idpwd{
-	height:120px;
+.idpwd {
+	height: 120px;
 	width: 300px;
-	display:flex;
-	
-	flex-direction:column;
-	justify-content:space-between;
-	align-items:center;
+	display: flex;
+
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
 }
 
-.idpwd input{
+.idpwd input {
 	justify-content: space-between;
 	width: 250px;
-	
 	height: 45px;
 }
 
-.loginbutton{
+.loginbutton {
 	height: 120px;
 	width: 75px;
 }
 
-#adminLogin{
-	padding-top:20%;
-	height:50vh;
+#adminLogin {
+	padding-top: 150px;
+	margin: 0 auto;
+	height: 100vh;
+	width: 800px;
 }
 
-#memberLogin{
-	margin : 0 auto;
-	align-items:center;
-	background-color:pink;
-	height:600px;
-	width:800px;
+#memberLogin {
+	margin: 0 auto;
+	align-items: center;
+	background-color: pink;
+	height: 600px;
+	width: 800px;
 }
 
-h2{
-	font-size:1.8rem;
-	text-align:center;
+h2 {
+	font-size: 1.8rem;
+	text-align: center;
+	margin: 50px;
 }
 
-#memberMenu{
-	background-color:skyblue;
-	display:flex;
-	flex-direction:column;
-	justify-content:center;
-	align-items:center;
-	width:500px;
-	height:45vh;
+#memberMenu {
+	margin: 0 auto;
+	width: 600px;
+	height: 300px;
 }
 
-#memberMenuOne{
-	background-color:blue;
-	display:flex;
-	justify-content:center;
-	align-items:center;
+#memberMenu a {
+	margin: 0 auto;
+	padding: 10px;
+	width: 150px;
+	height: 150px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid #c0c0c0;
+	border-radius: 50%;
+}
+
+#memberMenuOne {
+	width: 600px;
+	height: 150px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 25px;
+}
+
+#memberMenuTwo {
+	width: 600px;
+	height: 150px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#adminMenu {
+	margin: 0 auto;
+	width: 600px;
+	height: 300px;
+}
+
+#adminMenu a {
+	margin: 0 auto;
+	padding: 10px;
+	width: 150px;
+	height: 150px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid #c0c0c0;
+	border-radius: 50%;
+}
+
+#adminMenuOne {
+	width: 600px;
+	height: 150px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 25px;
+}
+
+#adminMenuTwo {
+	width: 600px;
+	height: 150px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }

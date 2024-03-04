@@ -30,11 +30,11 @@ function emailCheck(){
 function inputHandler(e, check, message){
 	if(check){
 	    console.log(e.target.nextElementSibling);
-		e.target.nextElementSibling.nextElementSibling.style.color="green";
-		e.target.nextElementSibling.nextElementSibling.innerHTML = "OK!";
+		e.target.nextElementSibling.style.color="green";
+		e.target.nextElementSibling.innerHTML = "OK!";
 	} else {
-		e.target.nextElementSibling.nextElementSibling.style.color="red";
-		e.target.nextElementSibling.nextElementSibling.innerHTML = message;
+		e.target.nextElementSibling.style.color="red";
+		e.target.nextElementSibling.innerHTML = message;
 	}
 }
 
@@ -55,7 +55,7 @@ userName.addEventListener("input", function(e){
 });
 
 userPhone.addEventListener("input", function(e){
-	inputHandler(e, phoneCheck(), "-를 생략한 숫자만 입력하세요.");
+	inputHandler(e, phoneCheck(), "휴대폰 번호를 입력하세요.");
 });
 
 email.addEventListener("input", function(e){
