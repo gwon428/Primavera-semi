@@ -79,7 +79,6 @@ public class UserController {
 		} else {
 			return "user/updateCheck";
 		}
-		
 	}
 	
 	@PostMapping("/updateUser")

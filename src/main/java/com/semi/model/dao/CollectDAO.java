@@ -14,10 +14,21 @@ public class CollectDAO {
 	@Autowired
 	private SqlSessionTemplate session;
 	
-	// 전체 수거 신청 리스트 보기
+	// 관리자용 수거신청현황 페이지 (prog제외)
 	public List<Collect> showAllCollect(){
 		return session.selectList("collectMapper.showAllCollect");
 	}
+	
+	// 회원용 진행상황 페이지용 
+	public List<Collect> showCollect(){
+		return session.selectList("collectMapper.showCollect");
+	}
+	
+	// 관리자용 progress 페이지
+	public int updateCollect() {
+		return session.update("collectMapper.updateCollect");
+	}
+	
 	
 	// 수거 신청 
 	public int registerCollect(Collect vo) {

@@ -1,0 +1,35 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="qnaMapper">
+
+	<resultMap type="Qna" id="qnaMap">
+		<id property="qnaNum" column="qna_num"/>
+		<result property="id" column="id"/>
+		<result property="title" column="title"/>
+		<result property="content" column="content"/>
+		<result property="orderNum" column="order_num"/>
+		<result property="writeDate" column="write_date"/>
+		<result property="url" column="url"/>
+		<result property="status" column="status"/>
+	</resultMap>
+	
+	<!-- insert -->
+	<insert id="insertQna" parameterType="Qna" useGeneratedKeys="true" keyProperty="qnaNum" keyColumn="qna_num">
+		INSERT INTO qna(id, title, content, url, order_num) 
+		VALUES(#{id}, #{title}, #{content}, #{url}, #{orderNum})
+	</insert>
+	<!-- selectAll -->
+	<select id="showAllQna" parameterType="PagingQna" resultMap="qnaMap">
+		SELECT qna_num, title, id, write_date, status 
+		FROM qna
+		LIMIT #{offset}, #{limit}
+	</select>
+	
+	<!-- selectCount -->
+	<select id="countQna" resultType="int">
+		SELECT count(*) FROM qna
+	</select>
+	
+	<!-- update -->
+	
+	<!-- delete -->
+</mapper>

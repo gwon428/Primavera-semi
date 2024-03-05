@@ -26,7 +26,7 @@
 				<a href="#">Store</a> 
 				<a href="#">Guid</a> 
 				<a href="collectPage">PickUp</a> 
-				<a href="#">Board</a> 
+				<a href="/board/list">Board</a> 
 				<a href="myPage"><i class="fa-regular fa-user" id="mypage"></i></a>
 			</nav>
 		</header>
@@ -86,7 +86,6 @@
 					</div>
 					<i class="fa-solid fa-chevron-right" id="direc"></i>
 				</div>
-			
 				<c:choose>
 					<c:when test="${user == 'anonymousUser'}">
 						<a href="../myPage" id="registerPage">Pick Up</a>
@@ -95,12 +94,12 @@
 						<a href="registerCollect" id="registerPage">Pick Up</a>
 					</c:otherwise>
 				</c:choose>
-				
+				<a href="yebinCollect" id="collect">[임시]예빈아가져가</a>
+				<a href="qna" id="qna">[임시]qna로 넘어가는 페이지에요</a>
 			</div>
 		</section>
 
 	</main>
-
 	<script src="../../../resources/js/collect.js"></script>
 </body>
 </html>
