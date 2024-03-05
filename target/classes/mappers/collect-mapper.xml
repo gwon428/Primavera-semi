@@ -24,6 +24,11 @@
 	<!-- select -->
 	<select id="showAllCollect" resultMap="collectMap">
 		SELECT * FROM collect
+		LIMIT #{offset}, #{limit}
+	</select>
+	
+	<select id="count" resultType="int">
+	SELECT count(*) FROM collect;
 	</select>
 	
 	<!-- updage -->

@@ -166,7 +166,6 @@
       </section>
 
     </main>
-    <script src="../SemiProject/front.js"></script>
   </body>
 
   </html>

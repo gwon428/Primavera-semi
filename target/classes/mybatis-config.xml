@@ -8,6 +8,8 @@
 		<typeAlias type="com.semi.model.vo.User" alias="User" />
 		<typeAlias type="com.semi.model.vo.Collect" alias="Collect" />
 		<typeAlias type="com.semi.model.vo.Board" alias="Board" />
+		<typeAlias type="com.semi.model.vo.Progress" alias="Progress"/>
+		<typeAlias type="com.semi.model.vo.PagingCollect" alias="Paging"/>
 	</typeAliases>
 
 	<!-- 쿼리문 -->
@@ -15,5 +17,6 @@
 		<mapper resource="mappers/user-mapper.xml" />
 		<mapper resource="mappers/collect-mapper.xml" />
 		<mapper resource="mappers/board-mapper.xml" />
+		<mapper resource="mappers/progress-mapper.xml"/>
 	</mappers>
 </configuration>

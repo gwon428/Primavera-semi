@@ -28,7 +28,6 @@
 	</nav>
 </header>
 <body>
-	<div class="background">
 	<sec:authentication property="principal" var="user" />
 	<c:choose>
 		<c:when test="${user == 'anonymousUser'}">
@@ -51,6 +50,9 @@
 		</c:when>
 		<c:otherwise>
 			<c:if test="${user.auth == 'ADMIN'}">
+			<section id="Adbackground">
+				<div id="background-blackbox"></div>
+			</section>
 				<div id="Login">
 					<input type="hidden" id="auth"
 						value="<c:out value="${user.auth}"/>">
@@ -61,15 +63,20 @@
 								href="allUser">전체 회원 조회</a>
 						</div>
 						<div id="MenuTwo">
-							<a href="progressManager">progress 관리</a> <a
-								href="progressManager">수거 신청 현황</a> <a href="/logout">로그아웃</a>
+							<a href="progressManager">progress 관리</a>
+							<a href="showAllCollect">수거 신청 현황</a>
+							<a href="/logout">로그아웃</a>
 						</div>
 					</div>
 				</div>
+			</div>
+			
 			</c:if>
 			<c:if test="${user.auth == 'MEMBER'}">
+			<section id="Userbackground">
+				<div id="background-blackbox"></div>
+			</section>
 				<div id="Login">
-					<!--<c:set var="auth" value="${user.auth}"/>-->
 					<input type="hidden" id="auth"
 						value="<c:out value="${user.auth}"/>">
 					<div id="logo"><div class="logobox">Primavera</div></div>
@@ -90,7 +97,6 @@
 			</c:if>
 		</c:otherwise>
 	</c:choose>
-</div>
 </body>
 
 </html>

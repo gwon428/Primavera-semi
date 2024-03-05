@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.semi.model.vo.PagingCollect;
 import com.semi.model.vo.User;
 import com.semi.service.UserService;
 
@@ -126,9 +127,10 @@ public class UserController {
 	}
 	
 	@GetMapping("allUser")
-	public String allUser(Model model) {
-		List<User> list = service.showAllUser();
+	public String allUser(Model model, PagingCollect paging) {
+		List<User> list = service.showAllUser(paging);
 		model.addAttribute("list", list);
+		model.addAttribute("paging", new PagingCollect(paging.getPage(), service.total()));
 		return "user/allUser";
 	}
 }

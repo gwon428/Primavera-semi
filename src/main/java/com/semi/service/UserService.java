@@ -11,6 +11,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.semi.model.dao.UserDAO;
+import com.semi.model.vo.PagingCollect;
 import com.semi.model.vo.User;
 
 @Service
@@ -45,9 +46,13 @@ public class UserService implements UserDetailsService{
 		return dao.deleteUser(userDetails);
 	}
 
-	public List<User> showAllUser(){
-		return dao.showAllUser();
+	public List<User> showAllUser(PagingCollect paging){
+		paging.setOffset(paging.getLimit() * (paging.getPage()-1));
+		return dao.showAllUser(paging);
 	}
 	
+	public int total() {
+		return dao.total();
+	}
 	
 }
