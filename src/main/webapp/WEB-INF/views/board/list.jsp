@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>글 목록</title>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -15,10 +15,11 @@
 </head>
 <body>
 	<div class="container">
-
 		<div class="header">
 			<h1>글 목록</h1>
-			<a href="/board/write" class="btn btn-outline-warning">글쓰기</a>
+			<c:if test="${isLoggedIn}">
+				<a href="/board/write" class="btn btn-outline-warning">글쓰기</a>
+			</c:if>
 		</div>
 		<table class="table">
 			<thead>
@@ -34,13 +35,9 @@
 			<tbody>
 				<c:forEach items="${list}" var="board" varStatus="status">
 					<tr>
-						<div class="form-group">
-							<label>Content</label>
-							<textarea class="form-control" row="10" name="content"
-								style="resize: none;">${vo.content}</textarea>
-							<a href="/upload/${vo.url}" download><img
-								src="/upload/${vo.url}" /></a>
-						</div>
+						<td><img
+							src="${pageContext.request.contextPath}/upload/${board.url}"
+							width="100" height="100" /></td>
 						<td>${status.count}</td>
 						<td><a href="/board/view?no=${board.no}">${board.title}</a></td>
 						<td>${board.id}</td>
@@ -51,6 +48,17 @@
 				</c:forEach>
 			</tbody>
 		</table>
+
+		<nav aria-label="Page navigation">
+			<ul class="pagination">
+				<c:forEach begin="1" end="${totalPages}" var="i">
+					<li class="page-item ${currentPage == i ? 'active' : ''}"><a
+						class="page-link" href="/board/list?page=${i}&size=${size}">${i}</a>
+					</li>
+				</c:forEach>
+			</ul>
+		</nav>
 	</div>
 </body>
 </html>
+

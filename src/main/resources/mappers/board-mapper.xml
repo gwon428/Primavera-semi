@@ -2,27 +2,38 @@
 <mapper namespace="board">
 
 	<resultMap type="Board" id="boardMap">
-		<id property="no" column="no"/>
-		<result property="id" column="id"/>
-		<result property="title" column="title"/>
-		<result property="content" column="content"/>
-		<result property="orderNum" column="order_num"/>
-		<result property="date" column="date"/>
-		<result property="url" column="url"/>
-		<result property="rating" column="rating"/>		
+		<id property="no" column="no" />
+		<result property="id" column="id" />
+		<result property="title" column="title" />
+		<result property="content" column="content" />
+		<result property="orderNum" column="order_num" />
+		<result property="date" column="date" />
+		<result property="url" column="url" />
+		<result property="rating" column="rating" />
 	</resultMap>
 
 	<insert id="insert" parameterType="Board"
 		useGeneratedKeys="true" keyProperty="no" keyColumn="no">
 		INSERT INTO
 		review(id, title, content, url, rating)
-		VALUES(#{id}, #{title}, #{content},
+		VALUES(#{id}, #{title},
+		#{content},
 		#{url},
 		#{rating})
 	</insert>
 
 	<select id="selectAll" resultMap="boardMap">
 		SELECT * FROM review
+	</select>
+
+	<select id="selectPage" resultType="com.semi.model.vo.Board">
+		SELECT * FROM review
+		ORDER BY no DESC
+		LIMIT #{limit} OFFSET #{offset}
+	</select>
+
+	<select id="count" resultType="int">
+		SELECT COUNT(*) FROM review
 	</select>
 
 	<select id="select" parameterType="int" resultMap="boardMap">
@@ -43,5 +54,5 @@
 		WHERE
 		no=#{no}
 	</delete>
-	
+
 </mapper>

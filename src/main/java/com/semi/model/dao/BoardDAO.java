@@ -1,11 +1,10 @@
 package com.semi.model.dao;
 
 import java.util.List;
-
+import org.apache.ibatis.session.RowBounds;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-
 import com.semi.model.vo.Board;
 
 @Repository
@@ -34,4 +33,13 @@ public class BoardDAO {
 		return session.delete("board.delete", no);
 	}
 
+	public List<Board> selectPage(int page, int size) {
+		int offset = (page - 1) * size;
+		RowBounds rowBounds = new RowBounds(offset, size);
+		return session.selectList("board.selectAll", null, rowBounds);
+	}
+
+	public int count() {
+		return session.selectOne("board.count");
+	}
 }
