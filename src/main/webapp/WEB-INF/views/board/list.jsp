@@ -81,7 +81,7 @@
 			</table>
 			<div class="writebtn">
 				<c:if test="${isLoggedIn}">
-					<a href="/board/write" class="btn btn-success">글쓰기</a>
+					<a href="/board/write" class="btn btn-warning">글쓰기</a>
 				</c:if>
 			</div>
 			<nav>

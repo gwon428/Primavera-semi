@@ -77,3 +77,32 @@ table {
 	border-radius: 15px;
 	overflow: hidden;
 }
+
+.pagination > li > a
+{
+    background-color: white;
+    color: #FFC107;
+}
+
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > li > span:focus,
+.pagination > li > span:hover
+{
+    color: #FFC107;
+    background-color: #eee;
+    border-color: #ddd;
+}
+
+.pagination > .active > a
+{
+    color: white;
+    background-color: #FFC107 !Important;
+    border: solid 1px #FFC107 !Important;
+}
+
+.pagination > .active > a:hover
+{
+    background-color: #FFC107 !Important;
+    border: solid 1px #FFC107;
+}

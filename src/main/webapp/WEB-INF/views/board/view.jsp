@@ -21,29 +21,34 @@
 <script src="https://kit.fontawesome.com/4602e82315.js"
 	crossorigin="anonymous"></script>
 </head>
+
 <body class="main">
 	<div class="container">
 		<h1>Review</h1>
+		
 		<form action="/update" method="post" enctype="multipart/form-data">
 			<input type="hidden" name="no" value="${vo.no}"> <input
 				type="hidden" name="url" value="${vo.url}">
+				
 			<div class="form-group">
 				<a href="/upload/${vo.url}" download> <img
 					src="/upload/${vo.url}" />
 				</a>
-
 			</div>
+			
 			<div class="form-group">
 				<label>Title</label> <input class="form-control" name="title"
 					value="${vo.title}"> <br />
 				<textarea class="form-control" rows="10" name="content"
 					style="resize: none;">${vo.content}</textarea>
 			</div>
+			
 			<a href="/board/list" class="btn btn-success">글목록</a>
 			<c:if test="${vo.id == currentUserId}">
-				<button type="submit" class="btn btn-outline-info">수정</button>
-				<a class="btn btn-outline-danger" href="/delete?no=${vo.no}">삭제</a>
+				<button type="submit" class="btn btn-info">수정</button>
+				<a class="btn btn-danger" href="/delete?no=${vo.no}">삭제</a>
 			</c:if>
+			
 		</form>
 	</div>
 </body>
