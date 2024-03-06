@@ -26,16 +26,6 @@
 		SELECT * FROM review
 	</select>
 
-	<select id="selectPage" resultType="com.semi.model.vo.Board">
-		SELECT * FROM review
-		ORDER BY no DESC
-		LIMIT #{limit} OFFSET #{offset}
-	</select>
-
-	<select id="count" resultType="int">
-		SELECT COUNT(*) FROM review
-	</select>
-
 	<select id="select" parameterType="int" resultMap="boardMap">
 		SELECT * FROM
 		review
@@ -54,5 +44,17 @@
 		WHERE
 		no=#{no}
 	</delete>
+
+	<select id="selectPage" parameterType="Paging"
+		resultMap="boardMap">
+		SELECT * FROM review
+		ORDER BY no DESC
+		LIMIT #{offset},
+		#{limit}
+	</select>
+
+	<select id="count" resultType="int">
+		SELECT COUNT(*) FROM review
+	</select>
 
 </mapper>

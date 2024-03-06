@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.semi.model.vo.Board;
+import com.semi.model.vo.Paging;
 import com.semi.service.BoardService;
 
 @Controller
@@ -56,16 +57,21 @@ public class BoardController {
 	}
 
 	@GetMapping("/board/list")
-	public String list(@RequestParam(value = "page", defaultValue = "1") int page,
-			@RequestParam(value = "size", defaultValue = "10") int size, Model model) {
-		List<Board> boardList = service.selectPage(page, size);
+	public String list(Model model, @RequestParam(value = "page", defaultValue = "1") int page) {
+		// 총 게시물 수 조회
+		int total = service.total();
+
+		// Paging 객체 생성 시 총 게시물 수를 함께 전달
+		Paging paging = new Paging(page, total);
+
+		// 페이징 처리된 게시물 목록 조회
+		List<Board> boardList = service.selectPage(paging);
 		model.addAttribute("list", boardList);
 
-		int total = service.getTotalBoardCount();
-		int totalPages = (int) Math.ceil((double) total / size);
-		model.addAttribute("totalPages", totalPages);
-		model.addAttribute("currentPage", page);
+		// 모델에 Paging 객체 추가
+		model.addAttribute("paging", paging);
 
+		// 로그인 상태 확인 후 모델에 추가
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		boolean isLoggedIn = authentication != null && authentication.isAuthenticated()
 				&& !(authentication instanceof AnonymousAuthenticationToken);
@@ -93,10 +99,12 @@ public class BoardController {
 
 	@PostMapping("/update")
 	public String update(Board b) throws IllegalStateException, IOException {
-		if (!b.getFile().isEmpty()) {
-			if (b.getUrl() != null) {
+		if (b.getFile() != null && !b.getFile().isEmpty()) {
+			if (b.getUrl() != null && !b.getUrl().isEmpty()) {
 				File file = new File(path + b.getUrl());
-				file.delete();
+				if (file.exists()) {
+					file.delete();
+				}
 			}
 			String url = fileUpload(b.getFile());
 			b.setUrl(url);

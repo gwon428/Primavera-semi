@@ -1,0 +1,19 @@
+.container {
+	margin-top: 70px;
+}
+
+.form-group {
+	margin: 20px 0;
+}
+
+img {
+	height: 100px;
+	width: 100px;
+	margin: 10px;
+}
+
+.main {
+	background-color: rgb(229, 227, 219);
+	width: 100%;
+	height: 100vh;
+}

@@ -8,6 +8,7 @@
 		<typeAlias type="com.semi.model.vo.User" alias="User" />
 		<typeAlias type="com.semi.model.vo.Collect" alias="Collect" />
 		<typeAlias type="com.semi.model.vo.Board" alias="Board" />
+		<typeAlias type="com.semi.model.vo.Paging" alias="Paging" />
 	</typeAliases>
 
 	<!-- 쿼리문 -->

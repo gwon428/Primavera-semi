@@ -6,6 +6,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import com.semi.model.vo.Board;
+import com.semi.model.vo.Paging;
 
 @Repository
 public class BoardDAO {
@@ -33,13 +34,11 @@ public class BoardDAO {
 		return session.delete("board.delete", no);
 	}
 
-	public List<Board> selectPage(int page, int size) {
-		int offset = (page - 1) * size;
-		RowBounds rowBounds = new RowBounds(offset, size);
-		return session.selectList("board.selectAll", null, rowBounds);
+	public List<Board> selectPage(Paging paging) {
+		return session.selectList("board.selectPage", paging);
 	}
 
-	public int count() {
+	public int total() {
 		return session.selectOne("board.count");
 	}
 }
