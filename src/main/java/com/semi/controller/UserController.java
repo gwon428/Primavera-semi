@@ -128,8 +128,10 @@ public class UserController {
 	
 	@GetMapping("allUser")
 	public String allUser(Model model, PagingCollect paging) {
+		System.out.println("첫 시작!");
 		List<User> list = service.showAllUser(paging);
 		model.addAttribute("list", list);
+		System.out.println("list size : " + list.size());
 		model.addAttribute("paging", new PagingCollect(paging.getPage(), service.total()));
 		return "user/allUser";
 	}

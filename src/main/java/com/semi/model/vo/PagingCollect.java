@@ -12,6 +12,7 @@ public class PagingCollect {
 	private int limit = 10; // 레코드 수 (rows 수)
 	
 	private int pageSize = 10;	// 한 페이지 당 페이지 개수
+//	private int pageSize = total/limit;
 	private int endPage = this.pageSize;	// 한 페이지의 마지막 페이지 수
 	private int startPage = this.endPage - this.pageSize + 1;	// 한 페이지의 첫 페이지 수 (마지막 페이지 수 이후에 계산하는 것을 추천)
 	
@@ -20,7 +21,7 @@ public class PagingCollect {
 	
 	// 페이지에 따라서 startPage, endPage가 바뀌어야 함
 	public PagingCollect(int page, int total) {
-		
+		System.out.println("total : " + total);
 		/*
 		 	page: 1~10 -> endPage : 10
 		 	page: 11~20 -> endPage : 20
@@ -28,11 +29,10 @@ public class PagingCollect {
 		 */
 
 		this.page = page;
-		this.endPage = (int) (Math.ceil((double)page / this.pageSize) * this.pageSize);
-		this.startPage = endPage - pageSize + 1;
+		this.endPage = (int)(Math.ceil((double) page / this.pageSize)) * this.pageSize;
+		this.startPage = this.endPage - this.pageSize + 1;
 		
-		int lastPage = (int)(Math.ceil((double)total)/this.limit);
-		
+		int lastPage = (int)(Math.ceil((double)total / this.limit));
 		if(lastPage < this.endPage) {
 			this.endPage = lastPage;
 		}

@@ -28,11 +28,10 @@
 <body>
 	<main>
 		<div id="top"></div>
+		<h2>전체 회원 조회</h2>
 		<table border="1" class="table">
-			<h2>전체 회원 조회</h2>
-			<hr id="underline">
 			<tr>
-				<th class="no">No</th>
+				<!-- <th class="no">No</th> -->
 				<th>아이디</th>
 				<th>이름</th>
 				<th>전화번호</th>
@@ -46,7 +45,7 @@
 			</tr>
 			<c:forEach items="${list}" var="item" varStatus="status">
 				<tr>
-					<td class="no">${status.count}</td>
+					<!-- 		<td class="no">${status.count + paging.pageSize * (paging.page-1)}</td>  -->
 					<td>${item.id}</td>
 					<td>${item.name}</td>
 					<td>${item.phone}</td>
@@ -61,27 +60,78 @@
 				</tr>
 			</c:forEach>
 		</table>
-
+		<!-- 
 		<div class="pagination">
-
-			<div class="page-item ${pagingCollect.prev ? '' : 'disabled'}">
-				<a class="page-link"
-					href="/allUser?page=${pagingCollect.startPage-1}">Previous</a>
+			<div class="page-item ${paging.prev ? '' : 'disabled'}">
+				<c:choose>
+				<c:when test="${paging.startPage == 1}">
+					<a class="page-link" href="/allUser?page=${paging.startPage=1}">Previous</a>
+				</c:when>
+				
+				<c:otherwise>
+				<a class="page-link" href="/allUser?page=${paging.startPage-1}">Previous</a>
+				</c:otherwise>
+				</c:choose>
 			</div>
+			
+			<div id="page">
+				<c:forEach begin="${paging.startPage}" end="${paging.endPage}"
+					var="page">
 
-			<c:forEach begin="${pagingCollect.startPage}"
-				end="${pagingCollect.endPage}" var="page">
-				<div class="page-item">
-					<a class="page-link ${pagingCollect.page == page ? 'active' : ''}"
-						href="/allUser?page=${page}">${page}</a>
-				</div>
-			</c:forEach>
+					<div class="page-item">
+						<a class="page-link ${paging.page == page ? 'active' : ''}"
+							href="/allUser?page=${page}">${page}</a>
+					</div>
 
-			<div class="page-item ${pagingCollect.next ? '' : 'disabled'}">
-				<a class="page-link" href="/allUser?page=${pagingCollect.endPage+1}">Next</a>
+				</c:forEach>
+			</div>
+			${paging}
+			<div class="page-item ${paging.next ? '' : 'disabled'}">
+			<c:choose>
+				<c:when test="${paging.endPage < paging.pageSize}">
+				<a class="page-link" href="/allUser?page=${paging.page+1}">Next</a>
+				</c:when>
+				<c:otherwise>
+				<a class="page-link" href="/allUser?page=${paging.endPage+1}">Next</a>
+				</c:otherwise>
+				</c:choose>
 			</div>
 		</div>
+-->
+		<nav>
+			<div id="page">
+				<ul class="pagination">
+					<li class="page-item ${paging.prev ? '' : 'disabled'}">
+					<c:choose>
+						<c:when test="${paging.startPage == 1}">
+							<a class="page-link" href="/allUser?page=${paging.startPage=1}">Previous</a>
+						</c:when>
+						<c:otherwise>
+							<a class="page-link" href="/allUser?page=${paging.startPage-1}">Previous</a>
+						</c:otherwise>
+					</c:choose>
+					</li>
 
+					<c:forEach begin="${paging.startPage}" end="${paging.endPage}"
+						var="page">
+						<li class="page-item"><a
+							class="page-link ${paging.page== page ? 'active' : ''} "
+							href="/allUser?page=${page}">${page}</a></li>
+					</c:forEach>
+
+					<li class="page-item ${paging.next ? '' : 'disabled'}">
+					<c:choose>
+						<c:when test="${paging.endPage < 10}">
+							<a class="page-link" href="/allUser?page=${paging.endPage=paging.endPage}">Next</a>
+						</c:when>
+						<c:otherwise>
+							<a class="page-link" href="/allUser?page=${paging.endPage + 1}">Next</a>
+						</c:otherwise>
+						</c:choose>					
+					</li>
+				</ul>
+			</div>
+		</nav>
 	</main>
 </body>
 

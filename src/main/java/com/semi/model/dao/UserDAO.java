@@ -41,6 +41,6 @@ public class UserDAO {
 	}
 	
 	public int total() {
-		return session.selectOne("collectMapper.count");
+		return session.selectOne("userMapper.count");
 	}
 }
