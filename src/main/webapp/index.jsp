@@ -25,7 +25,7 @@
         <a href="#">Primavera</a>
       </nav>
       <nav>
-        <a href="#">Store</a>
+        <a href="/map/mainmap">Store</a>
         <a href="#">Guide</a>
         <a href="collectPage">PickUp</a>
         <a href="/board/list">Board</a>
