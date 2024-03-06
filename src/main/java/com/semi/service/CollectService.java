@@ -3,6 +3,8 @@ package com.semi.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
 import com.semi.model.dao.CollectDAO;
@@ -16,20 +18,30 @@ public class CollectService {
 	
 	// 관리자용 수거신청현황 페이지 (prog제외)
 	public List<Collect> showAllCollect(){
+		
 		return dao.showAllCollect(); 
 	}
 	
 	// 회원용 진행상황 페이지용 
 		public List<Collect> showCollect(){
-			return dao.showCollect();
+			Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+			UserDetails userDetails = (UserDetails)principal;
+			System.out.println(userDetails.getUsername());
+			System.out.println(userDetails);
+			return dao.showCollect(userDetails.getUsername());
 	}
+	
+	// 관리자용 progress 관리 페이지용(조건x)
+	public List<Collect> showProgress(){
+		return dao.showProgress();
+	}	
 		
-	// 관리자용 progress 페이지
-	public int updateCollect() {
-		return dao.updateCollect();
+	// update : 수거 신청 진행상황 변경
+	public int updateProgress(Collect collect) {
+		return dao.updateProgress(collect);
 	}
-		
-		
+	
+/*--------------------------------------------------------------*/
 	
 	// 수거 신청 
 	public int registerCollect(Collect vo) {

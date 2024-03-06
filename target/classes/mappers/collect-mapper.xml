@@ -30,17 +30,21 @@
 		
 	</select>
 	
-	<!-- select : 회원용 진행상황 페이지용 -->
-	<select id="showCollect" parameterType="User" resultMap="collectMap">
+	<!-- select : 회원용 진행상황 페이지용 : 로그인 된 회원의 아이디를 조건으로-->
+	<select id="showCollect" parameterType="String" resultMap="collectMap">
+		SELECT order_num, id, name, phone, prog
+		FROM collect
+		WHERE id=#{id}
+	</select>
+	
+	<!-- select : 관리자용 progress 관리 페이지용 : 기존 정보 보이기 -->
+	<select id="showProgress" resultMap="collectMap">
 		SELECT order_num, id, name, phone, prog
 		FROM collect
 	</select>
 	
-	<!-- select : 관리자용 progress 관리 페이지용 : 기존 정보 보이기 -->
-	
-	
 	<!-- update : 관리자용 progress 관리 페이지용 : prog 바꾸기 -->
-	<update id="updateCollect" parameterType="Collect">
+	<update id="updateProgress" parameterType="Collect">
 		UPDATE collect
 		SET prog=#{prog}
 		WHERE order_num=#{orderNum}

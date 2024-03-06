@@ -11,7 +11,7 @@
 </head>
 <body>
 <sec:authentication property="principal" var="user" />
-<h2>회원용 진행상황 페이지용</h2>
+<h2>회원용 수거 신청 진행 상황 페이지용</h2>
 	<table border=1>
 		<tr>
 			<th>주문번호</th>

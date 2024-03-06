@@ -38,9 +38,11 @@
 				<!--  현재 주소에 있는 거 긁어서 같이 넘기고,거기서 계속 넘기면 다시 유지해서 올 수 있음 -->
 				<c:forEach items="${list}" var="item" varStatus="status">
 					<tr>
-						<td>${item.qnaNum}</td>
-						<!-- <td>${status.count}</td> -->
-						<td>${item.title}</td>
+						<td>${status.count}</td>
+						<!-- 
+						<td><a href="/qna/view?qna_num=${item.qnaNum}">${item.title}</td>
+						 -->
+						 <td><a href="/view?qnaNum=${item.qnaNum}">${item.title}</a></td>
 						<td>${item.id}</td>
 						<td><fmt:formatDate value="${item.writeDate}"
 								pattern="yyyy-MM-dd" /></td>

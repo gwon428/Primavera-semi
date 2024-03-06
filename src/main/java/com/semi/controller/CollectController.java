@@ -41,16 +41,25 @@ public class CollectController {
 	// 회원용 진행상황 페이지용 
 		@GetMapping("showCollect")
 		public String showCollect(Model model) {
-			
 			List<Collect> list = service.showCollect();
 			model.addAttribute("list", list);
-			
 			return "collect/showCollect";
 		}
 		
-	// 관리자용 progress 페이지
+	// 관리자용 - 회원 수거 신청 현황 변경 페이지
+		@GetMapping("showProgress")
+		public String showProgress(Model model) {
+			List<Collect> progress = service.showProgress();
+			model.addAttribute("progress", progress);
+			return "collect/showProgress";
+		}
 	
-	
+	// update : 관리자용 progress 관리 페이지용 : prog 바꾸기
+		@PostMapping("update_ok")
+		public String updateProgress(Collect collect) {
+			service.updateProgress(collect);
+			return "collect/yebinCollect";
+		}
 /*----------------------------------------------------------*/
 	// 수거 신청 페이지
 	@GetMapping("registerCollect")

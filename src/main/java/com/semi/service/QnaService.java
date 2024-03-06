@@ -25,8 +25,13 @@ public class QnaService {
 		return dao.total();
 	}
 	
-	// qna 등록
+	// qna 등록 - insert
 	public int insert(Qna qna) {
 		return dao.insert(qna);
+	}
+	
+	// 작성한 QnA 전문 보이게 - selectOne
+	public Qna select(int qnaNum) {
+		return dao.select(qnaNum);
 	}
 }
