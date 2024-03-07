@@ -37,7 +37,19 @@
 	</select>
 	
 	<!-- update -->
-	
+	<update id="update" parameterType="Qna">
+		UPDATE qna
+		SET 
+		title=#{title},
+		content=#{content},
+		write_date=#{writeDate},
+		url=#{url}
+		WHERE qna_num=${qnaNum}
+	</update>
 	
 	<!-- delete -->
+	<delete id="delete" parameterType="int">
+	DELETE FROM qna
+	WHERE qna_num=#{qnaNum}
+	</delete>
 </mapper>

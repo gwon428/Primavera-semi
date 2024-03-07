@@ -31,7 +31,6 @@ public class CollectDAO {
 	
 	// update : 수거 신청 진행상황 변경
 	public int updateProgress(Collect collect) {
-		System.out.println(collect);
 		return session.update("collectMapper.updateProgress", collect);
 	}
 	

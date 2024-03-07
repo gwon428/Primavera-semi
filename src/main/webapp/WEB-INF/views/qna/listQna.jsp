@@ -14,7 +14,7 @@
 	crossorigin="anonymous" />
 </head>
 <body>
-	</div>
+
 	<div class="container">
 
 		<div class="header">
@@ -54,14 +54,14 @@
 	</div>
 	<nav>
 			<ul class="pagination">
-				<li class="page-item ${paging.prev ? '' : 'disabled'}"><a class="page-link" href="/qna?page=${paging.startPage - 1}">Previous</a>
+				<li class="page-item ${paging.prev ? '' : 'disabled'}"><a class="page-link" href="/listQna?page=${paging.startPage - 1}">Previous</a>
 				</li>
 				
 				<c:forEach begin="${paging.startPage}" end="${paging.endPage}" var="page">
-					<li class="page-item"><a class="page-link ${paging.page== page ? 'active' : ''} " href="/qna?page=${page}">${page}</a></li>		
+					<li class="page-item"><a class="page-link ${paging.page== page ? 'active' : ''} " href="/listQna?page=${page}">${page}</a></li>		
 				</c:forEach>
 			
-				<li class="page-item ${paging.next ? '' : 'disabled'}"><a class="page-link" href="/qna?page=${paging.endPage + 1}">Next</a></li>
+				<li class="page-item ${paging.next ? '' : 'disabled'}"><a class="page-link" href="/listQna?page=${paging.endPage + 1}">Next</a></li>
 			</ul>
 		</nav>
 </body>

@@ -60,11 +60,11 @@ public class QnaController {
 			//return "redirect:/view?no=" + qna.getQnaNum();
 			//return "redirect:/qna";
 			System.out.println(qna.getQnaNum());
-			return "redirect:/qna";
+			return "redirect:/listQna";
 		}
 		
 		// 리스트 페이징 처리 
-		@GetMapping("qna")
+		@GetMapping("listQna")
 		public String showFilm(Model model, PagingQna paging) {
 			
 			//System.out.println(paging);
@@ -72,44 +72,61 @@ public class QnaController {
 			List<Qna> list = service.showAllQna(paging);
 			model.addAttribute("list", list);
 			model.addAttribute("paging", new PagingQna(paging.getPage(), service.total()));
-			return "qna/qna";
+			return "qna/listQna";
 		}
-		
+		Qna qna= null;
 	//	리스트에서 제목 누르면 qna 내용 적혀있는 페이지로 넘어가는!
 		@GetMapping("view")
 		public String view(Model model, String qnaNum) {
-			System.out.println("no : "+ qnaNum );
+			//System.out.println("no : "+ qnaNum );
 			int qnanum = Integer.parseInt(qnaNum);
-			System.out.println("qnanum : "  + qnanum);
-			Qna qna = service.select(qnanum);
-			System.out.println("qna : " + qna);
+			//System.out.println("qnanum : "  + qnanum);
+			qna = service.select(qnanum);
+			//System.out.println("qna : " + qna);
 			model.addAttribute("qna", qna);
 			return "/qna/view";
 		}
   
-	
-  
-/*	
-  @PostMapping("/update")
-	public String update(Qna qna) throws IllegalStateException, IOException {
+	@GetMapping("updateQna")
+	public String updateQna(Model model) {
+		model.addAttribute("qna", qna);
+		return "qna/updateQna";
+	}
 		
-		// b.getFile() --> 존재한다면! 이건 새로운 이미지 파일
-		// --> 이미지 파일을 수정하겠다!
-		if(!qna.getFile().isEmpty()) {
-			// b.geturl() --> 존재한다면! 이건 기존 이미지 파일 
-			// null이 아닌 경우가 기존 이미지가 존재!
-			// -> 이 기존 이미지는 삭제!
-			if(qna.getUrl()!=null) {
-				File file = new File(path + qna.getUrl());
-				file.delete();
+	@PostMapping("updateQna")
+		public String update(Qna qna) throws IllegalStateException, IOException {
+			if(!qna.getFile().isEmpty()) {
+				if(qna.getUrl()!=null) {
+					File file = new File(path+qna.getUrl());
+					file.delete();
+				}
+				String url = fileUpload(qna.getFile());
+				qna.setUrl(url);
 			}
-			String url = fileUpload(qna.getFile());
-			qna.setUrl(url);
+			service.update(qna);
+			return "redirect:/view?qnaNum="+qna.getQnaNum();
+		}
+  
+
+ @GetMapping("/deleteQna")
+	public String delete(String qnaNum) {
+		
+		int parsingNo = Integer.parseInt(qnaNum);
+		
+		// 업로드한 파일도 삭제! 필요!!!!
+		// 필요한 정보 가져오기
+		Qna qna = service.select(parsingNo);
+		if(qna.getUrl()!=null) {
+			// url이 null이 아닌 경우 정보 삭제!
+			File file = new File(path+qna.getUrl());
+			file.delete();
 		}
 		
-		service.update(qna);
-		
-		return "redirect:/view?no="+qna.getNo();
-	}
-*/	
+		// 삭제
+		service.delete(parsingNo);
+		return "redirect:/listQna";
+	} 
+  
+
+
 }

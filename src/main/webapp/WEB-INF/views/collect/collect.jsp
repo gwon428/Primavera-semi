@@ -95,7 +95,7 @@
 					</c:otherwise>
 				</c:choose>
 				<a href="yebinCollect" id="collect">[임시]예빈아가져가</a>
-				<a href="qna" id="qna">[임시]qna로 넘어가는 페이지에요</a>
+				<a href="listQna" id="qna">[임시]qna로 넘어가는 페이지에요</a>
 			</div>
 		</section>
 

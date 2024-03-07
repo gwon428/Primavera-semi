@@ -25,7 +25,6 @@ public class QnaDAO {
 		return session.selectOne("qnaMapper.countQna");
 	}
 	
-	
 	// qna 등록 - insert
 	public int insert(Qna qna) {
 		return session.insert("qnaMapper.insertQna", qna);
@@ -36,4 +35,13 @@ public class QnaDAO {
 		return session.selectOne("qnaMapper.select", qnaNum);
 	}
 	
+	// 작성한 Qna 수정
+	public int update(Qna qna) {
+		return session.update("qnaMapper.update", qna);
+	}
+	
+	// 작성한 Qna 삭제 
+	public int delete(int qnaNum) {
+		return session.delete("qnaMapper.delete", qnaNum);
+	}
 }

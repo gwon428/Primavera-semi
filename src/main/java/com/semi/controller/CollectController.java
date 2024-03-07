@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.semi.model.vo.Collect;
 import com.semi.service.CollectService;
@@ -55,10 +56,12 @@ public class CollectController {
 		}
 	
 	// update : 관리자용 progress 관리 페이지용 : prog 바꾸기
+		@ResponseBody
 		@PostMapping("update_ok")
 		public String updateProgress(Collect collect) {
+			System.out.println("신청들어옴");
 			service.updateProgress(collect);
-			return "collect/yebinCollect";
+			return "collect";
 		}
 /*----------------------------------------------------------*/
 	// 수거 신청 페이지

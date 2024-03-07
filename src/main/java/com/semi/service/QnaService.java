@@ -34,4 +34,14 @@ public class QnaService {
 	public Qna select(int qnaNum) {
 		return dao.select(qnaNum);
 	}
+	
+	// 작성한 Qna 수정
+	public int update(Qna qna) {
+		return dao.update(qna);
+	}
+	
+	// 작성한 Qna 삭제 
+	public int delete(int qnaNum) {
+		return dao.delete(qnaNum);
+	}
 }
