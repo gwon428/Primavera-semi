@@ -6,19 +6,16 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="../../../resources/css/agree.css" />
-<script>
-	$(".modal.modal_cover").on("click",function(){
-		$(".modal").css({"display":"none"});
-	})
-</script>
+
 </head>
 <body>
 <div class="modal policy" tabindex="-1">
 <div class="in">
 
 <div class="txt">
-
 <div class="tit">이용약관</div>
+
+<hr>
 <div class="con">
 	<div class="modal-body">
 		제1조 목적 <br>

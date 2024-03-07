@@ -16,40 +16,38 @@
 body {
   height: 100vh;
   font-weight: bolder;
-  
 }
 
-#back{
-	 background-image: url(../../../resources/images/top-background.jpg);
+#back {
+  background-image: url(../../../resources/images/top-background.jpg);
   background-size: cover;
-    background-position: center;
-    position: absolute;
-    left: 20%;
-    top: 8%;
-    width: 1100px;
-    height: 83vh;
-    border-radius: 20px;
-    border-style:none;
+  background-position: center;
+  position: absolute;
+  left: 20%;
+  top: 8%;
+  width: 1100px;
+  height: 83vh;
+  border-radius: 20px;
+  border-style: none;
 }
-#back_black{
-	width: 100%;
+#back_black {
+  width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 20px;
 }
 
 #pickUp {
-	
-	height: 200px;
-    width: 900px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    position: relative;
-    left: 10%;
-    top: -65%;
+  height: 200px;
+  width: 900px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  position: relative;
+  left: 10%;
+  top: -65%;
 }
 
 #header {
@@ -64,7 +62,7 @@ h2 {
   font-style: italic;
   font-size: 1.4rem;
   width: 10%;
- color : white;
+  color: white;
 }
 
 #ps {
@@ -73,7 +71,7 @@ h2 {
   left: 160%;
   top: 26%;
   font-family: "Cafe24Oneprettynight";
-	color : white; 
+  color: white;
 }
 
 #pickUpTable {
@@ -87,8 +85,8 @@ h2 {
   grid-auto-flow: column;
   font-family: "Cafe24Oneprettynight";
   padding: 35px;
-  background-color : white;
-  border-style:none;
+  background-color: white;
+  border-style: none;
 }
 
 p {
@@ -121,7 +119,7 @@ textarea {
 
 textarea {
   resize: none;
-  width : 310px;
+  width: 310px;
 }
 
 #postCode,
@@ -132,13 +130,13 @@ textarea {
 
 #agree_check {
   font-family: "GangwonEdu_OTFBoldA";
-    position: relative;
-    top: -78px
+  position: relative;
+  top: -78px;
 }
 
-#agree_text{
-	font-size : 1rem;
-	margin-bottom: 3px;
+#agree_text {
+  font-size: 1rem;
+  margin-bottom: 3px;
 }
 
 a {
@@ -146,27 +144,26 @@ a {
   text-decoration-line: underline;
 }
 
-
 #button {
-  background-color : black;
-  color : white;
+  background-color: black;
+  color: white;
   width: 110px;
   height: 45px;
-  border-style : none;
+  border-style: none;
   margin-top: -13px;
 }
 
-#button:hover{
-	background-color : white;
-	color : black;
-	border : 1px solid black;
+#button:hover {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
 }
 
 .pop_wrap {
   visibility: hidden;
   border: 1px solid black;
   position: fixed;
-  top: 12%;
+  top: 19%;
   left: 40%;
   box-sizing: border-box;
   width: 400px;
@@ -174,10 +171,6 @@ a {
   background-color: white;
   overflow: hidden;
   border-radius: 10px;
-}
-
-.dsc {
-  margin: 0px 0px;
 }
 
 .pop_inner {
@@ -189,4 +182,10 @@ a {
 .btn_close {
   position: absolute;
   left: 40%;
+  margin-top: 5px;
+}
+
+#pop_head {
+  display: flex;
+  justify-content: space-between;
 }

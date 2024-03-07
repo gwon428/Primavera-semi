@@ -17,4 +17,5 @@ public class Collect {
 	private Date collectionDate;
 	private String doorPwd;
 	private String request;
+	private String prog;
 }

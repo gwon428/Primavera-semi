@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,7 +30,16 @@ public class BoardController {
 	
 	// 글 쓰기
 	@PostMapping("/board/write")
-	public String write(Board b) throws IllegalStateException, IOException {	  
+	public String write(Board b) throws IllegalStateException, IOException {	
+		
+		// 개발 끝나면 실제 로그인 아이디가 들어가도록 할 코드
+		//Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		//UserDetails userDetails = (UserDetails)principal;
+		//b.setId(userDetails.getUsername());
+		
+		b.setId("eodbs12");
+		
+		System.out.println("board  : " + b);
 	    if (b == null || b.getFile() == null) {
 	        System.out.println("Error: Board 객체 또는 파일이 null입니다.");	    
 	        return "redirect:/error"; 

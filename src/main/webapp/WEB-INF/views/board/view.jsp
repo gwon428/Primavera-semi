@@ -34,8 +34,7 @@ img {
 				<label>Title</label> <input class="form-control" name="title"
 					value="${vo.title}">
 			</div>
-			<div class="form-group">
-				<label>Content</label>
+			<div class="form-group">				
 				<textarea class="form-control" row="10" name="content"
 					style="resize: none;">${vo.content}</textarea>
 				<a href="/upload/${vo.url}" download><img

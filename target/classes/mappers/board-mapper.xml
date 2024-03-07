@@ -15,8 +15,8 @@
 	<insert id="insert" parameterType="Board"
 		useGeneratedKeys="true" keyProperty="no" keyColumn="no">
 		INSERT INTO
-		review(title, content, url, rating)
-		VALUES(#{title}, #{content},
+		review(id, title, content, url, rating)
+		VALUES(#{id}, #{title}, #{content},
 		#{url},
 		#{rating})
 	</insert>
