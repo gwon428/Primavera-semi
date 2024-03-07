@@ -31,7 +31,7 @@
 		<h2>전체 회원 조회</h2>
 		<table border="1" class="table">
 			<tr>
-				<!-- <th class="no">No</th> -->
+				<th class="no">No</th>
 				<th>아이디</th>
 				<th>이름</th>
 				<th>전화번호</th>
@@ -45,7 +45,7 @@
 			</tr>
 			<c:forEach items="${list}" var="item" varStatus="status">
 				<tr>
-					<!-- 		<td class="no">${status.count + paging.pageSize * (paging.page-1)}</td>  -->
+					<td class="no">${status.count + paging.pageSize * (paging.page-1)}</td>
 					<td>${item.id}</td>
 					<td>${item.name}</td>
 					<td>${item.phone}</td>

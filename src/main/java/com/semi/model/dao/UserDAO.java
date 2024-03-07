@@ -16,6 +16,10 @@ public class UserDAO {
 	@Autowired
 	private SqlSessionTemplate session;
 	
+	public User check(String id) {
+		return session.selectOne("userMapper.idCheck", id);
+	}
+	
 	public int registerUser(User user) {
 		return session.insert("userMapper.registerUser", user);
 	}

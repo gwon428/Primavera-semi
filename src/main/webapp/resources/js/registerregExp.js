@@ -30,7 +30,6 @@ function emailCheck(){
 
 function inputHandler(e, check, message){
 	if(check){
-	    console.log(e.target.nextElementSibling);
 		e.target.nextElementSibling.style.color="green";
 		e.target.nextElementSibling.innerHTML = "OK!";
 	} else {
@@ -67,7 +66,10 @@ function validate(){
 	if(!idCheck()){
 		userId.focus();
 		return false;
-	} else if(!pwdCheck()){
+	} else if (idDupCheck){
+		userId.focus();
+		return false;
+	}else if(!pwdCheck()){
 		userPwd.focus();
 		return false;
 	} else if(!pwdCheck2()){

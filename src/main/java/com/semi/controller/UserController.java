@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.semi.model.vo.PagingCollect;
 import com.semi.model.vo.User;
@@ -56,6 +57,16 @@ public class UserController {
 	public String join() {
 		return "user/register";
 	}
+	
+	@ResponseBody
+	@PostMapping("/check")
+	public boolean check(String id) {
+		User user = service.idCheck(id);
+		System.out.println(user);
+		if(user == null) return false;
+		return true;
+	}
+	
 	
 	@PostMapping("/register")
 	public String register(User user) {

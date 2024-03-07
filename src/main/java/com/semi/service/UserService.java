@@ -30,6 +30,10 @@ public class UserService implements UserDetailsService{
 		return user;
 	}
 	
+	public User idCheck(String id) {
+		return dao.check(id);
+	}
+	
 	public int registerUser(User user) {
 		String encodePw = bcpe.encode(user.getPassword());
 		user.setPassword(encodePw);
