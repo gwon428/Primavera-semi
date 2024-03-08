@@ -8,7 +8,7 @@
 		<id property="noticeNum" column="notice_num"/>
 		<result property="title" column="title"/>
 		<result property="content" column="content"/>
-		<result property="manager" column="manager"/>
+		<result property="id" column="id"/>
 		<result property="url" column="url"/>
 		<result property="writeDate" column="write_date"/>
 	</resultMap>

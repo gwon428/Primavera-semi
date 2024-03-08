@@ -24,7 +24,7 @@ h1 {
 <body>
 	<div class="container">
 		<h1>게시물 등록</h1>
-		<form action="/notice/write" method="post"
+		<form action="writeNotice" method="post"
 			enctype="multipart/form-data">
 			<div class="form-group">
 				<label>제목</label> <input class="form-control" name="title">

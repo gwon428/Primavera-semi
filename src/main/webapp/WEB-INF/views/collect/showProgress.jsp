@@ -64,7 +64,7 @@
 		
 			<table border=1>
 				<tr>
-					<th>아이디</th>
+					<th>주문번호</th>
 					<th>진행 상황 변경</th>
 				</tr>
 				<tr>

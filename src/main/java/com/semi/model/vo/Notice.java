@@ -13,7 +13,7 @@ public class Notice {
 	private int noticeNum;
 	private String title;
 	private String content;
-	private String manager;
+	private String id;
 	private String url;
 	private Date writeDate;
 	
