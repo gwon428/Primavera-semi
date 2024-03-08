@@ -26,12 +26,12 @@ public class BoardDAO {
 		return session.selectOne("board.select", no);
 	}
 
-	public int update(Board b) {
-		return session.update("board.update", b);
+	public int updatereview(Board b) {
+		return session.update("board.updatereview", b);
 	}
 
-	public int delete(int no) {
-		return session.delete("board.delete", no);
+	public int deletereview(int no) {
+		return session.delete("board.deletereview", no);
 	}
 
 	public List<Board> selectPage(Paging paging) {

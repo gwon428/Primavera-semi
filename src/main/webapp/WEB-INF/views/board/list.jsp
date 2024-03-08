@@ -59,7 +59,7 @@
 						<tr>
 							<td><c:if test="${not empty board.url}">
 									<img
-										src="${pageContext.request.contextPath}/upload/${board.url}"
+										src="${pageContext.request.contextPath}/upload/review/${board.url}"
 										width="100" height="100" />
 								</c:if></td>
 							<td>${status.count}</td>

@@ -25,12 +25,12 @@ public class BoardService {
 		return dao.select(no);
 	}
 
-	public int update(Board b) {
-		return dao.update(b);
+	public int updatereview(Board b) {
+		return dao.updatereview(b);
 	}
 
-	public int delete(int no) {
-		return dao.delete(no);
+	public int deletereview(int no) {
+		return dao.deletereview(no);
 	}
 
 	public List<Board> selectPage(Paging paging) {

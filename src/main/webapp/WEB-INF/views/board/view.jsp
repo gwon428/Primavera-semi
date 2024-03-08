@@ -26,13 +26,13 @@
 	<div class="container">
 		<h1>Review</h1>
 		
-		<form action="/update" method="post" enctype="multipart/form-data">
+		<form action="/updatereview" method="post" enctype="multipart/form-data">
 			<input type="hidden" name="no" value="${vo.no}"> <input
 				type="hidden" name="url" value="${vo.url}">
 				
 			<div class="form-group">
-				<a href="/upload/${vo.url}" download> <img
-					src="/upload/${vo.url}" />
+				<a href="/upload/review/${vo.url}" download> <img
+					src="/upload/review/${vo.url}" />
 				</a>
 			</div>
 			
@@ -46,7 +46,7 @@
 			<a href="/board/list" class="btn btn-success">글목록</a>
 			<c:if test="${vo.id == currentUserId}">
 				<button type="submit" class="btn btn-info">수정</button>
-				<a class="btn btn-danger" href="/delete?no=${vo.no}">삭제</a>
+				<a class="btn btn-danger" href="/deletereview?no=${vo.no}">삭제</a>
 			</c:if>
 			
 		</form>

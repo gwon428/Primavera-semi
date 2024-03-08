@@ -24,7 +24,7 @@ import com.semi.service.BoardService;
 @Controller
 public class BoardController {
 
-	private String path = "D:\\upload\\";
+	private String path = "D:\\upload\\review\\";
 
 	@Autowired
 	private BoardService service;
@@ -49,7 +49,7 @@ public class BoardController {
 		}
 
 		if (!b.getFile().isEmpty()) {
-			String url = fileUpload(b.getFile());
+			String url = fileUploadreview(b.getFile());
 			b.setUrl(url);
 		}
 		service.insert(b);
@@ -97,7 +97,7 @@ public class BoardController {
 		return "board/view";
 	}
 
-	@PostMapping("/update")
+	@PostMapping("/updatereview")
 	public String update(Board b) throws IllegalStateException, IOException {
 		if (b.getFile() != null && !b.getFile().isEmpty()) {
 			if (b.getUrl() != null && !b.getUrl().isEmpty()) {
@@ -106,27 +106,27 @@ public class BoardController {
 					file.delete();
 				}
 			}
-			String url = fileUpload(b.getFile());
+			String url = fileUploadreview(b.getFile());
 			b.setUrl(url);
 		}
 
-		service.update(b);
+		service.updatereview(b);
 
 		return "redirect:/board/view?no=" + b.getNo();
 	}
 
-	@PostMapping("/upload")
+	@PostMapping("/uploadreview")
 	public String upload(MultipartFile file) throws IllegalStateException, IOException {
 		System.out.println("파일 사이즈 : " + file.getSize());
 		System.out.println("파일 이름 : " + file.getOriginalFilename());
 		System.out.println("파일 파라미터명 : " + file.getName());
 
-		fileUpload(file);
+		fileUploadreview(file);
 
 		return "redirect:/";
 	}
 
-	@GetMapping("/delete")
+	@GetMapping("/deletereview")
 	public String delete(String no) {
 		int parsingNo = Integer.parseInt(no);
 		Board b = service.select(parsingNo);
@@ -134,14 +134,14 @@ public class BoardController {
 			File file = new File(path + b.getUrl());
 			file.delete();
 		}
-		service.delete(parsingNo);
+		service.deletereview(parsingNo);
 		return "redirect:board/list";
 	}
 
-	@PostMapping("/multiUpload")
+	@PostMapping("/multiUploadreview")
 	public String multiUpload(List<MultipartFile> files) throws IllegalStateException, IOException {
 		for (MultipartFile file : files) {
-			fileUpload(file);
+			fileUploadreview(file);
 		}
 		return "redirect:/";
 	}
@@ -152,7 +152,7 @@ public class BoardController {
 	}
 
 	// 파일 업로드
-	public String fileUpload(MultipartFile file) throws IllegalStateException, IOException {
+	public String fileUploadreview(MultipartFile file) throws IllegalStateException, IOException {
 		UUID uuid = UUID.randomUUID();
 		String filename = uuid.toString() + "_" + file.getOriginalFilename();
 
