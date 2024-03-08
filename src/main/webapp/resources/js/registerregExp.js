@@ -28,12 +28,11 @@ $('#userId').keyup(() => {
 
 // 아이디 정규표현식
 $('#userId').keyup((e) =>{
-	 let id=$(e.target).val(); 
-
+	let id=$(e.target).val(); 
 	const regExp = /^[A-Za-z][A-Za-z0-9]{3,11}$/;
-	
 	if(regExp.test(id) || id === ""){
 		$('#idreg').text("");
+		idCheck = false;
 	} else {
 		$('#idreg').text("첫 글자는 반드시 영문자로, 영문자, 숫자 포함하여 총 4~12자로 입력하세요.").css("color", "red");
 		idCheck = true;
@@ -49,6 +48,7 @@ $('#userPwd').keyup((e) =>{
 	
 	if(regExp.test(pwd) || pwd === ""){
 		$('#pwdreg').text("");
+		pwdCheck = false;
 	} else {
 		$('#pwdreg').text("영문자, 숫자, 특수문자 포함하여 총 8~15자로 입력하세요.").css("color", "red");
 		pwdCheck = true;
@@ -61,10 +61,9 @@ $('#passwordcheck').keyup((e) =>{
 	let pwd = $('#userPwd').val();
 	let pwdCheck = $(e.target).val();
 	
-	console.log($('#pwdcheckreg'));
-
 	if((pwd === pwdCheck) || pwdCheck === "") {
 		$('#pwdcheckreg').text("");
+		pwdCheck2 = false;
 	} else {
 		$('#pwdcheckreg').text("위의 비밀번호와 일치하게 입력하세요.").css("color", "red");
 		pwdCheck2 = true;
@@ -79,6 +78,7 @@ $('#userName').keyup((e) => {
 	
 	if(regExp.test(name) || name === ""){
 		$('#namereg').text("");
+		nameCheck = false;
 	} else {
 		$('#namereg').text("한글로만 이루어져야되며, 2글자 이상으로 입력하세요.").css("color", "red");
 		nameCheck = true;
@@ -93,6 +93,7 @@ $('#userPhone').keyup((e) => {
 	
 	if(regExp.test(phone) || phone === ""){
 		$('#phonereg').text("");
+		phoneCheck = false;
 	} else {
 		$('#phonereg').text("휴대폰 번호를 입력하세요.").css("color", "red");
 		phoneCheck = true;
@@ -107,6 +108,7 @@ $('#email').keyup((e) => {
 	
 	if(regExp.test(email) || email === ""){
 		$('#emailreg').text("");
+		emailCheck = false;
 	} else {
 		$('#emailreg').text("이메일 형식에 맞춰서 입력하세요.").css("color", "red");
 		emailCheck = true;
@@ -116,11 +118,13 @@ $('#email').keyup((e) => {
 function validate(){
 	if(idCheck){
 		userId.focus();
+		console.log("아이디체크문제");
 		return false;
 	} else if (idDupCheck){
 		userId.focus();
+		console.log("중복확인.." + idDupCheck);
 		return false;
-	}else if(pwdCheck){
+	} else if(pwdCheck){
 		userPwd.focus();
 		return false;
 	} else if(pwdCheck2){

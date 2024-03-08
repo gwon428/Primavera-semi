@@ -59,11 +59,11 @@
 						<div id="logo"><div class="logobox">Primavera</div></div>
 					<div id="Menu">
 						<div id="MenuOne">
-							<a href="notice">공지 게시판 관리</a> <a href="qna">Q&A 게시판 관리</a> <a
+							<a href="notice">공지 게시판 관리</a> <a href="listQna">Q&A 게시판 관리</a> <a
 								href="allUser">전체 회원 조회</a>
 						</div>
 						<div id="MenuTwo">
-							<a href="progressManager">progress 관리</a>
+							<a href="showProgress">progress 관리</a>
 							<a href="showAllCollect">수거 신청 현황</a>
 							<a href="/logout">로그아웃</a>
 						</div>
@@ -85,7 +85,7 @@
 						<div id="MenuOne">
 							<a href="review">내가 적은 후기</a>
 							<a href="qna">내 Q&A</a>
-							<a href="progress">진행상황</a>
+							<a href="showCollect">진행상황</a>
 						</div>
 						<div id="MenuTwo">
 							<a href="update">회원 정보 수정</a>
