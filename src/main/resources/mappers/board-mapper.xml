@@ -2,21 +2,22 @@
 <mapper namespace="board">
 
 	<resultMap type="Board" id="boardMap">
-		<id property="no" column="no"/>
-		<result property="id" column="id"/>
-		<result property="title" column="title"/>
-		<result property="content" column="content"/>
-		<result property="orderNum" column="order_num"/>
-		<result property="date" column="date"/>
-		<result property="url" column="url"/>
-		<result property="rating" column="rating"/>		
+		<id property="no" column="no" />
+		<result property="id" column="id" />
+		<result property="title" column="title" />
+		<result property="content" column="content" />
+		<result property="orderNum" column="order_num" />
+		<result property="date" column="date" />
+		<result property="url" column="url" />
+		<result property="rating" column="rating" />
 	</resultMap>
 
 	<insert id="insert" parameterType="Board"
 		useGeneratedKeys="true" keyProperty="no" keyColumn="no">
 		INSERT INTO
 		review(id, title, content, url, rating)
-		VALUES(#{id}, #{title}, #{content},
+		VALUES(#{id}, #{title},
+		#{content},
 		#{url},
 		#{rating})
 	</insert>
@@ -31,17 +32,29 @@
 		WHERE no=#{no}
 	</select>
 
-	<update id="update" parameterType="Board">
+	<update id="updatereview" parameterType="Board">
 		UPDATE review SET
 		title=#{title}, content=#{content}, url=#{url}, rating=#{rating}
 		WHERE
 		no=#{no}
 	</update>
 
-	<delete id="delete" parameterType="int">
+	<delete id="deletereview" parameterType="int">
 		DELETE FROM review
 		WHERE
 		no=#{no}
 	</delete>
-	
+
+	<select id="selectPage" parameterType="Paging"
+		resultMap="boardMap">
+		SELECT * FROM review
+		ORDER BY no DESC
+		LIMIT #{offset},
+		#{limit}
+	</select>
+
+	<select id="count" resultType="int">
+		SELECT COUNT(*) FROM review
+	</select>
+
 </mapper>

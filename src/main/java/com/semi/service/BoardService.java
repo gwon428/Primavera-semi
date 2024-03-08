@@ -1,12 +1,11 @@
 package com.semi.service;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.semi.model.dao.BoardDAO;
 import com.semi.model.vo.Board;
+import com.semi.model.vo.Paging;
 
 @Service
 public class BoardService {
@@ -26,11 +25,20 @@ public class BoardService {
 		return dao.select(no);
 	}
 
-	public int update(Board b) {
-		return dao.update(b);
+	public int updatereview(Board b) {
+		return dao.updatereview(b);
 	}
 
-	public int delete(int no) {
-		return dao.delete(no);
+	public int deletereview(int no) {
+		return dao.deletereview(no);
+	}
+
+	public List<Board> selectPage(Paging paging) {
+		paging.setOffset(paging.getLimit() * (paging.getPage() - 1));
+		return dao.selectPage(paging);
+	}
+
+	public int total() {
+		return dao.total();
 	}
 }
