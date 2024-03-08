@@ -18,15 +18,18 @@ public class Paging {
 	private boolean next;
 
 	public Paging(int page, int total) {
-		// 현재 페이지 번호가 1 미만인 경우 1로 설정
-		this.page = Math.max(page, 1);
 
-		this.offset = (this.page - 1) * this.limit;
+//		this.page = Math.max(page, 1);
 
-		this.endPage = (int) (Math.ceil((double) this.page / this.pageSize)) * this.pageSize;
+//		this.offset = (this.page - 1) * this.limit;
+
+		this.page = page;
+		this.endPage = (int) (Math.ceil((double) page / this.pageSize)) * this.pageSize;
 		this.startPage = this.endPage - this.pageSize + 1;
 
+		// ex > 100개의 공지사항은 끝쪽수로 나눈게 우리는 라스트 페이지인거다 !
 		int lastPage = (int) (Math.ceil((double) total / this.limit));
+
 		if (lastPage < this.endPage) {
 			this.endPage = lastPage;
 		}
@@ -34,4 +37,6 @@ public class Paging {
 		this.prev = this.startPage > 1;
 		this.next = this.endPage < lastPage;
 	}
+
 }
+
