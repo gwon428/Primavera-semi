@@ -74,7 +74,7 @@ public class UserController {
 	}
 
 	// 회원정보수정 jsp로 이동
-	@GetMapping("/update")
+	@GetMapping("/updateUser")
 	public String update() {
 		return "user/updateCheck";
 	}

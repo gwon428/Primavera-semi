@@ -88,7 +88,7 @@
 							<a href="showCollect">진행상황</a>
 						</div>
 						<div id="MenuTwo">
-							<a href="update">회원 정보 수정</a>
+							<a href="updateUser">회원 정보 수정</a>
 							<a href="deleteUser">회원 탈퇴</a>
 							<a href="/logout">로그아웃</a>
 						</div>
