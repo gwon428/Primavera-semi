@@ -21,7 +21,6 @@ function validate() {
 	    return false;
 	}else if(!f.agree.checked){
 		alert("약관 내용에 동의해주세요.");
-	    f.agree.focus();
 	    return false;
 	}
 	    alert("수거 신청에 성공하였습니다.");

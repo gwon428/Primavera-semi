@@ -38,7 +38,7 @@ public class QnaController {
 			return filename;
 		}
 		
-		@GetMapping("write")
+		@GetMapping("writeQna")
 		public String write() {
 			return "qna/insertQna";
 		}
@@ -72,11 +72,13 @@ public class QnaController {
 			List<Qna> list = service.showAllQna(paging);
 			model.addAttribute("list", list);
 			model.addAttribute("paging", new PagingQna(paging.getPage(), service.total()));
+			
 			return "qna/listQna";
 		}
 		Qna qna= null;
+		
 	//	리스트에서 제목 누르면 qna 내용 적혀있는 페이지로 넘어가는!
-		@GetMapping("view")
+		@GetMapping("viewQna")
 		public String view(Model model, String qnaNum) {
 			//System.out.println("no : "+ qnaNum );
 			int qnanum = Integer.parseInt(qnaNum);
@@ -84,7 +86,7 @@ public class QnaController {
 			qna = service.select(qnanum);
 			//System.out.println("qna : " + qna);
 			model.addAttribute("qna", qna);
-			return "/qna/view";
+			return "/qna/viewQna";
 		}
   
 	@GetMapping("updateQna")
@@ -104,7 +106,7 @@ public class QnaController {
 				qna.setUrl(url);
 			}
 			service.update(qna);
-			return "redirect:/view?qnaNum="+qna.getQnaNum();
+			return "redirect:/viewQna?qnaNum="+qna.getQnaNum();
 		}
   
 
