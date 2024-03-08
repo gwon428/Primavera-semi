@@ -25,6 +25,7 @@ public class CollectController {
 		return "collect/collect";
 	}
 	
+
 	
 /*----------------------------------------------------------*/	
 

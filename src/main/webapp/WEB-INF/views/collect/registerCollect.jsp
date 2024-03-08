@@ -30,7 +30,7 @@
 	</div>
 		<div id="pickUpTable">
 			<div class="id">
-				<p>*아이디</p>
+				<p>*아이디 <span id="idCheck">변경 불가 항목입니다.</span></p>
 				<input type="text" name="id" id="id" value="${user.id}" readonly/>
 			</div>
 			<div class="name">
@@ -39,17 +39,17 @@
 			</div>
 			<div class="phone">
 				<p>*전화번호</p>
-				<input type="text" name="phone" />
+				<input type="text" name="phone" value="${user.phone}"/>
 			</div>
 
 			<div class="addr">
 				<p>*주소</p>
 				<input type="text" name="postCode" id="postCode" placeholder="우편번호"
-					size="15"  /> <input type="button"
+					size="15"  value="${user.postCode}"/> <input type="button"
 					onclick="daumPostCode()" value="우편번호 찾기" /> <input type="text"
 					name="roadAddress" id="roadAddress" placeholder="주소" size="40"
-					 /> <input type="text" name="detailAddress"
-					id="detailAddress" placeholder="상세 주소" size="40"  />
+					 value="${user.roadAddress}"/> <input type="text" name="detailAddress"
+					id="detailAddress" placeholder="상세 주소" size="40"  value="${user.detailAddress}"/>
 			</div>
 
 			<div class="collectDate">

@@ -96,6 +96,12 @@ p {
   font-size: 1.3rem;
 }
 
+#idCheck{
+	margin-left : 10px;
+	font-size : 0.6rem;
+	color : red;
+}
+
 input,
 button,
 textarea {

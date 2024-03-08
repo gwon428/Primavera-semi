@@ -27,7 +27,7 @@
 </head>
 <body>
 <div class="container">
-		<h1>게시물 정보</h1>
+		<h1>게시물 수정</h1>
 		<form action="/updateQna" method="post" enctype="multipart/form-data">
 			<input type="hidden" name="qnaNum" value="${qna.qnaNum}">
 			<input type="hidden" name="url" value="${qna.url}">
@@ -41,10 +41,13 @@
 				<a href="/upload/${qna.url}" download><img src="/upload/${qna.url}"/></a>
 			</div>
 			<div class="form-group">
-				<label for="file">Add File</label>
+				<label for="file">사진 첨부</label>
 				<input class="form-control" type="file" id="file" name="file" accept="image/*">
 			</div>
-			<div><p id="writeDate" name="writeDate"></p></div>
+			<div>
+			
+
+			</div>
 			<button type="submit" class="btn btn-outline-warning">수정</button>
 			
 		</form>
@@ -52,9 +55,8 @@
 	<script>
 	
 	let today = new Date();   
-	
-	
-	$("#writeDate").text(today);
+
+	$("#writeDate").val(today);
 	
 	</script>
 </body>

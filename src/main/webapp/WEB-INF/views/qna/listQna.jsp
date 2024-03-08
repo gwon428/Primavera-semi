@@ -20,7 +20,7 @@
 		<div class="header">
 			<h1>Qna 페이지</h1>
 
-			<a href="/write" class="btn btn-outline-warning">게시글 등록</a>
+			<a href="/writeQna" class="btn btn-outline-warning">게시글 등록</a>
 		</div>
 
 		<table class="table">
@@ -42,10 +42,10 @@
 						<!-- 
 						<td><a href="/qna/view?qna_num=${item.qnaNum}">${item.title}</td>
 						 -->
-						 <td><a href="/view?qnaNum=${item.qnaNum}">${item.title}</a></td>
+						 <td><a href="/viewQna?qnaNum=${item.qnaNum}">${item.title}</a></td>
 						<td>${item.id}</td>
 						<td><fmt:formatDate value="${item.writeDate}"
-								pattern="yyyy-MM-dd" /></td>
+								pattern="yyyy-MM-dd HH:mm" /></td>
 						<td>${item.status}</td>		
 					</tr>
 				</c:forEach>
