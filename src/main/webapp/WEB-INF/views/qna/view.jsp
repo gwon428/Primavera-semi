@@ -16,7 +16,7 @@ prefix="spring"%>
     <div id="content" name="cotent">내용 : ${qna.content}</div>
     <div id="writeDate" name="writeDate" >작성일자 
     <fmt:formatDate value="${qna.writeDate}"
-								pattern="yyyy-MM-dd" />
+								pattern="yyyy-MM-dd HH:mm" />
     </div>
     <div id="url" name="url">사진 : <img src="/upload/qna/${qna.url}"/></div>
     

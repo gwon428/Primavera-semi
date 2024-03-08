@@ -42,7 +42,6 @@
 		SET 
 		title=#{title},
 		content=#{content},
-		write_date=#{writeDate},
 		url=#{url}
 		WHERE qna_num=${qnaNum}
 	</update>

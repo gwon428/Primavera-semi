@@ -45,7 +45,7 @@
 						 <td><a href="/view?qnaNum=${item.qnaNum}">${item.title}</a></td>
 						<td>${item.id}</td>
 						<td><fmt:formatDate value="${item.writeDate}"
-								pattern="yyyy-MM-dd" /></td>
+								pattern="yyyy-MM-dd HH:mm" /></td>
 						<td>${item.status}</td>		
 					</tr>
 				</c:forEach>
