@@ -7,12 +7,6 @@ DROP TABLE qna;
 DROP TABLE user;
 DROP TABLE collect;
 
-SELECT * FROM user;
-
-SELECT * FROM collect;
-DELETE FROM user WHERE id='user03';
-UPDATE user SET auth='ADMIN'
-WHERE id = 'manager01';
 
 CREATE TABLE user(
     id VARCHAR(20) NOT NULL UNIQUE,
@@ -39,7 +33,8 @@ road_address VARCHAR(30) NOT NULL,
 detail_address VARCHAR(30) NOT NULL,
 collection_date DATE NOT NULL,
 door_pwd  VARCHAR(30),           
-request TEXT
+request TEXT,
+prog VARCHAR(30) DEFAULT('신청완료')
 );
 
 CREATE TABLE review (
@@ -48,22 +43,20 @@ id VARCHAR(20) NOT NULL,
 title VARCHAR(30) NOT NULL,
 content TEXT NOT NULL,	
 order_num INT,
-date DATE DEFAULT (current_date),
+date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 url VARCHAR(200),
 rating INT
 );
    
-   SELECT * FROM user;
-
 CREATE TABLE qna (
 qna_num INT PRIMARY KEY AUTO_INCREMENT,
-id VARCHAR(20) NOT NULL UNIQUE,
+id VARCHAR(20) NOT NULL,
 title VARCHAR(30) NOT NULL,
 content TEXT NOT NULL,
 order_num INT NOT NULL,
-write_date DATE DEFAULT (current_date),
+write_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 url VARCHAR(200),
-status CHAR(1) CHECK(status IN('Y','N'))
+status CHAR(1) CHECK(status IN('Y','N')) DEFAULT 'N'
 );
 
 CREATE TABLE qna_answer(
@@ -71,21 +64,16 @@ qna_num INT NOT NULL,
 manager VARCHAR(20) NOT NULL,
 content TEXT NOT NULL,
 url VARCHAR(200),
-answer_date DATE DEFAULT (current_date)
+answer_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
 CREATE TABLE notice(
 notice_num INT PRIMARY KEY AUTO_INCREMENT,
 title VARCHAR(30) NOT NULL,
 content TEXT NOT NULL,
-manager VARCHAR(20) NOT NULL,
+id VARCHAR(30),
 url VARCHAR(200),
-write_date DATE DEFAULT (current_date)
-);
-
-CREATE TABLE progress (
-order_num INT NOT NULL,
-prog VARCHAR(30)
+write_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
 CREATE TABLE list(
