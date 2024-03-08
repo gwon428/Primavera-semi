@@ -60,44 +60,6 @@
 				</tr>
 			</c:forEach>
 		</table>
-		<!-- 
-		<div class="pagination">
-			<div class="page-item ${paging.prev ? '' : 'disabled'}">
-				<c:choose>
-				<c:when test="${paging.startPage == 1}">
-					<a class="page-link" href="/allUser?page=${paging.startPage=1}">Previous</a>
-				</c:when>
-				
-				<c:otherwise>
-				<a class="page-link" href="/allUser?page=${paging.startPage-1}">Previous</a>
-				</c:otherwise>
-				</c:choose>
-			</div>
-			
-			<div id="page">
-				<c:forEach begin="${paging.startPage}" end="${paging.endPage}"
-					var="page">
-
-					<div class="page-item">
-						<a class="page-link ${paging.page == page ? 'active' : ''}"
-							href="/allUser?page=${page}">${page}</a>
-					</div>
-
-				</c:forEach>
-			</div>
-			${paging}
-			<div class="page-item ${paging.next ? '' : 'disabled'}">
-			<c:choose>
-				<c:when test="${paging.endPage < paging.pageSize}">
-				<a class="page-link" href="/allUser?page=${paging.page+1}">Next</a>
-				</c:when>
-				<c:otherwise>
-				<a class="page-link" href="/allUser?page=${paging.endPage+1}">Next</a>
-				</c:otherwise>
-				</c:choose>
-			</div>
-		</div>
--->
 		<nav>
 			<div id="page">
 				<ul class="pagination">

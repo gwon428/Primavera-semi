@@ -8,7 +8,7 @@ h1 {
 }
 
 form {
-	height: 485px;
+	height: 550px;
 	border: 1px solid #c0c0c0;
 	border-radius:20px;
 	width: 765px;
@@ -76,8 +76,53 @@ form input{
 	display:flex;
 	align-items:center;
 	justify-content:center;
+	padding-top: 10px;
 }
 #button{
 	width: 140px;
 	height:30px;
+}
+
+#agree_check {
+  text-align:center;
+  padding-bottom: 10px;
+}
+#agree_text {
+  font-size: 1rem;
+  margin-bottom: 3px;
+}
+a {
+  font-weight: 700;
+  text-decoration-line: underline;
+}
+.pop_wrap {
+  visibility: hidden;
+  border: 1px solid black;
+  position: fixed;
+  top: 19%;
+  left: 40%;
+  box-sizing: border-box;
+  width: 400px;
+  height: 550px;
+  background-color: white;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.pop_inner {
+  line-height: 23px;
+  font-size: 13px;
+  margin: 0 8px;
+}
+.btn_close {
+  position: absolute;
+  left: 40%;
+  margin-top: 5px;
+}
+#pop_head {
+  display: flex;
+  justify-content: space-between;
+}
+#agree{
+	width: 20px;
+	height: 20px;
 }

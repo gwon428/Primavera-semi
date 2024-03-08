@@ -1,0 +1,23 @@
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd" >
+<configuration>
+	<settings>
+		<setting name="jdbcTypeForNull" value="NULL" />
+	</settings>
+
+	<typeAliases>
+		<typeAlias type="com.semi.model.vo.User" alias="User" />
+		<typeAlias type="com.semi.model.vo.Collect" alias="Collect" />
+		<typeAlias type="com.semi.model.vo.Board" alias="Board" />
+		<typeAlias type="com.semi.model.vo.PagingCollect" alias="Paging"/>
+		<typeAlias type="com.semi.model.vo.Qna" alias="Qna"/>
+		<typeAlias type="com.semi.model.vo.PagingQna" alias="PagingQna"/>
+	</typeAliases>
+
+	<!-- 쿼리문 -->
+	<mappers>
+		<mapper resource="mappers/user-mapper.xml" />
+		<mapper resource="mappers/collect-mapper.xml" />
+		<mapper resource="mappers/board-mapper.xml" />
+		<mapper resource="mappers/qna-mapper.xml"/>
+	</mappers>
+</configuration>

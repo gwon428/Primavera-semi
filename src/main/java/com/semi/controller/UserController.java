@@ -62,7 +62,6 @@ public class UserController {
 	@PostMapping("/check")
 	public boolean check(String id) {
 		User user = service.idCheck(id);
-		System.out.println(user);
 		if(user == null) return false;
 		return true;
 	}
@@ -122,7 +121,6 @@ public class UserController {
 			return "redirect:/";
 		} else {
 			System.out.println("탈퇴 안되염. . ");
-			
 			return "";
 		}
 	}

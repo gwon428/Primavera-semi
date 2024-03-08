@@ -6,6 +6,7 @@ let pwdCheck2 = false;
 let nameCheck = false;
 let phoneCheck = false;
 let emailCheck = false;
+let f = false;
 			
 $('#userId').keyup(() => {
 	const id = $('#userId').val();
@@ -114,15 +115,22 @@ $('#email').keyup((e) => {
 		emailCheck = true;
 	}
 });
-
+/*
+$("#agree").on("click", (e)=>{
+    if($(event.target).check){
+    	f = true;
+    }
+});
+*/
 function validate(){
+
+	let f = document.register;
+
 	if(idCheck){
 		userId.focus();
-		console.log("아이디체크문제");
 		return false;
 	} else if (idDupCheck){
 		userId.focus();
-		console.log("중복확인.." + idDupCheck);
 		return false;
 	} else if(pwdCheck){
 		userPwd.focus();
@@ -139,6 +147,27 @@ function validate(){
 	} else if(emailCheck){
 		email.focus();
 		return false;
+	} else if(!f.agree.checked){
+		alert("약관 내용에 동의해주세요.");
+	    return false;
 	}
 	return true;
 }
+
+var target = document.querySelectorAll('.btn_open');
+var btnPopClose = document.querySelectorAll('.pop_wrap .btn_close');
+var targetID;
+
+for (var i = 0; i < target.length; i++) {
+	target[i].addEventListener('click', function() {
+			targetID = this.getAttribute('href');
+			document.querySelector(targetID).style.visibility = 'visible';
+	});
+}
+
+for (var j = 0; j < target.length; j++) {
+	btnPopClose[j].addEventListener('click', function() {
+		this.parentNode.parentNode.style.visibility = 'hidden';
+	});
+}
+

@@ -25,23 +25,9 @@ public class CollectController {
 		return "collect/collect";
 	}
 	
-	/*
-	// 전체 수거 신청 리스트 보기 
-	@GetMapping("showAllCollect")
-	public String showallCollect(Model model, PagingCollect paging) {
-		List<Collect> list = service.showAllCollect(paging);
-		model.addAttribute("list", list);
-		model.addAttribute("paging", new PagingCollect(paging.getPage(), service.total()));
-		return "collect/showallCollect";
-	}
-	*/
-/*----------------------------------------------------------*/	
-	// 예빈전용 페이지 
-	@GetMapping("yebinCollect")
-	public String yebinCollect() {
-		return "collect/yebinCollect";
-	}
 	
+/*----------------------------------------------------------*/	
+
 	// 관리자용 수거신청현황 페이지 (prog제외) 
 		@GetMapping("showAllCollect")
 		public String showallCollect(Model model) {

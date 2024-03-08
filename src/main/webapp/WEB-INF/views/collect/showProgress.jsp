@@ -33,7 +33,10 @@
 <main>
 		<form action="update_ok" method="post" id="update" name="update">
 		
+		<div class="left">
+		<h1>수거 신청 현황 관리</h1>
 		<div id="progtable">
+		
 			<table border=1 class="table">
 				<tr>
 					<th>주문번호</th>
@@ -56,8 +59,9 @@
 				</c:forEach>
 			</table>
 		</div>
-		
+		</div>
 		<div id="manageProgress">
+		
 			<table border=1>
 				<tr>
 					<th>아이디</th>

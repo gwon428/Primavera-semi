@@ -26,7 +26,6 @@ public class UserService implements UserDetailsService{
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		User user = dao.getMemberById(username);
-		System.out.println(user);
 		return user;
 	}
 	
