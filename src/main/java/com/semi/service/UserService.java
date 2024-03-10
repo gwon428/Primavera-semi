@@ -11,6 +11,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.semi.model.dao.UserDAO;
+import com.semi.model.vo.PagingCollect;
 import com.semi.model.vo.User;
 
 @Service
@@ -25,8 +26,11 @@ public class UserService implements UserDetailsService{
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		User user = dao.getMemberById(username);
-		System.out.println(user);
 		return user;
+	}
+	
+	public User idCheck(String id) {
+		return dao.check(id);
 	}
 	
 	public int registerUser(User user) {
@@ -45,9 +49,13 @@ public class UserService implements UserDetailsService{
 		return dao.deleteUser(userDetails);
 	}
 
-	public List<User> showAllUser(){
-		return dao.showAllUser();
+	public List<User> showAllUser(PagingCollect paging){
+		paging.setOffset(paging.getLimit() * (paging.getPage()-1));
+		return dao.showAllUser(paging);
 	}
 	
+	public int total() {
+		return dao.total();
+	}
 	
 }

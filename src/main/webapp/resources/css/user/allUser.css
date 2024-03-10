@@ -1,0 +1,69 @@
+h2{
+	padding-top : 150px;
+	text-align: center;
+	font-size: 2rem;
+	font-weight: bolder;
+	margin-bottom: 27px;
+}
+
+#top{
+	padding-top : 70px;
+}
+
+.table{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	align-content: center;
+}
+
+table {
+	text-align: center;
+	width: 100vw;
+}
+
+table tr:first-child  {
+	border-top: 1px solid;
+}
+table tr:first-child th {
+	padding-top: 20px;
+}
+
+th{
+	height: 30px;
+	font-weight: bolder;
+	font-size: 1.1rem;
+	padding-top: 5px;
+	padding-bottom: 15px;
+	text-align:center;
+	border-bottom: 0.5px solid gray;
+	margin-bottom: 15px;
+}
+
+
+td{
+	width: 90px;
+	height: 50px;
+	padding-top: 15px;
+}
+
+.no{
+	width: 30px;
+	padding-right: 10px;
+	font-weight: bolder;
+}
+
+.roadAddr{
+	width: 230px;
+}
+
+.pagination{
+	align-items: center;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-evenly;
+	padding-top: 25px;
+	width: 800px;
+}
+
+

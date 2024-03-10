@@ -6,21 +6,27 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+	crossorigin="anonymous">
 </head>
 <body>
+<div>
 	<h2>전체 수거 신청 정보 보기</h2>
-	<table border=1>
+	<table border=1 class="table">
 		<tr>
-			<th>주문번호</th>
-			<th>아이디</th>
-			<th>이름</th>
-			<th>전화번호</th>
-			<th>우편번호</th>
-			<th>도로명 주소</th>
-			<th>상세 주소</th>
-			<th>수거일</th>
-			<th>공동 현관 비밀번호</th>
-			<th>요청사항</th>
+			<th scope="col">주문번호</th>
+			<th scope="col">아이디</th>
+			<th scope="col">이름</th>
+			<th scope="col">전화번호</th>
+			<th scope="col">우편번호</th>
+			<th scope="col">도로명 주소</th>
+			<th scope="col">상세 주소</th>
+			<th scope="col">수거일</th>
+			<th scope="col">공동 현관 비밀번호</th>
+			<th scope="col">요청사항</th>
 		</tr>
 		
 		<c:forEach items="${list}" var="item">
@@ -38,5 +44,17 @@
 			</tr>
 		</c:forEach>
 	</table>
+	<ul class="pagination">
+		
+			<li class="page-item ${pagingCollect.prev ? '' : 'disabled'}"><a class="page-link" href="/showAllCollect?page=${pagingCollect.startPage-1}">Previous</a>
+			</li>
+			
+			<c:forEach begin="${pagingCollect.startPage}" end="${pagingCollect.endPage}" var="page">
+				<li class="page-item"><a class="page-link ${pagingCollect.page == page ? 'active' : ''}" href="/showAllCollect?page=${page}">${page}</a></li>
+			</c:forEach>
+			
+			<li class="page-item ${pagingCollect.next ? '' : 'disabled'}"><a class="page-link"href="/showAllCollect?page=${pagingCollect.endPage+1}">Next</a></li>
+		</ul>
+		</div>
 </body>
 </html>

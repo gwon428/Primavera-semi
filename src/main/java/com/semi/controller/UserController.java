@@ -20,7 +20,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.semi.model.vo.PagingCollect;
 import com.semi.model.vo.User;
 import com.semi.service.UserService;
 
@@ -56,6 +58,15 @@ public class UserController {
 		return "user/register";
 	}
 	
+	@ResponseBody
+	@PostMapping("/check")
+	public boolean check(String id) {
+		User user = service.idCheck(id);
+		if(user == null) return false;
+		return true;
+	}
+	
+	
 	@PostMapping("/register")
 	public String register(User user) {
 		service.registerUser(user);
@@ -63,7 +74,7 @@ public class UserController {
 	}
 
 	// 회원정보수정 jsp로 이동
-	@GetMapping("/update")
+	@GetMapping("/updateUser")
 	public String update() {
 		return "user/updateCheck";
 	}
@@ -79,7 +90,6 @@ public class UserController {
 		} else {
 			return "user/updateCheck";
 		}
-		
 	}
 	
 	@PostMapping("/updateUser")
@@ -111,7 +121,6 @@ public class UserController {
 			return "redirect:/";
 		} else {
 			System.out.println("탈퇴 안되염. . ");
-			
 			return "";
 		}
 	}
@@ -126,9 +135,11 @@ public class UserController {
 	}
 	
 	@GetMapping("allUser")
-	public String allUser(Model model) {
-		List<User> list = service.showAllUser();
+	public String allUser(Model model, PagingCollect paging) {
+		List<User> list = service.showAllUser(paging);
 		model.addAttribute("list", list);
+		System.out.println("list size : " + list.size());
+		model.addAttribute("paging", new PagingCollect(paging.getPage(), service.total()));
 		return "user/allUser";
 	}
 }

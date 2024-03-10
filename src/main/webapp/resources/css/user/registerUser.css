@@ -8,10 +8,10 @@ h1 {
 }
 
 form {
-	height: 400px;
+	height: 550px;
 	border: 1px solid #c0c0c0;
 	border-radius:20px;
-	width: 700px;
+	width: 765px;
 	margin: 0 auto;
 }
 
@@ -24,61 +24,105 @@ form select{
 	margin-bottom:15px;
 }
 #regist{
-	margin-top : 15px;
-	height: 350px;
+	height: 400px;
 	display:flex;
-	flex-direction:row;
 	justify-content:center;
 	align-items:center;
-	width:700px;
+	width:660px;
+	margin: 10px auto;
 }
 
 #registerOne{
 	margin-top: 10px;
 	display: flex;
 	flex-direction:column;
-	width: 50vw;
+	width: 350px;
+	height: 360px;
 	align-items:center;
-	justify-content:center;
-}
-
-#register input{
-	width: 25vw;
+	justify-content:space-evenly;
 }
 
 #registerTwo{
 	display: flex;
 	flex-direction:column;
-	width: 50vw;
+	width: 350px;
+	height: 360px;
 	align-items:center;
-	justify-content:center;
+	justify-content:space-evenly;
 }
 
 .addr{
+	height: 80px;
 	display:flex;	
 	flex-direction:column;
+	margin-bottom: 10px;
 }
 
 .addr input{
 	width: 200px;
+	margin-bottom: 10px;
 }
 
 .addrPost input{
 	width: 97px;
+	margin-bottom: 10px;
 }
 
-form span{
-	color:white;
-}
 form input{
 	width: 200px;
+	height: 27px;
 }
 #submit{
 	display:flex;
 	align-items:center;
 	justify-content:center;
+	padding-top: 10px;
 }
 #button{
 	width: 140px;
 	height:30px;
+}
+
+#agree_check {
+  text-align:center;
+  padding-bottom: 10px;
+}
+#agree_text {
+  font-size: 1rem;
+  margin-bottom: 3px;
+}
+a {
+  font-weight: 700;
+  text-decoration-line: underline;
+}
+.pop_wrap {
+  visibility: hidden;
+  border: 1px solid black;
+  position: fixed;
+  top: 19%;
+  left: 40%;
+  box-sizing: border-box;
+  width: 400px;
+  height: 550px;
+  background-color: white;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.pop_inner {
+  line-height: 23px;
+  font-size: 13px;
+  margin: 0 8px;
+}
+.btn_close {
+  position: absolute;
+  left: 40%;
+  margin-top: 5px;
+}
+#pop_head {
+  display: flex;
+  justify-content: space-between;
+}
+#agree{
+	width: 20px;
+	height: 20px;
 }

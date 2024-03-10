@@ -3,17 +3,24 @@
 	<settings>
 		<setting name="jdbcTypeForNull" value="NULL" />
 	</settings>
-	
+
 	<typeAliases>
-		<typeAlias type="com.semi.model.vo.User" alias="User"/>
-		<typeAlias type="com.semi.model.vo.Collect" alias="Collect"/>
-		<typeAlias type="com.semi.model.vo.BoardVO" alias="BoardVO"/>
+		<typeAlias type="com.semi.model.vo.User" alias="User" />
+		<typeAlias type="com.semi.model.vo.Collect" alias="Collect" />
+		<typeAlias type="com.semi.model.vo.Board" alias="Board" />
+		<typeAlias type="com.semi.model.vo.PagingCollect" alias="PagingCollect"/>
+		<typeAlias type="com.semi.model.vo.Qna" alias="Qna"/>
+		<typeAlias type="com.semi.model.vo.PagingQna" alias="PagingQna"/>
+		<typeAlias type="com.semi.model.vo.Paging" alias="Paging" />
+		<typeAlias type="com.semi.model.vo.Notice" alias="Notice"/>
 	</typeAliases>
-	
+
 	<!-- 쿼리문 -->
 	<mappers>
-		<mapper resource="mappers/user-mapper.xml"/>
-		<mapper resource="mappers/collect-mapper.xml"/>
-		<mapper resource="mappers/board-mapper.xml"/>
+		<mapper resource="mappers/user-mapper.xml" />
+		<mapper resource="mappers/collect-mapper.xml" />
+		<mapper resource="mappers/board-mapper.xml" />
+		<mapper resource="mappers/qna-mapper.xml"/>
+		<mapper resource="mappers/notice-mapper.xml"/>
 	</mappers>
 </configuration>

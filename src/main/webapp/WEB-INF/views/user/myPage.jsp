@@ -41,55 +41,62 @@
 					<input type="submit" value="Login" class="loginbutton">
 				</form>
 
-				<div>
-					<a href="findPwd">비밀번호 찾기 | </a> <a href="findId">아이디 찾기 | </a> <a
-						href="register">회원가입</a>
+				<div id="anonymousUserMenu">
+					<a href="findPwd">비밀번호 찾기 | </a>
+					<a href="findId">아이디 찾기 | </a>
+					<a href="register">회원가입</a>
 				</div>
 			</main>
 		</c:when>
 		<c:otherwise>
-			<c:if test="${user.auth == '관리자'}">
-				<div id="adminLogin">
-
+			<c:if test="${user.auth == 'ADMIN'}">
+			<section id="Adbackground">
+				<div id="background-blackbox"></div>
+			</section>
+				<div id="Login">
 					<input type="hidden" id="auth"
 						value="<c:out value="${user.auth}"/>">
-					<h2>${user.name}님은${user.auth}입니다.</h2>
-					<div id="adminMenu">
-						<div id="adminMenuOne">
-							<a href="notice">공지 게시판 관리</a> <a href="qna">Q&A 게시판 관리</a> <a
+						<div id="logo"><div class="logobox">Primavera</div></div>
+					<div id="Menu">
+						<div id="MenuOne">
+							<a href="notice/list">공지 게시판 관리</a> <a href="listQna">Q&A 게시판 관리</a> <a
 								href="allUser">전체 회원 조회</a>
 						</div>
-						<div id="adminMenuTwo">
-							<a href="progressManager">progress 관리</a> <a
-								href="progressManager">수거 신청 현황</a> <a href="/logout">로그아웃</a>
+						<div id="MenuTwo">
+							<a href="showProgress">progress 관리</a>
+							<a href="showAllCollect">수거 신청 현황</a>
+							<a href="/logout">로그아웃</a>
 						</div>
 					</div>
-
 				</div>
+			</div>
+			
 			</c:if>
-			<c:if test="${user.auth == '회원'}">
-				<div id="memberLogin">
-
-					<!--<c:set var="auth" value="${user.auth}"/>-->
+			<c:if test="${user.auth == 'MEMBER'}">
+			<section id="Userbackground">
+				<div id="background-blackbox"></div>
+			</section>
+				<div id="Login">
 					<input type="hidden" id="auth"
 						value="<c:out value="${user.auth}"/>">
-					<h2>${user.name}님은${user.auth}입니다.</h2>
-					<div id="memberMenu">
-						<div id="memberMenuOne">
-							<a href="review">내가 적은 후기</a> <a href="qna">내 Q&A</a> <a
-								href="progress">진행상황</a>
+					<div id="logo"><div class="logobox">Primavera</div></div>
+					
+					<div id="Menu">
+						<div id="MenuOne">
+							<a href="review">내가 적은 후기</a>
+							<a href="qna">내 Q&A</a>
+							<a href="showCollect">진행상황</a>
 						</div>
-						<div id="memberMenuTwo">
-							<a href="update">회원 정보 수정</a> <a href="deleteUser">회원 탈퇴</a> <a
-								href="/logout">로그아웃</a>
+						<div id="MenuTwo">
+							<a href="updateUser">회원 정보 수정</a>
+							<a href="deleteUser">회원 탈퇴</a>
+							<a href="/logout">로그아웃</a>
 						</div>
 					</div>
-
 				</div>
 			</c:if>
 		</c:otherwise>
 	</c:choose>
-
 </body>
 
 </html>

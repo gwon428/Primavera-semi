@@ -1,25 +1,44 @@
 package com.semi.service;
 
-import com.semi.model.dao.BoardDAO;
-import com.semi.model.vo.BoardVO;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
+import com.semi.model.dao.BoardDAO;
+import com.semi.model.vo.Board;
+import com.semi.model.vo.Paging;
 
 @Service
 public class BoardService {
 
-    @Autowired
-    private BoardDAO boarddao;
+	@Autowired
+	private BoardDAO dao;
 
-    
-    public List<BoardVO> getAllBoard() {
-        return boarddao.getAllBoard();
-    }
+	public int insert(Board b) {
+		return dao.insert(b);
+	}
 
-  
-    public int writeBoard(BoardVO boardVO) {
-    	return boarddao.writeBoard(boardVO);
-    }
+	public List<Board> selectAll() {
+		return dao.selectAll();
+	}
+
+	public Board select(int no) {
+		return dao.select(no);
+	}
+
+	public int updatereview(Board b) {
+		return dao.updatereview(b);
+	}
+
+	public int deletereview(int no) {
+		return dao.deletereview(no);
+	}
+
+	public List<Board> selectPage(Paging paging) {
+		paging.setOffset(paging.getLimit() * (paging.getPage() - 1));
+		return dao.selectPage(paging);
+	}
+
+	public int total() {
+		return dao.total();
+	}
 }

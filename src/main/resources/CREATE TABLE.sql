@@ -7,6 +7,7 @@ DROP TABLE qna;
 DROP TABLE user;
 DROP TABLE collect;
 
+
 CREATE TABLE user(
     id VARCHAR(20) NOT NULL UNIQUE,
     password VARCHAR(200) NOT NULL,
@@ -32,51 +33,47 @@ road_address VARCHAR(30) NOT NULL,
 detail_address VARCHAR(30) NOT NULL,
 collection_date DATE NOT NULL,
 door_pwd  VARCHAR(30),           
-request TEXT
+request TEXT,
+prog VARCHAR(30) DEFAULT('신청완료')
 );
 
 CREATE TABLE review (
-review_num INT PRIMARY KEY AUTO_INCREMENT,
-id VARCHAR(20) NOT NULL UNIQUE,		
+no INT PRIMARY KEY AUTO_INCREMENT,
+id VARCHAR(20) NOT NULL,		
 title VARCHAR(30) NOT NULL,
 content TEXT NOT NULL,	
-order_num INT NOT NULL,
-write_date DATE DEFAULT (current_date),
-star_point INT NOT NULL
+order_num INT,
+date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+url VARCHAR(200),
+rating INT
 );
-
+   
 CREATE TABLE qna (
 qna_num INT PRIMARY KEY AUTO_INCREMENT,
-id VARCHAR(20) NOT NULL UNIQUE,
+id VARCHAR(20) NOT NULL,
 title VARCHAR(30) NOT NULL,
 content TEXT NOT NULL,
 order_num INT NOT NULL,
-write_date DATE DEFAULT (current_date),
-status CHAR(1) CHECK(status IN('Y','N'))
+write_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+url VARCHAR(200),
+status CHAR(1) CHECK(status IN('Y','N')) DEFAULT 'N'
 );
 
 CREATE TABLE qna_answer(
 qna_num INT NOT NULL,
 manager VARCHAR(20) NOT NULL,
 content TEXT NOT NULL,
-answer_date DATE DEFAULT (current_date)
+url VARCHAR(200),
+answer_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
 CREATE TABLE notice(
 notice_num INT PRIMARY KEY AUTO_INCREMENT,
 title VARCHAR(30) NOT NULL,
 content TEXT NOT NULL,
-manager VARCHAR(20) NOT NULL,
-write_date DATE DEFAULT (current_date)
-);
-
-CREATE TABLE progress (
-order_num INT NOT NULL,
-collect_req CHAR(1) check (collect_req IN ('Y', 'N')),
-collect_complete CHAR(1) check (collect_complete IN ('Y', 'N')),
-collect_check CHAR(1) check (collect_check IN ('Y', 'N')),
-deposit_ing CHAR(1) check (deposit_ing IN ('Y', 'N')),
-deposit_complete CHAR(1) check (deposit_complete IN ('Y', 'N'))
+id VARCHAR(30),
+url VARCHAR(200),
+write_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
 CREATE TABLE list(
