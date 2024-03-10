@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.semi.model.vo.Collect;
-import com.semi.model.vo.PagingCollect;
+import com.semi.model.vo.Paging;
 import com.semi.service.CollectService;
 
 @Controller
@@ -25,15 +25,14 @@ public class CollectController {
 		return "collect/collect";
 	}
 	
-
-	
 /*----------------------------------------------------------*/	
 
 	// 관리자용 수거신청현황 페이지 (prog제외) 
 		@GetMapping("showAllCollect")
-		public String showallCollect(Model model) {
-			List<Collect> list = service.showAllCollect();
+		public String showallCollect(Model model, Paging paging) {
+			List<Collect> list = service.showAllCollect(paging);
 			model.addAttribute("list", list);
+			model.addAttribute("paging", new Paging(paging.getPage(), service.total()));
 			return "collect/showallCollect";
 		}
 	
@@ -47,9 +46,10 @@ public class CollectController {
 		
 	// 관리자용 - 회원 수거 신청 현황 변경 페이지
 		@GetMapping("showProgress")
-		public String showProgress(Model model) {
-			List<Collect> progress = service.showProgress();
+		public String showProgress(Model model, Paging paging) {
+			List<Collect> progress = service.showProgress(paging);
 			model.addAttribute("progress", progress);
+			model.addAttribute("paging", new Paging(paging.getPage(), service.total()));
 			return "collect/showProgress";
 		}
 	

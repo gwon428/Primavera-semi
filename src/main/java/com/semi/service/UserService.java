@@ -4,6 +4,7 @@ package com.semi.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -11,7 +12,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.semi.model.dao.UserDAO;
-import com.semi.model.vo.PagingCollect;
+import com.semi.model.vo.Board;
+import com.semi.model.vo.Paging;
+import com.semi.model.vo.Qna;
 import com.semi.model.vo.User;
 
 @Service
@@ -49,13 +52,31 @@ public class UserService implements UserDetailsService{
 		return dao.deleteUser(userDetails);
 	}
 
-	public List<User> showAllUser(PagingCollect paging){
+	public List<User> showAllUser(Paging paging){
 		paging.setOffset(paging.getLimit() * (paging.getPage()-1));
 		return dao.showAllUser(paging);
 	}
-	
+
 	public int total() {
 		return dao.total();
+	}
+	
+	public User findId(User user) {
+		return dao.findId(user);
+	}
+	
+	// 내가 쓴 후기 리스트 출력
+	public List<Board> showReview(){
+		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		UserDetails userDetails = (UserDetails)principal;
+		return dao.showReview(userDetails.getUsername());
+	}
+	
+	// 내가 쓴 qna 리스트 출력
+	public List<Qna> showQna(){
+		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		UserDetails userDetails = (UserDetails)principal;
+		return dao.showQna(userDetails.getUsername());
 	}
 	
 }

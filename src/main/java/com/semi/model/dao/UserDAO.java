@@ -7,7 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Repository;
 
-import com.semi.model.vo.PagingCollect;
+import com.semi.model.vo.Board;
+import com.semi.model.vo.Paging;
+import com.semi.model.vo.Qna;
 import com.semi.model.vo.User;
 
 @Repository
@@ -40,11 +42,24 @@ public class UserDAO {
 		return session.update("userMapper.deleteUser", userDetails);
 	}
 
-	public List<User> showAllUser(PagingCollect paging) {
+	public List<User> showAllUser(Paging paging) {
 		return session.selectList("userMapper.showAllUser", paging);
 	}
 	
 	public int total() {
 		return session.selectOne("userMapper.count");
+	}
+	
+	public User findId(User user) {
+		return session.selectOne("userMapper.findId", user);
+	}
+	
+	// 내가 쓴 리뷰 리스트 출력
+	public List<Board> showReview(String id){
+		return session.selectList("board.showReview", id);
+	}
+	
+	public List<Qna> showQna(String id){
+		return session.selectList("qnaMapper.showQna", id);
 	}
 }

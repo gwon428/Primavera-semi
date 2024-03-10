@@ -22,7 +22,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.semi.model.vo.PagingCollect;
+import com.semi.model.vo.Board;
+import com.semi.model.vo.Paging;
+import com.semi.model.vo.Qna;
 import com.semi.model.vo.User;
 import com.semi.service.UserService;
 
@@ -107,15 +109,13 @@ public class UserController {
 		return "user/deleteCheck";
 	}
 	
+	// 탈퇴 (비밀번호 확인 후 탈퇴 처리)
 	@PostMapping("/deleteCheck")
 	public String deleteCheck(String password) {
 		
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		UserDetails userDetails = (UserDetails)principal;
-//		System.out.println(userDetails);
-//		System.out.println(password);
 		if(bcpe.matches(password, userDetails.getPassword())) {
-//			System.out.println("탈퇴시켜줘 . . . .");
 			service.deleteUser(userDetails);
 			SecurityContextHolder.clearContext();
 			return "redirect:/";
@@ -125,6 +125,7 @@ public class UserController {
 		}
 	}
 	
+	// 로그아웃
 	@RequestMapping(value="/logout", method= RequestMethod.GET)
 	public String logout(HttpServletRequest request, HttpServletResponse response) {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
@@ -135,11 +136,45 @@ public class UserController {
 	}
 	
 	@GetMapping("allUser")
-	public String allUser(Model model, PagingCollect paging) {
+	public String allUser(Model model, Paging paging) {
 		List<User> list = service.showAllUser(paging);
 		model.addAttribute("list", list);
-		System.out.println("list size : " + list.size());
-		model.addAttribute("paging", new PagingCollect(paging.getPage(), service.total()));
+		model.addAttribute("paging", new Paging(paging.getPage(), service.total()));
 		return "user/allUser";
+	}
+	
+	@GetMapping("findId")
+	public String findId() {
+		return "account/findId";
+	}
+	
+	@PostMapping("/findId")
+	public String findId(User user, Model model) {
+		// 찾고자 하는 사용자 정보(이름, 이메일)을 user 형태로 받아 jsp에서 출력할 수 있도록 바인딩
+		model.addAttribute("finder", user);
+		if(service.findId(user) != null) {
+			// 찾은 user 정보를 jsp에서 출력할 수 있도록 바인딩
+			model.addAttribute("user", service.findId(user));
+			// 찾기를 성공했을 경우 나오는 페이지
+			return "account/findIdResult";
+		} else {
+			// 해당 사용자가 없다고 출력할 페이지..
+			return "account/findFail";
+		}
+	}	
+	// 내가 쓴 후기 모아보기
+	@GetMapping("showReview")
+	public String showReview(Model model) {
+		List<Board> list = service.showReview();
+		model.addAttribute("list", list);
+		return "user/showReview";
+	}
+	
+	// 내가 쓴 qna 모아보기
+	@GetMapping("showQna")
+	public String showQna(Model model) {
+		List<Qna> list = service.showQna();
+		model.addAttribute("list", list);
+		return "user/showQna";
 	}
 }

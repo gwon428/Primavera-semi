@@ -7,6 +7,9 @@ DROP TABLE qna;
 DROP TABLE user;
 DROP TABLE collect;
 
+SELECT * FROM user;
+UPDATE user SET auth='ADMIN' WHERE id='manager01';
+
 
 CREATE TABLE user(
     id VARCHAR(20) NOT NULL UNIQUE,
@@ -94,8 +97,6 @@ ALTER TABLE list ADD CONSTRAINT li_id_cust
 ALTER TABLE review ADD CONSTRAINT rev_order_num
 	FOREIGN KEY (order_num) REFERENCES collect(order_num) ON DELETE CASCADE;
 ALTER TABLE qna ADD CONSTRAINT qna_order_num
-	FOREIGN KEY (order_num) REFERENCES collect(order_num) ON DELETE CASCADE;
-ALTER TABLE progress ADD CONSTRAINT prog_order_num
 	FOREIGN KEY (order_num) REFERENCES collect(order_num) ON DELETE CASCADE;
     
 ALTER TABLE qna_answer ADD CONSTRAINT qna_num

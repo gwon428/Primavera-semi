@@ -41,4 +41,6 @@ public class BoardDAO {
 	public int total() {
 		return session.selectOne("board.count");
 	}
+	
+	
 }

@@ -42,8 +42,8 @@
 				</form>
 
 				<div id="anonymousUserMenu">
-					<a href="findPwd">비밀번호 찾기 | </a>
 					<a href="findId">아이디 찾기 | </a>
+					<a href="findPwd">비밀번호 찾기 | </a>
 					<a href="register">회원가입</a>
 				</div>
 			</main>
@@ -83,8 +83,8 @@
 					
 					<div id="Menu">
 						<div id="MenuOne">
-							<a href="review">내가 적은 후기</a>
-							<a href="qna">내 Q&A</a>
+							<a href="showReview">내가 적은 후기</a>
+							<a href="showQna">내 Q&A</a>
 							<a href="showCollect">진행상황</a>
 						</div>
 						<div id="MenuTwo">

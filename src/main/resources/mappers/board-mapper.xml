@@ -57,4 +57,12 @@
 		SELECT COUNT(*) FROM review
 	</select>
 
+	<!-- 회원용 마이페이지 - 내가 적은 후기 보기 -->
+	<select id="showReview" parameterType="String"
+		resultMap="boardMap">
+		SELECT title, content, order_num, date
+		FROM review
+		WHERE
+		id=#{id}
+	</select>
 </mapper>

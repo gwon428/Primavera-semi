@@ -36,7 +36,7 @@
 			<a href="">내가 적은 후기</a>
 			<a href="">내 Q&A</a>
 			<a href="progress">진행 상황</a>
-			<a href="update">회원 정보 수정</a>
+			<a href="updateUser">회원 정보 수정</a>
 			<a href="deleteUser" id="delete">회원 탈퇴</a>
 			<a href="logout">로그아웃</a>
 		</div>

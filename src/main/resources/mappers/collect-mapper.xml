@@ -27,7 +27,7 @@
 		SELECT order_num, id, name, phone, post_code, road_address, 
 		detail_address, collection_date, door_pwd, request 
 		FROM collect
-		
+		LIMIT #{offset}, #{limit}
 	</select>
 	
 	<!-- select : 회원용 진행상황 페이지용 : 로그인 된 회원의 아이디를 조건으로-->
@@ -41,6 +41,7 @@
 	<select id="showProgress" resultMap="collectMap">
 		SELECT order_num, id, name, phone, prog
 		FROM collect
+		LIMIT #{offset}, #{limit}
 	</select>
 	
 	<!-- update : 관리자용 progress 관리 페이지용 : prog 바꾸기 -->
@@ -50,6 +51,9 @@
 		WHERE order_num=#{orderNum}
 	</update>
 	
+	<select id="count" resultType="int">
+	SELECT count(*) FROM user;
+	</select>
 	
 	
 </mapper>

@@ -8,7 +8,6 @@
 		<typeAlias type="com.semi.model.vo.User" alias="User" />
 		<typeAlias type="com.semi.model.vo.Collect" alias="Collect" />
 		<typeAlias type="com.semi.model.vo.Board" alias="Board" />
-		<typeAlias type="com.semi.model.vo.PagingCollect" alias="PagingCollect"/>
 		<typeAlias type="com.semi.model.vo.Qna" alias="Qna"/>
 		<typeAlias type="com.semi.model.vo.PagingQna" alias="PagingQna"/>
 		<typeAlias type="com.semi.model.vo.Paging" alias="Paging" />

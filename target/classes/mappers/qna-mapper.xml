@@ -51,4 +51,13 @@
 	DELETE FROM qna
 	WHERE qna_num=#{qnaNum}
 	</delete>
+	
+	<!-- 회원용 마이페이지 - 내가 적은 qna 보기 -->
+	<select id="showQna" parameterType="String"
+		resultMap="qnaMap">
+		SELECT qna_num, title, id, write_date, status
+		FROM qna
+		WHERE
+		id=#{id}
+	</select>
 </mapper>
