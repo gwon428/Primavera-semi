@@ -37,7 +37,7 @@
 		<p> 아이디 : ${user.id} 
 		<input type="hidden" name="id" value="${user.id}"></p>
 		<p>비밀번호 : 
-		<input type="password" name="password" id="userPwd" value="${user.password}"></p>
+		<input type="password" name="password" id="userPwd" value="${pwd}"></p>
 		<p>이름 : 
 		<input type="text" name="name" id="userName" value="${user.name}"></p>
 		<p>휴대폰 번호 : 

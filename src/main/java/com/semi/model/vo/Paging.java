@@ -19,10 +19,6 @@ public class Paging {
 
 	public Paging(int page, int total) {
 
-//		this.page = Math.max(page, 1);
-
-//		this.offset = (this.page - 1) * this.limit;
-
 		this.page = page;
 		this.endPage = (int) (Math.ceil((double) page / this.pageSize)) * this.pageSize;
 		this.startPage = this.endPage - this.pageSize + 1;

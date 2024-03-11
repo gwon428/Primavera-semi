@@ -32,15 +32,16 @@ public class CollectController {
 		public String showallCollect(Model model, Paging paging) {
 			List<Collect> list = service.showAllCollect(paging);
 			model.addAttribute("list", list);
-			model.addAttribute("paging", new Paging(paging.getPage(), service.total()));
+			model.addAttribute("paging", new Paging(paging.getPage(), service.showAllCollecttotal()));
 			return "collect/showallCollect";
 		}
 	
 	// 회원용 진행상황 페이지용 
 		@GetMapping("showCollect")
-		public String showCollect(Model model) {
+		public String showCollect(Model model, Paging paging) {
 			List<Collect> list = service.showCollect();
 			model.addAttribute("list", list);
+			model.addAttribute("paging", new Paging(paging.getPage(), service.showCollecttotal()));
 			return "collect/showCollect";
 		}
 		
@@ -48,8 +49,10 @@ public class CollectController {
 		@GetMapping("showProgress")
 		public String showProgress(Model model, Paging paging) {
 			List<Collect> progress = service.showProgress(paging);
+			
 			model.addAttribute("progress", progress);
-			model.addAttribute("paging", new Paging(paging.getPage(), service.total()));
+			model.addAttribute("paging", new Paging(paging.getPage(), service.showProgresstotal()));
+			
 			return "collect/showProgress";
 		}
 	

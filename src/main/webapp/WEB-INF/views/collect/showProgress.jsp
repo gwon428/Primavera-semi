@@ -58,6 +58,35 @@
 					</tr>
 				</c:forEach>
 			</table>
+			<ul class="pagination">
+					<li class="page-item ${paging.prev ? '' : 'disabled'}">
+					<c:choose>
+						<c:when test="${paging.startPage == 1}">
+							<a class="page-link" href="/showProgress?page=${paging.startPage=1}">Previous</a>
+						</c:when>
+						<c:otherwise>
+							<a class="page-link" href="/showProgress?page=${paging.startPage-1}">Previous</a>
+						</c:otherwise>
+					</c:choose>
+					</li>
+
+					<c:forEach begin="${paging.startPage}" end="${paging.endPage}" var="page">
+						<li class="page-item"><a
+							class="page-link ${paging.page== page ? 'active' : ''} "
+							href="/showProgress?page=${page}">${page}</a></li>
+					</c:forEach>
+
+					<li class="page-item ${paging.next ? '' : 'disabled'}">
+					<c:choose>
+						<c:when test="${paging.endPage < 10}">
+							<a class="page-link" href="/showProgress?page=${paging.endPage=paging.endPage}">Next</a>
+						</c:when>
+						<c:otherwise>
+							<a class="page-link" href="/showProgress?page=${paging.endPage + 1}">Next</a>
+						</c:otherwise>
+						</c:choose>					
+					</li>
+				</ul>
 		</div>
 		</div>
 		<div id="manageProgress">
@@ -91,36 +120,7 @@
 	      	</div>
 	     </div>
 	</form>
-	<ul class="pagination">
-					<li class="page-item ${paging.prev ? '' : 'disabled'}">
-					<c:choose>
-						<c:when test="${paging.startPage == 1}">
-							<a class="page-link" href="/showProgress?page=${paging.startPage=1}">Previous</a>
-						</c:when>
-						<c:otherwise>
-							<a class="page-link" href="/showProgress?page=${paging.startPage-1}">Previous</a>
-						</c:otherwise>
-					</c:choose>
-					</li>
-
-					<c:forEach begin="${paging.startPage}" end="${paging.endPage}"
-						var="page">
-						<li class="page-item"><a
-							class="page-link ${paging.page== page ? 'active' : ''} "
-							href="/showProgress?page=${page}">${page}</a></li>
-					</c:forEach>
-
-					<li class="page-item ${paging.next ? '' : 'disabled'}">
-					<c:choose>
-						<c:when test="${paging.endPage < 10}">
-							<a class="page-link" href="/showProgress?page=${paging.endPage=paging.endPage}">Next</a>
-						</c:when>
-						<c:otherwise>
-							<a class="page-link" href="/showProgress?page=${paging.endPage + 1}">Next</a>
-						</c:otherwise>
-						</c:choose>					
-					</li>
-				</ul>
+	
 </main>
 
 	<script>

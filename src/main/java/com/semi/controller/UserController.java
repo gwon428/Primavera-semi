@@ -36,19 +36,13 @@ public class UserController {
 
 	@Autowired
 	private UserService service;
-	
+		
 	// 마이페이지로 이동 (로그인 + 기타 메뉴 보이는 화면)
 	@GetMapping("myPage")
 	public String myPage() {
 		return "user/myPage";
 	}
 	
-//	@PostMapping("login")
-//	public String login(HttpServletRequest request, User user) {
-//		HttpSession session = request.getSession();
-//		session.setAttribute("loginUser", service.loadUserByUsername(user.getId()));
-//		return "redirect:/";
-//	}
 	
 	@PostMapping("/loginFail")
 	public String loginFail() {
@@ -68,7 +62,6 @@ public class UserController {
 		return true;
 	}
 	
-	
 	@PostMapping("/register")
 	public String register(User user) {
 		service.registerUser(user);
@@ -82,10 +75,12 @@ public class UserController {
 	}
 	
 	@PostMapping("/updateCheck")
-	public String updateCheck(String password) {
+	public String updateCheck(String password, Model model) {
 		
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		UserDetails userDetails = (UserDetails)principal;
+		
+		model.addAttribute("pwd", password);
 		
 		if(bcpe.matches(password, userDetails.getPassword())) {
 			return "user/updateUser";
@@ -96,6 +91,7 @@ public class UserController {
 	
 	@PostMapping("/updateUser")
 	public String update(@AuthenticationPrincipal User user, HttpServletRequest request, Authentication authentication) {
+		
 		// 변경할 비밀번호를 다시 암호화해서 sql에 넣어야 함..!
 		HttpSession session = request.getSession();
 		if(service.updateUser(user)==1) {
@@ -148,6 +144,8 @@ public class UserController {
 		return "account/findId";
 	}
 	
+	private String id;
+	
 	@PostMapping("/findId")
 	public String findId(User user, Model model) {
 		// 찾고자 하는 사용자 정보(이름, 이메일)을 user 형태로 받아 jsp에서 출력할 수 있도록 바인딩
@@ -155,6 +153,7 @@ public class UserController {
 		if(service.findId(user) != null) {
 			// 찾은 user 정보를 jsp에서 출력할 수 있도록 바인딩
 			model.addAttribute("user", service.findId(user));
+			id = service.findId(user).getId();
 			// 찾기를 성공했을 경우 나오는 페이지
 			return "account/findIdResult";
 		} else {
@@ -177,4 +176,11 @@ public class UserController {
 		model.addAttribute("list", list);
 		return "user/showQna";
 	}
+	
+	@GetMapping("/findIdlogin")
+	public String findIdLogin(Model model) {
+		model.addAttribute("user", id);
+		return "/user/findIdLogin";
+	}
+	
 }

@@ -33,19 +33,33 @@ public class CollectService {
 		return dao.showAllCollect(paging); 
 	}
 	
+	public int showAllCollecttotal() {
+		return dao.showAllCollecttotal();
+	}
+	
 	// 회원용 진행상황 페이지용 
 		public List<Collect> showCollect(){
 			Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 			UserDetails userDetails = (UserDetails)principal;
-			System.out.println(userDetails.getUsername());
-			System.out.println(userDetails);
 			return dao.showCollect(userDetails.getUsername());
 	}
+		
+		public int showCollecttotal() {
+			Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+			UserDetails userDetails = (UserDetails)principal;
+			
+			return dao.showCollecttotal(userDetails.getUsername());
+		}
 	
 	// 관리자용 progress 관리 페이지용(조건x)
 	public List<Collect> showProgress(Paging paging){
+		paging.setOffset(paging.getLimit() * (paging.getPage()-1));
 		return dao.showProgress(paging);
 	}	
+	
+	public int showProgresstotal() {
+		return dao.showProgresstotal();
+	}
 		
 	// update : 수거 신청 진행상황 변경
 	public int updateProgress(Collect collect) {
@@ -58,4 +72,6 @@ public class CollectService {
 	public int registerCollect(Collect vo) {
 		return dao.registerCollect(vo);
 	}
+
+
 }

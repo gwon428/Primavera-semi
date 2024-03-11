@@ -30,9 +30,19 @@
 		LIMIT #{offset}, #{limit}
 	</select>
 	
+	<select id="countAllCollect" resultType="int">
+		SELECT count(*) FROM collect
+	</select>
+	
 	<!-- select : 회원용 진행상황 페이지용 : 로그인 된 회원의 아이디를 조건으로-->
 	<select id="showCollect" parameterType="String" resultMap="collectMap">
 		SELECT order_num, id, name, phone, prog
+		FROM collect
+		WHERE id=#{id}
+	</select>
+	
+	<select id="Collect" parameterType="String" resultType="int">
+		SELECT count(*)
 		FROM collect
 		WHERE id=#{id}
 	</select>
@@ -42,6 +52,10 @@
 		SELECT order_num, id, name, phone, prog
 		FROM collect
 		LIMIT #{offset}, #{limit}
+	</select>
+	
+	<select id="countProgress" resultType="int">
+		SELECT COUNT(*) FROM collect
 	</select>
 	
 	<!-- update : 관리자용 progress 관리 페이지용 : prog 바꾸기 -->
@@ -54,6 +68,7 @@
 	<select id="count" resultType="int">
 	SELECT count(*) FROM user;
 	</select>
+	
 	
 	
 </mapper>

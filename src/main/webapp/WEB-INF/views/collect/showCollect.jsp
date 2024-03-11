@@ -65,7 +65,7 @@
 			<c:forEach begin="${paging.startPage}" end="${paging.endPage}"
 				var="page">
 				<li class="page-item"><a
-					class="page-link ${paging.page== page ? 'active' : ''} "
+					class="page-link ${paging.page== page ? 'active' : ''}"
 					href="/showCollect?page=${page}">${page}</a></li>
 			</c:forEach>
 

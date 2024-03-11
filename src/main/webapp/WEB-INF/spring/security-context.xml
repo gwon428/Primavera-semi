@@ -17,6 +17,8 @@
 	<security:http>
 		<security:form-login login-processing-url="/login" authentication-failure-handler-ref="userLoginFailHandler"/>
 		<security:csrf disabled="true" />
+		<security:intercept-url pattern="/login"
+			access="permitAll" />
 		<security:access-denied-handler
 			error-page="/error" />
 		<security:logout logout-url="/logout"

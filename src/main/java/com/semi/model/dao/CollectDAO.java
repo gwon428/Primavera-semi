@@ -28,14 +28,28 @@ public class CollectDAO {
 		return session.selectList("collectMapper.showAllCollect", paging);
 	}
 	
+	public int showAllCollecttotal() {
+		return session.selectOne("collectMapper.countAllCollect");
+	}
+	
+	
 	// 회원용 진행상황 페이지용 
 	public List<Collect> showCollect(String id){
 		return session.selectList("collectMapper.showCollect", id);
 	}
 	
+	public int showCollecttotal(String id) {
+		return session.selectOne("collectMapper.Collect", id);
+	}
+	
+	
 	// 관리자용 progress 관리 페이지용(조건x)
 	public List<Collect> showProgress(Paging paging){
 		return session.selectList("collectMapper.showProgress", paging);
+	}
+	
+	public int showProgresstotal() {
+		return session.selectOne("collectMapper.countProgress");
 	}
 	
 	// update : 수거 신청 진행상황 변경
@@ -48,4 +62,7 @@ public class CollectDAO {
 	public int registerCollect(Collect vo) {
 		return session.insert("collectMapper.registerCollect", vo);
 	}
+	
+	
+	
 }
