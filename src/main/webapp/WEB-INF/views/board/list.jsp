@@ -31,11 +31,16 @@
 				<a href="/">Primavera</a>
 			</nav>
 			<nav>
-				<a href="#">Store</a> <a href="#">Guide</a> <a href="/collectPage">PickUp</a>
+				<a href="/map/mainMap">Store</a> <a href="#">Guide</a> <a href="/collectPage">PickUp</a>
 				<a href="/board/list">Board</a> <a href="/myPage"><i
 					class="fa-regular fa-user"></i></a>
 			</nav>
 		</header>
+
+		<div class="word">
+			<h1 class="h1">REVIEW</h1>
+		</div>
+
 		<section id="neck">
 			<div class="cover"></div>
 		</section>
@@ -57,10 +62,10 @@
 				<tbody>
 					<c:forEach items="${list}" var="board" varStatus="status">
 						<tr>
-							<td><c:if test="${not empty board.url}">
+							<td class="image-cell"><c:if test="${not empty board.url}">
 									<img
 										src="${pageContext.request.contextPath}/upload/review/${board.url}"
-										width="100" height="100" />
+										width="150" height="150" />
 								</c:if></td>
 							<td>${status.count}</td>
 							<td><a href="/board/view?no=${board.no}">${board.title}</a></td>
@@ -78,6 +83,7 @@
 						</tr>
 					</c:forEach>
 				</tbody>
+
 			</table>
 			<div class="writebtn">
 				<c:if test="${isLoggedIn}">

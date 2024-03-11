@@ -1,0 +1,35 @@
+.word .h1 {
+	position: absolute;
+	top: 460px;
+	left: 35px;
+	font-size: 4rem;
+	font-style: italic;
+	color: white;
+	margin-left: 40px;
+	animation: slide 1.8s;
+}
+
+@keyframes slide {
+    from { left: -300px; }
+    to { left: 35px; }
+}
+
+.container {
+	padding-top: 20vh;
+}
+
+body, #neck, .cover, .map, .main {
+	width: 100%;
+}
+
+#neck {
+	background-image: url(../../../resources/images/reviewbackground.jpg);
+	background-size: cover;
+	background-position: center;
+	height: 85vh;
+}
+
+.cover {
+	height: 100%;
+	background-color: rgba(50, 36, 30, 0.6);
+}

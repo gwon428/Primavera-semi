@@ -17,3 +17,17 @@ img {
 	width: 100%;
 	height: 100vh;
 }
+
+.form-image {
+	width: 450px;
+	height: 450px;	
+}
+
+.form-image img {
+	display: block;
+	margin: auto;
+	width: 450px;
+	height: 450px;
+	object-fit: cover;
+	vertical-align: middle;	
+}

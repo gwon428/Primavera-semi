@@ -30,7 +30,7 @@
 			<input type="hidden" name="no" value="${vo.no}"> <input
 				type="hidden" name="url" value="${vo.url}">
 				
-			<div class="form-group">
+			<div class="form-image">
 				<a href="/upload/review/${vo.url}" download> <img
 					src="/upload/review/${vo.url}" />
 				</a>
