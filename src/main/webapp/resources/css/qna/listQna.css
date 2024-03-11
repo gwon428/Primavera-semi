@@ -1,0 +1,49 @@
+#top {
+  background-image: url(../../../resources/images/reviewbackground.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 85vh;
+  width: 100%;
+}
+
+.blackbox {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.top-content {
+  width: 500px;
+  height: 85%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h2 {
+  position: absolute;
+  top: 460px;
+  left: 35px;
+  font-size: 4rem;
+  font-style: italic;
+  color: white;
+  margin-left: 40px;
+  animation : slide 1.8s;
+}
+
+@keyframes slide {
+  from {
+    left: -300px;
+  }
+  to {
+    left: 35px;
+  }
+}
+
+.container{
+	height : 83vh;
+	margin-top : 70px;
+}

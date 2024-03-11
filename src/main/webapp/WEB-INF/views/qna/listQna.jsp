@@ -12,13 +12,43 @@
 	rel="stylesheet"
 	integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
 	crossorigin="anonymous" />
+	
+	<link rel="stylesheet" href="../../../resources/css/reset.css" />
+	<link rel="stylesheet" href="../../../resources/css/header.css" />
+	<link rel="stylesheet" href="../../../resources/css/qna/listQna.css" />
+	<script src="https://kit.fontawesome.com/4602e82315.js" crossorigin="anonymous"></script>
+
+
 </head>
 <body>
+<main>
+					<div class="header-blackbox"></div>
+					<header>
+						<nav>
+							<a href="index.jsp">Primavera</a>
+						</nav>
+						<nav>
+							<a href="#">Store</a>
+							<a href="#">Guid</a>
+							<a href="collectPage">PickUp</a>
+							<a href="/board/list">Board</a>
+							<a href="myPage"><i class="fa-regular fa-user" id="mypage"></i></a>
+						</nav>
+					</header>
+
+
+					<section id="top">
+						<div class="blackbox"></div>
+						<div class="top-content">
+							<h2>QnA</h2>
+						</div>
+					</section>
+
 
 	<div class="container">
 
 		<div class="header">
-			<h1>Qna 페이지</h1>
+			<h1>Q&A</h1>
 
 			<a href="/writeQna" class="btn btn-outline-warning">게시글 등록</a>
 		</div>
@@ -51,7 +81,9 @@
 				</c:forEach>
 			</tbody>
 		</table>
-	</div>
+	
+	
+	
 	<nav>
 			<ul class="pagination">
 				<li class="page-item ${paging.prev ? '' : 'disabled'}"><a class="page-link" href="/listQna?page=${paging.startPage - 1}">Previous</a>
@@ -64,5 +96,6 @@
 				<li class="page-item ${paging.next ? '' : 'disabled'}"><a class="page-link" href="/listQna?page=${paging.endPage + 1}">Next</a></li>
 			</ul>
 		</nav>
+		</div>
 </body>
 </html>

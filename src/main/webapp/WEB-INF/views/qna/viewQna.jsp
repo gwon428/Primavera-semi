@@ -2,6 +2,7 @@
 pageEncoding="UTF-8"%> <%@taglib uri="http://www.springframework.org/tags"
 prefix="spring"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
   <head>
@@ -18,9 +19,11 @@ prefix="spring"%>
     <fmt:formatDate value="${qna.writeDate}"
 								pattern="yyyy-MM-dd HH:mm" />
     </div>
+   
     <div id="url" name="url">사진 : <img src="/upload/qna/${qna.url}"/></div>
-    
+
     <button value="수정" id="btn"><a href="updateQna" id="updateQna">수정</a></button>
     <button value="삭제" id="btndelete"><a href="/deleteQna?qnaNum=${qna.qnaNum}" id="deleteQna">삭제</a></button>
+     <button value="목록" id="btnlist"><a href="listQna" id="listQna">목록</a></button>
   </body>
 </html>
