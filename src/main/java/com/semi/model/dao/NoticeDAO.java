@@ -37,7 +37,6 @@ public class NoticeDAO {
 	}
 
 	public int update(Notice n) {
-		System.out.println("DAO");
 		return session.update("noticeMapper.update", n);
 	}
 
