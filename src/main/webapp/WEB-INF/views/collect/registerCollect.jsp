@@ -10,7 +10,7 @@
 <title>Insert title here</title>
 
 <link rel="stylesheet" href="../../../resources/css/reset.css" />
-<link rel="stylesheet" href="../../../resources/css/register.css" />
+<link rel="stylesheet" href="../../../resources/css/collect/register.css" />
 
 <script
 		src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"

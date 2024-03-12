@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "Cafe24Oneprettynight";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff")
+    format("woff");
+  font-style: normal;
+}
+
 #top {
   background-image: url(../../../resources/images/reviewbackground.jpg);
   background-size: cover;
@@ -31,7 +38,7 @@ h2 {
   font-style: italic;
   color: white;
   margin-left: 40px;
-  animation : slide 1.8s;
+  animation: slide 1.8s;
 }
 
 @keyframes slide {
@@ -43,7 +50,83 @@ h2 {
   }
 }
 
-.container{
-	height : 83vh;
-	margin-top : 70px;
+.main {
+  height: 83vh;
+  margin-top: 70px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.header h1 {
+  font-size: 4rem;
+  font-weight: bolder;
+  font-family: "Cafe24Oneprettynight";
+  margin-bottom:20px;
+}
+#writeQna {
+  position: relative;
+  left: 430px;
+  margin: 20px 0;
+  padding: 7px;
+  font-size: 1rem;
+  background-color: #93b19a;
+  color: white;
+  border: none;
+  font-family: "Cafe24Oneprettynight";
+  border-radius: 6px;
+}
+table {
+  margin: 12px 0;
+  position: relative;
+  border-top: 1px solid #757575;
+  border-bottom: 1px solid #757575;
+  min-height: 440px;
+  width: 950px;
+}
+
+tr {
+  position: relative;
+  display:grid;
+  grid-template-columns: 0.5fr 3fr 1fr 1fr 0.5fr;
+  width: 950px;
+  height: 40px;
+  border-bottom: 1px solid #eaeaea;
+}
+th {
+  font-family: "Cafe24Oneprettynight";
+  font-size: 1rem;
+  font-weight: bolder;
+  margin: 10px 0;
+}
+td{
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	font-family: "Cafe24Oneprettynight";
+	font-weight : bolder;
+}
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.page-link{
+	
+	margin : 0 10px;
+	font-family: "Cafe24Oneprettynight";
+	font-weight : bolder;
+	font-size : 15px;
+}
+
+#page_num{
+    display: inline-block;
+    text-align: center;
+    font-size: 16px;
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
 }
