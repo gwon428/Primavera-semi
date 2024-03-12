@@ -60,7 +60,6 @@
 				</tr>
 			</c:forEach>
 		</table>
-		<nav>
 			<div id="page">
 				<ul class="pagination">
 					<li class="page-item ${paging.prev ? '' : 'disabled'}">
@@ -93,7 +92,6 @@
 					</li>
 				</ul>
 			</div>
-		</nav>
 	</main>
 </body>
 

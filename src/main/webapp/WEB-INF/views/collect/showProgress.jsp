@@ -49,7 +49,7 @@
 				
 				<c:forEach items="${progress}" var="item">
 					<tr>
-						<td>${item.orderNum}</td>
+						<td class="numbering">${item.orderNum}</td>
 						<td>${item.id}</td>
 						<td>${item.name}</td>
 						<td>${item.phone}</td>
@@ -91,10 +91,10 @@
 		</div>
 		<div id="manageProgress">
 		
-			<table border=1>
+			<table border=1 class="progress">
 				<tr>
-					<th>주문번호</th>
-					<th>진행 상황 변경</th>
+					<th class="progth">주문번호</th>
+					<th class="progth">진행 상황 변경</th>
 				</tr>
 				<tr>
 					<td>

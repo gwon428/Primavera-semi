@@ -1,5 +1,5 @@
 h2{
-	padding-top : 150px;
+	padding-top : 50px;
 	text-align: center;
 	font-size: 2rem;
 	font-weight: bolder;
@@ -38,6 +38,7 @@ th{
 	text-align:center;
 	border-bottom: 0.5px solid gray;
 	margin-bottom: 15px;
+	width: 170px;
 }
 
 
@@ -63,7 +64,7 @@ td{
 	display: flex;
 	justify-content: space-evenly;
 	padding-top: 25px;
-    width: 100vw;
+	width: 100vw;
     position: absolute;
     bottom: 80px;
 }

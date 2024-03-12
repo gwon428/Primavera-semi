@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="/resources/css/reset.css" />
 <link href="../../resources/css/header.css" rel="stylesheet"
 	type="text/css">
-<link href="../../resources/css/user/allUser.css" rel="stylesheet"
+<link href="../../resources/css/admin/showAllCollect.css" rel="stylesheet"
 	type="text/css">
 <meta charset="UTF-8">
 <script src="https://kit.fontawesome.com/4602e82315.js"
@@ -26,11 +26,12 @@
 	</nav>
 </header>
 <body>
-	<div>
+<main>
+	<div id="top"></div>
 		<h2>전체 수거 신청 정보 보기</h2>
 		<table border=1 class="table">
 			<tr>
-				<th scope="col">주문번호</th>
+				<th scope="col" style="width:75px;">주문번호</th>
 				<th scope="col">아이디</th>
 				<th scope="col">이름</th>
 				<th scope="col">전화번호</th>
@@ -44,12 +45,12 @@
 
 			<c:forEach items="${list}" var="item">
 				<tr>
-					<td>${item.orderNum}</td>
+					<td class="no">${item.orderNum}</td>
 					<td>${item.id}</td>
 					<td>${item.name}</td>
 					<td>${item.phone}</td>
 					<td>${item.postCode}</td>
-					<td>${item.roadAddress}</td>
+					<td class="roadAddr">${item.roadAddress}</td>
 					<td>${item.detailAddress}</td>
 					<td>${item.collectionDate}</td>
 					<td>${item.doorPwd}</td>
@@ -57,17 +58,18 @@
 				</tr>
 			</c:forEach>
 		</table>
-		<ul class="pagination">
-			<li class="page-item ${paging.prev ? '' : 'disabled'}"><c:choose>
+		<div id="page">
+			<ul class="pagination">
+				<li class="page-item ${paging.prev ? '' : 'disabled'}">
+					<c:choose>
 					<c:when test="${paging.startPage == 1}">
-						<a class="page-link"
-							href="/showAllCollect?page=${paging.startPage=1}">Previous</a>
+						<a class="page-link" href="/showAllCollect?page=${paging.startPage=1}">Previous</a>
 					</c:when>
 					<c:otherwise>
-						<a class="page-link"
-							href="/showAllCollect?page=${paging.startPage-1}">Previous</a>
+						<a class="page-link" href="/showAllCollect?page=${paging.startPage-1}">Previous</a>
 					</c:otherwise>
-				</c:choose></li>
+				</c:choose>
+				</li>
 
 			<c:forEach begin="${paging.startPage}" end="${paging.endPage}"
 				var="page">
@@ -76,7 +78,8 @@
 					href="/showAllCollect?page=${page}">${page}</a></li>
 			</c:forEach>
 
-			<li class="page-item ${paging.next ? '' : 'disabled'}"><c:choose>
+			<li class="page-item ${paging.next ? '' : 'disabled'}">
+				<c:choose>
 					<c:when test="${paging.endPage < 10}">
 						<a class="page-link"
 							href="/showAllCollect?page=${paging.endPage=paging.endPage}">Next</a>
@@ -85,8 +88,10 @@
 						<a class="page-link"
 							href="/showAllCollect?page=${paging.endPage + 1}">Next</a>
 					</c:otherwise>
-				</c:choose></li>
-		</ul>
-	</div>
+				</c:choose>
+				</li>
+			</ul>
+		</div>
+	</main>
 </body>
 </html>

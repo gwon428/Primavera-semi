@@ -8,12 +8,12 @@
 <link rel="stylesheet" href="/resources/css/reset.css" />
 <link href="../../resources/css/header.css" rel="stylesheet"
 	type="text/css">
-<link href="../../resources/css/user/allUser.css" rel="stylesheet"
+<link href="../../resources/css/admin/showReview.css" rel="stylesheet"
 	type="text/css">
 <meta charset="UTF-8">
 <script src="https://kit.fontawesome.com/4602e82315.js"
 	crossorigin="anonymous"></script>
-<title>Insert title here</title>
+<title>내가 쓴 후기</title>
 </head>
 <header>
 	<nav>
@@ -26,7 +26,8 @@
 	</nav>
 </header>
 <body>
-<div>
+<main>
+<div id="top"></div>
 		<h2>내가 쓴 후기</h2>
 		<table border=1 class="table">
 			<tr>
@@ -45,6 +46,7 @@
 				</tr>
 			</c:forEach>
 		</table>
+		<div id="page">
 		<ul class="pagination">
 			<li class="page-item ${paging.prev ? '' : 'disabled'}"><c:choose>
 					<c:when test="${paging.startPage == 1}">
@@ -75,6 +77,7 @@
 					</c:otherwise>
 				</c:choose></li>
 		</ul>
-	</div>
+		</div>
+	</main>
 </body>
 </html>
