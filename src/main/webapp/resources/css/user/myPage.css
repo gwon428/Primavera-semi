@@ -107,6 +107,7 @@ h2 {
 	z-index: 6;
 	text-shadow: 0px 0px 10px gray;
 }
+
 .logobox{
 	position: relative;
 	z-index: 5;
@@ -114,6 +115,7 @@ h2 {
 	text-align: center;
 	border-radius: 40px;
 }
+
 #Menu {
 	margin: 0 auto;
 	width: 950px;

@@ -9,12 +9,12 @@
 <link rel="stylesheet" href="/resources/css/reset.css" />
 <link href="../../resources/css/header.css" rel="stylesheet"
 	type="text/css">
-<link href="../../resources/css/admin/showQna.css" rel="stylesheet"
+<link href="../../resources/css/user/showQna.css" rel="stylesheet"
 	type="text/css">
 <meta charset="UTF-8">
 <script src="https://kit.fontawesome.com/4602e82315.js"
 	crossorigin="anonymous"></script>
-<title>Insert title here</title>
+<title>내 Q&A</title>
 </head>
 <header>
 	<nav>
@@ -22,14 +22,14 @@
 	</nav>
 	<nav>
 		<a href="#">Store</a> <a href="#">Guide</a> <a href="collectPage">PickUp</a>
-		<a href="#">Board</a> <a href="myPage"><i
+		<a href="board/list">Board</a> <a href="myPage"><i
 			class="fa-regular fa-user"></i></a>
 	</nav>
 </header>
 <body>
 <main>
 <div id="top"></div>
-		<h2>내가 쓴 qna 보기</h2>
+		<h2>내 Q&A</h2>
 		<table border=1 class="table">
 			<tr>
 				<th>질문번호</th>
@@ -41,10 +41,10 @@
 
 			<c:forEach items="${list}" var="item">
 				<tr>
-				<td class="no">${status.count + paging.pageSize * (paging.page-1)}</td>
+				<td class="no">${item.qnaNum}</td>
 					 <td><a href="/viewQna?qnaNum=${item.qnaNum}">${item.title}</a></td>
 					 <td>${item.id}</td>
-					 <td><fmt:formatDate value="${item.writeDate}" pattern="yyyy-MM-dd HH:mm" /></td>
+					 <td><fmt:formatDate value="${item.writeDate}" pattern="yy-MM-dd" /></td>
 						<td>${item.status}</td>
 				</tr>
 			</c:forEach>

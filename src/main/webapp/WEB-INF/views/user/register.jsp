@@ -3,9 +3,7 @@
 	<html>
 
 	<head>
-		<link rel="stylesheet" href="/resources/css/reset.css" />
-		<link href="../../resources/css/header.css" rel="stylesheet" type="text/css">
-		<link href="../../resources/css/user/registerUser.css" rel="stylesheet" type="text/css">
+
 
 		<meta charset="UTF-8">
 		<script src="https://kit.fontawesome.com/4602e82315.js" crossorigin="anonymous"></script>
@@ -18,7 +16,7 @@
 		</nav>
 		<nav>
 			<a href="#">Store</a> <a href="#">Guide</a> <a href="collectPage">PickUp</a>
-			<a href="#">Board</a> <a href="myPage"><i class="fa-regular fa-user"></i></a>
+			<a href="board/list">Board</a> <a href="myPage"><i class="fa-regular fa-user"></i></a>
 		</nav>
 	</header>
 

@@ -54,12 +54,30 @@ public class UserDAO {
 		return session.selectOne("userMapper.findId", user);
 	}
 	
+	public User checkEmail(User user) {
+		return session.selectOne("userMapper.checkEmail", user);
+	}
+	
+	
 	// 내가 쓴 리뷰 리스트 출력
 	public List<Board> showReview(String id){
 		return session.selectList("board.showReview", id);
 	}
+
+	public int totalmyReview(String id) {
+		return session.selectOne("board.countmyReview", id);
+	}
 	
 	public List<Qna> showQna(String id){
 		return session.selectList("qnaMapper.showQna", id);
+	}
+	
+	public int totalmyQna(String id) {
+		return session.selectOne("qnaMapper.countmyQna", id);
+	}
+
+	// 비밀번호 재설정
+	public int updatePwd(User user) {
+		return session.update("userMapper.updatePwd", user);
 	}
 }

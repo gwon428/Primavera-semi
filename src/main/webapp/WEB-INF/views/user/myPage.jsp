@@ -12,7 +12,6 @@
 	type="text/css">
 <link href="../../resources/css/user/myPage.css" rel="stylesheet"
 	type="text/css">
-<meta charset="UTF-8">
 <script src="https://kit.fontawesome.com/4602e82315.js"
 	crossorigin="anonymous"></script>
 <title>Insert title here</title>
@@ -23,7 +22,7 @@
 	</nav>
 	<nav>
 		<a href="#">Store</a> <a href="#">Guide</a> <a href="collectPage">PickUp</a>
-		<a href="#">Board</a> <a href="myPage"><i
+		<a href="board/list">Board</a> <a href="myPage"><i
 			class="fa-regular fa-user"></i></a>
 	</nav>
 </header>
@@ -43,7 +42,7 @@
 
 				<div id="anonymousUserMenu">
 					<a href="findId">아이디 찾기 | </a>
-					<a href="findPwd">비밀번호 찾기 | </a>
+					<a href="changePwd">비밀번호 찾기 | </a>
 					<a href="register">회원가입</a>
 				</div>
 			</main>

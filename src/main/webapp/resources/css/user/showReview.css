@@ -19,7 +19,6 @@ h2{
 
 table {
 	text-align: center;
-	width: 100vw;
 }
 
 table tr:first-child  {
@@ -38,7 +37,6 @@ th{
 	text-align:center;
 	border-bottom: 0.5px solid gray;
 	margin-bottom: 15px;
-	width: 170px;
 }
 
 
@@ -68,5 +66,15 @@ td{
     position: absolute;
     bottom: 80px;
 }
+#title{
+	width: 180px;
+}
 
+#content{
+	width: 400px;
+	background-color: pink;
+}
 
+#date{
+	width: 180px;
+}

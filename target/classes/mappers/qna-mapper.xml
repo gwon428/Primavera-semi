@@ -60,4 +60,9 @@
 		WHERE
 		id=#{id}
 	</select>
+	
+	<select id="countmyQna" parameterType="String" resultType="int">
+		SELECT COUNT(*) FROM qna
+		WHERE id=#{id}
+	</select>
 </mapper>

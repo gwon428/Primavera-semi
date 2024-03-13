@@ -50,6 +50,12 @@
 			WHERE id=#{id}
 	</update>
 	
+	<update id="updatePwd" parameterType="User">
+		UPDATE user
+		SET password=#{password}
+		WHERE id=#{id}
+	</update>
+	
 	<update id="deleteUser" parameterType="User">
 		UPDATE user
 		SET enabled = 0
@@ -72,6 +78,9 @@
 	WHERE name=#{name} AND email=#{email}
 	</select>
 	
-	
+	<select id="checkEmail" parameterType="User" resultMap="userMap">
+	SELECT * FROM user
+	WHERE id=#{id} AND email=#{email}
+	</select>
 	
 </mapper>

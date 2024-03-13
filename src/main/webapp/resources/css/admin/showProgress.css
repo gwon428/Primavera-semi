@@ -5,32 +5,56 @@ main{
 	justify-content: center;
 	align-items: center;
 	width: 100vw;
+	font-family: "Noto Serif KR", serif;
+}
+
+#progressbackground{
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	background-color: skyblue;
+	
+	background-image: url(../../../resources/images/progressbackground.jpg);
+	background-size: cover;
+	background-position: center;
+	z-index: -3;
+}
+
+#background-blackbox{
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(70, 70, 70, 0.8);
 }
 
 h1{
 	font-size: 1.5rem;
 	margin-bottom: 30px;
 	font-weight: bolder;
+	text-shadow: 0px 0px 5px gray;
 }
 
 
 form{
 	display: flex;
 	flex-direction: row;
+	background-color: rgba(200, 200, 200, 0.8);
+    padding: 30px;
+    border-radius: 10px;
 }
 
 #manageProgress{
-	border: 1px solid #c0c0c0;
-	border-radius: 10px;
+	background-color: rgba(0, 0, 0, 0.1);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-evenly;
 	width : 290px;
 	height: 445px;
-	margin-right: 50px;
+	padding-right: 25px;
 	margin-top : 55px;
-	margin-left: 30px;
+	margin-left: 15px;
+	border: 1px solid transparent;
+    border-image: linear-gradient(to right, gray, transparent, white) 1;
 }
 
 .progth{
@@ -43,12 +67,13 @@ form{
 }
 
 #progtable{
-	border: 1px solid #c0c0c0;
 	border-radius: 20px;
 	width:700px;
 	height: 450px;
 	margin-top: 30px;
 	margin-right: 20px;
+	border: 1px solid transparent;
+    border-image: linear-gradient(to left, gray, transparent, white) 1;
 }
 
 .table{
@@ -66,7 +91,6 @@ form{
 th{
 	width: 130px;
 	height: 35px;
-	border: 1px solid pink;
 	font-weight: bolder;
 	padding-top: 8px;
 }
@@ -84,6 +108,7 @@ td{
 	display: flex;
 	justify-content: space-evenly;
 	padding-top: 25px;
+	padding-bottom: 10px;
 	width: 700px;
 	position: absolute;
     bottom: 230px;
@@ -108,13 +133,22 @@ td{
 }
 
 #btn{
+	border-radius: 50px;
 	height: 40px;
     width: 130px;
-    font-weight: bolder;
     font-size: 1rem;
+    margin-left: 20px;
+}
+
+#btn:hover{
+	background-color: white;
+	cursor:pointer;
+	font-weight: bolder;
 }
 
 .progress{
 	height: 90px;
     margin-top: 30px
 }
+
+

@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+     <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,9 +9,8 @@
 <link rel="stylesheet" href="/resources/css/reset.css" />
 <link href="../../resources/css/header.css" rel="stylesheet"
 	type="text/css">
-<link href="../../resources/css/admin/showReview.css" rel="stylesheet"
+<link href="../../resources/css/user/showReview.css" rel="stylesheet"
 	type="text/css">
-<meta charset="UTF-8">
 <script src="https://kit.fontawesome.com/4602e82315.js"
 	crossorigin="anonymous"></script>
 <title>내가 쓴 후기</title>
@@ -21,7 +21,7 @@
 	</nav>
 	<nav>
 		<a href="#">Store</a> <a href="#">Guide</a> <a href="collectPage">PickUp</a>
-		<a href="#">Board</a> <a href="myPage"><i
+		<a href="board/list">Board</a> <a href="myPage"><i
 			class="fa-regular fa-user"></i></a>
 	</nav>
 </header>
@@ -35,14 +35,16 @@
 				<th scope="col">내용</th>
 				<th scope="col">주문번호</th>
 				<th scope="col">작성날짜</th>
+				<th scope="col">별점</th>
 			</tr>
 
 			<c:forEach items="${list}" var="item">
 				<tr>
-					<td>${item.title}</td>
-					<td>${item.content}</td>
+					<td id="title">${item.title}</td>
+					<td id="content">${item.content}</td>
 					<td>${item.orderNum}</td>
-					<td>${item.date}</td>
+					<td id="date"><fmt:formatDate value="${item.date}" pattern="yyyy-MM-dd HH:mm" /></td>
+					<td>${item.rating}</td>
 				</tr>
 			</c:forEach>
 		</table>

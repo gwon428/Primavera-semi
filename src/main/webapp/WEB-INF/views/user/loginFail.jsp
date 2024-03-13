@@ -47,7 +47,7 @@ align-items:center;
 	</nav>
 	<nav>
 		<a href="#">Store</a> <a href="#">Guide</a> <a href="collectPage">PickUp</a>
-		<a href="#">Board</a> <a href="myPage"><i class="fa-regular fa-user"></i></a>
+		<a href="board/list">Board</a> <a href="myPage"><i class="fa-regular fa-user"></i></a>
 	</nav>
 </header>
 <body>

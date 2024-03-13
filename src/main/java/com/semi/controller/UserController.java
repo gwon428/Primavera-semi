@@ -2,12 +2,17 @@ package com.semi.controller;
 
 
 import java.util.List;
+import java.util.Random;
 
+import javax.mail.MessagingException;
+import javax.mail.internet.MimeMessage;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
+import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -36,6 +41,9 @@ public class UserController {
 
 	@Autowired
 	private UserService service;
+	
+	@Autowired
+	JavaMailSenderImpl mailSender;
 		
 	// 마이페이지로 이동 (로그인 + 기타 메뉴 보이는 화면)
 	@GetMapping("myPage")
@@ -144,8 +152,6 @@ public class UserController {
 		return "account/findId";
 	}
 	
-	private String id;
-	
 	@PostMapping("/findId")
 	public String findId(User user, Model model) {
 		// 찾고자 하는 사용자 정보(이름, 이메일)을 user 형태로 받아 jsp에서 출력할 수 있도록 바인딩
@@ -153,7 +159,6 @@ public class UserController {
 		if(service.findId(user) != null) {
 			// 찾은 user 정보를 jsp에서 출력할 수 있도록 바인딩
 			model.addAttribute("user", service.findId(user));
-			id = service.findId(user).getId();
 			// 찾기를 성공했을 경우 나오는 페이지
 			return "account/findIdResult";
 		} else {
@@ -161,25 +166,85 @@ public class UserController {
 			return "account/findFail";
 		}
 	}	
+	
+	// 로그인 찾기 후 비밀번호 찾기로 이동..
+	@GetMapping("changePwd")
+	public String changePwd(String id, Model model) {
+		model.addAttribute("id", id);
+		return "account/changePwd";
+	}
+	
+	// 메일 전송
+	@ResponseBody
+	@PostMapping("/EmailAuth")
+	public int emailAuth(String email) {
+		
+		Random random = new Random();
+		// 난수 범위 : 111111~999999 (6자리 난수)
+		int checkNum = random.nextInt(888888)+111111;
+		
+		String setForm = "primavera240327@gmail.com";
+		String toMail = email;
+		String title = "회원가입 인증 이메일입니다.";
+		String content = "인증 코드는 " + checkNum + "입니다. " +
+					"<br>" + "해당 인증 코드를 인증 코드 확인란에 기입하여 주세요.";
+		
+		MimeMessage message = mailSender.createMimeMessage();
+		try {
+			MimeMessageHelper helper = new MimeMessageHelper(message, true, "utf-8");
+			helper.setFrom(setForm);
+			helper.setTo(toMail);
+			helper.setSubject(title);
+			helper.setText(content, true);
+			mailSender.send(message);
+		} catch (MessagingException e) {
+			e.printStackTrace();
+		}
+		
+		return checkNum;
+	}
+	
+	@PostMapping("checkEmail")
+	public String checkEmail(User user, Model model) {
+		System.out.println("checkEmail!! : " + user);
+		model.addAttribute("id", user.getId());
+		return "account/changePassword";
+	}
+	
+	
+	@PostMapping("updatePwd")
+	public String updatePwd(User user, HttpServletRequest request, Authentication authentication) {
+		HttpSession session = request.getSession();
+		System.out.println("비밀번호 재설정 .. " + user);
+		
+		if(service.updatePwd(user)==1) {
+			session.setAttribute("user", user);
+		}
+		return "user/myPage";
+	}
+	
+	
 	// 내가 쓴 후기 모아보기
 	@GetMapping("showReview")
-	public String showReview(Model model) {
+	public String showReview(Model model, Paging paging) {
 		List<Board> list = service.showReview();
 		model.addAttribute("list", list);
+		model.addAttribute("paging", new Paging(paging.getPage(), service.showReviewtotal()));
 		return "user/showReview";
 	}
 	
 	// 내가 쓴 qna 모아보기
 	@GetMapping("showQna")
-	public String showQna(Model model) {
+	public String showQna(Model model, Paging paging) {
 		List<Qna> list = service.showQna();
 		model.addAttribute("list", list);
+		model.addAttribute("paging", new Paging(paging.getPage(), service.showQnatotal()));
 		return "user/showQna";
 	}
 	
 	@GetMapping("/findIdlogin")
-	public String findIdLogin(Model model) {
-		model.addAttribute("user", id);
+	public String findIdLogin(String id, Model model) {
+		model.addAttribute("id", id);
 		return "/user/findIdLogin";
 	}
 	

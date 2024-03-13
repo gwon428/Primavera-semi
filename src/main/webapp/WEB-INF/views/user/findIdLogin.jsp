@@ -7,7 +7,6 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<meta charset="UTF-8">
 <link rel="stylesheet" href="/resources/css/reset.css" />
 <link href="../../resources/css/header.css" rel="stylesheet"
 	type="text/css">
@@ -24,7 +23,7 @@
 	</nav>
 	<nav>
 		<a href="#">Store</a> <a href="#">Guide</a> <a href="collectPage">PickUp</a>
-		<a href="#">Board</a> <a href="myPage"><i
+		<a href="board/list">Board</a> <a href="myPage"><i
 			class="fa-regular fa-user"></i></a>
 	</nav>
 </header>
@@ -33,7 +32,7 @@
 		<h1>로그인</h1>
 		<form action="/login" method="post">
 			<div class="idpwd">
-				<input type="text" name="username" value="${user}" placeholder="아이디" />
+				<input type="text" name="username" value="${id}" placeholder="아이디" />
 				<input type="password" name="password" placeholder="비밀번호" />
 			</div>
 			<input type="submit" value="Login" class="loginbutton">

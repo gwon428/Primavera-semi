@@ -12,7 +12,11 @@
 	type="text/css">
 <link href="../../resources/css/admin/showProgress.css" rel="stylesheet"
 	type="text/css">
-<meta charset="UTF-8">
+	
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR&display=swap" rel="stylesheet">
+
 <script src="https://kit.fontawesome.com/4602e82315.js"
 	crossorigin="anonymous"></script>
 <title>Insert title here</title>
@@ -24,15 +28,17 @@
 	</nav>
 	<nav>
 		<a href="#">Store</a> <a href="#">Guide</a> <a href="collectPage">PickUp</a>
-		<a href="#">Board</a> <a href="myPage"><i
+		<a href="board/list">Board</a> <a href="myPage"><i
 			class="fa-regular fa-user"></i></a>
 	</nav>
 </header>
 <body>
 <sec:authentication property="principal" var="user" />
+<section id="progressbackground">
+	<div id="background-blackbox"></div>
+</section>
 <main>
 		<form action="update_ok" method="post" id="update" name="update">
-		
 		<div class="left">
 		<h1>수거 신청 현황 관리</h1>
 		<div id="progtable">

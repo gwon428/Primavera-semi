@@ -3,6 +3,7 @@ package com.semi.service;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -65,11 +66,22 @@ public class UserService implements UserDetailsService{
 		return dao.findId(user);
 	}
 	
+	public User checkEmail(User user) {
+		return dao.checkEmail(user);
+	}
+	
+	
 	// 내가 쓴 후기 리스트 출력
 	public List<Board> showReview(){
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		UserDetails userDetails = (UserDetails)principal;
 		return dao.showReview(userDetails.getUsername());
+	}
+	
+	public int showReviewtotal() {
+		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		UserDetails userDetails = (UserDetails)principal;
+		return dao.totalmyReview(userDetails.getUsername());
 	}
 	
 	// 내가 쓴 qna 리스트 출력
@@ -79,5 +91,17 @@ public class UserService implements UserDetailsService{
 		return dao.showQna(userDetails.getUsername());
 	}
 	
+	public int showQnatotal() {
+		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		UserDetails userDetails = (UserDetails)principal;
+		return dao.totalmyQna(userDetails.getUsername());
+	}
+
+	public int updatePwd(User user) {
+		String inputPw = bcpe.encode(user.getPassword());
+		System.out.println("service : " + inputPw);
+		user.setPassword(inputPw);
+		return dao.updatePwd(user);
+	}
 	
 }

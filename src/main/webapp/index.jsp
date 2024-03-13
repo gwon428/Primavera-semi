@@ -137,13 +137,13 @@
               <ul>Store</ul>
             </a>
             <a href="#">
-              <ul>Guid</ul>
+              <ul>Guide</ul>
             </a>
             <a href="collectPage">
               <ul>PickUp</ul>
             </a>
             <a href="listpage">
-              <ul>Bord</ul>
+              <ul>Board</ul>
             </a>
           </div>
           <div class="row_SNS">
