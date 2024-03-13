@@ -1,4 +1,3 @@
-/* 별점 */
 .star-rating .fas {
 	color: #FFD700;
 }
@@ -7,18 +6,72 @@
 	color: #CCCCCC;
 }
 
-a:link, a:visited, a:active {
+.word .h1 {
+	position: absolute;
+	top: 460px;
+	left: 35px;
+	font-size: 4rem;
+	font-style: italic;
+	color: white;
+	margin-left: 40px;
+	animation: slide 1.8s;
+}
+
+@keyframes slide {
+    from { left: -300px; }
+    to { left: 35px; }
+}
+
+.container {
+	padding-top: 20vh;
+}
+
+table {
+	font-size: .9em;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, .25);
+	width: 100%;
+	border-collapse: collapse;
+	border-radius: 15px;
+	overflow: hidden;
+	background-color: #FFFFFF;
+	text-align: left;
+}
+
+table th, table td {
+	vertical-align: middle;
+	width: 16.66%;
+}
+
+.image-cell {
+	width: 150px;
+	height: 150px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #FFFFFF;
+}
+
+.image-cell img {
+	display: block;
+	margin: auto;
+	max-width: 100%;
+	max-height: 100%;
+	object-fit: cover;
+	vertical-align: middle;
+}
+
+.table a:link, .table a:visited, .table a:active {
 	text-decoration: none;
 	color: #383636;
 }
 
-a:hover {
+.table a:hover {
 	text-decoration: underline;
 	font-weight: bold;
 	color: #383636;
 }
 
-body {
+body, #neck, .cover, .top, .main {
 	width: 100%;
 }
 
@@ -27,17 +80,14 @@ body {
 	background-size: cover;
 	background-position: center;
 	height: 85vh;
-	width: 100%;
 }
 
 .cover {
-	width: 100%;
 	height: 100%;
 	background-color: rgba(50, 36, 30, 0.6);
 }
 
 .top {
-	width: 500px;
 	height: 100%;
 	position: absolute;
 	top: 0;
@@ -52,15 +102,8 @@ body {
 	text-align: center;
 }
 
-h1 {
-	margin: 10px;
-	justify-content: center;
-	text-align: center;
-}
-
 .main {
 	background-color: rgb(229, 227, 219);
-	width: 100%;
 	height: 100vh;
 }
 
@@ -69,40 +112,15 @@ h1 {
 	margin: 0 auto;
 }
 
-table {
-	font-size: .9em;
-	box-shadow: 0 2px 5px rgba(0, 0, 0, .25);
-	width: 100%;
-	border-collapse: collapse;
-	border-radius: 15px;
-	overflow: hidden;
+.pagination>li>a, .pagination>li>a:focus, .pagination>li>a:hover,
+	.pagination>li>span:focus, .pagination>li>span:hover {
+	background-color: white;
+	color: #FFC107;
+	border-color: #ddd;
 }
 
-.pagination > li > a
-{
-    background-color: white;
-    color: #FFC107;
-}
-
-.pagination > li > a:focus,
-.pagination > li > a:hover,
-.pagination > li > span:focus,
-.pagination > li > span:hover
-{
-    color: #FFC107;
-    background-color: #eee;
-    border-color: #ddd;
-}
-
-.pagination > .active > a
-{
-    color: white;
-    background-color: #FFC107 !Important;
-    border: solid 1px #FFC107 !Important;
-}
-
-.pagination > .active > a:hover
-{
-    background-color: #FFC107 !Important;
-    border: solid 1px #FFC107;
+.pagination>.active>a, .pagination>.active>a:hover {
+	color: white;
+	background-color: #FFC107 !Important;
+	border: solid 1px #FFC107;
 }
