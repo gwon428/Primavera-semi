@@ -24,11 +24,16 @@
       <nav>
         <a href="#">Primavera</a>
       </nav>
-      <nav>
+        <nav>
         <a href="/map/mainmap">Store</a>
-        <a href="#">Guide</a>
+        <a href="#">Guid</a>
         <a href="collectPage">PickUp</a>
-        <a href="/board/list">Board</a>
+        <a href="list">Board</a>
+        <span>
+          <a href="/board/list">Board</a>
+          <a href="#">Q & A</a>
+          <a href="#">Notice</a>
+        </span>
         <a href="myPage"><i class="fa-regular fa-user"></i></a>
       </nav>
     </header>
