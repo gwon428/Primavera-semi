@@ -1,0 +1,37 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="qnaAnswerMapper">
+
+<resultMap type="QnaAnswer" id="qnaAnswerMap">
+		<id property="qnaNum" column="qna_num"/>
+		<result property="id" column="id"/>
+		<result property="content" column="content"/>
+		<result property="url" column="url"/>
+		<result property="answerDate" column="answer_date"/>
+	</resultMap>
+	
+	<!-- insert -->
+	<insert id="insertQnaAnswer" parameterType="QnaAnswer">
+		INSERT INTO(qna_num, id, content, url) 
+		VALUES(#{qnaNum}, #{id}, #{content}, #{url})
+	</insert>
+	
+	<!-- select -->
+	<select id="selectQnaAnswer" parameterType="int" resultMap="qnaAnswerMap">
+		SELECT * FROM qna_answer
+		WHERE qna_num = #{qnaNum}
+	</select>
+	
+	<!-- update -->
+	<update id="updateQnaAnswer" parameterType="QnaAnswer">
+		UPDATE qna_answer  
+		SET content = #{content}
+		WHERE qna_num = #{qnaNum}
+	</update>
+	
+	
+	<!-- delete -->
+	<delete id="deleteQnaAnswer" parameterType="int">
+	DELETE FROM qna_answer
+	WHERE qna_num=#{qnaNum}
+	</delete>
+</mapper>

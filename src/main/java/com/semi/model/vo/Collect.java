@@ -18,4 +18,5 @@ public class Collect {
 	private String doorPwd;
 	private String request;
 	private String prog;
+	private int kg;
 }

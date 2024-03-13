@@ -43,7 +43,7 @@ public class QnaController {
 			return "qna/insertQna";
 		}
 		
-		// 글 등록
+		// 글 등록(insert)
 		@PostMapping("insertQna")
 		public String insertQna(Qna qna) throws IllegalStateException, IOException {
 			if(!qna.getFile().isEmpty()) {
@@ -63,7 +63,7 @@ public class QnaController {
 			return "redirect:/listQna";
 		}
 		
-		// 리스트 페이징 처리 
+		// 리스트 페이징 처리 (select)
 		@GetMapping("listQna")
 		public String showFilm(Model model, PagingQna paging) {
 			
@@ -80,15 +80,13 @@ public class QnaController {
 	//	리스트에서 제목 누르면 qna 내용 적혀있는 페이지로 넘어가는!
 		@GetMapping("viewQna")
 		public String view(Model model, String qnaNum) {
-			//System.out.println("no : "+ qnaNum );
 			int qnanum = Integer.parseInt(qnaNum);
-			//System.out.println("qnanum : "  + qnanum);
 			qna = service.select(qnanum);
-			//System.out.println("qna : " + qna);
 			model.addAttribute("qna", qna);
 			return "/qna/viewQna";
 		}
   
+		//수정(update)
 	@GetMapping("updateQna")
 	public String updateQna(Model model) {
 		model.addAttribute("qna", qna);
@@ -110,6 +108,7 @@ public class QnaController {
 		}
   
 
+	// 삭제(delete)
  @GetMapping("/deleteQna")
 	public String delete(String qnaNum) {
 		

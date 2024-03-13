@@ -9,7 +9,7 @@
 				<title>Insert title here</title>
 				<link rel="stylesheet" href="../../../resources/css/reset.css" />
 				<link rel="stylesheet" href="../../../resources/css/header.css" />
-				<link rel="stylesheet" href="../../../resources/css/collect.css" />
+				<link rel="stylesheet" href="../../../resources/css/collect/collect.css" />
 				<script src="https://kit.fontawesome.com/4602e82315.js" crossorigin="anonymous"></script>
 			</head>
 
@@ -99,7 +99,7 @@
 					</section>
 
 				</main>
-				<script src="../../../resources/js/collect.js"></script>
+				<script src="../../../resources/js/collect/collect.js"></script>
 			</body>
 
 			</html>

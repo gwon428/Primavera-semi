@@ -6,7 +6,6 @@
 		<result property="id" column="id"/>
 		<result property="title" column="title"/>
 		<result property="content" column="content"/>
-		<result property="orderNum" column="order_num"/>
 		<result property="writeDate" column="write_date"/>
 		<result property="url" column="url"/>
 		<result property="status" column="status"/>
@@ -14,8 +13,8 @@
 	
 	<!-- insert -->
 	<insert id="insertQna" parameterType="Qna" useGeneratedKeys="true" keyProperty="qnaNum" keyColumn="qna_num">
-		INSERT INTO qna(id, title, content, url, order_num) 
-		VALUES(#{id}, #{title}, #{content}, #{url}, #{orderNum})
+		INSERT INTO qna(id, title, content, url) 
+		VALUES(#{id}, #{title}, #{content}, #{url})
 	</insert>
 	
 	<!-- selectAll -->

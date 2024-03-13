@@ -12,6 +12,7 @@
 		<typeAlias type="com.semi.model.vo.PagingQna" alias="PagingQna"/>
 		<typeAlias type="com.semi.model.vo.Paging" alias="Paging" />
 		<typeAlias type="com.semi.model.vo.Notice" alias="Notice"/>
+		<typeAlias type="com.semi.model.vo.QnaAnswer" alias="QnaAnswer"/>
 	</typeAliases>
 
 	<!-- 쿼리문 -->
@@ -21,5 +22,6 @@
 		<mapper resource="mappers/board-mapper.xml" />
 		<mapper resource="mappers/qna-mapper.xml"/>
 		<mapper resource="mappers/notice-mapper.xml"/>
+		<mapper resource="mappers/qnaAnswer-mapper.xml"/>
 	</mappers>
 </configuration>
