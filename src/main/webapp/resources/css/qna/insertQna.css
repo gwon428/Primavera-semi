@@ -51,6 +51,9 @@ form{
     align-items: center;
     margin-bottom: 20px;
 }
+#id{
+	margin-top : 20px;
+}
 label{
 	margin-left : 25px;
 }
@@ -76,7 +79,7 @@ label{
 	height:100px;
 	margin-right:70px;
 	border-radius:3px;
-border-color : #d1d1d1;	
+	border-color : #d1d1d1;	
 }
 
 #img_input{
@@ -93,6 +96,10 @@ border-color : #d1d1d1;
 #photo{
 	margin-left: 0px;
 	cursor: pointer;
+}
+img{
+	width:92px;
+	height:92px;
 }
 .btn{
 	display:flex;

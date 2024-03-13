@@ -27,6 +27,8 @@
 			<th scope="col">수거일</th>
 			<th scope="col">공동 현관 비밀번호</th>
 			<th scope="col">요청사항</th>
+			<th scope="col">수거 신청 무게</th>
+			<th scope="col">금액</th>
 		</tr>
 		
 		<c:forEach items="${list}" var="item">
@@ -41,6 +43,8 @@
 				<td>${item.collectionDate}</td>
 				<td>${item.doorPwd}</td>
 				<td>${item.request}</td>
+				<td>${item.kg}</td>
+				<td>${item.kg*400}</td>
 			</tr>
 		</c:forEach>
 	</table>

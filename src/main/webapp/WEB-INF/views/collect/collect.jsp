@@ -99,7 +99,7 @@
 					</section>
 
 				</main>
-				<script src="../../../resources/js/collect.js"></script>
+				<script src="../../../resources/js/collect/collect.js"></script>
 			</body>
 
 			</html>

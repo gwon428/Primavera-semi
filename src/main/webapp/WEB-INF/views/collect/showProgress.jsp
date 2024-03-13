@@ -44,7 +44,8 @@
 					<th>이름</th>
 					<th>전화번호</th>
 					<th>진행상황</th>
-					
+					<th>수거 신청 무게</th>
+					<th>금액</th>
 				</tr>
 				
 				<c:forEach items="${progress}" var="item">
@@ -54,7 +55,8 @@
 						<td>${item.name}</td>
 						<td>${item.phone}</td>
 						<td id="prog">${item.prog}</td>
-			
+						<td>${item.kg}</td>
+						<td>${item.kg*400}</td>
 					</tr>
 				</c:forEach>
 			</table>
@@ -93,25 +95,6 @@
 	     
 	</form>
 </main>
-
-	<script>
-	$("#btn").click(()=>{
-		$.ajax({
-			type:"post",
-			url:"/update_ok",
-			data: $("#update").serialize(),
-			
-			success: function(result){
-				$("#prog").html(result.prog);
-				window.location.reload();
-			},
-			error: function(){
-				console.log("에러 발생!");
-			}
-		})
-	})
-	
-	
-	</script>
+	<script src="../../../resources/js/collect/showProgress.js"></script>
 </body>
 </html>

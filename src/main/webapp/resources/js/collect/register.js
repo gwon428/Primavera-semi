@@ -19,6 +19,9 @@ function validate() {
 	}else if(f.collectionDate.value==''){
 	    f.collectionDate.focus();
 	    return false;
+	}else if(f.kg.value==''){
+	    f.kg.focus();
+	    return false;
 	}else if(!f.agree.checked){
 		alert("약관 내용에 동의해주세요.");
 	    return false;

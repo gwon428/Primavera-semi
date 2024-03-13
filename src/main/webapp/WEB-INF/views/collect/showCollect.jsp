@@ -19,6 +19,8 @@
 			<th>이름</th>
 			<th>전화번호</th>
 			<th>진행상황</th>
+			<th>수거 신청 무게</th>
+			<th>금액</th>
 		</tr>
 		
 		<c:forEach items="${list}" var="item">
@@ -28,6 +30,8 @@
 				<td>${item.name}</td>
 				<td>${item.phone}</td>
 				<td>${item.prog}</td>
+				<td>${item.kg}</td>
+				<td>${item.kg*400}</td>
 			</tr>
 		</c:forEach>
 	</table>

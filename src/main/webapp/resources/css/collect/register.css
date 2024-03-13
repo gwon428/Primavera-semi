@@ -122,10 +122,14 @@ textarea {
   width: 44%;
   height: 20%;
 }
-
-textarea {
+#kg{
+	width: 170px;
+    height: 35px;
+}
+textarea#request {
   resize: none;
   width: 310px;
+  height:100px;
 }
 
 #postCode,

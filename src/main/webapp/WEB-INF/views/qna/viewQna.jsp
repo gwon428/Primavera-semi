@@ -1,29 +1,77 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-pageEncoding="UTF-8"%> <%@taglib uri="http://www.springframework.org/tags"
-prefix="spring"%>
+	pageEncoding="UTF-8"%>
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Insert title here</title>
-  </head>
-  <body>
-    <h2>등록한 글 내용 확인</h2>
+<head>
+<meta charset="UTF-8" />
+<title>Insert title here</title>
+<link rel="stylesheet" href="../../../resources/css/reset.css" />
+<link rel="stylesheet" href="../../../resources/css/header.css" />
+<link rel="stylesheet" href="../../../resources/css/qna/viewQna.css" />
+<script src="https://kit.fontawesome.com/4602e82315.js"
+	crossorigin="anonymous"></script>
+</head>
+<body>
+<sec:authentication property="principal" var="user" />
+	<div class="header-blackbox"></div>
+	<header>
+		<nav>
+			<a href="index.jsp">Primavera</a>
+		</nav>
+		<nav>
+			<a href="#">Store</a> <a href="#">Guid</a> <a href="collectPage">PickUp</a>
+			<a href="/board/list">Board</a> <a href="myPage"><i
+				class="fa-regular fa-user" id="mypage"></i></a>
+		</nav>
+	</header>
+	<!-- -----------------------------------main----------------------------- -->
+	<div id="main">
+		<div id="top_title">
+			<span id="qna">Q&A</span>
+			<div name="title" id="title">${qna.title}</div>
+		</div>
+		<div id="text_button">
+			<div id="id_writeDate">
+				<div name="id" id="id">${qna.id}</div>
+				<div id="writeDate" name="writeDate">
+					
+					<fmt:formatDate value="${qna.writeDate}" pattern="yy-MM-dd HH:ss" />
+				</div>
+			</div>
 
-    
-    <div name="title" id="title" >제목 : ${qna.title}</div>
-    <div id="content" name="cotent">내용 : ${qna.content}</div>
-    <div id="writeDate" name="writeDate" >작성일자 
-    <fmt:formatDate value="${qna.writeDate}"
-								pattern="yyyy-MM-dd HH:mm" />
-    </div>
-   
-    <div id="url" name="url">사진 : <img src="/upload/qna/${qna.url}"/></div>
-
-    <button value="수정" id="btn"><a href="updateQna" id="updateQna">수정</a></button>
-    <button value="삭제" id="btndelete"><a href="/deleteQna?qnaNum=${qna.qnaNum}" id="deleteQna">삭제</a></button>
-     <button value="목록" id="btnlist"><a href="listQna" id="listQna">목록</a></button>
-  </body>
+			<div id="button">
+			
+				<button value="목록" id="btnlist">
+					<a href="listQna" id="listQna">목록</a>
+				</button>
+				<button value="수정" id="btnupdate">
+					<a href="updateQna" id="updateQna">수정</a>
+				</button>
+				<button value="삭제" id="btndelete">
+					<a href="/deleteQna?qnaNum=${qna.qnaNum}" id="deleteQna">삭제</a>
+				</button>
+				
+			</div>
+		</div>
+		<div id="content" name="content">${qna.content}</div>
+		<div id="url" name="url">
+			<img src="/upload/qna/${qna.url}" />
+		</div>
+	<c:choose>
+		<c:when test="${user == 'anonymousUser'}">
+		</c:when>
+		<c:otherwise>
+		<c:if test="${user.auth == 'ADMIN'}">
+	<div id="qnaAnswer">
+		<div>qna대답창</div>
+	</div>
+		</c:if>
+		</c:otherwise>
+	</c:choose>
+	</div>
+</body>
 </html>

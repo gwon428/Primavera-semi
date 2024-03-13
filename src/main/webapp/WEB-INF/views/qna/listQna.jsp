@@ -2,6 +2,8 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
+   
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,7 +25,7 @@
 
 </head>
 <body>
-	<sec:authentication property="principal" var="user" />
+<sec:authentication property="principal" var="user" />
 	
 		<div class="header-blackbox"></div>
 		<header>
@@ -49,7 +51,7 @@
 					<h1>Q&A</h1>
 					<c:choose>
 						<c:when test="${user == 'anonymousUser'}">
-							<a href="../mypage" 
+							<a href="../myPage" 
 								id="writeQna">Q&A등록</a>
 						</c:when>
 						<c:otherwise>
@@ -61,7 +63,7 @@
 				<table class="table">
 					<thead>
 						<tr>
-							<th>질문번호</th>
+							<th>번호</th>
 							<th>제목</th>
 							<th>아이디</th>
 							<th>작성일</th>
@@ -85,8 +87,17 @@
 			</div>
 			<nav id="paging">
 				<ul class="pagination">
-					<li class="page-item ${paging.prev ? '' : 'disabled'}"><a
-						class="page-link" href="/listQna?page=${paging.startPage - 1}">Previous</a>
+					<li class="page-item ${paging.prev ? '' : 'disabled'}">
+					
+					<c:choose>
+						<c:when test="${paging.startPage == 1}">
+							<a class="page-link" href="/listQna?page=${paging.startPage=1}">Previous</a>
+						</c:when>
+						<c:otherwise>
+							<a class="page-link" href="/listQna?page=${paging.startPage-1}">Previous</a>
+						</c:otherwise>
+					</c:choose>
+					
 					</li>
 
 					<c:forEach begin="${paging.startPage}" end="${paging.endPage}"
@@ -96,8 +107,15 @@
 							href="/listQna?page=${page}" id="page_num">${page}</a></li>
 					</c:forEach>
 
-					<li class="page-item ${paging.next ? '' : 'disabled'}"><a
-						class="page-link" href="/listQna?page=${paging.endPage + 1}">Next</a></li>
+					<li class="page-item ${paging.next ? '' : 'disabled'}"><c:choose>
+						<c:when test="${paging.endPage < 10}">
+							<a class="page-link" href="/listQna?page=${paging.endPage=paging.endPage}">Next</a>
+						</c:when>
+						<c:otherwise>
+							<a class="page-link" href="/listQna?page=${paging.endPage + 1}">Next</a>
+						</c:otherwise>
+						</c:choose>	
+					</li>
 				</ul>
 			</nav>
 

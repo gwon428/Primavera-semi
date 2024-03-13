@@ -57,6 +57,10 @@
 				<input type="date" name="collectionDate" id="collectionDate" max="2025-12-31"
 					min="2024-02-22" />
 			</div>
+			<div class="kg">
+				<p>*수거 신청 무게</p>
+				<input type="number" name="kg" id="kg" placeholder="5~20kg 신청 가능" min="5" max="20"/>
+			</div>
 			<div>
 				<p>공동 현관 비밀번호</p>
 				<textarea name="doorPwd" id="doorPwd" cols="50" rows="2"
@@ -64,7 +68,7 @@
 			</div>
 			<div>
 				<p>요청사항</p>
-				<textarea name="request" id="request" cols="50" rows="10"
+				<textarea name="request" id="request" cols="40" rows="10"
 					placeholder="요청사항을 있으신 경우, 입력해주세요"></textarea>
 			</div>
 		</div>
@@ -99,7 +103,7 @@
  
 	</form>
 	</div>
-	<script src="../../../resources/js/register.js"></script>
+	<script src="../../../resources/js/collect/register.js"></script>
 	
 </body>
 </html>
