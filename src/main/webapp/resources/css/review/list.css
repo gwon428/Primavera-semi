@@ -108,8 +108,11 @@ body, #neck, .cover, .top, .main {
 }
 
 .pagination {
-	width: 550px;
-	margin: 0 auto;
+	display: flex;
+    position: relative;
+    top: 600px;
+    font-size: 1.5rem;
+    left: -151px;
 }
 
 .pagination>li>a, .pagination>li>a:focus, .pagination>li>a:hover,

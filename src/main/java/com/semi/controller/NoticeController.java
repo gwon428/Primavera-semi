@@ -75,6 +75,8 @@ public class NoticeController {
 		return filename;
 	}
 	
+	
+	
 	@GetMapping("noticeView")
 	public void view(String noticeNum, Model model) {
 		model.addAttribute("vo", service.select(Integer.parseInt(noticeNum)));
@@ -84,20 +86,15 @@ public class NoticeController {
 	
 	@PostMapping("updateNotice")
 	public String update(Notice n) throws IllegalStateException, IOException {
-		System.out.println(n.getNoticeNum());
 		if (!n.getFile().isEmpty()) {
 			if (n.getUrl() != null) {
 				File file = new File(path + n.getUrl());
 				file.delete();
 			}
-
 			String url = noticeFileUpload(n.getFile());
 			n.setUrl(url);
-
 		}
 		service.update(n);
-		System.out.println("추가 후 : " + n);
-		//return "redirect:/notice/noticeView?notice_num=" + n.getNoticeNum();
 		return "redirect:/notice/list";
 	}
 
@@ -116,6 +113,6 @@ public class NoticeController {
 
 		service.delete(parsingNo);
 
-		return "redirect:/notice/list";
+		return "redirect:notice/List";
 	}
 }

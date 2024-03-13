@@ -19,7 +19,7 @@ header {
   justify-content: space-between;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.6);
-  z-index: 2;
+  z-index: 100;
 }
 
 header a {
@@ -41,13 +41,35 @@ header nav:nth-child(2) a {
   font-size: 1.5rem;
 }
 
+nav > a[href="list"]:hover + span,
+nav > span:hover {
+  display: block;
+}
+
+nav > span {
+  display: none;
+  position: absolute;
+  right: 79px;
+  top: 59px;
+  padding: 11px;
+}
+
+nav > span a {
+  display: block;
+  text-decoration: none;
+}
+
+nav > span a:hover {
+  color: black;
+}
+
 /* -----------------------------------Main Section 1-------------------------------------- */
 
 .header-blackbox {
   position: absolute;
   width: 100%;
   height: 100vh;
-  background-color: rgba(50, 36, 30, 0.6);
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 #section1 video {
@@ -69,10 +91,18 @@ header nav:nth-child(2) a {
 
 @keyframes slide1 {
   from {
-    left: -300px;
+    left: -600px;
   }
   to {
     left: 50px;
+  }
+}
+@keyframes out1 {
+  from {
+    left: -600px;
+  }
+  to {
+    left: 50p;
   }
 }
 
@@ -87,7 +117,16 @@ header nav:nth-child(2) a {
 
 @keyframes slide2 {
   from {
-    left: -200px;
+    left: 50px;
+  }
+  to {
+    left: 400px;
+  }
+}
+
+@keyframes out2 {
+  from {
+    left: 50px;
   }
   to {
     left: 400px;
@@ -135,6 +174,7 @@ header nav:nth-child(2) a {
   }
 }
 /* ------------------------------------Main Section 2-------------------------------------- */
+
 #section2 {
   background-color: rgb(229, 227, 219);
   width: 100%;
@@ -212,6 +252,15 @@ header nav:nth-child(2) a {
   }
 }
 
+@keyframes out4 {
+  from {
+    left: -200px;
+  }
+  to {
+    left: 0px;
+  }
+}
+
 .container1 p {
   position: absolute;
   width: 550px;
@@ -226,7 +275,7 @@ header nav:nth-child(2) a {
   font-size: 4rem;
   padding-left: 1020px;
   border-bottom: solid;
-  animation: slide5 1.5s;
+  animation: slide5 1s;
 }
 
 .container2 li {
@@ -238,6 +287,15 @@ header nav:nth-child(2) a {
 }
 
 @keyframes slide5 {
+  from {
+    left: -500px;
+  }
+  to {
+    left: 0px;
+  }
+}
+
+@keyframes out5 {
   from {
     left: -500px;
   }
@@ -280,10 +338,19 @@ header nav:nth-child(2) a {
   font-size: 11rem;
   top: -550px;
   opacity: 50%;
-  animation: slide6 2s;
+  animation: slide6 1.5s;
 }
 
 @keyframes slide6 {
+  from {
+    left: -500px;
+  }
+  to {
+    left: 0px;
+  }
+}
+
+@keyframes out6 {
   from {
     left: -500px;
   }
@@ -303,6 +370,15 @@ header nav:nth-child(2) a {
 }
 
 @keyframes slide7 {
+  from {
+    left: 1500px;
+  }
+  to {
+    left: 300px;
+  }
+}
+
+@keyframes out7 {
   from {
     left: 1500px;
   }
@@ -366,7 +442,7 @@ header nav:nth-child(2) a {
   color: white;
 }
 
-/* --------------------------------------- Footer -------------------------------------- */
+/* -------------------------------------- Footer -------------------------------------- */
 
 .line2 {
   left: 50px;
