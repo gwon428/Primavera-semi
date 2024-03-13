@@ -1,12 +1,12 @@
 .word .h1 {
-	position: absolute;
-	top: 460px;
-	left: 35px;
-	font-size: 4rem;
-	font-style: italic;
-	color: white;
-	margin-left: 40px;
-	animation: slide 1.8s;
+    position: absolute;
+    top: 460px;
+    left: 35px;
+    font-size: 4rem;
+    font-style: italic;
+    color: white;
+    margin-left: 40px;
+    animation: slide 1.8s;
 }
 
 @keyframes slide {
@@ -15,21 +15,63 @@
 }
 
 .container {
-	padding-top: 20vh;
+    padding-top: 20vh;
 }
 
-body, #neck, .cover, .map, .main {
-	width: 100%;
+body, #neck, .cover, .map {
+    width: 100%;
+}
+
+.main {
+	background-color: rgb(229, 227, 219);
+	height: 100vh;
 }
 
 #neck {
-	background-image: url(../../../resources/images/reviewbackground.jpg);
-	background-size: cover;
-	background-position: center;
-	height: 85vh;
+    background-image: url(../../../resources/images/reviewbackground.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 85vh;
+    margin-bottom: 50px;
 }
 
 .cover {
-	height: 100%;
-	background-color: rgba(50, 36, 30, 0.6);
+    height: 100%;
+    background-color: rgba(50, 36, 30, 0.6);
+}
+
+.image-text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 500px;
+    margin-top: 20vh;   
+}
+
+.image-text-wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.image-text-wrapper img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 0 10px #999;    
+}
+
+.text-section {
+    max-width: 400px;
+    margin-left: 50px;    
+}
+
+#map {
+    margin: 50px auto;
+    width: 800px;
+    height: 600px;
+    border-radius: 15px;   
+    padding: 15px;
+    box-shadow: 0 0 10px #999;
 }

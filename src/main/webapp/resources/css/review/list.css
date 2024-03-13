@@ -97,7 +97,7 @@ body, #neck, .cover, .top, .main {
 	justify-content: center;
 }
 
-.writebtn, h1 {
+.writebtn {
 	margin: 10px;
 	text-align: center;
 }

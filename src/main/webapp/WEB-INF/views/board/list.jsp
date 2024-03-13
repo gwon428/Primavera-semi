@@ -31,9 +31,9 @@
 				<a href="/">Primavera</a>
 			</nav>
 			<nav>
-				<a href="/map/mainMap">Store</a> <a href="#">Guide</a> <a href="/collectPage">PickUp</a>
-				<a href="/board/list">Board</a> <a href="/myPage"><i
-					class="fa-regular fa-user"></i></a>
+				<a href="/map/mainMap">Store</a> <a href="#">Guide</a> <a
+					href="/collectPage">PickUp</a> <a href="/board/list">Board</a> <a
+					href="/myPage"><i class="fa-regular fa-user"></i></a>
 			</nav>
 		</header>
 
@@ -44,10 +44,7 @@
 		<section id="neck">
 			<div class="cover"></div>
 		</section>
-		<div class="container">
-			<div class="header1">
-				<h1>REVIEW</h1>
-			</div>
+		<div class="container">			
 			<table class="table">
 				<thead>
 					<tr>
@@ -91,21 +88,18 @@
 				</c:if>
 			</div>
 			<nav>
-				<ul class="pagination">
-					<!-- 이전 페이지 버튼 -->
+				<ul class="pagination">					
 					<li class="page-item ${paging.prev ? '' : 'disabled'}"><a
 						class="page-link" href="/board/list?page=${paging.startPage - 1}">Previous</a>
 					</li>
-
-					<!-- 페이지 번호 버튼 -->
+					
 					<c:forEach begin="${paging.startPage}" end="${paging.endPage}"
 						var="page">
 						<li class="page-item ${paging.page == page ? 'active' : ''}">
 							<a class="page-link" href="/board/list?page=${page}">${page}</a>
 						</li>
 					</c:forEach>
-
-					<!-- 다음 페이지 그룹 버튼 -->
+					
 					<li class="page-item ${paging.next ? '' : 'disabled'}"><a
 						class="page-link" href="/board/list?page=${paging.endPage + 1}">Next</a>
 					</li>

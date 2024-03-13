@@ -32,8 +32,7 @@ public class BoardController {
 	@GetMapping("/board/write")
 	public void write() {
 	}
-
-	// 글 쓰기
+	
 	@PostMapping("/board/write")
 	public String write(Board b) throws IllegalStateException, IOException {
 

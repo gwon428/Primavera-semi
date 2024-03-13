@@ -46,8 +46,8 @@ align-items:center;
 		<a href="/">Primavera</a>
 	</nav>
 	<nav>
-		<a href="#">Store</a> <a href="#">Guide</a> <a href="collectPage">PickUp</a>
-		<a href="#">Board</a> <a href="myPage"><i class="fa-regular fa-user"></i></a>
+		<a href="/map/mainMap">Store</a> <a href="#">Guide</a> <a href="collectPage">PickUp</a>
+		<a href="/board/list">Board</a> <a href="myPage"><i class="fa-regular fa-user"></i></a>
 	</nav>
 </header>
 <body>
