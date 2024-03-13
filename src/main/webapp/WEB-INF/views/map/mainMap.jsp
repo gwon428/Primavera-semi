@@ -13,6 +13,7 @@
 <link rel="stylesheet" href="../../../resources/css/header.css" />
 <link href="../../resources/css/map/mainMap.css" rel="stylesheet"
 	type="text/css">
+ 
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 <script src="https://kit.fontawesome.com/4602e82315.js"
@@ -25,7 +26,7 @@
 				<a href="/">Primavera</a>
 			</nav>
 			<nav>
-				<a href="/map/mainMap">Store</a> <a href="#">Guide</a> <a
+				<a href="mainMap">Store</a> <a href="#">Guide</a> <a
 					href="/collectPage">PickUp</a> <a href="/board/list">Board</a> <a
 					href="/myPage"><i class="fa-regular fa-user"></i></a>
 			</nav>

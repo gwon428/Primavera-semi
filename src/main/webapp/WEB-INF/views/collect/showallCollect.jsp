@@ -57,19 +57,7 @@
 							<td>${item.kg*400}</td>
 						</tr>
 
-						<c:forEach items="${list}" var="item">
-							<tr>
-								<td class="no">${item.orderNum}</td>
-								<td>${item.id}</td>
-								<td>${item.name}</td>
-								<td>${item.phone}</td>
-								<td>${item.postCode}</td>
-								<td class="roadAddr">${item.roadAddress}</td>
-								<td>${item.detailAddress}</td>
-								<td>${item.collectionDate}</td>
-								<td>${item.doorPwd}</td>
-								<td>${item.request}</td>
-							</tr>
+						
 						</c:forEach>
 				</table>
 				<div id="page">
