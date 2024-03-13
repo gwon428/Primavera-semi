@@ -77,62 +77,124 @@
 		<script type="text/javascript"
 			src="//dapi.kakao.com/v2/maps/sdk.js?appkey=04b7f22e5edf17d8f2ce411e6eb1f006"></script>
 		<script>
-			var mapContainer = document.getElementById('map'), // 지도를 표시할 div  
+			var mapContainer = document.getElementById('map'),
 			mapOption = {
-				center : new kakao.maps.LatLng(37.49968, 127.0359), // 지도의 중심좌표
+				// 지도의 중심좌표
+				center : new daum.maps.LatLng(37.5519, 126.9918),
+				// 지도의 확대 레벨 
 				level : 9
-			// 지도의 확대 레벨
 			};
+			// 지도를 생성
+			var map = new daum.maps.Map(mapContainer, mapOption);
 
-			var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+			// 지도에 마커를 표시 
+			var marker1 = new daum.maps.Marker({
+				map : map,
+				position : new daum.maps.LatLng(37.49781, 127.13338)
+			});
 
-			// 마커를 표시할 위치와 내용을 가지고 있는 객체 배열입니다 
-			var positions = [ {
-				content : '<div>프리마베라 1호점</div>',
-				latlng : new kakao.maps.LatLng(37.50153, 127.0355)
-			}, {
-				content : '<div>프리마베라 2호점</div>',
-				latlng : new kakao.maps.LatLng(37.574524, 127.03965)
-			}, {
-				content : '<div>프리마베라 3호점</div>',
-				latlng : new kakao.maps.LatLng(37.526436, 126.896004)
-			} ];
+			var marker2 = new daum.maps.Marker({
+				map : map,
+				position : new daum.maps.LatLng(37.574524, 127.03965)
+			});
 
-			for (var i = 0; i < positions.length; i++) {
-				// 마커를 생성합니다
-				var marker = new kakao.maps.Marker({
-					map : map, // 마커를 표시할 지도
-					position : positions[i].latlng
-				// 마커의 위치
-				});
+			var marker3 = new daum.maps.Marker({
+				map : map,
+				position : new daum.maps.LatLng(37.495472, 126.887536)
+			});
+			// 커스텀 오버레이에 표시할 컨텐츠			
+			var content1 = '<div class="wrap">'
+					+ '    <div class="info">'
+					+ '        <div class="title">'
+					+ '            프리마베라 1호점'
+					+ '            <div class="close" onclick="closeOverlay1()" title="닫기"></div>'
+					+ '        </div>'
+					+ '        <div class="body">'
+					+ '            <div class="img">'
+					+ '                <img src="../../../resources/images/wallet.jpg" width="73" height="70">'
+					+ '           </div>'
+					+ '            <div class="desc">'
+					+ '                <div class="ellipsis">서울특별시 송파구 첨단로 242</div>'
+					+ '                <div class="jibun ellipsis">(우) 63309 (지번) 영평동 2181</div>'
+					+ '                <div>070-1312-1454</div>'
+					+ '            </div>' + '        </div>' + '    </div>'
+					+ '</div>';
+					
+			var content2 = '<div class="wrap">'
+					+ '    <div class="info">'
+					+ '        <div class="title">'
+					+ '            프리마베라 2호점'
+					+ '            <div class="close" onclick="closeOverlay2()" title="닫기"></div>'
+					+ '        </div>'
+					+ '        <div class="body">'
+					+ '            <div class="img">'
+					+ '                <img src="../../../resources/images/clothes.jpg" width="73" height="70">'
+					+ '           </div>'
+					+ '            <div class="desc">'
+					+ '                <div class="ellipsis">서울특별시 동대문구 첨단로 242</div>'
+					+ '                <div class="jibun ellipsis">(우) 63309 (지번) 영평동 2181</div>'
+					+ '                <div>070-1712-3764</div>'
+					+ '            </div>' + '        </div>' + '    </div>'
+					+ '</div>';
 
-				// 마커에 표시할 인포윈도우를 생성합니다 
-				var infowindow = new kakao.maps.InfoWindow({
-					content : positions[i].content
-				// 인포윈도우에 표시할 내용
-				});
+			var content3 = '<div class="wrap">'
+					+ '    <div class="info">'
+					+ '        <div class="title">'
+					+ '            프리마베라 3호점'
+					+ '            <div class="close" onclick="closeOverlay3()" title="닫기"></div>'
+					+ '        </div>'
+					+ '        <div class="body">'
+					+ '            <div class="img">'
+					+ '                <img src="../../../resources/images/bag.jpg" width="73" height="70">'
+					+ '           </div>'
+					+ '            <div class="desc">'
+					+ '                <div class="ellipsis">서울특별시 구로구 첨단로 242</div>'
+					+ '                <div class="jibun ellipsis">(우) 63309 (지번) 영평동 2181</div>'
+					+ '                <div>070-4512-1214</div>'
+					+ '            </div>' + '        </div>' + '    </div>'
+					+ '</div>';
+			// 마커 위에 커스텀오버레이를 표시			
+			var overlay1 = new daum.maps.CustomOverlay({
+				content : content1,
+				map : map,
+				position : marker1.getPosition()
+			});
 
-				// 마커에 mouseover 이벤트와 mouseout 이벤트를 등록합니다
-				// 이벤트 리스너로는 클로저를 만들어 등록합니다 
-				// for문에서 클로저를 만들어 주지 않으면 마지막 마커에만 이벤트가 등록됩니다
-				kakao.maps.event.addListener(marker, 'mouseover',
-						makeOverListener(map, marker, infowindow));
-				kakao.maps.event.addListener(marker, 'mouseout',
-						makeOutListener(infowindow));
+			var overlay2 = new daum.maps.CustomOverlay({
+				content : content2,
+				map : map,
+				position : marker2.getPosition()
+			});
+
+			var overlay3 = new daum.maps.CustomOverlay({
+				content : content3,
+				map : map,
+				position : marker3.getPosition()
+			});
+			// 마커를 클릭했을 때 커스텀 오버레이를 표시
+			daum.maps.event.addListener(marker1, 'click', function() {
+				overlay1.setMap(map);
+			});
+
+			daum.maps.event.addListener(marker2, 'click', function() {
+				overlay2.setMap(map);
+			});
+
+			daum.maps.event.addListener(marker3, 'click', function() {
+				overlay3.setMap(map);
+			});
+
+			// 커스텀 오버레이 닫기
+			function closeOverlay1() {
+				overlay1.setMap(null);
 			}
 
-			// 인포윈도우를 표시하는 클로저를 만드는 함수입니다 
-			function makeOverListener(map, marker, infowindow) {
-				return function() {
-					infowindow.open(map, marker);
-				};
+			function closeOverlay2() {
+				overlay2.setMap(null);
 			}
 
-			// 인포윈도우를 닫는 클로저를 만드는 함수입니다 
-			function makeOutListener(infowindow) {
-				return function() {
-					infowindow.close();
-				};
+			function closeOverlay3() {
+				overlay3.setMap(null);
 			}
 		</script>
 	</main>

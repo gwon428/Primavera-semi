@@ -20,16 +20,7 @@
 	crossorigin="anonymous" />
 <script src="https://kit.fontawesome.com/4602e82315.js"
 	crossorigin="anonymous"></script>
-<style>
-.star-rating .fas, .star-rating .far {
-	cursor: not-allowed;
-}
 
-.read-only {
-	background-color: #f0f0f0;
-	pointer-events: none;
-}
-</style>
 </head>
 
 <body class="main">
@@ -61,6 +52,7 @@
 					<c:forEach begin="1" end="5" var="i">
 						<i class="${i <= vo.rating ? 'fas' : 'far'} fa-star"
 							data-rating="${i}"></i>
+						<input type="hidden" name="rating" id="rating-input" value="1">						
 					</c:forEach>
 				</div>
 			</div>
