@@ -13,14 +13,15 @@
 <body>
 <div>
 		<span>Primavera 답변</span>
+		<input id="qnaNum" value="${qna.qnaNum}" hidden>
 		<div name="qnaNum" id="qnaNum">${qnaAnswer.qnaNum}</div>
 		<div name="id" id="id">${qnaAnswer.id}</div>
 		<div id="answerDate" name="answerDate">
-		"${qnaAnswer}"
+		
 			<fmt:formatDate value="${qnaAnswer.answerDate}" pattern="yy-MM-dd HH:ss" />
 		</div>
 		<div id="content" name="content">${qnaAnswer.content}</div>
-		</div>
+	</div>
 </body>
 </html>
 

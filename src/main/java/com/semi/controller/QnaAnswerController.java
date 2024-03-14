@@ -50,20 +50,19 @@ public class QnaAnswerController {
 		}
 		service.insertQnaAnswer(qnaAnswer);
 		System.out.println("qnaAnswer" + qnaAnswer.getQnaNum());
-		
-		return "qnaAnswer/viewAnswer";
+		System.out.println("대답내용 : "+ qnaAnswer.getContent());
+		return "redirect:/viewQna?qnaNum="+qnaAnswer.getQnaNum();
 	}
 	
 	
 	// select
-	
-	@GetMapping("qnaAnswer")
+	@GetMapping("")
 	public String selectQnaAnswer(String qnaNum, Model model) {
 		int qnanum = Integer.parseInt(qnaNum);
 		QnaAnswer qnaAnswer = service.selectQnaAnswer(qnanum);
 		model.addAttribute("qnaAnswer", qnaAnswer);
-		System.out.println(qnaAnswer.getAnswerDate());
-		return "qna/viewQna";
+		
+		return "redirect:/viewQna?qnaNum="+qnaAnswer.getQnaNum();
 	}
 	
 	

@@ -91,6 +91,18 @@
 		<c:if test="${user.auth == 'ADMIN'}">
 	<div id="qnaAnswer">
 		<jsp:include page="/WEB-INF/views/qnaAnswer/viewAnswer.jsp"></jsp:include>
+		
+	</div>
+	<div>
+		<span>Primavera!! 답변</span>
+		<input id="qnaNum" value="${qna.qnaNum}" hidden>
+		<div name="qnaNum" id="qnaNum">${qna.qnaNum}</div>
+		<div name="id" id="id">${qnaAnswer.id}</div>
+		<div id="answerDate" name="answerDate">
+		
+			<fmt:formatDate value="${qnaAnswer.answerDate}" pattern="yy-MM-dd HH:ss" />
+		</div>
+		<div id="content" name="content">${qnaAnswer.content}</div>
 	</div>
 		</c:if>
 		</c:otherwise>
