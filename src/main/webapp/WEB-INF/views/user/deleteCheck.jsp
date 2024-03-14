@@ -29,7 +29,7 @@
 				<sec:authentication property="principal" var="user" />
 				<main>
 					<div id="sideMenu">
-						<a href="showReview">내가 적은 후기</a>
+						<a href="showReview">My Review</a>
 						<a href="showQna">내 Q&A</a>
 						<a href="showCollect">진행 상황</a>
 						<a href="updateUser">회원 정보 수정</a>

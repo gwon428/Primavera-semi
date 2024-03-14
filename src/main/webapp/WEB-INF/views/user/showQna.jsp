@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-    <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,60 +27,72 @@
 	</nav>
 </header>
 <body>
-<main>
-<div id="top"></div>
+		<div id="top"></div>
+		
+		
+		<main>
+		<div id="sideMenu">
+			<a href="showReview" id="showReview">My Review</a> <a href="showQna" id="myqna">내 Q&A</a> <a
+				href="showCollect">진행 상황</a> <a href="updateUser">회원
+				정보 수정</a> <a href="deleteUser">회원 탈퇴</a> <a href="logout">로그아웃</a>
+		</div>
+		
+		<div id="mainMenu">
 		<h2>내 Q&A</h2>
-		<table border=1 class="table">
-			<tr>
-				<th>질문번호</th>
+			<table border=1 class="table">
+				<tr>
+					<th>질문번호</th>
 					<th>제목</th>
 					<th>아이디</th>
 					<th>작성일</th>
 					<th>답변상태</th>
-			</tr>
-
-			<c:forEach items="${list}" var="item">
-				<tr>
-				<td class="no">${item.qnaNum}</td>
-					 <td><a href="/viewQna?qnaNum=${item.qnaNum}">${item.title}</a></td>
-					 <td>${item.id}</td>
-					 <td><fmt:formatDate value="${item.writeDate}" pattern="yy-MM-dd" /></td>
-						<td>${item.status}</td>
 				</tr>
-			</c:forEach>
-		</table>
-		<div id="page">
-		<ul class="pagination">
-			<li class="page-item ${paging.prev ? '' : 'disabled'}"><c:choose>
-					<c:when test="${paging.startPage == 1}">
-						<a class="page-link"
-							href="/showReview?page=${paging.startPage=1}">Previous</a>
-					</c:when>
-					<c:otherwise>
-						<a class="page-link"
-							href="/showReview?page=${paging.startPage-1}">Previous</a>
-					</c:otherwise>
-				</c:choose></li>
 
-			<c:forEach begin="${paging.startPage}" end="${paging.endPage}"
-				var="page">
-				<li class="page-item"><a
-					class="page-link ${paging.page== page ? 'active' : ''} "
-					href="/showReview?page=${page}">${page}</a></li>
-			</c:forEach>
-
-			<li class="page-item ${paging.next ? '' : 'disabled'}"><c:choose>
-					<c:when test="${paging.endPage < 10}">
-						<a class="page-link"
-							href="/showReview?page=${paging.endPage=paging.endPage}">Next</a>
-					</c:when>
-					<c:otherwise>
-						<a class="page-link"
-							href="/showReview?page=${paging.endPage + 1}">Next</a>
-					</c:otherwise>
-				</c:choose></li>
-		</ul>
-	</div>
+				<c:forEach items="${list}" var="item">
+					<tr>
+						<td class="no">${item.qnaNum}</td>
+						<td><a href="/viewQna?qnaNum=${item.qnaNum}">${item.title}</a></td>
+						<td>${item.id}</td>
+						<td><fmt:formatDate value="${item.writeDate}"
+								pattern="yy-MM-dd" /></td>
+						<td>${item.status}</td>
+					</tr>
+				</c:forEach>
+			</table>
+			
+		</div>
 	</main>
+	<div id="page">
+				<ul class="pagination">
+					<li class="page-item ${paging.prev ? '' : 'disabled'}"><c:choose>
+							<c:when test="${paging.startPage == 1}">
+								<a class="page-link"
+									href="/showReview?page=${paging.startPage=1}">Previous</a>
+							</c:when>
+							<c:otherwise>
+								<a class="page-link"
+									href="/showReview?page=${paging.startPage-1}">Previous</a>
+							</c:otherwise>
+						</c:choose></li>
+
+					<c:forEach begin="${paging.startPage}" end="${paging.endPage}"
+						var="page">
+						<li class="page-item"><a
+							class="page-link ${paging.page== page ? 'active' : ''} "
+							href="/showReview?page=${page}">${page}</a></li>
+					</c:forEach>
+
+					<li class="page-item ${paging.next ? '' : 'disabled'}"><c:choose>
+							<c:when test="${paging.endPage < 10}">
+								<a class="page-link"
+									href="/showReview?page=${paging.endPage=paging.endPage}">Next</a>
+							</c:when>
+							<c:otherwise>
+								<a class="page-link"
+									href="/showReview?page=${paging.endPage + 1}">Next</a>
+							</c:otherwise>
+						</c:choose></li>
+				</ul>
+			</div>
 </body>
 </html>

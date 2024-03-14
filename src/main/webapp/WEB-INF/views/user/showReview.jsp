@@ -26,9 +26,18 @@
 	</nav>
 </header>
 <body>
-<main>
+
 <div id="top"></div>
-		<h2>내가 쓴 후기</h2>
+<main>
+
+<div id="sideMenu">
+			<a href="showReview" id="showReview">My Review</a> <a href="showQna">내 Q&A</a> <a
+				href="showCollect" id="showCollect">진행 상황</a> <a href="updateUser">회원
+				정보 수정</a> <a href="deleteUser">회원 탈퇴</a> <a href="logout">로그아웃</a>
+		</div>
+		
+		<div id="mainMenu">
+		<h2>My Review</h2>
 		<table border=1 class="table">
 			<tr>
 				<th scope="col">제목</th>
@@ -47,7 +56,10 @@
 					<td>${item.rating}</td>
 				</tr>
 			</c:forEach>
+				
 		</table>
+		</div>
+	</main>
 		<div id="page">
 		<ul class="pagination">
 			<li class="page-item ${paging.prev ? '' : 'disabled'}"><c:choose>
@@ -80,6 +92,6 @@
 				</c:choose></li>
 		</ul>
 		</div>
-	</main>
+	
 </body>
 </html>

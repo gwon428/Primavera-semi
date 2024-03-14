@@ -30,8 +30,17 @@
 <body>
 <sec:authentication property="principal" var="user" />
 <!-- 회원용 수거 신청 진행 상황 페이지 -->
-<main>
+
 <div id="top"></div>
+
+<main>
+<div id="sideMenu">
+			<a href="showReview" id="showReview">My Review</a> <a href="showQna">내 Q&A</a> <a
+				href="showCollect" id="showCollect">진행 상황</a> <a href="updateUser">회원
+				정보 수정</a> <a href="deleteUser">회원 탈퇴</a> <a href="logout">로그아웃</a>
+		</div>
+		
+		<div id="mainMenu">
 <h2>진행 상황</h2>
 	<table border=1 class="table">
 		<tr>
@@ -40,7 +49,7 @@
 			<th>이름</th>
 			<th>전화번호</th>
 			<th>진행상황</th>
-			<th>수거 신청 무게</th>
+			<th style="width:250px;">수거 신청 무게</th>
 			<th>금액</th>
 		</tr>
 		
@@ -55,7 +64,10 @@
 				<td>${item.kg*400}</td>
 			</tr>
 		</c:forEach>
+		
 	</table>
+	</div>
+	</main>
 	<div id="page">
 	<ul class="pagination">
 			<li class="page-item ${paging.prev ? '' : 'disabled'}">
@@ -87,6 +99,6 @@
 				</c:choose></li>
 		</ul>
 		</div>
-		</main>
+		
 </body>
 </html>

@@ -29,16 +29,13 @@
 				<sec:authentication property="principal" var="user" />
 				<main>
 
-					<div id="sideMenu">
-						<a href="showReview">내가 적은 후기</a>
-						<a href="showQna">내 Q&A</a>
-						<a href="showCollect">진행 상황</a>
-						<a href="updateUser" id="update">회원 정보 수정</a>
-						<a href="deleteUser">회원 탈퇴</a>
-						<a href="logout">로그아웃</a>
-					</div>
+		<div id="sideMenu">
+			<a href="showReview" id="showReview">My Review</a> <a href="showQna">내 Q&A</a> <a
+				href="showCollect">진행 상황</a> <a href="updateUser" id="update">회원
+				정보 수정</a> <a href="deleteUser">회원 탈퇴</a> <a href="logout">로그아웃</a>
+		</div>
 
-					<div id="mainMenu">
+		<div id="mainMenu">
 						<h1>비밀번호 인증</h1>
 						<hr>
 						<h2>정보를 안전하게 보호하기 위해 </h2>
