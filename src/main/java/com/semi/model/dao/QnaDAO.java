@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 
 import com.semi.model.vo.Collect;
+import com.semi.model.vo.Paging;
 import com.semi.model.vo.PagingQna;
 import com.semi.model.vo.Qna;
 
@@ -18,7 +19,7 @@ public class QnaDAO {
 	private SqlSessionTemplate session;
 	
 	// 리스트 페이징 처리 (Qna 보이는 첫 페이지)
-	public List<Qna> showAllQna(PagingQna paging){
+	public List<Qna> showAllQna(Paging paging){
 		return session.selectList("qnaMapper.showAllQna", paging);
 	}
 	public int total() {

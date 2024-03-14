@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.semi.model.dao.QnaDAO;
+import com.semi.model.vo.Paging;
 import com.semi.model.vo.PagingQna;
 import com.semi.model.vo.Qna;
 
@@ -16,7 +17,7 @@ public class QnaService {
 	private QnaDAO dao;
 	
 	// 리스트 페이징 처리
-	public List<Qna> showAllQna(PagingQna paging){
+	public List<Qna> showAllQna(Paging paging){
 		paging.setOffset(paging.getLimit()*(paging.getPage()-1));
 		return dao.showAllQna(paging);
 	}

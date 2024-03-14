@@ -38,14 +38,19 @@
 			<div id="id_writeDate">
 				<div name="id" id="id">${qna.id}</div>
 				<div id="writeDate" name="writeDate">
-					
 					<fmt:formatDate value="${qna.writeDate}" pattern="yy-MM-dd HH:ss" />
 				</div>
 			</div>
 
 			<div id="button">
 			<c:choose>
-				<c:when test="${user == 'anonymousUser'}">
+				<c:when test="${user == 'anonymousUser'||(qna.id != user.id&&user.auth!='ADMIN')}">
+				<button value="목록" id="btnlist">
+					<a href="listQna" id="listQna">목록</a>
+				</button>
+				</c:when>
+				<c:otherwise>
+				<c:if test="${user.auth == 'ADMIN'}">
 				<button value="목록" id="btnlist">
 					<a href="listQna" id="listQna">목록</a>
 				</button>
@@ -55,17 +60,19 @@
 				<button value="삭제" id="btndelete">
 					<a href="/deleteQna?qnaNum=${qna.qnaNum}" id="deleteQna">삭제</a>
 				</button>
-				</c:when>
-				<c:otherwise>
-				<c:if test="${user.auth == 'ADMIN'}">
+				<button value="댓글" id="btnAnswer">
+					<a href="writeAnswer?qnaNum=${qna.qnaNum}" id="AnswerQna">댓글</a>
+				</button>
+				</c:if>
+				<c:if test="${qna.id == user.id}">
 				<button value="목록" id="btnlist">
 					<a href="listQna" id="listQna">목록</a>
 				</button>
+				<button value="수정" id="btnupdate">
+					<a href="updateQna" id="updateQna">수정</a>
+				</button>
 				<button value="삭제" id="btndelete">
 					<a href="/deleteQna?qnaNum=${qna.qnaNum}" id="deleteQna">삭제</a>
-				</button>
-				<button value="댓글" id="btnAnswer">
-					<a href="writeAnswer?qnaNum=${qna.qnaNum}" id="AnswerQna" >댓글</a>
 				</button>
 				</c:if>
 				</c:otherwise>

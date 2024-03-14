@@ -75,7 +75,7 @@ public class CollectController {
 	public String signUp(Collect vo) {	
 		service.registerCollect(vo);
 		
-		return "collect/collect";
+		return "redirect:/showCollect";
 	}
 	
 }

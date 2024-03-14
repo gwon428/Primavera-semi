@@ -9,13 +9,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<!-- 
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
-	crossorigin="anonymous" />
- -->
 <link rel="stylesheet" href="../../../resources/css/reset.css" />
 <link rel="stylesheet" href="../../../resources/css/header.css" />
 <link rel="stylesheet" href="../../../resources/css/qna/listQna.css" />
@@ -81,11 +74,14 @@
 						<!--  현재 주소에 있는 거 긁어서 같이 넘기고,거기서 계속 넘기면 다시 유지해서 올 수 있음 -->
 						<c:forEach items="${list}" var="item" varStatus="status">
 							<tr>
+							<!-- 
 								<td>${status.count}</td>
+								 -->
+								 <td>${paging.total - (paging.page - 1) * 10 - status.index}</td>
 								<td><a href="/viewQna?qnaNum=${item.qnaNum}">${item.title}</a></td>
 								<td>${item.id}</td>
 								<td><fmt:formatDate value="${item.writeDate}"
-										pattern="yy-MM-dd" /></td>
+										pattern="yy-MM-dd HH:ss" /></td>
 								<td>${item.status}</td>
 							</tr>
 						</c:forEach>

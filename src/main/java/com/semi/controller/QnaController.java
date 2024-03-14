@@ -10,9 +10,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-
+import com.semi.model.vo.Paging;
 import com.semi.model.vo.PagingQna;
 import com.semi.model.vo.Qna;
 import com.semi.service.QnaService;
@@ -65,13 +66,18 @@ public class QnaController {
 		
 		// 리스트 페이징 처리 (select)
 		@GetMapping("listQna")
-		public String showFilm(Model model, PagingQna paging) {
-			
+	//	public String showFilm(Model model, Paging paging) {
+		public String showFilm(Model model, @RequestParam(value = "page", defaultValue = "1") int page) {
 			//System.out.println(paging);
+			
+			// 페이지 거꾸로
+			int total = service.total();
+			Paging paging = new Paging(page, total);
 			
 			List<Qna> list = service.showAllQna(paging);
 			model.addAttribute("list", list);
-			model.addAttribute("paging", new PagingQna(paging.getPage(), service.total()));
+			//model.addAttribute("paging", new PagingQna(paging.getPage(), service.total()));
+			model.addAttribute("paging", paging);
 			
 			return "qna/listQna";
 		}

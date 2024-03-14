@@ -21,6 +21,7 @@
 	<select id="showAllQna" parameterType="PagingQna" resultMap="qnaMap">
 		SELECT qna_num, title, id, write_date, status 
 		FROM qna
+		ORDER BY qna_num DESC
 		LIMIT #{offset}, #{limit}
 	</select>
 	
