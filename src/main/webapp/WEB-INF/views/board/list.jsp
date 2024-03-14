@@ -44,7 +44,7 @@
 		<section id="neck">
 			<div class="cover"></div>
 		</section>
-		<div class="container">			
+		<div class="container">
 			<table class="table">
 				<thead>
 					<tr>
@@ -63,8 +63,8 @@
 									<img
 										src="${pageContext.request.contextPath}/upload/review/${board.url}"
 										width="150" height="150" />
-								</c:if></td>
-							<td>${status.count}</td>
+								</c:if></td>							
+							<td>${paging.total - (paging.page - 1) * 10 - status.index}</td>
 							<td><a href="/board/view?no=${board.no}">${board.title}</a></td>
 							<td>${board.id}</td>
 							<td>
@@ -88,18 +88,18 @@
 				</c:if>
 			</div>
 			<nav>
-				<ul class="pagination">					
+				<ul class="pagination">
 					<li class="page-item ${paging.prev ? '' : 'disabled'}"><a
 						class="page-link" href="/board/list?page=${paging.startPage - 1}">Previous</a>
 					</li>
-					
+
 					<c:forEach begin="${paging.startPage}" end="${paging.endPage}"
 						var="page">
 						<li class="page-item ${paging.page == page ? 'active' : ''}">
 							<a class="page-link" href="/board/list?page=${page}">${page}</a>
 						</li>
 					</c:forEach>
-					
+
 					<li class="page-item ${paging.next ? '' : 'disabled'}"><a
 						class="page-link" href="/board/list?page=${paging.endPage + 1}">Next</a>
 					</li>

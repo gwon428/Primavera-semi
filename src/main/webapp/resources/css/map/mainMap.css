@@ -67,20 +67,51 @@ body, #neck, .cover, .map {
     margin-left: 50px;    
 }
 
+/* 이미지 슬라이드 부분 */
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.image-text-wrapper {
+    opacity: 0;
+    transform: translateX(-100%);
+}
+
+.image-text-wrapper.animate {
+    animation: slideIn 2s ease-out forwards;
+}
+
 #map {
     margin: 50px auto;
     width: 800px;
     height: 600px;
     border-radius: 15px;   
     padding: 15px;
-    box-shadow: 0 0 10px #999;    
-    animation: slide4 2.0s;
+    box-shadow: 0 0 10px #999;       
 }
 
+/* 맵 슬라이드 부분 */
 
-@keyframes slide4 {
-    from { bottom: -300px; }
-    to { bottom: 0px; }
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+#map.animate {
+    animation: slideUp 2s ease-out forwards;
 }
 
 .wrap {
