@@ -36,10 +36,11 @@
 	</select>
 	
 	<!-- select : 회원용 진행상황 페이지용 : 로그인 된 회원의 아이디를 조건으로-->
-	<select id="showCollect" parameterType="String" resultMap="collectMap">
+	<select id="showCollect" parameterType="Pagingseven" resultMap="collectMap">
 		SELECT order_num, id, name, phone, prog, kg
 		FROM collect
 		WHERE id=#{id}
+		LIMIT #{offset}, #{limit}
 	</select>
 	
 	<select id="Collect" parameterType="String" resultType="int">

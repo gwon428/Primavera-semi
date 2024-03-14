@@ -10,6 +10,7 @@
 		<typeAlias type="com.semi.model.vo.Board" alias="Board" />
 		<typeAlias type="com.semi.model.vo.Qna" alias="Qna"/>
 		<typeAlias type="com.semi.model.vo.PagingQna" alias="PagingQna"/>
+		<typeAlias type="com.semi.model.vo.Pagingseven" alias="Pagingseven"/>
 		<typeAlias type="com.semi.model.vo.Paging" alias="Paging" />
 		<typeAlias type="com.semi.model.vo.Notice" alias="Notice"/>
 		<typeAlias type="com.semi.model.vo.QnaAnswer" alias="QnaAnswer"/>

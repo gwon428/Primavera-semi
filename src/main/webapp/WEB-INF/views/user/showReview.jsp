@@ -30,36 +30,34 @@
 <div id="top"></div>
 <main>
 
-<div id="sideMenu">
+		<div id="sideMenu">
 			<a href="showReview" id="showReview">My Review</a> <a href="showQna">내 Q&A</a> <a
 				href="showCollect" id="showCollect">진행 상황</a> <a href="updateUser">회원
 				정보 수정</a> <a href="deleteUser">회원 탈퇴</a> <a href="logout">로그아웃</a>
 		</div>
 		
 		<div id="mainMenu">
-		<h2>My Review</h2>
-		<table border=1 class="table">
-			<tr>
-				<th scope="col">제목</th>
-				<th scope="col">내용</th>
-				<th scope="col">주문번호</th>
-				<th scope="col">작성날짜</th>
-				<th scope="col">별점</th>
-			</tr>
-
-			<c:forEach items="${list}" var="item">
+			<h2>My Review</h2>
+			<table border=1 class="table">
 				<tr>
-					<td id="title">${item.title}</td>
-					<td id="content">${item.content}</td>
-					<td>${item.orderNum}</td>
-					<td id="date"><fmt:formatDate value="${item.date}" pattern="yyyy-MM-dd HH:mm" /></td>
-					<td>${item.rating}</td>
+					<th scope="col">제목</th>
+					<th scope="col">내용</th>
+					<th scope="col">작성날짜</th>
+					<th scope="col">별점</th>
 				</tr>
-			</c:forEach>
-				
-		</table>
-		</div>
-	</main>
+	
+				<c:forEach items="${list}" var="item">
+					<tr>
+						<td id="title">${item.title}</td>
+						<td id="content">${item.content}</td>
+						<td id="date"><fmt:formatDate value="${item.date}" pattern="yyyy-MM-dd HH:mm" /></td>
+						<td>${item.rating}</td>
+					</tr>
+				</c:forEach>
+					
+			</table>
+		
+	
 		<div id="page">
 		<ul class="pagination">
 			<li class="page-item ${paging.prev ? '' : 'disabled'}"><c:choose>
@@ -92,6 +90,7 @@
 				</c:choose></li>
 		</ul>
 		</div>
-	
+		</div>
+	</main>
 </body>
 </html>

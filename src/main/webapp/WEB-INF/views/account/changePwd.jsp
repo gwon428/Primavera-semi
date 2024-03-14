@@ -34,7 +34,7 @@
 		<form action="/checkEmail" method="post" id="frm">
 			<div id="input">
 				<p>아이디</p>
-				<input size="15" type="text" id="id" name="id" value="${id}">
+				<input size="15" type="text" id="id" name="id" value="${id}" autofocus>
 				<p>이메일</p>
 				<input type="text" name="email" id="email" disabled="disabled" placeholder="이메일을 입력해주세요.">
 				<div>
@@ -51,7 +51,7 @@
 	idDupCheck = false;
 	
 	<!-- 아이디 존재 여부 확인 -->
-		$('#id').keyup(() => {
+		$('#id').focus(() => {
 			const id = $('#id').val();
 
 			$.ajax({
@@ -72,6 +72,7 @@
 				}
 			})
 		})
+		
 	
 		$('#email').keyup(()=>{
 			const id=$('#id').val();

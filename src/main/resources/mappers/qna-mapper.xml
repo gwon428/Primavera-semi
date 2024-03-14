@@ -52,12 +52,13 @@
 	</delete>
 	
 	<!-- 회원용 마이페이지 - 내가 적은 qna 보기 -->
-	<select id="showQna" parameterType="String"
+	<select id="showQna" parameterType="Pagingseven"
 		resultMap="qnaMap">
-		SELECT qna_num, title, id, write_date, status
+		SELECT *
 		FROM qna
 		WHERE
 		id=#{id}
+		LIMIT #{offset}, #{limit}
 	</select>
 	
 	<select id="countmyQna" parameterType="String" resultType="int">

@@ -1,6 +1,15 @@
+@font-face {
+  font-family: "Cafe24Oneprettynight";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff")
+    format("woff");
+  font-style: normal;
+}
+
 main{
 	padding-top:150px;
 	height:100vh;
+	font-family: "Cafe24Oneprettynight";
+font-weight: bolder;
 }
 
 h1{

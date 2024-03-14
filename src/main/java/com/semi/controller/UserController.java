@@ -29,6 +29,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.semi.model.vo.Board;
 import com.semi.model.vo.Paging;
+import com.semi.model.vo.Pagingseven;
 import com.semi.model.vo.Qna;
 import com.semi.model.vo.User;
 import com.semi.service.UserService;
@@ -235,19 +236,19 @@ public class UserController {
 	
 	// 내가 쓴 후기 모아보기
 	@GetMapping("showReview")
-	public String showReview(Model model, Paging paging) {
-		List<Board> list = service.showReview();
+	public String showReview(Model model, Pagingseven paging) {
+		List<Board> list = service.showReview(paging);
 		model.addAttribute("list", list);
-		model.addAttribute("paging", new Paging(paging.getPage(), service.showReviewtotal()));
+		model.addAttribute("paging", new Pagingseven(paging.getPage(), service.showReviewtotal()));
 		return "user/showReview";
 	}
 	
 	// 내가 쓴 qna 모아보기
 	@GetMapping("showQna")
-	public String showQna(Model model, Paging paging) {
-		List<Qna> list = service.showQna();
+	public String showQna(Model model, Pagingseven paging) {
+		List<Qna> list = service.showQna(paging);
 		model.addAttribute("list", list);
-		model.addAttribute("paging", new Paging(paging.getPage(), service.showQnatotal()));
+		model.addAttribute("paging", new Pagingseven(paging.getPage(), service.showQnatotal()));
 		return "user/showQna";
 	}
 	

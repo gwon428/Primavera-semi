@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import com.semi.model.vo.Collect;
 import com.semi.model.vo.Paging;
+import com.semi.model.vo.Pagingseven;
 
 @Repository
 public class CollectDAO {
@@ -34,8 +35,8 @@ public class CollectDAO {
 	
 	
 	// 회원용 진행상황 페이지용 
-	public List<Collect> showCollect(String id){
-		return session.selectList("collectMapper.showCollect", id);
+	public List<Collect> showCollect(Pagingseven paging){
+		return session.selectList("collectMapper.showCollect", paging);
 	}
 	
 	public int showCollecttotal(String id) {

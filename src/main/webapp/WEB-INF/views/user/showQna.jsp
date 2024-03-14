@@ -59,19 +59,16 @@
 					</tr>
 				</c:forEach>
 			</table>
-			
-		</div>
-	</main>
 	<div id="page">
 				<ul class="pagination">
 					<li class="page-item ${paging.prev ? '' : 'disabled'}"><c:choose>
 							<c:when test="${paging.startPage == 1}">
 								<a class="page-link"
-									href="/showReview?page=${paging.startPage=1}">Previous</a>
+									href="/showQna?page=${paging.startPage=1}">Previous</a>
 							</c:when>
 							<c:otherwise>
 								<a class="page-link"
-									href="/showReview?page=${paging.startPage-1}">Previous</a>
+									href="/showQna?page=${paging.startPage-1}">Previous</a>
 							</c:otherwise>
 						</c:choose></li>
 
@@ -79,20 +76,22 @@
 						var="page">
 						<li class="page-item"><a
 							class="page-link ${paging.page== page ? 'active' : ''} "
-							href="/showReview?page=${page}">${page}</a></li>
+							href="/showQna?page=${page}">${page}</a></li>
 					</c:forEach>
 
 					<li class="page-item ${paging.next ? '' : 'disabled'}"><c:choose>
 							<c:when test="${paging.endPage < 10}">
 								<a class="page-link"
-									href="/showReview?page=${paging.endPage=paging.endPage}">Next</a>
+									href="/showQna?page=${paging.endPage=paging.endPage}">Next</a>
 							</c:when>
 							<c:otherwise>
 								<a class="page-link"
-									href="/showReview?page=${paging.endPage + 1}">Next</a>
+									href="/showQna?page=${paging.endPage + 1}">Next</a>
 							</c:otherwise>
 						</c:choose></li>
 				</ul>
 			</div>
+			</div>
+			</main>
 </body>
 </html>

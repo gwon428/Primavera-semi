@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 import com.semi.model.dao.UserDAO;
 import com.semi.model.vo.Board;
 import com.semi.model.vo.Paging;
+import com.semi.model.vo.Pagingseven;
 import com.semi.model.vo.Qna;
 import com.semi.model.vo.User;
 
@@ -76,23 +77,32 @@ public class UserService implements UserDetailsService{
 	
 	
 	// 내가 쓴 후기 리스트 출력
-	public List<Board> showReview(){
+	public List<Board> showReview(Pagingseven paging){
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		UserDetails userDetails = (UserDetails)principal;
-		return dao.showReview(userDetails.getUsername());
+		
+		paging.setOffset(paging.getLimit() * (paging.getPage()-1));
+		
+		paging.setId(userDetails.getUsername());
+		return dao.showReview(paging);
 	}
 	
 	public int showReviewtotal() {
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		UserDetails userDetails = (UserDetails)principal;
+		
 		return dao.totalmyReview(userDetails.getUsername());
 	}
 	
 	// 내가 쓴 qna 리스트 출력
-	public List<Qna> showQna(){
+	public List<Qna> showQna(Pagingseven paging){
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		UserDetails userDetails = (UserDetails)principal;
-		return dao.showQna(userDetails.getUsername());
+		
+		paging.setOffset(paging.getLimit() * (paging.getPage()-1));
+		
+		paging.setId(userDetails.getUsername());
+		return dao.showQna(paging);
 	}
 	
 	public int showQnatotal() {

@@ -66,8 +66,7 @@
 		</c:forEach>
 		
 	</table>
-	</div>
-	</main>
+	
 	<div id="page">
 	<ul class="pagination">
 			<li class="page-item ${paging.prev ? '' : 'disabled'}">
@@ -99,6 +98,7 @@
 				</c:choose></li>
 		</ul>
 		</div>
-		
+		</div>
+	</main>
 </body>
 </html>

@@ -49,8 +49,7 @@
 		resultMap="boardMap">
 		SELECT * FROM review
 		ORDER BY no DESC
-		LIMIT #{offset},
-		#{limit}
+		LIMIT #{offset}, #{limit}
 	</select>
 
 	<select id="count" resultType="int">
@@ -58,12 +57,13 @@
 	</select>
 
 	<!-- 회원용 마이페이지 - 내가 적은 후기 보기 -->
-	<select id="showReview" parameterType="String"
+	<select id="showReview" parameterType="Pagingseven"
 		resultMap="boardMap">
 		SELECT *
 		FROM review
 		WHERE
 		id=#{id}
+		LIMIT #{offset}, #{limit}
 	</select>
 	
 	<select id="countmyReview" parameterType="String" resultType="int">

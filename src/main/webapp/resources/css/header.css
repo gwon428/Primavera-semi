@@ -92,9 +92,10 @@ nav > span:hover {
 nav > span {
   display: none;
   position: absolute;
-  right: 79px;
-  top: 59px;
+  right: 73px;
+  top: 70px;
   padding: 11px;
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 nav > span a {
@@ -111,7 +112,6 @@ a h1 {
   text-decoration: none;
   position: relative;
 }
-
 a::after,
 a h1::after {
   content: "";
@@ -122,4 +122,11 @@ a h1::after {
   height: 2px;
   background-color: white;
   transition: width 0.5s ease;
+}
+nav a:hover::after,
+a h1:hover::after {
+  width: 100%;
+}
+.directivity a h1:hover {
+  opacity: 0.5;
 }
