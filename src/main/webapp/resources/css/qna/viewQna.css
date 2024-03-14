@@ -87,16 +87,18 @@ body{
 #btnAnswer{
 	background-color : #5c8063;
 	border-radius : 3px;
-	width : 60px;
+	width : 45px;
 	height: 27px;
 	border : none;
 }
 #btnAnswer a{
 	color : white;
+	font-family: "Cafe24Oneprettynight";
+	font-weight:bold;	
 }
 #content{
 	padding-top: 30px;
-    min-height: 320px;
+    min-height: 280px;
     max-height: 790px;
     padding-bottom: 30px;
     border-bottom: 1px solid #d1d1d1;
