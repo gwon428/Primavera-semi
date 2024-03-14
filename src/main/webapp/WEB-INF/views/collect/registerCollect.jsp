@@ -10,17 +10,40 @@
 <title>Insert title here</title>
 
 <link rel="stylesheet" href="../../../resources/css/reset.css" />
+<link rel="stylesheet" href="../../../resources/css/header.css" />
 <link rel="stylesheet" href="../../../resources/css/collect/register.css" />
 
 <script
 		src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"
 		defer>
 	</script>
-	<script src="../../../resources/js/registerCollectDaum.js"></script>
-	<script src="https://kit.fontawesome.com/4602e82315.js" crossorigin="anonymous"></script>
+<script src="../../../resources/js/registerCollectDaum.js"></script>
+<script src="https://kit.fontawesome.com/4602e82315.js" crossorigin="anonymous"></script>
+	
 </head>
 <body>
 <sec:authentication property="principal" var="user" />
+
+<div class="header-blackbox"></div>
+	<header>
+		<nav>
+			<a href="index.jsp">Primavera</a>
+		</nav>
+		<nav>
+			<a href="/map/mainMap">Store</a>
+			<a href="#">Guide</a>
+			<a href="collectPage">PickUp</a>
+			<a href="list">Board</a>
+		<span>
+			<a href="/board/list">Review</a>
+			<a href="listQna">Q & A</a>
+			<a href="notice/list">Notice</a>
+		</span>
+							
+			<a href="myPage"><i class="fa-regular fa-user" id="mypage"></i></a>
+		</nav>
+	</header>
+<!-- -----------------------main----------------------------- -->
 <div id="back">
 <div id="back_black"></div>
 	<form action="signUpCollect" method="post" id="pickUp" name="pickUp" onsubmit="return validate()">

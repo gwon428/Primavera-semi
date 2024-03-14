@@ -25,7 +25,13 @@
 							<a href="/map/mainMap">Store</a>
 							<a href="#">Guide</a>
 							<a href="collectPage">PickUp</a>
-							<a href="/board/list">Board</a>
+							<a href="list">Board</a>
+							 <span>
+					          <a href="/board/list">Review</a>
+					          <a href="listQna">Q & A</a>
+					          <a href="notice/list">Notice</a>
+					        </span>
+							
 							<a href="myPage"><i class="fa-regular fa-user" id="mypage"></i></a>
 						</nav>
 					</header>
@@ -93,8 +99,6 @@
 									<a href="registerCollect" id="registerPage">Pick Up</a>
 								</c:otherwise>
 							</c:choose>
-
-							<a href="listQna" id="qna">[임시]qna로 넘어가는 페이지에요</a>
 						</div>
 					</section>
 

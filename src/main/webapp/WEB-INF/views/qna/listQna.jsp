@@ -33,8 +33,15 @@
 				<a href="index.jsp">Primavera</a>
 			</nav>
 			<nav>
-				<a href="#">Store</a> <a href="#">Guid</a> <a href="collectPage">PickUp</a>
-				<a href="/board/list">Board</a> <a href="myPage"><i
+				<a href="#">Store</a> <a href="#">Guid</a> 
+				<a href="collectPage">PickUp</a>
+				<a href="list">Board</a> 
+				<span>
+         		<a href="/board/list">Review</a>
+          		<a href="listQna">Q & A</a>
+          		<a href="notice/list">Notice</a>
+        		</span>
+				<a href="myPage"><i
 					class="fa-regular fa-user" id="mypage"></i></a>
 			</nav>
 		</header>

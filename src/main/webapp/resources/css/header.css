@@ -29,7 +29,27 @@ header nav:nth-child(2) a {
   padding: 20px;
   font-size: 1.5rem;
 }
+nav > a[href="list"]:hover + span,
+nav > span:hover {
+  display: block;
+}
 
+nav > span {
+  display: none;
+  position: absolute;
+  right: 79px;
+  top: 59px;
+  padding: 11px;
+}
+
+nav > span a {
+  display: block;
+  text-decoration: none;
+}
+
+nav > span a:hover {
+  color: black;
+}
 #mypage {
   font-size: 1.5rem;
 }
