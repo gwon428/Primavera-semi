@@ -60,7 +60,34 @@ nav > span a {
 }
 
 nav > span a:hover {
-  color: black;
+  color: white;
+}
+
+nav a,
+a h1 {
+  text-decoration: none;
+  position: relative;
+}
+
+a::after,
+a h1::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: white;
+  transition: width 0.5s ease;
+}
+
+nav a:hover::after,
+a h1:hover::after {
+  width: 100%;
+}
+
+.directivity a h1:hover {
+  opacity: 0.5;
 }
 
 /* -----------------------------------Main Section 1-------------------------------------- */
@@ -162,7 +189,7 @@ nav > span a:hover {
 }
 
 #section1 nav i:hover {
-  color: black;
+  color: #699372;
 }
 
 @keyframes slide3 {
@@ -241,6 +268,27 @@ nav > span a:hover {
   font-size: 2rem;
   left: 580px;
   top: 380px;
+  color: black;
+}
+
+.container1 a {
+  text-decoration: none;
+  position: relative;
+}
+
+.container1 a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background-color: black;
+  transition: width 0.7s ease;
+}
+
+.container1 a:hover::after {
+  width: 100%;
 }
 
 @keyframes slide4 {
@@ -495,6 +543,21 @@ footer {
   font-size: 2rem;
   right: 200px;
   top: 90px;
+}
+
+.row_SNS a ul::after {
+  content: "";
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: white;
+  transition: width 0.5s ease;
+}
+
+.row_SNS a ul:hover::after {
+  width: 100%;
 }
 
 .impormation {
