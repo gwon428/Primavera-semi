@@ -31,14 +31,14 @@
 <body>
 	<main>
 		<h1>이메일 인증</h1>
-		<form action="/checkEmail" method="post">
+		<form action="/checkEmail" method="post" id="frm">
 			<div id="input">
 				<p>아이디</p>
-				<input size="15" type="text" name="id" value="${id}">
+				<input size="15" type="text" id="id" name="id" value="${id}">
 				<p>이메일</p>
-				<input type="text" name="email" id="email" placeholder="이메일을 입력해주세요.">
+				<input type="text" name="email" id="email" disabled="disabled" placeholder="이메일을 입력해주세요.">
 				<div>
-					<input type="button" value="인증하기" class="button" id="emailAuth">
+					<input type="button" value="인증하기" disabled="disabled" class="button" id="emailAuth">
 				</div>
 				<input class="form-control" placeholder="인증 코드 6자리를 입력해주세요" maxlength="6" disabled="disabled" name="authCode" id="authCode" type="text" autofocus/>
 				<span id="emailAuthWarn"></span>
@@ -46,7 +46,54 @@
 			</div>
 		</form>
 	</main>
+	
 	<script type="text/javascript">
+	idDupCheck = false;
+	
+	<!-- 아이디 존재 여부 확인 -->
+		$('#id').keyup(() => {
+			const id = $('#id').val();
+
+			$.ajax({
+				type: "post",
+				url: "/check",
+				data: "id=" + id,
+	
+				success: function (result) {
+					if (result) {
+						// 아이디가 존재할 경우 이메일 인증 버튼 활성화
+						$('#email').attr('disabled', false);
+						idDupCheck = true;
+					} else {
+						// 아이디가 존재하지 않을 경우 이메일 인증 버튼 비활성화
+						$('#email').attr('disabled', true);
+						idDupCheck = false;
+					}
+				}
+			})
+		})
+	
+		$('#email').keyup(()=>{
+			const id=$('#id').val();
+			const email=$('#email').val();
+			
+			$.ajax({
+				type:"post",
+				url:"/checkUser",
+				data: $('#frm').serialize(),
+				
+				success: function (result){
+					if(result){
+						$('#emailAuth').attr('disabled', false);
+					} else {
+						$('#emailAuth').attr('disabled', true);
+					}
+						
+				}
+			})
+			
+		})	
+	
 		$("#emailAuth").click(function(){
 			const email = $("#email").val();
 			
@@ -77,6 +124,7 @@
 			} else{
 				$("#emailAuthWarn").html('인증번호가 불일치 합니다. 다시 확인해주세요!');
 	        	$("#emailAuthWarn").css('color', 'red');
+	        	$("#check").css("display", "none");
 			}
 		});
 		

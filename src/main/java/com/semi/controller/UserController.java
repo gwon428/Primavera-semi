@@ -70,6 +70,16 @@ public class UserController {
 		return true;
 	}
 	
+	@ResponseBody
+	@PostMapping("/checkUser")
+	public boolean checkUser(User user) {
+		
+		User finder = service.userCheck(user);
+		
+		if(finder == null) return false;
+		return true;
+	}
+	
 	@PostMapping("/register")
 	public String register(User user) {
 		service.registerUser(user);
@@ -145,11 +155,6 @@ public class UserController {
 		model.addAttribute("list", list);
 		model.addAttribute("paging", new Paging(paging.getPage(), service.total()));
 		return "user/allUser";
-	}
-	
-	@GetMapping("findId")
-	public String findId() {
-		return "account/findId";
 	}
 	
 	@PostMapping("/findId")

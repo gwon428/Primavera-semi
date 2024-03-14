@@ -21,6 +21,13 @@
 		WHERE id=#{id}
 	</select>
 	
+	<select id="userCheck" parameterType="User" resultMap="userMap">
+		SELECT *
+		FROM user
+		WHERE id=#{id}
+		AND email=#{email}
+	</select>
+	
 	<insert id="registerUser" parameterType="User">
 		INSERT INTO user(id, password, name, phone, post_code, road_address, detail_address, email, bank_name, account)
 		VALUES(#{id}, #{password}, #{name}, #{phone}, #{postCode}, #{roadAddress}, #{detailAddress}, #{email}, #{bankName}, #{account})

@@ -22,6 +22,10 @@ public class UserDAO {
 		return session.selectOne("userMapper.idCheck", id);
 	}
 	
+	public User checkUser(User user) {
+		return session.selectOne("userMapper.userCheck", user);
+	}
+	
 	public int registerUser(User user) {
 		return session.insert("userMapper.registerUser", user);
 	}

@@ -2,15 +2,21 @@
 	<!DOCTYPE html>
 	<html>
 
-	<head>
-
-
-		<meta charset="UTF-8">
-		<script src="https://kit.fontawesome.com/4602e82315.js" crossorigin="anonymous"></script>
-		<title>Insert title here</title>
-		<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-	</head>
-	<header>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="/resources/css/reset.css" />
+	<link href="../../resources/css/header.css" rel="stylesheet"
+		type="text/css">
+	<link href="../../resources/css/user/registerUser.css" rel="stylesheet"
+		type="text/css">
+	<script src="https://kit.fontawesome.com/4602e82315.js"
+		crossorigin="anonymous"></script>
+	
+	<title>Insert title here</title>
+	
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<header>
 		<nav>
 			<a href="/">Primavera</a>
 		</nav>
