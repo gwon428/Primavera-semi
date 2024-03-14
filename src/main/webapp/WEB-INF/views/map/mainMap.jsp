@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="../../../resources/css/header.css" />
 <link href="../../resources/css/map/mainMap.css" rel="stylesheet"
 	type="text/css">
- 
+
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 <script src="https://kit.fontawesome.com/4602e82315.js"
@@ -78,37 +78,18 @@
 		<script type="text/javascript"
 			src="//dapi.kakao.com/v2/maps/sdk.js?appkey=04b7f22e5edf17d8f2ce411e6eb1f006"></script>
 		<script>
-			var mapContainer = document.getElementById('map'),
-			mapOption = {
-				// 지도의 중심좌표
-				center : new daum.maps.LatLng(37.5519, 126.9918),
-				// 지도의 확대 레벨 
-				level : 9
-			};
-			// 지도를 생성
-			var map = new daum.maps.Map(mapContainer, mapOption);
-
-			// 지도에 마커를 표시 
-			var marker1 = new daum.maps.Marker({
-				map : map,
-				position : new daum.maps.LatLng(37.49781, 127.13338)
-			});
-
-			var marker2 = new daum.maps.Marker({
-				map : map,
-				position : new daum.maps.LatLng(37.574524, 127.03965)
-			});
-
-			var marker3 = new daum.maps.Marker({
-				map : map,
-				position : new daum.maps.LatLng(37.495472, 126.887536)
-			});
-			// 커스텀 오버레이에 표시할 컨텐츠			
-			var content1 = '<div class="wrap">'
+		    var mapContainer = document.getElementById('map'),
+		        mapOption = {
+		            center: new kakao.maps.LatLng(37.5519, 126.9918),
+		            level: 9
+		        };
+		    var map = new kakao.maps.Map(mapContainer, mapOption);
+		    var markers = [
+		        { position: new kakao.maps.LatLng(37.49781, 127.13338), content: '<div class="wrap">'
 					+ '    <div class="info">'
 					+ '        <div class="title">'
 					+ '            프리마베라 1호점'
-					+ '            <div class="close" onclick="closeOverlay1()" title="닫기"></div>'
+					+ '            '
 					+ '        </div>'
 					+ '        <div class="body">'
 					+ '            <div class="img">'
@@ -119,13 +100,12 @@
 					+ '                <div class="jibun ellipsis">(우) 63309 (지번) 영평동 2181</div>'
 					+ '                <div>070-1312-1454</div>'
 					+ '            </div>' + '        </div>' + '    </div>'
-					+ '</div>';
-					
-			var content2 = '<div class="wrap">'
+					+ '</div>' },
+		        { position: new kakao.maps.LatLng(37.574524, 127.03965), content: '<div class="wrap">'
 					+ '    <div class="info">'
 					+ '        <div class="title">'
 					+ '            프리마베라 2호점'
-					+ '            <div class="close" onclick="closeOverlay2()" title="닫기"></div>'
+					+ '            '
 					+ '        </div>'
 					+ '        <div class="body">'
 					+ '            <div class="img">'
@@ -136,13 +116,12 @@
 					+ '                <div class="jibun ellipsis">(우) 63309 (지번) 영평동 2181</div>'
 					+ '                <div>070-1712-3764</div>'
 					+ '            </div>' + '        </div>' + '    </div>'
-					+ '</div>';
-
-			var content3 = '<div class="wrap">'
+					+ '</div>' },
+		        { position: new kakao.maps.LatLng(37.495472, 126.887536), content: '<div class="wrap">'
 					+ '    <div class="info">'
 					+ '        <div class="title">'
 					+ '            프리마베라 3호점'
-					+ '            <div class="close" onclick="closeOverlay3()" title="닫기"></div>'
+					+ '            '
 					+ '        </div>'
 					+ '        <div class="body">'
 					+ '            <div class="img">'
@@ -153,51 +132,54 @@
 					+ '                <div class="jibun ellipsis">(우) 63309 (지번) 영평동 2181</div>'
 					+ '                <div>070-4512-1214</div>'
 					+ '            </div>' + '        </div>' + '    </div>'
-					+ '</div>';
-			// 마커 위에 커스텀오버레이를 표시			
-			var overlay1 = new daum.maps.CustomOverlay({
-				content : content1,
-				map : map,
-				position : marker1.getPosition()
+					+ '</div>' }
+		    ];
+		    markers.forEach(function(markerInfo, index) {
+		        var marker = new kakao.maps.Marker({
+		            map: map,
+		            position: markerInfo.position
+		        });
+					
+					// 마커 위에 커스텀오버레이를 표시			
+					var overlay = new kakao.maps.CustomOverlay({
+			            content: markerInfo.content,
+			            map: map,
+			            position: marker.getPosition()
+			        });
+			        overlay.setMap(null);
+			        daum.maps.event.addListener(marker, 'mouseover', function() {
+			        	overlay.setMap(map);			        	
+			        });
+			        
+			        daum.maps.event.addListener(marker, 'mouseout', function() {
+			            overlay.setMap(null);
+			        });
+			    });
+			    function closeOverlay(overlay) {
+			        overlay.setMap(null);
+			    }
+	</script>		
+
+		<script>
+			document.addEventListener("DOMContentLoaded", function() {
+			    var observer = new IntersectionObserver(function(entries) {
+			        entries.forEach(entry => {
+			            if(entry.isIntersecting) {
+			                entry.target.classList.add('animate');
+			            }
+			        });
+			    });
+			   
+			    document.querySelectorAll('.image-text-wrapper').forEach(item => {
+			        observer.observe(item);
+			    });
+			  
+			    var mapElement = document.querySelector('#map');
+			    observer.observe(mapElement);
 			});
-
-			var overlay2 = new daum.maps.CustomOverlay({
-				content : content2,
-				map : map,
-				position : marker2.getPosition()
-			});
-
-			var overlay3 = new daum.maps.CustomOverlay({
-				content : content3,
-				map : map,
-				position : marker3.getPosition()
-			});
-			// 마커를 클릭했을 때 커스텀 오버레이를 표시
-			daum.maps.event.addListener(marker1, 'click', function() {
-				overlay1.setMap(map);
-			});
-
-			daum.maps.event.addListener(marker2, 'click', function() {
-				overlay2.setMap(map);
-			});
-
-			daum.maps.event.addListener(marker3, 'click', function() {
-				overlay3.setMap(map);
-			});
-
-			// 커스텀 오버레이 닫기
-			function closeOverlay1() {
-				overlay1.setMap(null);
-			}
-
-			function closeOverlay2() {
-				overlay2.setMap(null);
-			}
-
-			function closeOverlay3() {
-				overlay3.setMap(null);
-			}
 		</script>
+		
+		
 	</main>
 </body>
 </html>

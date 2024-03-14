@@ -13,6 +13,7 @@ public class Paging {
 	private int pageSize = 10;
 	private int endPage;
 	private int startPage;
+	private int total;
 
 	private boolean prev;
 	private boolean next;
@@ -20,6 +21,7 @@ public class Paging {
 	public Paging(int page, int total) {
 
 		this.page = page;
+		this.total = total;
 		this.endPage = (int) (Math.ceil((double) page / this.pageSize)) * this.pageSize;
 		this.startPage = this.endPage - this.pageSize + 1;
 
