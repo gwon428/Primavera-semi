@@ -156,6 +156,10 @@ public class UserController {
 		model.addAttribute("paging", new Paging(paging.getPage(), service.total()));
 		return "user/allUser";
 	}
+	@GetMapping("/findId")
+	public String findId() {
+		return "account/findId";
+	}
 	
 	@PostMapping("/findId")
 	public String findId(User user, Model model) {
