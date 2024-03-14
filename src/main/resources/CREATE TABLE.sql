@@ -1,14 +1,9 @@
-DROP TABLE list;
-DROP TABLE progress;
 DROP TABLE review;
 DROP TABLE notice;
 DROP TABLE qna_answer;
 DROP TABLE qna;
 DROP TABLE user;
 DROP TABLE collect;
-
-SELECT * FROM user;
-UPDATE user SET auth='ADMIN' WHERE id='manager01';
 
 
 CREATE TABLE user(
@@ -37,7 +32,8 @@ detail_address VARCHAR(30) NOT NULL,
 collection_date DATE NOT NULL,
 door_pwd  VARCHAR(30),           
 request TEXT,
-prog VARCHAR(30) DEFAULT('신청완료')
+prog VARCHAR(30) DEFAULT '신청완료',
+kg INT NOT NULL
 );
 
 CREATE TABLE review (
@@ -56,7 +52,6 @@ qna_num INT PRIMARY KEY AUTO_INCREMENT,
 id VARCHAR(20) NOT NULL,
 title VARCHAR(30) NOT NULL,
 content TEXT NOT NULL,
-order_num INT NOT NULL,
 write_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 url VARCHAR(200),
 status CHAR(1) CHECK(status IN('Y','N')) DEFAULT 'N'
@@ -64,7 +59,7 @@ status CHAR(1) CHECK(status IN('Y','N')) DEFAULT 'N'
 
 CREATE TABLE qna_answer(
 qna_num INT NOT NULL,
-manager VARCHAR(20) NOT NULL,
+id VARCHAR(20) NOT NULL,
 content TEXT NOT NULL,
 url VARCHAR(200),
 answer_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
@@ -79,19 +74,11 @@ url VARCHAR(200),
 write_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
-CREATE TABLE list(
-id VARCHAR(30) NOT NULL,
-order_num INT NOT NULL,
-collection_date DATE,
-kg INT NOT NULL,
-price INT NOT NULL
-);
+
 
 ALTER TABLE review ADD CONSTRAINT revi_cust_id
 	FOREIGN KEY (id) REFERENCES user(id) ON DELETE CASCADE;
 ALTER TABLE qna ADD CONSTRAINT qna_cust_id
-	FOREIGN KEY (id) REFERENCES user(id) ON DELETE CASCADE;
-ALTER TABLE list ADD CONSTRAINT li_id_cust
 	FOREIGN KEY (id) REFERENCES user(id) ON DELETE CASCADE;
 
 ALTER TABLE review ADD CONSTRAINT rev_order_num
@@ -101,6 +88,3 @@ ALTER TABLE qna ADD CONSTRAINT qna_order_num
     
 ALTER TABLE qna_answer ADD CONSTRAINT qna_num
 	FOREIGN KEY (qna_num) REFERENCES qna(qna_num) ON DELETE CASCADE;
-ALTER TABLE list ADD CONSTRAINT li_on_coll
-	FOREIGN KEY (order_num) REFERENCES collect(order_num) ON DELETE CASCADE;
-    
