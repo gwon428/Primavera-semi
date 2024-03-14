@@ -20,10 +20,16 @@
 			<a href="#">Primavera</a>
 		</nav>
 		<nav>
-			<a href="#">Store</a> <a href="#">Guid</a> <a href="collectPage">PickUp</a>
-			<a href="list">Board</a> <span> <a href="#">Board</a> <a
-				href="#">Q & A</a> <a href="#">Notice</a>
-			</span> <a href="myPage"><i class="fa-regular fa-user"></i></a>
+			<a href="/map/mainMap">Store</a> 
+			<a href="#">Guid</a>
+			<a href="collectPage">PickUp</a>
+			<a href="list">Board</a> 
+			<span> 
+			<a href="/board/list">Board</a> 
+			<a href="#">Q & A</a> 
+			<a href="/notice/lis">Notice</a>
+			</span> 
+			<a href="myPage"><i class="fa-regular fa-user"></i></a>
 		</nav>
 	</header>
 	<main>

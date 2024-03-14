@@ -56,9 +56,7 @@
 							<td>${item.kg}</td>
 							<td>${item.kg*400}</td>
 						</tr>
-
-						
-						</c:forEach>
+					</c:forEach>
 				</table>
 				<div id="page">
 					<ul class="pagination">

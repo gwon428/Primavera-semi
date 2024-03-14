@@ -6,7 +6,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/resources/css/reset.css" />
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
@@ -30,9 +29,9 @@
         <a href="collectPage">PickUp</a>
         <a href="list">Board</a>
         <span>
-          <a href="/board/list">Review</a>
-          <a href="listQna">Q & A</a>
-          <a href="notice/list">Notice</a>
+          <a href="/board/list">Board</a>
+          <a href="#">Q & A</a>
+          <a href="/notice/list">Notice</a>
         </span>
         <a href="myPage"><i class="fa-regular fa-user"></i></a>
       </nav>
@@ -171,6 +170,7 @@
         </footer>
       </section>
     </main>
+    <script src="/resources/js/front.js"></script>
   </body>
 
   </html>
