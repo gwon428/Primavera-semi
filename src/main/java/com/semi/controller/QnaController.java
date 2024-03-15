@@ -16,6 +16,8 @@ import org.springframework.web.multipart.MultipartFile;
 import com.semi.model.vo.Paging;
 import com.semi.model.vo.PagingQna;
 import com.semi.model.vo.Qna;
+import com.semi.model.vo.QnaAnswer;
+import com.semi.service.QnaAnswerService;
 import com.semi.service.QnaService;
 
 @Controller
@@ -23,6 +25,9 @@ public class QnaController {
 
 	@Autowired
 	private QnaService service;
+	
+	@Autowired
+	private QnaAnswerService qnaAnswerService;
 	
 	private String path = "D:\\upload\\qna\\";
 	
@@ -39,6 +44,7 @@ public class QnaController {
 			return filename;
 		}
 		
+		// 글 등록 페이지 이동
 		@GetMapping("writeQna")
 		public String write() {
 			return "qna/insertQna";
@@ -61,6 +67,7 @@ public class QnaController {
 			//return "redirect:/view?no=" + qna.getQnaNum();
 			//return "redirect:/qna";
 			System.out.println(qna.getQnaNum());
+			System.out.println("qna.getDate : " + qna.getWriteDate());
 			return "redirect:/listQna";
 		}
 		
@@ -89,6 +96,11 @@ public class QnaController {
 			int qnanum = Integer.parseInt(qnaNum);
 			qna = service.select(qnanum);
 			model.addAttribute("qna", qna);
+			
+			// 댓글 정보 바인딩 추가
+			QnaAnswer qnaAnswer = qnaAnswerService.selectQnaAnswer(qnanum);
+			model.addAttribute("qnaAnswer", qnaAnswer);
+			
 			return "/qna/viewQna";
 		}
   

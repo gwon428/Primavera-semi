@@ -24,7 +24,7 @@
 	<!-- update -->
 	<update id="updateQnaAnswer" parameterType="QnaAnswer">
 		UPDATE qna_answer  
-		SET content = #{content}
+		SET content = #{content}, url = #{url}
 		WHERE qna_num = #{qnaNum}
 	</update>
 	

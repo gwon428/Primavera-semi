@@ -9,6 +9,7 @@
 <head>
 <meta charset="UTF-8" />
 <title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <link rel="stylesheet" href="../../../resources/css/reset.css" />
 <link rel="stylesheet" href="../../../resources/css/header.css" />
 <link rel="stylesheet" href="../../../resources/css/qna/viewQna.css" />
@@ -82,32 +83,29 @@
 		<div id="content" name="content">${qna.content}</div>
 		<div id="url" name="url">
 			<img src="/upload/qna/${qna.url}" />
-		</div>
-		
+		</div> 
+	</div>
+	<!-- ------------------------댓글--------------------------- -->
 	<c:choose>
-		<c:when test="${user == 'anonymousUser'}">
-		</c:when>
-		<c:otherwise>
-		<c:if test="${user.auth == 'ADMIN'}">
-	<div id="qnaAnswer">
-		<jsp:include page="/WEB-INF/views/qnaAnswer/viewAnswer.jsp"></jsp:include>
-		
-	</div>
+		<c:when test="${qnaAnswer != null}">		
 	<div>
-		<span>Primavera!! 답변</span>
-		<input id="qnaNum" value="${qna.qnaNum}" hidden>
-		<div name="qnaNum" id="qnaNum">${qna.qnaNum}</div>
 		<div name="id" id="id">${qnaAnswer.id}</div>
-		<div id="answerDate" name="answerDate">
+				<div id="writeDate" name="writeDate">
+					<fmt:formatDate value="${qnaAnswer.answerDate}" pattern="yy-MM-dd HH:mm" />
+				</div>
 		
-			<fmt:formatDate value="${qnaAnswer.answerDate}" pattern="yy-MM-dd HH:ss" />
-		</div>
 		<div id="content" name="content">${qnaAnswer.content}</div>
+		<div id="url" name="url">
+			<img src="/upload/qnaAnswer/${qnaAnswer.url}" />
+		</div> 
+		
+
+		<button value="삭제" id="btndelete">
+			<a href="updateQnaAnswer?qnaNum=${qnaAnswer.qnaNum}" id="updateQnaAnswer">수정</a>
+			<a href="/deleteQnaAnswer?qnaNum=${qnaAnswer.qnaNum}" id="deleteQnaAnswer">삭제</a>
+		</button>
 	</div>
-		</c:if>
-		</c:otherwise>
+	</c:when>
 	</c:choose>
-	 
-	</div>
 </body>
 </html>
