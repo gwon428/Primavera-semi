@@ -8,18 +8,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>글 목록</title>
+<title>리뷰 목록</title>
 <link rel="stylesheet" href="../../../resources/css/reset.css" />
 <link rel="stylesheet" href="../../../resources/css/header.css" />
 <link href="../../resources/css/review/list.css" rel="stylesheet"
 	type="text/css">
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
-	crossorigin="anonymous" />
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 <script src="https://kit.fontawesome.com/4602e82315.js"
 	crossorigin="anonymous"></script>
 </head>
@@ -31,9 +24,10 @@
 				<a href="/">Primavera</a>
 			</nav>
 			<nav>
-				<a href="/map/mainMap">Store</a> <a href="#">Guide</a> <a
-					href="/collectPage">PickUp</a> <a href="/board/list">Board</a> <a
-					href="/myPage"><i class="fa-regular fa-user"></i></a>
+				<a href="#">Store</a> <a href="#">Guid</a> <a href="collectPage">PickUp</a>
+				<a href="list">Board</a> <span> <a href="/board/list">Review</a>
+					<a href="listQna">Q & A</a> <a href="notice/list">Notice</a>
+				</span> <a href="myPage"><i class="fa-regular fa-user" id="mypage"></i></a>
 			</nav>
 		</header>
 
@@ -45,6 +39,14 @@
 			<div class="cover"></div>
 		</section>
 		<div class="container">
+			<div class="header">
+			<div class="cover"></div>
+				<h1>REVIEW</h1>				
+					<c:if test="${isLoggedIn}">
+						<a href="/board/write" id="writebtn">리뷰 작성</a>
+					</c:if>
+				
+			</div>
 			<table class="table">
 				<thead>
 					<tr>
@@ -63,9 +65,9 @@
 									<img
 										src="${pageContext.request.contextPath}/upload/review/${board.url}"
 										width="150" height="150" />
-								</c:if></td>							
+								</c:if></td>
 							<td>${paging.total - (paging.page - 1) * 10 - status.index}</td>
-							<td><a href="/board/view?no=${board.no}">${board.title}</a></td>
+							<td><a class="review-link" href="/board/view?no=${board.no}">${board.title}</a></td>
 							<td>${board.id}</td>
 							<td>
 								<div class="star-rating">
@@ -82,11 +84,6 @@
 				</tbody>
 
 			</table>
-			<div class="writebtn">
-				<c:if test="${isLoggedIn}">
-					<a href="/board/write" class="btn btn-warning">글쓰기</a>
-				</c:if>
-			</div>
 			<nav>
 				<ul class="pagination">
 					<li class="page-item ${paging.prev ? '' : 'disabled'}"><a
