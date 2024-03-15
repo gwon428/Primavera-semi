@@ -1,0 +1,62 @@
+@font-face {
+  font-family: "Cafe24Oneprettynight";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff")
+    format("woff");
+  font-style: normal;
+}
+#answer{
+	/*height:41%;*/	
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	flex-direction : column;
+	
+}
+#answer_head{
+	font-size: 1.4rem;
+    font-weight: bold;
+    font-family: "Cafe24Oneprettynight";
+    width: 157px;
+    height: 45px;
+    border-radius: 15px;
+    background-color: #dbe5dd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#answerHeader{
+	width: 830px;
+    display: flex;
+    justify-content: space-between;
+	font-family: "Cafe24Oneprettynight";
+	font-weight : bold;
+	margin-bottom : 20px;
+	padding-top : 25px;
+}
+#id_date{
+	display:flex;
+	align-items: flex-end;
+}
+#contentAnswer{
+	border : none;
+	overflow: auto;
+    width:830px;
+    min-height: 270px;
+    max-height: 400px;
+    padding-top: 30px;
+    border-bottom: 2px dashed #4b6850;
+}
+#answer_btn{
+	display:flex;
+	justify-content : center;
+	margin: 15px 0px;
+}
+.btnAnswer{
+	margin : 0px 10px;
+}
+.btnAnswer a{
+	font-family: "Cafe24Oneprettynight";
+	font-weight : bold;
+}

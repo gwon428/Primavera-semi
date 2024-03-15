@@ -10,8 +10,8 @@ body{
 	height:100vh;
 }
 #main{
-	margin-top : 70px;
-	height:90%;	
+	margin-top : 160px;
+	/*height:90%;*/	
 	display:flex;
 	justify-content:center;
 	align-items:center;
@@ -98,19 +98,19 @@ body{
 }
 #content{
 	padding-top: 30px;
-    min-height: 280px;
+    min-height: 320px;
     max-height: 790px;
     padding-bottom: 30px;
-    border-bottom: 1px solid #d1d1d1;
-    border-top: 1px solid #d1d1d1;
+    border-bottom: 2px dashed #4b6850;
+    border-top: 2px solid #4b6850;
     overflow: auto;
-    width:800px;
+    width:830px;
 }
 #url{
-
-	border-bottom: 1px solid #d1d1d1;
-	width:800px;
-	height : 160px;
+	border-bottom: 2px solid #4b6850;
+	
+	width:830px;
+	height : 170px;
 }
 #image_container{
 	width : 130px;

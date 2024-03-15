@@ -15,6 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.semi.model.vo.Qna;
 import com.semi.model.vo.QnaAnswer;
 import com.semi.service.QnaAnswerService;
+import com.semi.service.QnaService;
 
 @Controller
 public class QnaAnswerController {
@@ -22,6 +23,8 @@ public class QnaAnswerController {
 	@Autowired
 	private QnaAnswerService service;
 
+	@Autowired
+	private QnaService qnaService;
 	
 	private String path = "D:\\upload\\qnaAnswer\\";
 	
@@ -41,6 +44,8 @@ public class QnaAnswerController {
 	@GetMapping("writeAnswer")
 	public String insert(int qnaNum, Model model) {
 		model.addAttribute("qna", qnaNum);
+		Qna qna = qnaService.select(qnaNum);
+		model.addAttribute("qnaView", qna);
 		return "qnaAnswer/insertAnswer";
 	}
 	
@@ -54,9 +59,7 @@ public class QnaAnswerController {
 			qnaAnswer.setUrl(url);
 		}
 		service.insertQnaAnswer(qnaAnswer);
-		System.out.println("qnaAnswer" + qnaAnswer.getQnaNum());
-		System.out.println("대답내용 : "+ qnaAnswer.getContent());
-		System.out.println("url : " + qnaAnswer.getUrl());
+		
 		return "redirect:/viewQna?qnaNum="+qnaAnswer.getQnaNum();
 	}
 	

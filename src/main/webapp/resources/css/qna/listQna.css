@@ -69,7 +69,7 @@ h2 {
 }
 #writeQna {
   position: relative;
-  left: 430px;
+  left: 450px;
   margin: 20px 0;
   padding: 7px;
   font-size: 1rem;
@@ -80,21 +80,21 @@ h2 {
   border-radius: 6px;
 }
 table {
-  margin: 12px 0;
-  position: relative;
-  border-top: 1px solid #757575;
-  border-bottom: 1px solid #757575;
-  min-height: 440px;
-  width: 950px;
+    margin: 12px 0;
+    position: relative;
+    border-top: 1px solid #757575;
+    border-bottom: 1px solid #757575;
+    min-height: 540px;
+    width: 950px;
 }
 
 tr {
-  position: relative;
-  display:grid;
-  grid-template-columns: 0.5fr 3fr 1fr 1fr 0.5fr;
-  width: 950px;
-  height: 40px;
-  border-bottom: 1px solid #eaeaea;
+    position: relative;
+    display: grid;
+    grid-template-columns: 0.5fr 3fr 1fr 1fr 0.5fr;
+    width: 950px;
+    height: 49px;
+    border-bottom: 1px solid #eaeaea;
 }
 th {
   font-family: "Cafe24Oneprettynight";

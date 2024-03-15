@@ -13,22 +13,30 @@
 <link rel="stylesheet" href="../../../resources/css/reset.css" />
 <link rel="stylesheet" href="../../../resources/css/header.css" />
 <link rel="stylesheet" href="../../../resources/css/qna/viewQna.css" />
+<link rel="stylesheet" href="../../../resources/css/qnaAnswer/viewQnaAnswer.css" />
 <script src="https://kit.fontawesome.com/4602e82315.js"
 	crossorigin="anonymous"></script>
 </head>
 <body>
 <sec:authentication property="principal" var="user" />
 	<div class="header-blackbox"></div>
-	<header>
-		<nav>
-			<a href="index.jsp">Primavera</a>
-		</nav>
-		<nav>
-			<a href="#">Store</a> <a href="#">Guid</a> <a href="collectPage">PickUp</a>
-			<a href="/board/list">Board</a> <a href="myPage"><i
-				class="fa-regular fa-user" id="mypage"></i></a>
-		</nav>
-	</header>
+    <header>
+      <nav>
+        <a href="#">Primavera</a>
+      </nav>
+      <nav>
+        <a href="mainMap">Store</a>
+        <a href="#">Guide</a>
+        <a href="collectPage">PickUp</a>
+        <a href="list">Board</a>
+        <span>
+          <a href="/board/list">Review</a>
+          <a href="listQna">Q & A</a>
+          <a href="/notice/list">Notice</a>
+        </span>
+        <a href="myPage"><i class="fa-regular fa-user"></i></a>
+      </nav>
+    </header>
 	<!-- -----------------------------------main----------------------------- -->
 	<div id="main">
 		<div id="top_title">
@@ -81,31 +89,47 @@
 			</div>
 		</div>
 		<div id="content" name="content">${qna.content}</div>
-		<div id="url" name="url">
-			<img src="/upload/qna/${qna.url}" />
-		</div> 
+		<c:choose>
+			<c:when test="${qna.url != null}">
+				<div id="url" name="url">
+					<img src="/upload/qna/${qna.url}" />
+				</div> 
+			</c:when>
+		</c:choose>
 	</div>
 	<!-- ------------------------댓글--------------------------- -->
-	<c:choose>
-		<c:when test="${qnaAnswer != null}">		
-	<div>
-		<div name="id" id="id">${qnaAnswer.id}</div>
-				<div id="writeDate" name="writeDate">
-					<fmt:formatDate value="${qnaAnswer.answerDate}" pattern="yy-MM-dd HH:mm" />
-				</div>
-		
-		<div id="content" name="content">${qnaAnswer.content}</div>
-		<div id="url" name="url">
-			<img src="/upload/qnaAnswer/${qnaAnswer.url}" />
-		</div> 
-		
-
-		<button value="삭제" id="btndelete">
-			<a href="updateQnaAnswer?qnaNum=${qnaAnswer.qnaNum}" id="updateQnaAnswer">수정</a>
-			<a href="/deleteQnaAnswer?qnaNum=${qnaAnswer.qnaNum}" id="deleteQnaAnswer">삭제</a>
-		</button>
+	<div id="answer">
+		<c:choose>
+				<c:when test="${qnaAnswer != null}">		
+					<div>
+						<div id="answerHeader">
+						<h2 id="answer_head">Primavera 답변</h2>
+							<div id="id_date">
+								<div name="id" id="id">${qnaAnswer.id}</div>
+								<div id="writeDate" name="writeDate">
+									<fmt:formatDate value="${qnaAnswer.answerDate}" pattern="yy-MM-dd HH:mm" />
+								</div>
+							</div>
+						</div>
+						<div id="contentAnswer" name="content">${qnaAnswer.content}</div>
+						<c:choose>
+							<c:when test="${qna.url != null}">
+								<div id="url" name="url">
+									<img src="/upload/qnaAnswer/${qnaAnswer.url}" />
+								</div> 
+							</c:when>
+						</c:choose>
+						<div id="answer_btn">		
+								<button value="수정" class="btnAnswer" id="btnupdate">
+									<a href="updateQnaAnswer?qnaNum=${qnaAnswer.qnaNum}" id="updateQnaAnswer">수정</a>
+								</button>
+								<button value="삭제" class="btnAnswer" id="btndelete">
+									<a href="/deleteQnaAnswer?qnaNum=${qnaAnswer.qnaNum}" id="deleteQnaAnswer">삭제</a>
+								</button>
+							</div>
+					</div>
+			</c:when>
+		</c:choose>
 	</div>
-	</c:when>
-	</c:choose>
 </body>
 </html>
