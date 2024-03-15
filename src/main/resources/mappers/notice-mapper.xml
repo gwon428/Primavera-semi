@@ -48,9 +48,9 @@
 	</update>
 
 	<delete id="delete" parameterType="int">
-		DELETE FROM board
+		DELETE FROM notice
 		WHERE
-		notice_num=#{notice_num}
+		notice_num=#{noticeNum}
 	</delete>
 
 

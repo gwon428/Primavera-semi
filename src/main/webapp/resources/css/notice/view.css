@@ -1,0 +1,223 @@
+header {
+	position: fixed;
+	width: 100%;
+	height: 70px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: rgba(0, 0, 0, 0.6);
+	z-index: 100;
+}
+
+header a {
+	color: white;
+	font-style: italic;
+}
+
+header nav:nth-child(1) {
+	margin-left: 50px;
+	font-size: 2.5rem;
+	font-weight: lighter;
+}
+
+header nav:nth-child(2) {
+	padding: 30px;
+}
+
+header nav:nth-child(2) a {
+	padding: 20px;
+	font-size: 1.5rem;
+}
+
+nav>a[href="list"]:hover+span, nav>span:hover {
+	display: block;
+}
+
+nav>span {
+	display: none;
+	position: absolute;
+	right: 50px;
+	top: 70px;
+	padding: 11px;
+	background-color: rgba(0, 0, 0, 0.6);
+}
+
+nav>span a {
+	display: block;
+	text-decoration: none;
+}
+
+nav>span a:hover {
+	color: white;
+}
+
+nav a, a h1 {
+	text-decoration: none;
+	position: relative;
+}
+
+a::after, a h1::after {
+	content: "";
+	position: absolute;
+	bottom: 0px;
+	left: 0;
+	width: 0%;
+	height: 2px;
+	background-color: white;
+	transition: width 0.5s ease;
+}
+
+nav a:hover::after, a h1:hover::after {
+	width: 100%;
+}
+
+.directivity a h1:hover {
+	opacity: 0.5;
+}
+
+/*--------------------------------------------------------------------*/
+@font-face {
+	font-family: "Cafe24Oneprettynight";
+	src:
+		url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff")
+		format("woff");
+	font-style: normal;
+}
+
+body {
+	position: absolute;
+	width: 100%;
+	height: 100vh;
+}
+
+#main {
+	margin-top: 70px;
+	height: 90%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+h1 {
+	margin-bottom: 15px;
+	font-size: 2rem;
+	font-weight: bold;
+	font-family: "Cafe24Oneprettynight";
+}
+
+.container {
+	border-top: 1px solid #757575;
+	justify-content: center;
+	align-items: center;
+	width: 700px;
+	position: relative;
+	left: 624px;
+	top: 201px;
+}
+
+form {
+	width: 616px;
+	height: 439px;
+	display: grid;
+	grid-template-rows: 2fr 1fr 0fr 2fr 2fr;
+}
+
+#title, #context, #file {
+	font-family: "Cafe24Oneprettynight";
+	font-weight: bold;
+	display: flex;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+#id {
+	margin-top: 20px;
+}
+
+label {
+	margin-left: 32px;
+}
+
+div #context label {
+	position: relative;
+	right: 19px;
+}
+
+#title_input {
+	width: 560px;
+	height: 30px;
+	margin-left: 14px;
+	margin-right: 70px;
+	border-radius: 3px;
+	border-color: #d1d1d1;
+}
+
+#content_input {
+	margin-left: -7px;
+	width: 560px;
+	height: 129px;
+	margin-right: -31px;
+	border-radius: 8px;
+	border-color: #d1d1d1;
+}
+
+#file_input {
+	width: 90px;
+	height: 90px;
+	border-radius: 8px;
+	border: 0.5px solid #d1d1d1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-left: 70px;
+}
+
+#file {
+	margin-left: 73px;
+	cursor: pointer;
+	position: relative;
+	top: 8px;
+	left: 110px;
+}
+
+#title label {
+	position: relative;
+	right: 16px;
+}
+
+#file label {
+	position: relative;
+	right: 202px;
+}
+
+img {
+	width: 92px;
+	height: 92px;
+}
+
+div.type {
+	display: flex;
+	display: flex;
+	position: relative;
+	left: 451px;
+}
+
+.btn {
+	margin: 20px 0;
+	padding: 7px;
+	font-size: 1rem;
+	cursor: pointer;
+	border: 0.5px solid #d1d1d1;
+	background-color: #93b19a;
+	color: white;
+	border: none;
+	font-family: "Cafe24Oneprettynight";
+	border-radius: 6px;
+	width: 75px;
+	height: 65px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

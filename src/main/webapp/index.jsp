@@ -21,7 +21,7 @@
     <div class="header-blackbox"></div>
     <header>
       <nav>
-        <a href="#">Primavera</a>
+        <a href="/">Primavera</a>
       </nav>
       <nav>
         <a href="mainMap">Store</a>
@@ -30,7 +30,7 @@
         <a href="list">Board</a>
         <span>
           <a href="/board/list">Review</a>
-          <a href="listQna">Q & A</a>
+          <a href="/qna/listQna">Q & A</a>
           <a href="/notice/list">Notice</a>
         </span>
         <a href="myPage"><i class="fa-regular fa-user"></i></a>
@@ -127,47 +127,46 @@
           </div>
         </div>
         <div class="line2"></div>
-        <footer>
-          <div class="row_left">
-            <h3>Go together the environment </h3>
-            <a href="">Primavera@com.kh.kr</a>
-            <p><i class="fa-solid fa-location-arrow"></i></p>
-          </div>
-          <div class="row_center">
-            <a href="#">
-              <ul>Home</ul>
-            </a>
-            <a href="#">
-              <ul>Store</ul>
-            </a>
-            <a href="#">
-              <ul>Guide</ul>
-            </a>
-            <a href="collectPage">
-              <ul>PickUp</ul>
-            </a>
-            <a href="listpage">
-              <ul>Board</ul>
-            </a>
-          </div>
-          <div class="row_SNS">
-            <a href="https://www.instagram.com/">
-              <ul>Instagram</ul>
-            </a>
-            <a href="https://www.facebook.com/?locale=ko_KR">
-              <ul>FaceBook</ul>
-            </a>
-            <a href="https://www.youtube.com/">
-              <ul>YouTube</ul>
-            </a>
-          </div>
-          <div class="impormation">
-            <p>Company : 서울 강남구 테헤란로14길 6 [6층]</p>
-            <p>offline_store : 서울 중구 남대문로 120 대일빌딩 2층, 3층</p>
-            <p>P.052-233-0555</p>
-            <p>이용약관 개인정보처리방침</p>
-          </div>
-        </footer>
+       <footer>
+            <p class="title">Primavery</p>
+            <div class="left">
+              <h5>Let's change the environment</h5>
+              <h4>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi
+                quis laudantium consequuntur, aspernatur magnam alias nam doloremque
+                sed quas consequatur quos, nostrum labore tempore esse
+              </h4>
+              <p>저희 회사는 서울에 등록된 회사입니다(번호 CSEZ421153)</p>
+              <h1>© 2024</h1>
+            </div>
+            <div class="center">
+              <ul>
+                <li>p : 052)XXX-XXXX</li>
+                <li>T : 010-XXXX-XXXX</li>
+                <li>E : Primavera@com.kh.kr</li>
+              </ul>
+              <span>
+                <a href="">instagram</a>
+                <a href="">facebook</a>
+                <a href="">twitter</a>
+                <a href="">YouTube</a>
+              </span>
+            </div>
+            <div class="right">
+            <div class="right">
+              <h2>Ceo : 애드워드 권</h2>
+              <h2>Personal Information Management Officer : 정 손 김</h2>
+              <h2>본사&스토어주소 : 서울 강남구 테헤란로14길 6</h2>
+             <div>
+                <a href="">이용약관</a>
+                <a href="">개인정보처리방침</a>
+             </div>
+              <img
+                src="https://assets-global.website-files.com/6477332607fa08930fe00261/6477570d55c46a6f4957b3ef_app%20store.svg"
+                alt=""
+              />
+            </div>
+          </footer>
       </section>
     </main>
     <script src="/resources/js/front.js"></script>
