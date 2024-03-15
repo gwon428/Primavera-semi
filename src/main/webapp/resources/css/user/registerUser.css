@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "Cafe24Oneprettynight";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff")
+    format("woff");
+  font-style: normal;
+}
+
 h1 {
 	/*헤더를 위해 높이 맞추기*/
 	padding-top:150px;
@@ -11,8 +18,10 @@ form {
 	height: 550px;
 	border: 1px solid #c0c0c0;
 	border-radius:20px;
-	width: 765px;
+	width: 1000px;
 	margin: 0 auto;
+	font-family: "Cafe24Oneprettynight";
+	font-weight: bolder;
 }
 
 form p{
@@ -56,28 +65,53 @@ form select{
 	display:flex;	
 	flex-direction:column;
 	margin-bottom: 10px;
+	
 }
 
 .addr input{
 	width: 200px;
 	margin-bottom: 10px;
+	font-family: "Cafe24Oneprettynight";
+	font-weight: bolder;
 }
 
 .addrPost input{
 	width: 97px;
 	margin-bottom: 10px;
+	font-family: "Cafe24Oneprettynight";
+	font-weight: bolder;
 }
 
 form input{
 	width: 200px;
 	height: 27px;
 }
+
+input:not(.password){
+	font-family: "Cafe24Oneprettynight";
+	font-weight: bolder;
+}
+
+input[type=password] {
+	font-family:'Malgun gothic', dotum, sans-serif;}
+}
+#userPwd{
+	color: black;
+}
+
 #submit{
 	display:flex;
 	align-items:center;
 	justify-content:center;
 	padding-top: 10px;
 }
+span{
+	background-color: skyblue;
+}
+
+
+<!-- 동의 css -->
+
 #button{
 	width: 140px;
 	height:30px;

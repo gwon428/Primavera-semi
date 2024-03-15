@@ -27,13 +27,9 @@
 <body>
 	<main>
 		<h1>해당 사용자가 존재하지 않습니다.</h1>
-		<div>
-			<button>
-				<a href="findId">아이디 찾기</a>
-			</button>
-			<button>
-				<a href="myPage">로그인</a>
-			</button>
+		<div id="menu">
+				<a href="findId" id="href">아이디 찾기</a>
+				<a href="register" id="href">회원가입</a>
 		</div>
 	</main>
 </body>

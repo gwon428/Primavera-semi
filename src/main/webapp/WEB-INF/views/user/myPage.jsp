@@ -14,7 +14,7 @@
 			</head>
 			<header>
       <nav>
-        <a href="#">Primavera</a>
+        <a href="/">Primavera</a>
       </nav>
       <nav>
         <a href="mainMap">Store</a>
@@ -33,24 +33,49 @@
 			<body>
 				<sec:authentication property="principal" var="user" />
 				<c:choose>
+				
+				
 					<c:when test="${user == 'anonymousUser'}">
 						<main>
-							<h1>로그인</h1>
-							<form action="/login" method="post">
+							<section id="background">
+							</section>
+							
+							<a href="/" class="loginformlogo">Primavera</a>
+							<form action="/login" method="post" class="loginform">
 								<div class="idpwd">
-									<input size="15" type="text" name="username" placeholder="아이디">
-									<input type="password" name="password" placeholder="비밀번호">
+									<div class="mb-3 row">
+										<label><i class="fa-regular fa-user"></i></label>
+										<div class="col-sm-10">
+											<input size="15" type="text" name="username" placeholder="아이디">
+										</div>
+									</div>
+									<div class="mb-3 row">
+										<label for="staticEmail" class="col-sm-2 col-form-label"><i
+											class="fa-solid fa-lock"></i></label>
+										<div class="col-sm-10">
+											<input type="password" name="password" placeholder="비밀번호">
+										</div>
+									</div>
+				
 								</div>
-								<input type="submit" value="Login" class="loginbutton">
+						
+								<!-- 	<input size="15" type="text" name="username" placeholder="아이디">
+									<input type="password" name="password" placeholder="비밀번호">
+								 -->
+								<input type="submit" value="로그인" class="loginbutton">
 							</form>
 
 							<div id="anonymousUserMenu">
-								<a href="findId">아이디 찾기 | </a>
-								<a href="changePwd">비밀번호 찾기 | </a>
+								<a href="findId">아이디 찾기</a>
+								<span> | </span>
+								<a href="changePwd">비밀번호 찾기</a>
+								<span> | </span>
 								<a href="register">회원가입</a>
 							</div>
 						</main>
 					</c:when>
+					
+					
 					<c:otherwise>
 						<c:if test="${user.auth == 'ADMIN'}">
 							<section id="Adbackground">
@@ -72,7 +97,6 @@
 										<a href="/logout">로그아웃</a>
 									</div>
 								</div>
-							</div>
 							</div>
 
 						</c:if>

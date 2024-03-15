@@ -157,6 +157,8 @@ public class UserController {
 		model.addAttribute("paging", new Paging(paging.getPage(), service.total()));
 		return "user/allUser";
 	}
+	
+	
 	@GetMapping("/findId")
 	public String findId() {
 		return "account/findId";
@@ -216,7 +218,6 @@ public class UserController {
 	
 	@PostMapping("checkEmail")
 	public String checkEmail(User user, Model model) {
-		System.out.println("checkEmail!! : " + user);
 		model.addAttribute("id", user.getId());
 		return "account/changePassword";
 	}

@@ -27,16 +27,21 @@
 	<main>
 	<h1>비밀번호 재설정</h1>
 		<form action="updatePwd" method="post" onsubmit="return validate()">
-		<p>아이디</p>
-			<input type="text" name="id" id="id" value="${id}">
-			<p>비밀번호</p>
-			<input type="password" name="password" id="userPwd" required><span
-				id="pwdreg"></span>
-
-			<p>비밀번호 확인</p>
-			<input type="password" id="passwordcheck" required><span
-				id="pwdcheckreg"></span>
-				
+			<div id="changeId">
+				<p>아이디</p>
+				<input type="text" name="id" id="id" value="${id}">
+			</div>
+			<span> &nbsp; </span>
+			<div id="changePwd">
+				<p>비밀번호</p>
+				<input type="password" name="password" id="userPwd" required>
+			</div>
+			<span id="pwdreg"> &nbsp; </span>
+			<div id="changePwdCheck">
+				<p>비밀번호 확인</p>
+				<input type="password" id="passwordcheck" required>
+			</div>
+			<span id="pwdcheckreg"> &nbsp; </span>
 			<input type="submit" value="비밀번호 재설정" id="change">
 		</form>
 	</main>
