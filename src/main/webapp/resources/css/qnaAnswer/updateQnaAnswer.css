@@ -100,68 +100,43 @@ div img {
   height: 100px;
 }
 /*----------------------------------- qna answer내용단 -----------------------------------------*/
-.qnaAnswer {
+.qnaAnswerUpdate {
   width: 100%;
   height: 100%;
   display:flex;
   flex-direction:column;
   align-items:center;
 }
-.qnaAnswer h1 {
-  font-family: "Cafe24Oneprettynight";
-  font-size: 2.4rem;
+.qnaAnswerUpdate h1{
+	 font-family: "Cafe24Oneprettynight";
+  font-size: 2.5rem;
   font-weight: bold;
-  color: #779d7f;
+  color: #739a7b;
   margin: 50px 0px;
 }
-div.insertAnswer{
+.updateAnswer{
 	font-family: "Cafe24Oneprettynight";
   	font-weight: bold;
   	margin-bottom : 30px;
 }
-.insertAnswer #id{
-	margin-left : 10px;
-	border-radius:3px;
-}
-.insertAnswer #qnaNum{
-	margin-left : 44px;
-	border-radius:3px;
-}
-.insertAnswer #content{
-  font-family: "Cafe24Oneprettynight";
+.updateAnswer #content{
+	font-family: "Cafe24Oneprettynight";
   font-weight: bold;
-  margin-top: 10px;
+  margin-top: 15px;
   border-radius:3px;
-  width: 290px;
+  width: 330px;
   height : 100px;
 }
 
-#img_input {
-    width: 90px;
-    height: 90px;
-    border-radius: 8px;
-    border: 0.5px solid #d1d1d1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-left: 96px;
-    margin-top: 3px;
-}
-#photo{
-	cursor: pointer;
-}
-img{
-	width:92px;
-	height:92px;
-}
-#answerButton{
+
+
+#answerUpdateButton{
   display:flex;
   align-items:center;
   justify-content : center;
   
 }
-#btn_insert{
+#btn_update{
 	font-family: "Cafe24Oneprettynight";
   font-weight: bold;
   font-size : 1rem;
@@ -172,7 +147,7 @@ img{
   background-color: #779d7f;
   color : black;
 }
-#btn_insert:hover{
+#btn_update:hover{
 	background-color : white;
 	color : #779d7f;
 	border : 2px solid #779d7f;

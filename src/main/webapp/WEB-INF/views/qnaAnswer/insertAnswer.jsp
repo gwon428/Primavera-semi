@@ -14,6 +14,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
       rel="stylesheet"
       href="../../../resources/css/qnaAnswer/insertQnaAnswer.css"
     />
+    <script src="https://kit.fontawesome.com/4602e82315.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <sec:authentication property="principal" var="user" />
@@ -100,11 +101,13 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                   name="qnaNum"
                   id="qnaNum"
                   value="${qna}"
+                  readonly
                 />
               </div>
             </div>
             <div class="insertAnswer">
               <label>*내용</label>
+              <br>
               <textarea
                 class="content"
                 row="10"
@@ -129,14 +132,15 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                 <div id="image_container"></div>
               </div>
             </div>
+            <div id="answerButton">
             <button type="submit" class="btn_final" id="btn_insert">
               등 록
             </button>
+            </div>
           </form>
         </div>
       </div>
     </div>
-
-    <script src="../../../resources/js/qna/insertQna.js"></script>
+    <script src="../../../resources/js/qnaAnswer/insertQnaAnswer.js"></script>
   </body>
 </html>

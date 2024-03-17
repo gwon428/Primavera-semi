@@ -82,7 +82,8 @@ public class QnaAnswerController {
 		//model.addAttribute("qnaAnswer", answerNum );
 		QnaAnswer qnaAnswer = service.selectQnaAnswer(answerNum);
 		model.addAttribute("qnaAnswer", qnaAnswer);
-		
+		// 질문 바인딩
+		model.addAttribute("qnaView", qnaService.select(answerNum));
 		return "qnaAnswer/updateQnaAnswer";
 	}
 		

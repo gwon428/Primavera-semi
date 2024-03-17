@@ -92,7 +92,9 @@
 		<c:choose>
 			<c:when test="${qna.url != null}">
 				<div id="url" name="url">
-					<img src="/upload/qna/${qna.url}" />
+					<a href="/upload/qna/${qna.url}" download>
+						<img src="/upload/qna/${qna.url}" />
+					</a>
 				</div> 
 			</c:when>
 		</c:choose>
@@ -115,7 +117,7 @@
 						<c:choose>
 							<c:when test="${qna.url != null}">
 								<div id="url" name="url">
-									<img src="/upload/qnaAnswer/${qnaAnswer.url}" />
+									<img src="/upload/qnaAnswer/${qnaAnswer.url}"/>
 								</div> 
 							</c:when>
 						</c:choose>
