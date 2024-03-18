@@ -6,6 +6,9 @@ import java.util.List;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,7 +32,12 @@ public class QnaController {
 	@Autowired
 	private QnaAnswerService qnaAnswerService;
 	
+	@Autowired
+	private BCryptPasswordEncoder bcpe;
+	
+	
 	private String path = "D:\\upload\\qna\\";
+	
 	
 	// 파일 업로드 기능 
 		public String fileUpload(MultipartFile file) throws IllegalStateException, IOException {
@@ -159,10 +167,25 @@ public class QnaController {
  		return "qnaAnswer/listQnaAnswer";
  		
 	}
- 	/*
+ 	
+ 	// 비밀글 시 비밀번호 확인 및 페이지 이동
  	@PostMapping("pwdCheck")
- 	public void pwdCheck() {
+ 	public String pwdCheck(String password) {
+ 		System.out.println("pwdCheck");
+ 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		UserDetails userDetails = (UserDetails)principal;
+ 		System.out.println(password);
+ 		/*
+ 		System.out.println(qnaNum);
+ 		int num = Integer.parseInt(qnaNum);
  		
+ 		Qna qna = service.select(num);*/
+ 		if(bcpe.matches(password, userDetails.getPassword())){
+ 			return "qnaAnswer/listQnaAnswer";
+ 		}
+ 		else {
+ 			return "redirect:/listQna";
+ 		}
  	}
- 	*/
+ 	
 }

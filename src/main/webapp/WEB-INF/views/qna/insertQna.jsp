@@ -38,7 +38,6 @@
 			</div>
 			<div class="insertQna" id="secret">
 				<label id="secretCheck">비밀글</label><input type="checkbox" name="secret" id="secret_input" value="Y">
-				<label id="secretPwd">비밀번호</label><input type="password" name="pwd" id="pwd" >
 			</div> 
 		</div>
 			<div class="insertQna" id="title">

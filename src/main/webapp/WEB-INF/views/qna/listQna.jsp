@@ -14,6 +14,7 @@
 <link rel="stylesheet" href="../../../resources/css/qna/listQna.css" />
 <script src="https://kit.fontawesome.com/4602e82315.js"
 	crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <style>
 #pwd_check{
 	cursor : pointer;
@@ -112,7 +113,7 @@
 								<c:choose>
 									<c:when test="${item.secret == 'Y'}">
 										<td><i class="fa-solid fa-lock"></i>&nbsp;
-										<div id="pwd_check">${item.title}</div></td>
+										<div id="pwd_check">${item.title}<input type="hidden" value="${item.qnaNum}" id="pwdQnaNum"></div></td>
 									</c:when>
 									<c:otherwise>
 										<td><a href="/viewQna?qnaNum=${item.qnaNum}">${item.title}</a></td>
@@ -167,9 +168,10 @@
 				  <div id="modalContent">
 				  	<h3>비밀글</h3>
 				  	<div id="content">
-				  	<form action="" mehtod="post">
+				  	<form action="pwdCheck" method="post" id="pwdCheck" name="pwdCheck">
 				  		<label>회원 비밀번호</label>
 				  		<input type="password" id="password" name="password">
+				  		<!-- <input type="hidden" id="qnaNum" name="qnaNum"> -->
 				  	</form>	
 				    </div>
 				    <button type="submit" id="pwdSubmit">확인</button>
@@ -180,10 +182,17 @@
 </body>
 <script>
 const pwdCheck= document.querySelector("#pwd_check");
+const pwdQnaNum = document.querySelector("#pwdQnaNum");
+const qnaNum = document.querySelector("#qnaNum");
 const modalCloseButton = document.getElementById('modalCloseButton');
 const modal = document.getElementById('modalContainer');
 
 pwdCheck.addEventListener('click', () => {
+	/*
+	console.log($(pwdQnaNum).val());
+	const qnaNumCheck = $(pwdQnaNum).val();
+	$(qnaNum).val(qnaNumCheck);
+	*/
   modal.classList.remove('hidden');
 });
 
