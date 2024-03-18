@@ -77,7 +77,7 @@ public class NoticeController {
 	
 	
 	
-	@GetMapping(" noticeView")
+	@GetMapping("noticeView")
 	public void view(String noticeNum, Model model) {
 		model.addAttribute("vo", service.select(Integer.parseInt(noticeNum)));
 	}

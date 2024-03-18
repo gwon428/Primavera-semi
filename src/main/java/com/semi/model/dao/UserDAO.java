@@ -65,12 +65,12 @@ public class UserDAO {
 	
 	
 	// 내가 쓴 리뷰 리스트 출력
-	public List<Board> showReview(Pagingseven paging){
-		return session.selectList("board.showReview", paging);
+	public List<Review> showReview(Pagingseven paging){
+		return session.selectList("reviewMapper.showReview", paging);
 	}
 
 	public int totalmyReview(String id) {
-		return session.selectOne("board.countmyReview", id);
+		return session.selectOne("reviewMapper.countmyReview", id);
 	}
 	
 	// 내가 쓴 Q&A 리스트 출력

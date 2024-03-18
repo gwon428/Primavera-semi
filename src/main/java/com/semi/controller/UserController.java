@@ -238,7 +238,7 @@ public class UserController {
 	// 내가 쓴 후기 모아보기
 	@GetMapping("showReview")
 	public String showReview(Model model, Pagingseven paging) {
-		List<Board> list = service.showReview(paging);
+		List<Review> list = service.showReview(paging);
 		model.addAttribute("list", list);
 		model.addAttribute("paging", new Pagingseven(paging.getPage(), service.showReviewtotal()));
 		return "user/showReview";

@@ -77,7 +77,7 @@ public class UserService implements UserDetailsService{
 	
 	
 	// 내가 쓴 후기 리스트 출력
-	public List<Board> showReview(Pagingseven paging){
+	public List<Review> showReview(Pagingseven paging){
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		UserDetails userDetails = (UserDetails)principal;
 		

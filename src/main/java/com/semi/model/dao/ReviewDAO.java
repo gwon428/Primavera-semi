@@ -14,31 +14,31 @@ public class ReviewDAO {
 	private SqlSessionTemplate session;
 
 	public int insert(Review b) {
-		return session.insert("review.insert", b);
+		return session.insert("reviewMapper.insert", b);
 	}
 
 	public List<Review> selectAll() {
-		return session.selectList("review.selectAll");
+		return session.selectList("reviewMapper.selectAll");
 	}
 
 	public Review select(int no) {
-		return session.selectOne("review.select", no);
+		return session.selectOne("reviewMapper.select", no);
 	}
 
 	public int updatereview(Review b) {
-		return session.update("review.updatereview", b);
+		return session.update("reviewMapper.updatereview", b);
 	}
 
 	public int deletereview(int no) {
-		return session.delete("review.deletereview", no);
+		return session.delete("reviewMapper.deletereview", no);
 	}
 
 	public List<Review> selectPage(Paging paging) {
-		return session.selectList("review.selectPage", paging);
+		return session.selectList("reviewMapper.selectPage", paging);
 	}
 
 	public int total() {
-		return session.selectOne("review.count");
+		return session.selectOne("reviewMapper.count");
 	}
 	
 	

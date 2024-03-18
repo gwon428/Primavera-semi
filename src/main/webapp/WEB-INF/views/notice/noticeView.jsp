@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
@@ -39,13 +40,14 @@ div#editor {
 		<nav>
 			<a href="/map/mainMap">Store</a> <a href="#">Guide</a> <a
 				href="collectPage">PickUp</a> <a href="list">Board</a> <span>
-				<a href="/board/list">Board</a> <a href="/listQna">Q & A</a> <a
+				<a href="/review/list">Board</a> <a href="/listQna">Q & A</a> <a
 				href="/notice/list">Notice</a>
 			</span> <a href="myPage"><i class="fa-regular fa-user"></i></a>
 		</nav>
 	</header>
+	<sec:authentication property="principal" var="user" />
 	<c:choose>
-		<c:when test="${user == 'annoymousUser'}">
+		<c:when test="${user.auth == 'ADMIN'}">
 			<div class="container">
 				<h1>게시물 정보</h1>
 				<form action="updateNotice" method="post"
@@ -76,6 +78,7 @@ div#editor {
 				</form>
 			</div>
 		</c:when>
+		
 		<c:otherwise>		
 			<div class="container2">
 			<h1>Notice</h1>

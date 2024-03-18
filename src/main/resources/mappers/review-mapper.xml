@@ -1,5 +1,5 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="review">
+<mapper namespace="reviewMapper">
 
 	<resultMap type="Review" id="reviewMap">
 		<id property="no" column="no" />
@@ -58,7 +58,7 @@
 
 	<!-- 회원용 마이페이지 - 내가 적은 후기 보기 -->
 	<select id="showReview" parameterType="Pagingseven"
-		resultMap="boardMap">
+		resultMap="reviewMap">
 		SELECT *
 		FROM review
 		WHERE

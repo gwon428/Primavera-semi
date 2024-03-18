@@ -32,7 +32,7 @@ detail_address VARCHAR(30) NOT NULL,
 collection_date DATE NOT NULL,
 door_pwd  VARCHAR(30),           
 request TEXT,
-prog VARCHAR(30) DEFAULT '신청완료',
+prog VARCHAR(30) DEFAULT('신청완료'),
 kg INT NOT NULL
 );
 
@@ -41,11 +41,11 @@ no INT PRIMARY KEY AUTO_INCREMENT,
 id VARCHAR(20) NOT NULL,		
 title VARCHAR(30) NOT NULL,
 content TEXT NOT NULL,	
-order_num INT,
 date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 url VARCHAR(200),
 rating INT
 );
+
    
 CREATE TABLE qna (
 qna_num INT PRIMARY KEY AUTO_INCREMENT,
@@ -54,7 +54,8 @@ title VARCHAR(30) NOT NULL,
 content TEXT NOT NULL,
 write_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 url VARCHAR(200),
-status CHAR(1) CHECK(status IN('Y','N')) DEFAULT 'N'
+status CHAR(1) CHECK(status IN('Y','N')) DEFAULT 'N',
+secret CHAR(1) CHECK(secret IN('Y', 'N')) DEFAULT 'N'
 );
 
 CREATE TABLE qna_answer(

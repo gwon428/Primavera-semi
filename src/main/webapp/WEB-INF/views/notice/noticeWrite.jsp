@@ -33,7 +33,7 @@ h1 {
 			<a href="collectPage">PickUp</a>
 			<a href="list">Board</a> 
 			<span> 
-			<a href="/board/list">Board</a> 
+			<a href="/review/list">Board</a> 
 			<a href="/listQna">Q & A</a> 
 			<a href="/notice/list">Notice</a>
 			</span> 

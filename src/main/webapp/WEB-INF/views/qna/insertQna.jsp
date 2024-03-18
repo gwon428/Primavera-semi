@@ -22,7 +22,7 @@
 		</nav>
 		<nav>
 			<a href="#">Store</a> <a href="#">Guid</a> <a href="collectPage">PickUp</a>
-			<a href="/board/list">Board</a> <a href="myPage"><i
+			<a href="/review/list">Board</a> <a href="myPage"><i
 				class="fa-regular fa-user" id="mypage"></i></a>
 		</nav>
 	</header>

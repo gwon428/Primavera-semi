@@ -91,9 +91,9 @@ a h1::after {
 
 nav a:hover::after,
 a h1:hover::after {
+ 
   width: 100%;
 }
-
 #mapage {
   size: 2.5rem;
 }
