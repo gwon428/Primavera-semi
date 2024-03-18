@@ -17,41 +17,40 @@
 	<div class="header-blackbox"></div>
 	<header>
 		<nav>
-			<a href="#">Primavera</a>
+			<a href="/">Primavera</a>
 		</nav>
 		<nav>
 			<a href="/map/mainMap">Store</a> 
-			<a href="#">Guid</a>
+			<a href="#">Guide</a>
 			<a href="collectPage">PickUp</a>
 			<a href="list">Board</a> 
 			<span> 
-			<a href="/board/list">Board</a> 
-			<a href="#">Q & A</a> 
-			<a href="/notice/lis">Notice</a>
+			<a href="/board/list">Riew</a> 
+			<a href="/listQna">Q & A</a> 
+			<a href="/notice/list">Notice</a>
 			</span> 
 			<a href="myPage"><i class="fa-regular fa-user"></i></a>
 		</nav>
 	</header>
+	<!-- ---------------------------------------------------------------------------- -->
 	<main>
 		<section class="section1">
 			<img src="../../../resources/images/pexels-pixabay-158827.jpg" alt="" />
-			<h1 class="h1">Board</h1>
-			<h1 class="h2">> Notice</h1>
+			<h1 class="h2">Notice</h1>
 		</section>
 		<section class="section2">
 			<div>
 				<div class="container">
-					<h1>공지사항</h1>
-					<p></p>
-					<a href="/notice/write" class="btn btn-outline-warning">게시글 등록</a>
+					<h1>Notice</h1>
+					<a href="/notice/write" class="btn btn-outline-warning" id="admit">게시글 등록</a>
 				</div>
 				<table border="1" class="table">
 					<thead>
 						<tr>
-							<td>번호</td>
-							<td>제목</td>
-							<td>내용</td>
-							<td>작성일</td>
+							<th>번호</th>
+							<th>제목</th>
+							<th>내용</th>
+							<th>작성일</th>
 						</tr>
 					</thead>
 					<tbody>

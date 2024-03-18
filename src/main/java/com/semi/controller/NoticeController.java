@@ -77,7 +77,7 @@ public class NoticeController {
 	
 	
 	
-	@GetMapping("noticeView")
+	@GetMapping(" noticeView")
 	public void view(String noticeNum, Model model) {
 		model.addAttribute("vo", service.select(Integer.parseInt(noticeNum)));
 	}
@@ -99,10 +99,10 @@ public class NoticeController {
 	}
 
 	// /notice/delete
-	@GetMapping("/deleteNotice")
-	public String delete(String Notice_num) {
-		int parsingNo = Integer.parseInt(Notice_num);
-
+	@GetMapping("deleteNotice")
+	public String delete(String noticeNum) {
+		int parsingNo = Integer.parseInt(noticeNum);
+		System.out.println("parsingNo : " + parsingNo);
 		// 업로드한 파일도 삭제!
 		Notice n = service.select(parsingNo);
 
@@ -110,9 +110,11 @@ public class NoticeController {
 			File file = new File(path + n.getUrl());
 			file.delete();
 		}
-
+		
 		service.delete(parsingNo);
 
-		return "redirect:notice/List";
+		return "redirect:/notice/list";
 	}
+	
+	
 }

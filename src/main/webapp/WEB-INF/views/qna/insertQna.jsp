@@ -9,9 +9,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="../../../resources/css/reset.css" />
 <link rel="stylesheet" href="../../../resources/css/qna/insertQna.css" />
- 
 <link rel="stylesheet" href="../../../resources/css/header.css" />
- 
 <script src="https://kit.fontawesome.com/4602e82315.js"
 	crossorigin="anonymous"></script>
 </head>
