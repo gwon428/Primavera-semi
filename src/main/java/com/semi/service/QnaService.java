@@ -45,4 +45,12 @@ public class QnaService {
 	public int delete(int qnaNum) {
 		return dao.delete(qnaNum);
 	}
+	
+	// 관리자용 Q&A 게시판 관리 페이지 : qna의 status가 'N'인 경우 리스트
+	public List<Qna> listStatus(Paging paging){
+		return dao.listStatus(paging);
+	}
+	public int totalStatus() {
+		return dao.totalStatus();
+	}
 }

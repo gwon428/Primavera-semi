@@ -78,6 +78,14 @@ h2 {
   border: none;
   font-family: "Cafe24Oneprettynight";
   border-radius: 6px;
+  
+}
+#writeQna:hover{
+	background-color : white;
+	border : 2px solid #93b19a;
+	color : #93b19a;
+	font-family: "Cafe24Oneprettynight";
+	font-weight: bolder;
 }
 table {
     margin: 12px 0;

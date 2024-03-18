@@ -34,4 +34,14 @@
 	DELETE FROM qna_answer
 	WHERE qna_num=#{qnaNum}
 	</delete>
+	
+	<!--  update : 답변 달릴 시 q&a의 status가 y로 변경 -->
+	<update id="updateStatus" parameterType="String">
+		UPDATE qna SET status='Y' 
+		WHERE qna_num = (
+			SELECT qna_num
+			FROM qna_answer
+			WHERE id=#{id}
+		);
+	</update>
 </mapper>

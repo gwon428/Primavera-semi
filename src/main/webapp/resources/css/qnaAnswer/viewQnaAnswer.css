@@ -5,14 +5,23 @@
   font-style: normal;
 }
 #answer{
-	/*height:41%;*/	
 	display:flex;
 	justify-content:center;
 	align-items:center;
 	flex-direction : column;
 	
 }
-#answer_head{
+#answer #answerHeader{
+	width: 830px;
+    display: flex;
+    justify-content: space-between;
+	font-family: "Cafe24Oneprettynight";
+	font-weight : bold;
+	margin-bottom : 20px;
+	padding-top : 25px;
+}
+
+#answer #answer_head{
 	font-size: 1.4rem;
     font-weight: bold;
     font-family: "Cafe24Oneprettynight";
@@ -22,24 +31,15 @@
     background-color: #dbe5dd;
     display: flex;
     justify-content: center;
-    align-items: center;
-    
+    align-items: center; 
 }
 
-#answerHeader{
-	width: 830px;
-    display: flex;
-    justify-content: space-between;
-	font-family: "Cafe24Oneprettynight";
-	font-weight : bold;
-	margin-bottom : 20px;
-	padding-top : 25px;
-}
-#id_date{
+#answer_head #id_date{
 	display:flex;
 	align-items: flex-end;
 }
-#contentAnswer{
+
+#answerContent{
 	border : none;
 	overflow: auto;
     width:830px;
@@ -48,6 +48,25 @@
     padding-top: 30px;
     border-bottom: 2px dashed #4b6850;
 }
+
+#answerUrl{
+	border-bottom: 2px solid #4b6850;
+	width:830px;
+	height : 170px;
+}
+/*
+#image_container{
+	width : 130px;
+	height:130px;
+	margin:15px;
+}*/
+#answerUrl img{
+	width : 130px;
+	height:130px;
+	margin:15px;
+}
+
+
 #answer_btn{
 	display:flex;
 	justify-content : center;

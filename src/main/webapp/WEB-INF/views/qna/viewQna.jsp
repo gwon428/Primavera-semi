@@ -45,7 +45,7 @@
 		</div>
 		<div id="text_button">
 			<div id="id_writeDate">
-				<div name="id" id="id">${qna.id}</div>
+				<div name="qnaId" id="qnaId">${qna.id}</div>
 				<div id="writeDate" name="writeDate">
 					<fmt:formatDate value="${qna.writeDate}" pattern="yy-MM-dd HH:ss" />
 				</div>
@@ -62,9 +62,6 @@
 				<c:if test="${user.auth == 'ADMIN'}">
 				<button value="목록" id="btnlist">
 					<a href="listQna" id="listQna">목록</a>
-				</button>
-				<button value="수정" id="btnupdate">
-					<a href="updateQna" id="updateQna">수정</a>
 				</button>
 				<button value="삭제" id="btndelete">
 					<a href="/deleteQna?qnaNum=${qna.qnaNum}" id="deleteQna">삭제</a>
@@ -88,13 +85,14 @@
 			</c:choose>	
 			</div>
 		</div>
-		<div id="content" name="content">${qna.content}</div>
+		<div id="qnaContent" name="qnaContent">${qna.content}</div>
 		<c:choose>
 			<c:when test="${qna.url != null}">
-				<div id="url" name="url">
+				<div id="qnaUrl" name="qnaUrl">
 					<a href="/upload/qna/${qna.url}" download>
 						<img src="/upload/qna/${qna.url}" />
 					</a>
+						
 				</div> 
 			</c:when>
 		</c:choose>
@@ -107,17 +105,19 @@
 						<div id="answerHeader">
 						<h2 id="answer_head">Primavera 답변</h2>
 							<div id="id_date">
-								<div name="id" id="id">${qnaAnswer.id}</div>
-								<div id="writeDate" name="writeDate">
+								<div name="answerId" id="answerId">${qnaAnswer.id}</div>
+								<div id="answerDate" name="answerDate">
 									<fmt:formatDate value="${qnaAnswer.answerDate}" pattern="yy-MM-dd HH:mm" />
 								</div>
 							</div>
 						</div>
-						<div id="contentAnswer" name="content">${qnaAnswer.content}</div>
+						<div id="answerContent" name="answerContent">${qnaAnswer.content}</div>
 						<c:choose>
-							<c:when test="${qna.url != null}">
-								<div id="url" name="url">
-									<img src="/upload/qnaAnswer/${qnaAnswer.url}"/>
+							<c:when test="${qnaAnswer.url != null}">
+								<div id="answerUrl" name="answerUrl">
+									<a href="/upload/qnaAnswer/${qnaAnswer.url}" download>
+										<img src="/upload/qnaAnswer/${qnaAnswer.url}"/>
+									</a>
 								</div> 
 							</c:when>
 						</c:choose>

@@ -63,11 +63,10 @@ public class QnaController {
 			}
 			// 비즈니스 로직 처리 -> service.Boardwrite
 			service.insert(qna);
-			//System.out.println("추가 후 : " + qna);
-			//return "redirect:/view?no=" + qna.getQnaNum();
-			//return "redirect:/qna";
-			System.out.println(qna.getQnaNum());
-			System.out.println("qna.getDate : " + qna.getWriteDate());
+			
+			//System.out.println(qna.getQnaNum());
+			System.out.println(qna.getSecret());
+			//System.out.println("qna.getDate : " + qna.getWriteDate());
 			return "redirect:/listQna";
 		}
 		
@@ -146,6 +145,24 @@ public class QnaController {
 		return "redirect:/listQna";
 	} 
   
-
-
+ 	// 관리자용 Q&A 게시판 관리 페이지 : qna의 status가 'N'인 경우 리스트
+ 	@GetMapping("listStatus")	
+ 	public String listStatus(Model model, @RequestParam(value = "page", defaultValue = "1") int page) {
+		
+		// 페이지 거꾸로
+		int total = service.totalStatus();
+		Paging paging = new Paging(page, total);
+		List<Qna> listStatus = service.listStatus(paging);
+		model.addAttribute("listStatus", listStatus);
+		model.addAttribute("paging", paging);
+		
+ 		return "qnaAnswer/listQnaAnswer";
+ 		
+	}
+ 	/*
+ 	@PostMapping("pwdCheck")
+ 	public void pwdCheck() {
+ 		
+ 	}
+ 	*/
 }

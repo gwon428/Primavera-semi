@@ -45,4 +45,12 @@ public class QnaDAO {
 	public int delete(int qnaNum) {
 		return session.delete("qnaMapper.delete", qnaNum);
 	}
+	
+	// 관리자용 Q&A 게시판 관리 페이지 : qna의 status가 'N'인 경우 리스트
+	public List<Qna> listStatus(Paging paging){
+		return session.selectList("qnaMapper.listStatus", paging);
+	}
+	public int totalStatus() {
+		return session.selectOne("qnaMapper.countStatus");
+	}
 }

@@ -46,7 +46,7 @@ public class QnaAnswerController {
 		model.addAttribute("qna", qnaNum);
 		Qna qna = qnaService.select(qnaNum);
 		model.addAttribute("qnaView", qna);
-		return "qnaAnswer/insertAnswer";
+		return "qnaAnswer/insertQnaAnswer";
 	}
 	
 	
@@ -59,7 +59,7 @@ public class QnaAnswerController {
 			qnaAnswer.setUrl(url);
 		}
 		service.insertQnaAnswer(qnaAnswer);
-		
+		service.updateStatus(qnaAnswer.getId());
 		return "redirect:/viewQna?qnaNum="+qnaAnswer.getQnaNum();
 	}
 	

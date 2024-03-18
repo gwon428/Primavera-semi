@@ -44,7 +44,7 @@ form{
 	display: flex;
     flex-wrap: wrap;
 }
-#id, #orderNum, #title, #content, #img{
+#id, #secret, #title, #content, #img{
 	font-family: "Cafe24Oneprettynight";
 	font-weight:bold;
     display: flex;
@@ -53,6 +53,16 @@ form{
 }
 #id{
 	margin-top : 20px;
+}
+#secret{
+	margin-top : 20px;
+}
+#secret #secretCheck{
+	width:43px;
+	margin-left: 5px;
+}
+#secret #secretPwd{
+	width:63px;
 }
 label{
 	margin-left : 25px;

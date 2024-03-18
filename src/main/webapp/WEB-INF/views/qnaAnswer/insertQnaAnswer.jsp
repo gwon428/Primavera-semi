@@ -45,7 +45,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
           <div id="qna_content">
             <h1>Q&A 질문</h1>
             <session id="contents">
-              <div name="id" id="id">
+              <div name="qnaId" id="qnaId">
                 <label>회원 아이디</label>
                 <input value="${qnaView.id}" readonly />
               </div>
@@ -53,17 +53,17 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                 <label>질문 번호</label>
                 <input value="${qnaView.qnaNum}" readonly />
               </div>
-              <div name="title" id="title">
+              <div name="qnaTitle" id="qnaTitle">
                 <label>제목</label><br>
                 <textarea>${qnaView.title}</textarea>
               </div>
-              <div id="content" name="content">
+              <div id="qnaContent" name="qnaContent">
                 <label>내용</label><br>
                 <textarea>${qnaView.content}</textarea>
               </div>
               <c:choose>
                 <c:when test="${qnaView.url != null}">
-                  <div id="url" name="url">
+                  <div id="qnaUrl" name="qnaUrl">
                     <img src="/upload/qna/${qnaView.url}" />
                   </div>
                 </c:when>

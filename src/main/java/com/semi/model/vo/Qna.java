@@ -17,6 +17,7 @@ public class Qna {
 	private Date writeDate;
 	private String url;
 	private String status;
+	private String secret;
 	
 	private MultipartFile file;
 }

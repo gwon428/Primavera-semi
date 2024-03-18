@@ -89,13 +89,13 @@ session#contents{
 div#qnaNum input {
   margin-left: 14px;
 }
-div#title textarea {
+div#qnaTitle textarea {
   height: 60px;
 }
-div#content textarea {
+div#qnaContent textarea {
   height: 100px;
 }
-div img {
+div#qnaUrl img {
   width: 100px;
   height: 100px;
 }
@@ -117,24 +117,50 @@ div img {
 .updateAnswer{
 	font-family: "Cafe24Oneprettynight";
   	font-weight: bold;
-  	margin-bottom : 30px;
+  	margin-bottom : 15px;
 }
 .updateAnswer #content{
 	font-family: "Cafe24Oneprettynight";
   font-weight: bold;
-  margin-top: 15px;
+  margin-top: 10px;
   border-radius:3px;
   width: 330px;
   height : 100px;
 }
 
+.updatePhoto{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+.updatePhoto img{
+	width:140px;
+	height:140px;
+	 margin : 0px 15px;
+}
+
+#img_input {
+    width:140px;
+	height:140px;
+    border-radius: 8px;
+    border: 0.5px solid #d1d1d1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin : 0px 15px;
+    margin-top: 15px;
+}
+#photo{
+	cursor: pointer;
+}
 
 
 #answerUpdateButton{
   display:flex;
   align-items:center;
   justify-content : center;
-  
+  margin-top : 15px;
 }
 #btn_update{
 	font-family: "Cafe24Oneprettynight";
