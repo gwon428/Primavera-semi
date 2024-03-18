@@ -113,11 +113,21 @@ public class UserService implements UserDetailsService{
 
 	public int updatePwd(User user) {
 		String inputPw = bcpe.encode(user.getPassword());
-		System.out.println("service : " + inputPw);
 		user.setPassword(inputPw);
 		return dao.updatePwd(user);
 	}
 
+	// 수집일 순
+	public List<User> showUsercolDate(Paging paging) {
+		paging.setOffset(paging.getLimit() * (paging.getPage()-1));
+		return dao.showUsercolDate(paging);
+	}
+
+	// 주문번호 순
+	public List<User> showUserorderNum(Paging paging){
+		paging.setOffset(paging.getLimit() * (paging.getPage()-1));
+		return dao.showUserorderNum(paging);
+	}
 	
 	
 }

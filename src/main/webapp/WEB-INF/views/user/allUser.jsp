@@ -39,6 +39,7 @@
 				<div id="top"></div>
 				<h2>전체 회원 조회</h2>
 				<table border="1" class="table">
+					<thead>
 					<tr>
 						<th class="no">No</th>
 						<th>아이디</th>
@@ -51,8 +52,9 @@
 						<th>은행</th>
 						<th width="150">계좌번호</th>
 					</tr>
+					</thead>
 					<c:forEach items="${list}" var="item" varStatus="status">
-						<tr>
+						 <tr>
 							<td class="no">${status.count + paging.pageSize * (paging.page-1)}</td>
 							<td>${item.id}</td>
 							<td>${item.name}</td>
@@ -63,7 +65,7 @@
 							<td width="175">${item.email}</td>
 							<td>${item.bankName}</td>
 							<td width="150">${item.account}</td>
-						</tr>
+						</tr> 
 					</c:forEach>
 				</table>
 				<div id="page">

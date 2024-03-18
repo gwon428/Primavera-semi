@@ -86,4 +86,12 @@ public class UserDAO {
 	public int updatePwd(User user) {
 		return session.update("userMapper.updatePwd", user);
 	}
+
+	public List<User> showUsercolDate(Paging paging) {
+		return session.selectList("userMapper.showUsercolDate", paging);
+	}
+	
+	public List<User> showUserorderNum(Paging paging){
+		return session.selectList("userMapper.showUserorderNum", paging);
+	}
 }

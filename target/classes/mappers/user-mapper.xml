@@ -75,8 +75,23 @@
 	LIMIT #{offset}, #{limit}
 	</select>
 	
+	<select id="showUsercolDate" parameterType="User" resultMap="userMap">
+	SELECT * FROM user
+	WHERE enabled=1
+	ORDER BY collection_date
+	LIMIT #{offset}, #{limit}
+	</select>
+
+	<select id="showUserorderNum" parameterType="User" resultMap="userMap">
+	SELECT * FROM user
+	WHERE enabled=1
+	ORDER BY orderNum
+	LIMIT #{offset}, #{limit}
+	</select>
+	
 	<select id="count" resultType="int">
-	SELECT count(*) FROM user;
+	SELECT count(*) FROM user
+	WHERE enabled=1
 	</select>
 	
 	<select id="findId" parameterType="User" resultMap="userMap">

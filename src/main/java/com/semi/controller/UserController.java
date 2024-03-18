@@ -150,13 +150,39 @@ public class UserController {
 		return "user/myPage";
 	}
 	
-	@GetMapping("allUser")
-	public String allUser(Model model, Paging paging) {
-		List<User> list = service.showAllUser(paging);
-		model.addAttribute("list", list);
+	@GetMapping("allUsercoldate")
+	public String allUsercoldate(Model model, Paging paging) {
+		List<User> list = service.showUsercolDate(paging);
+		model.addAttribute("coldatelist", list);
 		model.addAttribute("paging", new Paging(paging.getPage(), service.total()));
 		return "user/allUser";
 	}
+	
+	@GetMapping("allUserordernum")
+	public String allUserordernum(Model model, Paging paging) {
+		List<User> list = service.showUserorderNum(paging);
+		model.addAttribute("ordernumlist", list);
+		model.addAttribute("paging", new Paging(paging.getPage(), service.total()));
+		return "user/allUser";
+	}
+	
+//	@GetMapping("allUser")
+//	public String allUser(Model model, Paging paging) {
+//	List<User> list = service.showAllUser(paging);
+//	model.addAttribute("list", list);
+//	model.addAttribute("paging", new Paging(paging.getPage(), service.total()));
+//	return "user/allUser";
+//	}
+	
+//	@ResponseBody
+//	@PostMapping("sort")
+//	public String sort(String sort, User user, Model model, Paging paging){
+//		List<User> list = service.showUsersort(sort, paging);
+//		
+//		model.addAttribute("list", list);
+//		model.addAttribute("paging", new Paging(paging.getPage(), service.total()));
+//		return "user/allUser";
+//	}
 	
 	
 	@GetMapping("/findId")

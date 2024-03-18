@@ -39,6 +39,12 @@
 				
 			<div id="mainMenu">
 			<div>
+			<form action="sort" method="get">
+				<select name="sort" id="sort">
+					<option value="colDate">수거신청일순</option>
+					<option value="orderNum">신청순</option>
+				</select>
+			</form>
 				<h2>전체 수거 신청 정보 보기</h2>
 				<table border=1 class="table">
 					<tr>
@@ -108,6 +114,38 @@
 				</div>
 				
 				</main>
+				<script>
+				function sort(){
+					var sort = $('#sort').val();
+					$.ajax({
+						type: "POST",
+						url: "/allUser",
+						data: "sort=" +sort,
+						
+						success: function(result){
+							for(var i = 0; i<result.data.length; i++){
+								var item = "<tr>"
+									item += "<td class='no'>"+${item.id}+"</td>";
+									item += "<td>"+${item.id}+"</td>";
+									item += "<td>"+${item.name}+"</td>";
+									item += "<td>"+${item.phone}+"</td>";
+									item += "<td>"+${item.postCode}+"</td>";
+									item += "<td class='roadAddr'>" + ${item.roadAddress} + "</td>";
+									item += "<td>" + ${item.detailAddress} + "</td>";
+									item += "<td>"+${item.collectionDate}+"</td>";
+									item += "<td>" + ${item.kg} + "</td>";
+									item += "<td>" + ${item.kg*400} + "</td>";
+									item += "<td>" + ${item.doorPwd} + "</td>";
+									item += "<td>" + ${item.request} + "</td>";
+									item += "</tr>";
+									
+									$('#tableBody').append(item);
+							}
+						}
+					})
+				}
+			</script>
+				</script>
 		</body>
 
 		</html>
