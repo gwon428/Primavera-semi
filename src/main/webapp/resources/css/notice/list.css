@@ -64,8 +64,7 @@ img {
 	animation: slide1 1.8s;
 }
 
-@
-keyframes slide1 {from { left:-600px;
+@keyframes slide1 {from { left:-600px;
 	
 }
 
@@ -211,3 +210,4 @@ td {
 	height: 22px;
 	cursor: pointer;
 }
+

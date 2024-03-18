@@ -40,7 +40,7 @@ div#editor {
 		<nav>
 			<a href="/map/mainMap">Store</a> <a href="#">Guide</a> <a
 				href="collectPage">PickUp</a> <a href="list">Board</a> <span>
-				<a href="/review/list">Board</a> <a href="/listQna">Q & A</a> <a
+				<a href="/review/list">Board</a> <a href="listQna">Q & A</a> <a
 				href="/notice/list">Notice</a>
 			</span> <a href="myPage"><i class="fa-regular fa-user"></i></a>
 		</nav>
@@ -81,20 +81,19 @@ div#editor {
 		
 		<c:otherwise>		
 			<div class="container2">
-			<h1>Notice</h1>
-			<form action="updateNotice" method="post"
-				enctype="multipart/form-data">
-				<div class="form-group" id="usertitle">
-					<label class="form-control" name="title"
-						value="${vo.title}" id="titleinput">title : "${vo.title}"</label >
-				</div>
-				<div class="form-group" id="usercontext">
-					<label>content : </label>
-					<textarea class="form-control" cols="1000" row="100" name="content"
-						style="resize: none" id="content_input">${vo.content}</textarea>
-				</div>
-				<a href="/notice/list">목록으로</a>
-			</form>
+				<h1>Notice</h1>
+				<form action="updateNotice" method="post"
+					enctype="multipart/form-data">
+					<div class="form-group" id="usertitle">
+						<label class="form-control" name="title"
+							value="${vo.title}" id="titleinput">title : "${vo.title}"</label >
+					</div>
+					<div class="form-group" id="usercontext">
+						<label>content : </label>
+					<span id="content_input">${vo.content}</span>
+					</div>
+					<a href="/notice/list">목록으로</a>
+				</form>
 			</div>
 		</c:otherwise>
 	</c:choose>

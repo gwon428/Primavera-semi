@@ -120,13 +120,19 @@ img {
 }
 
 .btn {
-	width: 130px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
 	position: relative;
-	left: 498px;
-	top: 11px;
+	left: 554px;
+	top: -5px;
+	margin: 20px 0;
+	font-size: 1rem;
+	background-color: #93b19a;
+	color: white;
+	border: none;
+	border-radius: 6px;
+	width: 75px;
+	height: 42px;
+	cursor: pointer;
+	font-family: "Cafe24Oneprettynight";
 }
 
 /* ------------------------------------회원 일경우-----------------------------------------  */
