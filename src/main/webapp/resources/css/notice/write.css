@@ -32,7 +32,7 @@ h1 {
 	border-top: 1px solid #757575;
 	justify-content: center;
 	align-items: center;
-	width: 700px;
+	width: 631px;
 	position: relative;
 	left: 624px;
 	top: 201px;
@@ -104,11 +104,10 @@ div #context label {
 	left: 110px;
 }
 
-#title label{
-    position: relative;
-    right: 16px;
+#title label {
+	position: relative;
+	right: 16px;
 }
-
 
 #file label {
 	position: relative;
@@ -121,22 +120,13 @@ img {
 }
 
 .btn {
+	width: 130px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	position: relative;
+	left: 498px;
+	top: 11px;
 }
 
-
-    margin: 20px 0;
-    padding: 7px;
-    font-size: 1rem;
-     cursor: pointer;
-        border: 0.5px solid #d1d1d1;
-    background-color: #93b19a;
-    color: white;
-    border: none;
-    font-family: "Cafe24Oneprettynight";
-    border-radius: 6px;
-    width: 75px;
-    height: 65px;
-  
+/* ------------------------------------회원 일경우-----------------------------------------  */

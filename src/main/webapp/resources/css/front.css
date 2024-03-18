@@ -113,8 +113,7 @@ nav a:hover::after, a h1:hover::after {
 	animation: slide1 1.8s;
 }
 
-@
-keyframes slide1 {from { left:-600px;
+@keyframes slide1 {from { left:-600px;
 	
 }
 
@@ -123,8 +122,7 @@ to {
 }
 
 }
-@
-keyframes out1 {from { left:-600px;
+@keyframes out1 {from { left:-600px;
 	
 }
 
@@ -142,8 +140,7 @@ to {
 	animation: slide2 1.9s;
 }
 
-@
-keyframes slide2 {from { left:50px;
+@keyframes slide2 {from { left:50px;
 	
 }
 
@@ -152,8 +149,7 @@ to {
 }
 
 }
-@
-keyframes out2 {from { left:50px;
+@keyframes out2 {from { left:50px;
 	
 }
 
@@ -194,8 +190,7 @@ to {
 	color: #699372;
 }
 
-@
-keyframes slide3 {from { right:-60px;
+@keyframes slide3 {from { right:-60px;
 	
 }
 
@@ -292,8 +287,7 @@ to {
 	width: 100%;
 }
 
-@
-keyframes slide4 {from { left:-200px;
+@keyframes slide4 {from { left:-200px;
 	
 }
 
@@ -302,8 +296,7 @@ to {
 }
 
 }
-@
-keyframes out4 {from { left:-200px;
+@keyframes out4 {from { left:-200px;
 	
 }
 
@@ -337,8 +330,7 @@ to {
 	bottom: 480px;
 }
 
-@
-keyframes slide5 {from { left:-500px;
+@keyframes slide5 {from { left:-500px;
 	
 }
 
@@ -347,8 +339,7 @@ to {
 }
 
 }
-@
-keyframes out5 {from { left:-500px;
+@keyframes out5 {from { left:-500px;
 	
 }
 
@@ -394,8 +385,7 @@ to {
 	animation: slide6 1.5s;
 }
 
-@
-keyframes slide6 {from { left:-500px;
+@keyframes slide6 {from { left:-500px;
 	
 }
 
@@ -404,8 +394,7 @@ to {
 }
 
 }
-@
-keyframes out6 {from { left:-500px;
+@keyframes out6 {from { left:-500px;
 	
 }
 
@@ -424,8 +413,7 @@ to {
 	animation: slide7 2s;
 }
 
-@
-keyframes slide7 {from { left:1500px;
+@keyframes slide7 {from { left:1500px;
 	
 }
 
@@ -434,8 +422,7 @@ to {
 }
 
 }
-@
-keyframes out7 {from { left:1500px;
+@keyframes out7 {from { left:1500px;
 	
 }
 
@@ -644,7 +631,7 @@ footer .center {
 }
 
 .center ul {
-	width: 218px;
+	width: 257px;
 	right: 70px;
 	position: relative;
 	font-size: 1.1rem;

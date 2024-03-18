@@ -53,5 +53,4 @@
 		notice_num=#{noticeNum}
 	</delete>
 
-
 </mapper>

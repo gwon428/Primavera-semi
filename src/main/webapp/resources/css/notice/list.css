@@ -64,13 +64,15 @@ img {
 	animation: slide1 1.8s;
 }
 
-@keyframes slide1 {
-  from {
-    left: -600px;
-  }
-  to {
-    left: 204px;
-  }
+@
+keyframes slide1 {from { left:-600px;
+	
+}
+
+to {
+	left: 204px;
+}
+
 }
 
 /* ---------------------------------------------------- */
@@ -122,6 +124,9 @@ thead {
 
 .table td {
 	border-bottom: 2px solid #dddddd;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 /* ------------------------------------------------------------------- */
@@ -139,7 +144,7 @@ thead {
 #admit {
 	position: relative;
 	left: 1186px;
-	top: 626px;
+	top: 617px;
 	margin: 20px 0;
 	padding: 7px;
 	font-size: 1rem;

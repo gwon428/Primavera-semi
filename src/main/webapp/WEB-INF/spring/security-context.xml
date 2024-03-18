@@ -7,15 +7,18 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
 		http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-5.2.xsd">
 
-	<bean id="userLoginFailHandler" class="com.semi.util.UserLoginFailHandler"/>
-	<bean id="bcryptPasswordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder" />
+	<bean id="userLoginFailHandler"
+		class="com.semi.util.UserLoginFailHandler" />
+	<bean id="bcryptPasswordEncoder"
+		class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder" />
 
 	<context:component-scan base-package="com.semi"></context:component-scan>
 	<bean id="userService" class="com.semi.service.UserService" />
 
 
 	<security:http>
-		<security:form-login login-processing-url="/login" authentication-failure-handler-ref="userLoginFailHandler"/>
+		<security:form-login login-processing-url="/login"
+			authentication-failure-handler-ref="userLoginFailHandler" />
 		<security:csrf disabled="true" />
 		<security:intercept-url pattern="/login"
 			access="permitAll" />
