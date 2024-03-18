@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Repository;
 
-import com.semi.model.vo.Board;
+import com.semi.model.vo.Review;
 import com.semi.model.vo.Paging;
 import com.semi.model.vo.Qna;
 import com.semi.model.vo.User;
@@ -64,7 +64,7 @@ public class UserDAO {
 	
 	
 	// 내가 쓴 리뷰 리스트 출력
-	public List<Board> showReview(String id){
+	public List<Review> showReview(String id){
 		return session.selectList("board.showReview", id);
 	}
 

@@ -11,7 +11,7 @@
 }
 
 .star-rating .far {
-	color: #CCCCCC;	
+	color: #CCC;	
 }
 
 header a, #neck a {
@@ -130,6 +130,8 @@ body, .main {
 	height: 150px;
 	object-fit: cover;
 	vertical-align: middle;	
+	border-radius: 6px;
+	box-shadow: 0 0 5px #999;	
 }
 
 #writebtn {

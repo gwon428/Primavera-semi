@@ -24,12 +24,12 @@
         <a href="#">Primavera</a>
       </nav>
       <nav>
-        <a href="mainMap">Store</a>
+        <a href="/map/mainMap">Store</a>
         <a href="#">Guide</a>
         <a href="collectPage">PickUp</a>
         <a href="list">Board</a>
         <span>
-          <a href="/board/list">Review</a>
+          <a href="/review/list">Review</a>
           <a href="listQna">Q & A</a>
           <a href="/notice/list">Notice</a>
         </span>

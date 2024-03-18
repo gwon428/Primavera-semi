@@ -13,7 +13,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.semi.model.dao.UserDAO;
-import com.semi.model.vo.Board;
+import com.semi.model.vo.Review;
 import com.semi.model.vo.Paging;
 import com.semi.model.vo.Qna;
 import com.semi.model.vo.User;
@@ -76,7 +76,7 @@ public class UserService implements UserDetailsService{
 	
 	
 	// 내가 쓴 후기 리스트 출력
-	public List<Board> showReview(){
+	public List<Review> showReview(){
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		UserDetails userDetails = (UserDetails)principal;
 		return dao.showReview(userDetails.getUsername());

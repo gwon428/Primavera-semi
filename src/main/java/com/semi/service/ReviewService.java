@@ -3,29 +3,29 @@ package com.semi.service;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.semi.model.dao.BoardDAO;
-import com.semi.model.vo.Board;
+import com.semi.model.dao.ReviewDAO;
+import com.semi.model.vo.Review;
 import com.semi.model.vo.Paging;
 
 @Service
-public class BoardService {
+public class ReviewService {
 
 	@Autowired
-	private BoardDAO dao;
+	private ReviewDAO dao;
 
-	public int insert(Board b) {
+	public int insert(Review b) {
 		return dao.insert(b);
 	}
 
-	public List<Board> selectAll() {
+	public List<Review> selectAll() {
 		return dao.selectAll();
 	}
 
-	public Board select(int no) {
+	public Review select(int no) {
 		return dao.select(no);
 	}
 
-	public int updatereview(Board b) {
+	public int updatereview(Review b) {
 		return dao.updatereview(b);
 	}
 
@@ -33,7 +33,7 @@ public class BoardService {
 		return dao.deletereview(no);
 	}
 
-	public List<Board> selectPage(Paging paging) {
+	public List<Review> selectPage(Paging paging) {
 		paging.setOffset(paging.getLimit() * (paging.getPage() - 1));
 		return dao.selectPage(paging);
 	}

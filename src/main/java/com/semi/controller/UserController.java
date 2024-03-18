@@ -27,7 +27,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.semi.model.vo.Board;
+import com.semi.model.vo.Review;
 import com.semi.model.vo.Paging;
 import com.semi.model.vo.Qna;
 import com.semi.model.vo.User;
@@ -236,7 +236,7 @@ public class UserController {
 	// 내가 쓴 후기 모아보기
 	@GetMapping("showReview")
 	public String showReview(Model model, Paging paging) {
-		List<Board> list = service.showReview();
+		List<Review> list = service.showReview();
 		model.addAttribute("list", list);
 		model.addAttribute("paging", new Paging(paging.getPage(), service.showReviewtotal()));
 		return "user/showReview";

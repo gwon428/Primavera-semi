@@ -8,11 +8,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>리뷰 목록</title>
 <link rel="stylesheet" href="../../../resources/css/reset.css" />
 <link rel="stylesheet" href="../../../resources/css/header.css" />
-<link href="../../resources/css/review/list.css" rel="stylesheet"
-	type="text/css">
+<link rel="stylesheet" href="../../../resources/css/review/list.css" />
 <script src="https://kit.fontawesome.com/4602e82315.js"
 	crossorigin="anonymous"></script>
 </head>
@@ -24,10 +22,11 @@
 				<a href="/">Primavera</a>
 			</nav>
 			<nav>
-				<a href="#">Store</a> <a href="#">Guid</a> <a href="collectPage">PickUp</a>
-				<a href="list">Board</a> <span> <a href="/board/list">Review</a>
-					<a href="listQna">Q & A</a> <a href="notice/list">Notice</a>
-				</span> <a href="myPage"><i class="fa-regular fa-user" id="mypage"></i></a>
+				<a href="/map/mainMap">Store</a> <a href="#">Guide</a> <a
+					href="/collectPage">PickUp</a> <a href="/list">Board</a> <span>
+					<a href="/review/list">Review</a> <a href="listQna">Q & A</a> <a
+					href="/notice/list">Notice</a>
+				</span> <a href="/myPage"><i class="fa-regular fa-user"></i></a>
 			</nav>
 		</header>
 
@@ -40,12 +39,12 @@
 		</section>
 		<div class="container">
 			<div class="header">
-			<div class="cover"></div>
-				<h1>REVIEW</h1>				
-					<c:if test="${isLoggedIn}">
-						<a href="/board/write" id="writebtn">리뷰 작성</a>
-					</c:if>
-				
+				<div class="cover"></div>
+				<h1>REVIEW</h1>
+				<c:if test="${isLoggedIn}">
+					<a href="/review/write" id="writebtn">리뷰 작성</a>
+				</c:if>
+
 			</div>
 			<table class="table">
 				<thead>
@@ -59,25 +58,26 @@
 					</tr>
 				</thead>
 				<tbody>
-					<c:forEach items="${list}" var="board" varStatus="status">
+					<c:forEach items="${list}" var="review" varStatus="status">
 						<tr>
-							<td class="image-cell"><c:if test="${not empty board.url}">
+							<td class="image-cell"><c:if test="${not empty review.url}">
 									<img
-										src="${pageContext.request.contextPath}/upload/review/${board.url}"
+										src="${pageContext.request.contextPath}/upload/review/${review.url}"
 										width="150" height="150" />
 								</c:if></td>
 							<td>${paging.total - (paging.page - 1) * 10 - status.index}</td>
-							<td><a class="review-link" href="/board/view?no=${board.no}">${board.title}</a></td>
-							<td>${board.id}</td>
+							<td><a class="review-link"
+								href="/review/view?no=${review.no}">${review.title}</a></td>
+							<td>${review.id}</td>
 							<td>
 								<div class="star-rating">
 									<c:forEach begin="1" end="5" var="i">
 										<i
-											class="${i <= board.rating ? 'fas fa-star' : 'far fa-star'}"></i>
+											class="${i <= review.rating ? 'fas fa-star' : 'far fa-star'}"></i>
 									</c:forEach>
 								</div>
 							</td>
-							<td><fmt:formatDate value="${board.date}"
+							<td><fmt:formatDate value="${review.date}"
 									pattern="yyyy-MM-dd" /></td>
 						</tr>
 					</c:forEach>
@@ -87,18 +87,18 @@
 			<nav>
 				<ul class="pagination">
 					<li class="page-item ${paging.prev ? '' : 'disabled'}"><a
-						class="page-link" href="/board/list?page=${paging.startPage - 1}">Previous</a>
+						class="page-link"
+						href="/reviewboard/list?page=${paging.startPage - 1}">Previous</a>
 					</li>
 
 					<c:forEach begin="${paging.startPage}" end="${paging.endPage}"
 						var="page">
 						<li class="page-item ${paging.page == page ? 'active' : ''}">
-							<a class="page-link" href="/board/list?page=${page}">${page}</a>
+							<a class="page-link" href="/review/list?page=${page}">${page}</a>
 						</li>
 					</c:forEach>
-
 					<li class="page-item ${paging.next ? '' : 'disabled'}"><a
-						class="page-link" href="/board/list?page=${paging.endPage + 1}">Next</a>
+						class="page-link" href="/review/list?page=${paging.endPage + 1}">Next</a>
 					</li>
 				</ul>
 			</nav>
