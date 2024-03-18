@@ -30,7 +30,7 @@
 				<main>
 				<div id="sideMenu">
 					<a href="notice/list" id="noticelist">공지 게시판 관리</a>
-					<a href="listQna" id="qnalist">Q&A 게시판 관리</a>
+					<a href="listStatus" id="qnalist">Q&A 게시판 관리</a>
 					<a href="allUser" id="alluserlist">전체 회원 조회</a>
 					<a href="showProgress" id="showprogresslist">progress 관리</a>
 					<a href="showAllCollect" id="showallcollectlist">수거 신청 현황</a>

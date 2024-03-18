@@ -38,11 +38,11 @@
 						<p>아이디</p> <span id="idCheckresult">&nbsp;</span>
 						<input type="text" name="id" id="userId" required>
 						<span id="idreg">&nbsp;</span>
-						<span id="idreg2"></span>
+						<span id="idreg2">&nbsp;</span>
 						<p>비밀번호</p>
 						<input type="password" name="password" id="userPwd" required>
 						<span id="pwdreg">&nbsp;</span>
-						<span id="pwdreg2"></span>
+						<span id="pwdreg2">&nbsp;</span>
 
 						<p>비밀번호 확인</p>
 						<input type="password" id="passwordcheck" required>

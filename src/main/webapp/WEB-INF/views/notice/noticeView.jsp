@@ -47,7 +47,26 @@ div#editor {
 	</header>
 	<sec:authentication property="principal" var="user" />
 	<c:choose>
-		<c:when test="${user.auth == 'ADMIN'}">
+		<c:when test="${user == 'anonymousUser' || user.auth == 'MEMBER'}">	
+			<div class="container2">
+			<h1>Notice</h1>
+			<form action="updateNotice" method="post"
+				enctype="multipart/form-data">
+				<div class="form-group" id="usertitle">
+					<label class="form-control" name="title"
+						value="${vo.title}" id="titleinput">title : "${vo.title}"</label >
+				</div>
+				<div class="form-group" id="usercontext">
+					<label>content : </label>
+					<textarea class="form-control" cols="1000" row="100" name="content"
+						style="resize: none" id="content_input">${vo.content}</textarea>
+				</div>
+				<a href="/notice/list">목록으로</a>
+			</form>
+			</div>
+		</c:when>
+		<c:otherwise>
+			<c:if test="${user.auth == 'ADMIN'}">
 			<div class="container">
 				<h1>게시물 정보</h1>
 				<form action="updateNotice" method="post"
@@ -77,25 +96,7 @@ div#editor {
 					</div>
 				</form>
 			</div>
-		</c:when>
-		
-		<c:otherwise>		
-			<div class="container2">
-			<h1>Notice</h1>
-			<form action="updateNotice" method="post"
-				enctype="multipart/form-data">
-				<div class="form-group" id="usertitle">
-					<label class="form-control" name="title"
-						value="${vo.title}" id="titleinput">title : "${vo.title}"</label >
-				</div>
-				<div class="form-group" id="usercontext">
-					<label>content : </label>
-					<textarea class="form-control" cols="1000" row="100" name="content"
-						style="resize: none" id="content_input">${vo.content}</textarea>
-				</div>
-				<a href="/notice/list">목록으로</a>
-			</form>
-			</div>
+		</c:if>
 		</c:otherwise>
 	</c:choose>
 </body>

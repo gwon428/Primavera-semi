@@ -35,10 +35,7 @@
 			<body>
 				<sec:authentication property="principal" var="user" />
 				<c:choose>
-				
-				
 					<c:when test="${user == 'anonymousUser'}">
-					
 						<main>
 			<div class="section">
 				<div class="container">
@@ -61,7 +58,7 @@
 													<div id="form">
 													<form action="/login" method="post">
 													<div class="form-group">
-														<input type="text" name="username" class="form-style"
+														<input type="text" name="username" value="${id}" class="form-style"
 															placeholder="ID" id="loginId" autocomplete="off">
 													</div>
 													<div class="form-group mt-2">

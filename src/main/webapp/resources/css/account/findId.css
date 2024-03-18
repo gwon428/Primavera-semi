@@ -57,8 +57,8 @@ form{
 	line-height: 22px;
 	letter-spacing: 0.5px;
 	outline: none;
-	color: #ffffff;
-	background-color: rgba(44, 61, 47, 0.7);
+	color: black;
+	background-color: rgba(44, 61, 47, 0.4);
 	border: none;
 	box-shadow: 0 4px 8px 0 rgba(21,21,21,.2);
 }

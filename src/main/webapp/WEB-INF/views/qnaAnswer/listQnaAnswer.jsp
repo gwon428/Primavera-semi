@@ -7,9 +7,36 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+	<link rel="stylesheet" href="/resources/css/reset.css" />
+	<link href="../../resources/css/header.css" rel="stylesheet" type="text/css">
+	<link href="../../resources/css/admin/listQnaAnswer.css" rel="stylesheet" type="text/css">
+	<meta charset="UTF-8">
+	<script src="https://kit.fontawesome.com/4602e82315.js" crossorigin="anonymous"></script>
+<title>Q&A 관리</title>
 </head>
+<header>
+			<nav>
+				<a href="/">Primavera</a>
+			</nav>
+			<nav>
+				<a href="/map/mainMap">Store</a> <a href="#">Guide</a> <a href="collectPage">PickUp</a>
+				<a href="/review/list">Board</a> <a href="myPage"><i class="fa-regular fa-user"></i></a>
+			</nav>
+		</header>
 <body>
+<section id="progressbackground">
+					<div id="background-blackbox"></div>
+				</section>
+			<main>
+			<div id="sideMenu">
+				<a href="notice/list" id="noticelist">공지 게시판 관리</a>
+					<a href="listStatus" id="qnalist">Q&A 게시판 관리</a>
+					<a href="allUser" id="alluserlist">전체 회원 조회</a>
+					<a href="showProgress" id="showprogresslist">progress 관리</a>
+					<a href="showAllCollect" id="showallcollectlist">수거 신청 현황</a>
+					<a href="/logout">로그아웃</a>
+			</div>
+			<div id="mainMenu">
 	<h1>댓글 달아줘야 하는 사람들 리스트</h1>
 	
 	<div>
@@ -38,7 +65,7 @@
 					</tbody>
 				</table>
 			</div>
-			<nav id="paging">
+			<div id="page">
 				<ul class="pagination">
 					<li class="page-item ${paging.prev ? '' : 'disabled'}">
 					
@@ -69,7 +96,8 @@
 						</c:choose>	
 					</li>
 				</ul>
-			</nav>
-	
+</div>
+</div>
+</main>	
 </body>
 </html>

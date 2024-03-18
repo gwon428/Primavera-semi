@@ -15,6 +15,7 @@ public class Pagingseven {
 	private int pageSize = 10;
 	private int endPage;
 	private int startPage;
+	private int total;
 
 	private boolean prev;
 	private boolean next;

@@ -13,7 +13,7 @@ $('#userId').keyup((e) =>{
 	const regExp = /^[A-Za-z][A-Za-z0-9]{3,11}$/;
 	if(regExp.test(id) || id === ""){
 		$('#idreg').html('&nbsp;');
-		$('#idreg2').html('');
+		$('#idreg2').html('&nbsp;');
 		idCheck = false;
 	} else {
 		$('#idCheckresult').text("ID 사용 불가").css("color", "black");
@@ -55,6 +55,7 @@ $('#userPwd').keyup((e) =>{
 	
 	if(regExp.test(pwd) || pwd === ""){
 		$('#pwdreg').html('&nbsp;');
+		$('#pwdreg2').html('&nbsp;');
 		pwdCheck = false;
 	} else {
 		$('#pwdreg').text("영문자, 숫자, 특수문자 포함하여").css("color", "black");

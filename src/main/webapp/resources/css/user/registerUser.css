@@ -48,7 +48,25 @@ form {
     border: none;
     box-shadow: 0 4px 8px 0 rgba(21,21,21,.2);
 }
+form input{
+	height: 30px;
+	width: 200px;
+	cursor: pointer;
+	border: 0.7px solid rgba(0, 0, 0, 0.3);
+	border-radius: 10px;
+	padding-left: 10px;
+}
 
+form input:hover{
+	cursor: pointer;
+	border: 1px solid rgba(77, 107, 83, 0.8);
+	border-radius: 10px;
+}
+
+form input:focus{
+	outline: 0.7px solid rgba(0, 0, 0, 0.6);
+	border-radius: 10px;
+}
 form p{
 	margin: 5px;
 	font-weight: bolder;
@@ -57,6 +75,9 @@ form p{
 
 form select{
 	margin-bottom:15px;
+	font-family: "Cafe24Oneprettynight";
+	font-weight: bolder;
+	border-radius: 8px;
 }
 
 #regist{

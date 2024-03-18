@@ -256,7 +256,7 @@ public class UserController {
 	@GetMapping("/findIdlogin")
 	public String findIdLogin(String id, Model model) {
 		model.addAttribute("id", id);
-		return "/user/findIdLogin";
+		return "/user/myPage";
 	}
 	
 }
