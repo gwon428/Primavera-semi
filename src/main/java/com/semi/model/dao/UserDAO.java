@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Repository;
 
-import com.semi.model.vo.Board;
+import com.semi.model.vo.Review;
 import com.semi.model.vo.Paging;
 import com.semi.model.vo.Pagingseven;
 import com.semi.model.vo.Qna;

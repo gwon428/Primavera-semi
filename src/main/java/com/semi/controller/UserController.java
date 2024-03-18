@@ -27,7 +27,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.semi.model.vo.Board;
+import com.semi.model.vo.Review;
 import com.semi.model.vo.Paging;
 import com.semi.model.vo.Pagingseven;
 import com.semi.model.vo.Qna;
