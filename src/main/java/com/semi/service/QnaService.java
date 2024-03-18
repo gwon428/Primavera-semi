@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.semi.model.dao.QnaDAO;
+import com.semi.model.vo.Paging;
 import com.semi.model.vo.PagingQna;
 import com.semi.model.vo.Qna;
 
@@ -16,7 +17,7 @@ public class QnaService {
 	private QnaDAO dao;
 	
 	// 리스트 페이징 처리
-	public List<Qna> showAllQna(PagingQna paging){
+	public List<Qna> showAllQna(Paging paging){
 		paging.setOffset(paging.getLimit()*(paging.getPage()-1));
 		return dao.showAllQna(paging);
 	}
@@ -43,5 +44,13 @@ public class QnaService {
 	// 작성한 Qna 삭제 
 	public int delete(int qnaNum) {
 		return dao.delete(qnaNum);
+	}
+	
+	// 관리자용 Q&A 게시판 관리 페이지 : qna의 status가 'N'인 경우 리스트
+	public List<Qna> listStatus(Paging paging){
+		return dao.listStatus(paging);
+	}
+	public int totalStatus() {
+		return dao.totalStatus();
 	}
 }

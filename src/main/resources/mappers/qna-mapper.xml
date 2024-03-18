@@ -9,18 +9,20 @@
 		<result property="writeDate" column="write_date"/>
 		<result property="url" column="url"/>
 		<result property="status" column="status"/>
+		<result property="secret" column="secret"/>
 	</resultMap>
 	
 	<!-- insert -->
 	<insert id="insertQna" parameterType="Qna" useGeneratedKeys="true" keyProperty="qnaNum" keyColumn="qna_num">
-		INSERT INTO qna(id, title, content, url) 
-		VALUES(#{id}, #{title}, #{content}, #{url})
+		INSERT INTO qna(id, title, content, url, secret) 
+		VALUES(#{id}, #{title}, #{content}, #{url}, #{secret})
 	</insert>
 	
 	<!-- selectAll -->
 	<select id="showAllQna" parameterType="PagingQna" resultMap="qnaMap">
-		SELECT qna_num, title, id, write_date, status 
+		SELECT qna_num, title, id, write_date, status, secret
 		FROM qna
+		ORDER BY qna_num DESC
 		LIMIT #{offset}, #{limit}
 	</select>
 	
@@ -65,4 +67,20 @@
 		SELECT COUNT(*) FROM qna
 		WHERE id=#{id}
 	</select>
+	
+	<!-- 관리자용 Q&A 게시판 관리 페이지 : qna의 status가 'N'인 경우 리스트 -->
+	<select id="listStatus" parameterType="PagingQna" resultMap="qnaMap">
+		SELECT	id, title, write_date, status, qna_num
+ 		FROM qna
+ 		WHERE status='N'
+ 		LIMIT #{offset}, #{limit} 
+	</select>
+	
+	<!-- selectCount -->
+	<select id="countStatus" resultType="int">
+		SELECT count(*) FROM qna
+		WHERE status='N'
+	</select>
+	
+	
 </mapper>

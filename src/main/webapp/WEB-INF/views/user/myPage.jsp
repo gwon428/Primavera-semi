@@ -111,7 +111,7 @@
 								</div>
 								<div id="Menu">
 									<div id="MenuOne">
-										<a href="notice/list">공지 게시판 관리</a> <a href="listQna">Q&A 게시판 관리</a> <a
+										<a href="notice/list">공지 게시판 관리</a> <a href="listStatus">Q&A 게시판 관리</a> <a
 											href="allUser">전체 회원 조회</a>
 									</div>
 									<div id="MenuTwo">

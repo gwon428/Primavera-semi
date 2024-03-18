@@ -43,7 +43,7 @@ form{
 	display: flex;
     flex-wrap: wrap;
 }
-#id, #orderNum, #title, #content, #img{
+#id, #secret, #title, #content, #img{
 	font-family: "Cafe24Oneprettynight";
 	font-weight:bold;
     display: flex;
@@ -53,8 +53,19 @@ form{
 #id{
 	margin-top : 20px;
 }
+#secret{
+	margin-top : 20px;
+}
+#secret #secretCheck{
+	width:43px;
+	margin-left: 5px;
+}
+#secret #secretPwd{
+	width:63px;
+}
 label{
 	margin-left : 25px;
+	 width: 53px;
 }
 #id_input, #orderNum_input{
 	margin-left : 20px;
@@ -64,25 +75,26 @@ label{
 	border-radius:3px;
 	border-color : #d1d1d1;
 }
-#title_input{
-	width:560px;
-	height:30px;
-	margin-left : 14px;
-	margin-right:70px;
-	border-radius:3px;
-	border-color : #d1d1d1;
-}
-#content_input{
-	margin-left : 14px;
-	width:560px;
-	height:100px;
-	margin-right:70px;
-	border-radius:3px;
-	border-color : #d1d1d1;	
+#title_input {
+    width: 560px;
+    height: 30px;
+    margin-left: 20px;
+    margin-right: 70px;
+    border-radius: 3px;
+    border-color: #d1d1d1;
 }
 
-#img_input{
-	width: 90px;
+#content_input {
+    margin-left: 20px;
+    width: 560px;
+    height: 100px;
+    margin-right: 70px;
+    border-radius: 3px;
+    border-color: #d1d1d1;
+}
+
+#img_input {
+    width: 90px;
     height: 90px;
     border-radius: 8px;
     border: 0.5px solid #d1d1d1;
@@ -90,10 +102,11 @@ label{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-left: 70px;
+    margin-left: 96px;
+    margin-top: 3px;
 }
 #photo{
-	margin-left: 0px;
+	margin-left: 20px;
 	cursor: pointer;
 }
 img{

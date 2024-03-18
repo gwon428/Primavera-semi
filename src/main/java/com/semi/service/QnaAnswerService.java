@@ -30,4 +30,9 @@ public class QnaAnswerService {
 	public int deleteQnaAnswer(int qnaNum) {
 		return dao.deleteQnaAnswer(qnaNum);
 	}
+	
+	// updateStatus
+	public int updateStatus(String id) {
+		return dao.updateStatus(id);
+	}
 }

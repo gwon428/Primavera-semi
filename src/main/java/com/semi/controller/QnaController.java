@@ -10,11 +10,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-
+import com.semi.model.vo.Paging;
 import com.semi.model.vo.PagingQna;
 import com.semi.model.vo.Qna;
+import com.semi.model.vo.QnaAnswer;
+import com.semi.service.QnaAnswerService;
 import com.semi.service.QnaService;
 
 @Controller
@@ -22,6 +25,9 @@ public class QnaController {
 
 	@Autowired
 	private QnaService service;
+	
+	@Autowired
+	private QnaAnswerService qnaAnswerService;
 	
 	private String path = "D:\\upload\\qna\\";
 	
@@ -38,6 +44,7 @@ public class QnaController {
 			return filename;
 		}
 		
+		// 글 등록 페이지 이동
 		@GetMapping("writeQna")
 		public String write() {
 			return "qna/insertQna";
@@ -56,22 +63,27 @@ public class QnaController {
 			}
 			// 비즈니스 로직 처리 -> service.Boardwrite
 			service.insert(qna);
-			//System.out.println("추가 후 : " + qna);
-			//return "redirect:/view?no=" + qna.getQnaNum();
-			//return "redirect:/qna";
-			System.out.println(qna.getQnaNum());
+			
+			//System.out.println(qna.getQnaNum());
+			System.out.println(qna.getSecret());
+			//System.out.println("qna.getDate : " + qna.getWriteDate());
 			return "redirect:/listQna";
 		}
 		
 		// 리스트 페이징 처리 (select)
 		@GetMapping("listQna")
-		public String showFilm(Model model, PagingQna paging) {
-			
+	//	public String showFilm(Model model, Paging paging) {
+		public String showFilm(Model model, @RequestParam(value = "page", defaultValue = "1") int page) {
 			//System.out.println(paging);
+			
+			// 페이지 거꾸로
+			int total = service.total();
+			Paging paging = new Paging(page, total);
 			
 			List<Qna> list = service.showAllQna(paging);
 			model.addAttribute("list", list);
-			model.addAttribute("paging", new PagingQna(paging.getPage(), service.total()));
+			//model.addAttribute("paging", new PagingQna(paging.getPage(), service.total()));
+			model.addAttribute("paging", paging);
 			
 			return "qna/listQna";
 		}
@@ -83,6 +95,11 @@ public class QnaController {
 			int qnanum = Integer.parseInt(qnaNum);
 			qna = service.select(qnanum);
 			model.addAttribute("qna", qna);
+			
+			// 댓글 정보 바인딩 추가
+			QnaAnswer qnaAnswer = qnaAnswerService.selectQnaAnswer(qnanum);
+			model.addAttribute("qnaAnswer", qnaAnswer);
+			
 			return "/qna/viewQna";
 		}
   
@@ -128,6 +145,24 @@ public class QnaController {
 		return "redirect:/listQna";
 	} 
   
-
-
+ 	// 관리자용 Q&A 게시판 관리 페이지 : qna의 status가 'N'인 경우 리스트
+ 	@GetMapping("listStatus")	
+ 	public String listStatus(Model model, @RequestParam(value = "page", defaultValue = "1") int page) {
+		
+		// 페이지 거꾸로
+		int total = service.totalStatus();
+		Paging paging = new Paging(page, total);
+		List<Qna> listStatus = service.listStatus(paging);
+		model.addAttribute("listStatus", listStatus);
+		model.addAttribute("paging", paging);
+		
+ 		return "qnaAnswer/listQnaAnswer";
+ 		
+	}
+ 	/*
+ 	@PostMapping("pwdCheck")
+ 	public void pwdCheck() {
+ 		
+ 	}
+ 	*/
 }

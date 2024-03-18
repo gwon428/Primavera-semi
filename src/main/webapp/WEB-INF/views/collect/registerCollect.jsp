@@ -101,7 +101,7 @@
 				* 수거 신청을 위해 <a href="#pop_info_1" class="btn_open"> 이용약관 </a> 및 <a
 					href="#pop_info_2" class="btn_open">개인정보 수집 </a>에 동의합니다.
 			</p>
-			<input type="checkbox" name="agree" id="agree" value="yes" />네, 동의합니다.<br>
+			<input type="checkbox" name="agree" id="agree" value="yes" />네, 동의합니다.
 			
 		</div>
 		<div>
