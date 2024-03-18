@@ -20,20 +20,16 @@
 	</nav>
 	<nav>
 		<a href="#">Store</a> <a href="#">Guide</a> <a href="collectPage">PickUp</a>
-		<a href="board/list">Board</a> <a href="myPage"><i
+		<a href="/review/list">Board</a> <a href="myPage"><i
 			class="fa-regular fa-user"></i></a>
 	</nav>
 </header>
 <body>
 	<main>
 		<h1>해당 사용자가 존재하지 않습니다.</h1>
-		<div>
-			<button>
-				<a href="findId">아이디 찾기</a>
-			</button>
-			<button>
-				<a href="myPage">로그인</a>
-			</button>
+		<div id="menu">
+				<a href="findId" id="href">아이디 찾기</a>
+				<a href="register" id="href">회원가입</a>
 		</div>
 	</main>
 </body>

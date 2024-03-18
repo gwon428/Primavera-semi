@@ -24,7 +24,7 @@
 				</nav>
 				<nav>
 					<a href="/map/mainMap">Store</a> <a href="#">Guide</a> <a href="collectPage">PickUp</a>
-					<a href="/board/list">Board</a> <a href="myPage"><i class="fa-regular fa-user"></i></a>
+					<a href="/review/list">Board</a> <a href="myPage"><i class="fa-regular fa-user"></i></a>
 				</nav>
 			</header>
 
@@ -34,6 +34,16 @@
 					<div id="background-blackbox"></div>
 				</section>
 				<main>
+				<div id="sideMenu">
+					<a href="notice/list" id="noticelist">공지 게시판 관리</a>
+					<a href="listQna" id="qnalist">Q&A 게시판 관리</a>
+					<a href="allUser" id="alluserlist">전체 회원 조회</a>
+					<a href="showProgress" id="showprogresslist">progress 관리</a>
+					<a href="showAllCollect" id="showallcollectlist">수거 신청 현황</a>
+					<a href="/logout">로그아웃</a>
+				</div>
+				
+				<div id="mainMenu">
 					<form action="update_ok" method="post" id="update" name="update">
 						<div class="left">
 							<h1>수거 신청 현황 관리</h1>
@@ -46,8 +56,8 @@
 										<th>이름</th>
 										<th>전화번호</th>
 										<th>진행상황</th>
-										<th>수거 신청 무게</th>
-										<th>금액</th>
+										<th>수거량(kg)</th>
+										<th>금액(원)</th>
 									</tr>
 
 									<c:forEach items="${progress}" var="item">
@@ -128,7 +138,7 @@
 							</div>
 						</div>
 					</form>
-
+</div>
 				</main>
 				<script src="../../../resources/js/collect/showProgress.js"></script>
 			</body>

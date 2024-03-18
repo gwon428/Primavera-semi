@@ -22,7 +22,7 @@
 		</nav>
 		<nav>
 			<a href="#">Store</a> <a href="#">Guid</a> <a href="collectPage">PickUp</a>
-			<a href="/board/list">Board</a> <a href="myPage"><i
+			<a href="/review/list">Board</a> <a href="myPage"><i
 				class="fa-regular fa-user" id="mypage"></i></a>
 		</nav>
 	</header>
@@ -33,22 +33,22 @@
 	<div class="container">
 		<form action="insertQna" method="post" enctype="multipart/form-data" id="insertQna" name="insertQna" onsubmit="return validate()">
 		<div id="id_orderNum">
-			<div class="form-group" id="id">
+			<div class="insertQna" id="id">
 				<label>*아이디</label> <input class="form-control" name="id" id="id_input" value="${user.id}" readonly>
 			</div>
-			<!-- 
-			<div class="form-group" id="orderNum">
-				<label>*주문번호</label> <input class="form-control" name="orderNum" id="orderNum_input">
-			</div>  -->
-			</div>
-			<div class="form-group" id="title">
+			<div class="insertQna" id="secret">
+				<label id="secretCheck">비밀글</label><input type="checkbox" name="secret" id="secret_input" value="Y">
+				<label id="secretPwd">비밀번호</label><input type="password" name="pwd" id="pwd" >
+			</div> 
+		</div>
+			<div class="insertQna" id="title">
 				<label>*제목</label> <input class="form-control" name="title" id="title_input">
 			</div>
-			<div class="form-group" id="content">
+			<div class="insertQna" id="content">
 				<label>*내용</label>
 				<textarea class="form-control" row="10" name="content" id="content_input"></textarea>
 			</div>
-			<div class="form-group" id="img">
+			<div class="insertQna" id="img">
 				<div id="img_input">
 				<label for="file" id="photo">photo</label> 
 				
@@ -59,13 +59,14 @@
 					</div>
 			</div>
 			<div class="btn">
-			<button type="submit" class="btn_final" id="btn_insert">등 록</button>
+			<button type="submit" class="btn_final" id="btn_insert" onclick="add()">등 록</button>
 			<button value="목록" class="btn_final" id="btn_list"><a href="listQna" id="listQna">취 소</a></button>
 			</div>
 		</form>
 	</div>
 	</div>
 	<script src="../../../resources/js/qna/insertQna.js"></script>
+	
 
 </body>
 </html>

@@ -31,4 +31,9 @@ public class QnaAnswerDAO {
 	public int deleteQnaAnswer(int qnaNum) {
 		return session.delete("qnaAnswerMapper.deleteQnaAnswer", qnaNum);
 	}
+	
+	// updateStatus
+	public int updateStatus(String id) {
+		return session.update("qnaAnswerMapper.updateStatus", id);
+	}
 }

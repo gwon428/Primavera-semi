@@ -10,12 +10,12 @@
 <link rel="stylesheet" href="/resources/css/reset.css" />
 <link href="../../resources/css/header.css" rel="stylesheet"
 	type="text/css">
-<link href="../../resources/css/user/myPage.css" rel="stylesheet"
+<link href="../../resources/css/user/findIdLogin.css" rel="stylesheet"
 	type="text/css">
 <meta charset="UTF-8">
 <script src="https://kit.fontawesome.com/4602e82315.js"
 	crossorigin="anonymous"></script>
-<title>Insert title here</title>
+<title>Primavera</title>
 </head>
 <header>
 	<nav>
@@ -23,17 +23,27 @@
 	</nav>
 	<nav>
 		<a href="#">Store</a> <a href="#">Guide</a> <a href="collectPage">PickUp</a>
-		<a href="board/list">Board</a> <a href="myPage"><i
+		<a href="/review/list">Board</a> <a href="myPage"><i
 			class="fa-regular fa-user"></i></a>
 	</nav>
 </header>
 <body>
 	<main>
-		<h1>로그인</h1>
-		<form action="/login" method="post">
+		<h1 class="logo">Primavera</h1>
+		<form action="/login" method="post"  class="loginform">
 			<div class="idpwd">
-				<input type="text" name="username" value="${id}" placeholder="아이디" />
-				<input type="password" name="password" placeholder="비밀번호" />
+				<div class="mb-3 row">
+					<label><i class="fa-regular fa-user"></i></label>
+					<div class="col-sm-10">
+						<input type="text" name="username" value="${id}" placeholder="아이디" />
+					</div>
+				</div>
+				<div class="mb-3 row">
+					<label for="staticEmail" class="col-sm-2 col-form-label"><i class="fa-solid fa-lock"></i></label>
+						<div class="col-sm-10">
+							<input type="password" name="password" placeholder="비밀번호" />
+						</div>
+					</div>
 			</div>
 			<input type="submit" value="Login" class="loginbutton">
 		</form>

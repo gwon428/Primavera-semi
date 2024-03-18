@@ -28,7 +28,7 @@ body, #neck, .cover, .map {
 }
 
 #neck {
-    background-image: url(../../../resources/images/reviewbackground.jpg);
+    background-image: url(../../../resources/images/storebackground.jpg);
     background-size: cover;
     background-position: center;
     height: 85vh;

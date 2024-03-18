@@ -27,8 +27,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.semi.model.vo.Board;
+import com.semi.model.vo.Review;
 import com.semi.model.vo.Paging;
+import com.semi.model.vo.Pagingseven;
 import com.semi.model.vo.Qna;
 import com.semi.model.vo.User;
 import com.semi.service.UserService;
@@ -156,6 +157,8 @@ public class UserController {
 		model.addAttribute("paging", new Paging(paging.getPage(), service.total()));
 		return "user/allUser";
 	}
+	
+	
 	@GetMapping("/findId")
 	public String findId() {
 		return "account/findId";
@@ -194,7 +197,7 @@ public class UserController {
 		
 		String setForm = "primavera240327@gmail.com";
 		String toMail = email;
-		String title = "회원가입 인증 이메일입니다.";
+		String title = "비밀번호 변경 인증 이메일입니다.";
 		String content = "인증 코드는 " + checkNum + "입니다. " +
 					"<br>" + "해당 인증 코드를 인증 코드 확인란에 기입하여 주세요.";
 		
@@ -215,7 +218,6 @@ public class UserController {
 	
 	@PostMapping("checkEmail")
 	public String checkEmail(User user, Model model) {
-		System.out.println("checkEmail!! : " + user);
 		model.addAttribute("id", user.getId());
 		return "account/changePassword";
 	}
@@ -235,19 +237,19 @@ public class UserController {
 	
 	// 내가 쓴 후기 모아보기
 	@GetMapping("showReview")
-	public String showReview(Model model, Paging paging) {
-		List<Board> list = service.showReview();
+	public String showReview(Model model, Pagingseven paging) {
+		List<Review> list = service.showReview(paging);
 		model.addAttribute("list", list);
-		model.addAttribute("paging", new Paging(paging.getPage(), service.showReviewtotal()));
+		model.addAttribute("paging", new Pagingseven(paging.getPage(), service.showReviewtotal()));
 		return "user/showReview";
 	}
 	
 	// 내가 쓴 qna 모아보기
 	@GetMapping("showQna")
-	public String showQna(Model model, Paging paging) {
-		List<Qna> list = service.showQna();
+	public String showQna(Model model, Pagingseven paging) {
+		List<Qna> list = service.showQna(paging);
 		model.addAttribute("list", list);
-		model.addAttribute("paging", new Paging(paging.getPage(), service.showQnatotal()));
+		model.addAttribute("paging", new Pagingseven(paging.getPage(), service.showQnatotal()));
 		return "user/showQna";
 	}
 	

@@ -1,33 +1,79 @@
+@font-face {
+  font-family: "Cafe24Oneprettynight";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff")
+    format("woff");
+  font-style: normal;
+}
+
 main {
 	height: 100vh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	font-family: "Cafe24Oneprettynight";
+	font-weight: bolder;
+}
+
+#sidemenu{
+	display: flex;
+    text-align: center;
+    position: relative;
+    justify-content: space-evenly;
+    margin-top: 20px;
+    width: 420px;
+}
+
+.center-wrap{
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#sidemenu a:hover {
+	cursor: pointer;
+	color: green;
+}
+
+#idEmail div{
+	display: flex;
+}
+
+#idEmail input{
+	padding-left: 10px;
 }
 
 h1 {
 	font-size: 2.1rem;
 	font-weight: bolder;
 	padding: 20px;
+	color: rgb(44, 61, 47);
 }
 
 form{
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	width: 600px;
-	height: 35vh;
-	border-radius: 20px;
-	border: 1px solid #c0c0c0;
-	margin: 20px;
+	padding: 20px 20px;
+    font-weight: 500;
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: 0.5px;
+    outline: none;
+    color: #ffffff;
+    background-color: rgba(44, 61, 47, 0.3);
+    border: none;
+    box-shadow: 0 4px 8px 0 rgba(21,21,21,.2);
+    height: 370px;
+    width: 500px;
+    margin: 15px;
 }
+
 
 #input{
 	text-align: left;	
-	height: 20vh;
-	width: 400px;
 	display:flex;
 	flex-direction: column;
 	align-items: center;
@@ -38,17 +84,42 @@ p{
 	font-weight: bolder;
 	font-size: 1.2rem;
 	margin: 8px;
+	margin-right: 15px;
+	color: black;
 }
 
 .button{
 	margin: 15px;	
 	width: 170px;
-	height: 40px;
+}
+
+button{
+	height: 30px;
+    border-radius: 10px;
+    border: 0.7px solid rgba(0, 0, 0, 0.3);
+}
+
+button:hover{
+	outline: 0.7px solid rgba(77, 107, 83, 0.8);
+	font-weight: bolder;
 }
 
 #input input{
 	width: 200px;
 	height: 40px;
 	margin-bottom: 20px;
+	cursor: pointer;
+	border: 0.7px solid rgba(0, 0, 0, 0.3);
+	border-radius: 10px;
 }
 
+#input input:hover{
+	cursor: pointer;
+	border: 1px solid rgba(77, 107, 83, 0.8);
+	border-radius: 10px;
+}
+
+#input input:focus{
+	outline: 0.7px solid rgba(0, 0, 0, 0.6);
+	border-radius: 10px;
+}

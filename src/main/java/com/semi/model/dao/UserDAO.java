@@ -7,8 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Repository;
 
-import com.semi.model.vo.Board;
+import com.semi.model.vo.Review;
 import com.semi.model.vo.Paging;
+import com.semi.model.vo.Pagingseven;
 import com.semi.model.vo.Qna;
 import com.semi.model.vo.User;
 
@@ -64,16 +65,17 @@ public class UserDAO {
 	
 	
 	// 내가 쓴 리뷰 리스트 출력
-	public List<Board> showReview(String id){
-		return session.selectList("board.showReview", id);
+	public List<Review> showReview(Pagingseven paging){
+		return session.selectList("reviewMapper.showReview", paging);
 	}
 
 	public int totalmyReview(String id) {
-		return session.selectOne("board.countmyReview", id);
+		return session.selectOne("reviewMapper.countmyReview", id);
 	}
 	
-	public List<Qna> showQna(String id){
-		return session.selectList("qnaMapper.showQna", id);
+	// 내가 쓴 Q&A 리스트 출력
+	public List<Qna> showQna(Pagingseven paging){
+		return session.selectList("qnaMapper.showQna", paging);
 	}
 	
 	public int totalmyQna(String id) {

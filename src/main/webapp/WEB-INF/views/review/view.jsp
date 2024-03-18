@@ -8,25 +8,28 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>게시물 정보</title>
 <link rel="stylesheet" href="../../../resources/css/reset.css" />
 <link rel="stylesheet" href="../../../resources/css/header.css" />
-<link href="../../resources/css/review/view.css" rel="stylesheet"
-	type="text/css">
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
-	crossorigin="anonymous" />
+<link rel="stylesheet" href="../../../resources/css/review/view.css" />
 <script src="https://kit.fontawesome.com/4602e82315.js"
 	crossorigin="anonymous"></script>
-
 </head>
 
 <body class="main">
+	<header>
+		<nav>
+			<a href="/">Primavera</a>
+		</nav>
+		<nav>
+			<a href="/map/mainMap">Store</a> <a href="#">Guide</a> <a
+				href="/collectPage">PickUp</a> <a href="/list">Board</a> <span>
+				<a href="/review/list">Review</a> <a href="listQna">Q & A</a> <a
+				href="/notice/list">Notice</a>
+			</span> <a href="/myPage"><i class="fa-regular fa-user"></i></a>
+		</nav>
+	</header>
 	<div class="container">
 		<h1>Review</h1>
-
 		<form action="/updatereview" method="post"
 			enctype="multipart/form-data">
 			<input type="hidden" name="no" value="${vo.no}"> <input
@@ -40,38 +43,38 @@
 			</c:if>
 
 			<div class="form-group">
-				<label>Title</label> <input
+				<label>제목</label> <input
 					class="form-control ${vo.id != currentUserId ? 'read-only' : ''}"
 					name="title" value="${vo.title}"
 					${vo.id != currentUserId ? 'readonly' : ''}>
 			</div>
 
 			<div class="form-group">
-				<label>Rating</label>
+				<label>별점</label>
 				<div class="star-rating">
 					<c:forEach begin="1" end="5" var="i">
 						<i class="${i <= vo.rating ? 'fas' : 'far'} fa-star"
 							data-rating="${i}"></i>
-						<input type="hidden" name="rating" id="rating-input" value="1">						
+						<input type="hidden" name="rating" id="rating-input" value="1">
 					</c:forEach>
 				</div>
 			</div>
 
 			<div class="form-group">
-				<label>Content</label>
+				<label>내용</label>
 				<textarea
 					class="form-control ${vo.id != currentUserId ? 'read-only' : ''}"
 					rows="10" name="content"
 					${vo.id != currentUserId ? 'readonly' : ''}>${vo.content}</textarea>
 			</div>
 
-			<a href="/board/list" class="btn btn-success">글목록</a>
+			<a href="/review/list" class="btn-list">글목록</a>
 			<c:if test="${vo.id == currentUserId}">
-				<button type="submit" class="btn btn-info">수정</button>
+				<button type="submit" class="btn-info">수정</button>
 			</c:if>
 			<sec:authorize
 				access="hasAuthority('ADMIN') or ${vo.id == currentUserId}">
-				<a class="btn btn-danger" href="/deletereview?no=${vo.no}">삭제</a>
+				<a class="btn-delete" href="/deletereview?no=${vo.no}">삭제</a>
 			</sec:authorize>
 		</form>
 	</div>

@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.semi.model.dao.CollectDAO;
 import com.semi.model.vo.Collect;
 import com.semi.model.vo.Paging;
+import com.semi.model.vo.Pagingseven;
 
 @Service
 public class CollectService {
@@ -38,10 +39,14 @@ public class CollectService {
 	}
 	
 	// 회원용 진행상황 페이지용 
-		public List<Collect> showCollect(){
+		public List<Collect> showCollect(Pagingseven paging){
 			Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 			UserDetails userDetails = (UserDetails)principal;
-			return dao.showCollect(userDetails.getUsername());
+			
+			paging.setOffset(paging.getLimit() * (paging.getPage()-1));
+			
+			paging.setId(userDetails.getUsername());
+			return dao.showCollect(paging);
 	}
 		
 		public int showCollecttotal() {

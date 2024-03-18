@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-public class Board {
+public class Review {
 
 	private int no;
 	private String id;

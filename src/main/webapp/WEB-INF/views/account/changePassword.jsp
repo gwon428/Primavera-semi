@@ -18,27 +18,34 @@
 	</nav>
 	<nav>
 		<a href="#">Store</a> <a href="#">Guide</a> <a href="collectPage">PickUp</a>
-		<a href="board/list">Board</a> <a href="myPage"><i
+		<a href="/review/list">Board</a> <a href="myPage"><i
 			class="fa-regular fa-user"></i></a>
 	</nav>
 </header>
 <body>
 
 	<main>
+	<div class="center-wrap">
 	<h1>비밀번호 재설정</h1>
 		<form action="updatePwd" method="post" onsubmit="return validate()">
-		<p>아이디</p>
-			<input type="text" name="id" id="id" value="${id}">
-			<p>비밀번호</p>
-			<input type="password" name="password" id="userPwd" required><span
-				id="pwdreg"></span>
-
-			<p>비밀번호 확인</p>
-			<input type="password" id="passwordcheck" required><span
-				id="pwdcheckreg"></span>
-				
+			<div id="changeId">
+				<p>아이디</p>
+				<input type="text" name="id" id="id" value="${id}">
+			</div>
+			<span> &nbsp; </span>
+			<div id="changePwd">
+				<p>비밀번호</p>
+				<input type="password" name="password" id="userPwd" required>
+			</div>
+			<span id="pwdreg"> &nbsp; </span>
+			<div id="changePwdCheck">
+				<p>비밀번호 확인</p>
+				<input type="password" id="passwordcheck" required>
+			</div>
+			<span id="pwdcheckreg"> &nbsp; </span>
 			<input type="submit" value="비밀번호 재설정" id="change">
 		</form>
+		</div>
 	</main>
 
 <script>
@@ -55,7 +62,8 @@ $('#userPwd').keyup((e) =>{
 		$('#pwdreg').text("");
 		pwdCheck = false;
 	} else {
-		$('#pwdreg').text("영문자, 숫자, 특수문자 포함하여 총 8~15자로 입력하세요.").css("color", "red");
+		$('#pwdreg').text("영문자, 숫자, 특수문자 포함하여 총 8~15자로 입력하세요.").css("color", "black");
+		$('#pwdreg').css("font-weight", "bolder");
 		pwdCheck = true;
 	}
 });
@@ -70,7 +78,8 @@ $('#passwordcheck').keyup((e) =>{
 		$('#pwdcheckreg').text("");
 		pwdCheck2 = false;
 	} else {
-		$('#pwdcheckreg').text("위의 비밀번호와 일치하게 입력하세요.").css("color", "red");
+		$('#pwdcheckreg').text("위의 비밀번호와 일치하게 입력하세요.").css("color", "black");
+		$('#pwdcheckreg').css("font-weight", "bolder");
 		pwdCheck2 = true;
 	}
 });

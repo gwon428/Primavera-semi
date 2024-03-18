@@ -2,7 +2,6 @@
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,13 +16,10 @@
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
 	integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
 	crossorigin="anonymous"></script>
-
-
 <script src="https://kit.fontawesome.com/4602e82315.js"
 	crossorigin="anonymous"></script>
 <title>Document</title>
 </head>
-
 <body>
 	<div class="header-blackbox"></div>
 	<header>
@@ -31,9 +27,9 @@
 			<a href="/">Primavera</a>
 		</nav>
 		<nav>
-			<a href="mainMap">Store</a> <a href="#">Guide</a> <a
+			<a href="/map/mainMap">Store</a> <a href="#">Guide</a> <a
 				href="collectPage">PickUp</a> <a href="list">Board</a> <span>
-				<a href="/board/list">Review</a> <a href="/qna/listQna">Q & A</a> <a
+				<a href="/review/list">Review</a> <a href="listQna">Q & A</a> <a
 				href="/notice/list">Notice</a>
 			</span> <a href="myPage"><i class="fa-regular fa-user"></i></a>
 		</nav>
@@ -60,7 +56,6 @@
 					href="#section4"><i class="fa-solid fa-mountain-sun"></i></a>
 			</nav>
 		</section>
-
 		<section id="section2">
 			<div id="carouselExampleFade" class="carousel slide carousel-fade">
 				<div class="carousel-inner">
@@ -165,5 +160,4 @@
 	</main>
 	<script src="/resources/js/front.js"></script>
 </body>
-
 </html>

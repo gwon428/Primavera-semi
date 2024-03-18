@@ -18,11 +18,26 @@
 			</nav>
 			<nav>
 				<a href="#">Store</a> <a href="#">Guide</a> <a href="collectPage">PickUp</a>
-				<a href="board/list">Board</a> <a href="myPage"><i class="fa-regular fa-user"></i></a>
+				<a href="/review/list">Board</a> <a href="myPage"><i class="fa-regular fa-user"></i></a>
 			</nav>
 		</header>
 
 		<body>
+		<sec:authentication property="principal" var="user" />
+				<section id="progressbackground">
+					<div id="background-blackbox"></div>
+				</section>
+				<main>
+				<div id="sideMenu">
+					<a href="notice/list" id="noticelist">공지 게시판 관리</a>
+					<a href="listQna" id="qnalist">Q&A 게시판 관리</a>
+					<a href="allUser" id="alluserlist">전체 회원 조회</a>
+					<a href="showProgress" id="showprogresslist">progress 관리</a>
+					<a href="showAllCollect" id="showallcollectlist">수거 신청 현황</a>
+					<a href="/logout">로그아웃</a>
+				</div>
+				
+			<div id="mainMenu">
 			<div>
 				<h2>전체 수거 신청 정보 보기</h2>
 				<table border=1 class="table">
@@ -35,10 +50,10 @@
 						<th scope="col">도로명 주소</th>
 						<th scope="col">상세 주소</th>
 						<th scope="col">수거일</th>
-						<th scope="col">공동 현관 비밀번호</th>
-						<th scope="col">요청사항</th>
 						<th scope="col">수거 신청 무게</th>
 						<th scope="col">금액</th>
+						<th scope="col">공동 현관 비밀번호</th>
+						<th scope="col">요청사항</th>
 					</tr>
 
 					<c:forEach items="${list}" var="item">
@@ -51,10 +66,10 @@
 							<td>${item.roadAddress}</td>
 							<td>${item.detailAddress}</td>
 							<td>${item.collectionDate}</td>
-							<td>${item.doorPwd}</td>
-							<td>${item.request}</td>
 							<td>${item.kg}</td>
 							<td>${item.kg*400}</td>
+							<td>${item.doorPwd}</td>
+							<td>${item.request}</td>
 						</tr>
 					</c:forEach>
 				</table>
@@ -89,6 +104,9 @@
 						</li>
 					</ul>
 				</div>
+				</div>
+				</div>
+				
 				</main>
 		</body>
 

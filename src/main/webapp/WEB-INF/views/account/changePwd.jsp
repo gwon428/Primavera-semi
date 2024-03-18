@@ -15,7 +15,7 @@
 <meta charset="UTF-8">
 <script src="https://kit.fontawesome.com/4602e82315.js"
 	crossorigin="anonymous"></script>
-<title>Insert title here</title>
+<title>Primavera</title>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 <header>
@@ -24,30 +24,63 @@
 	</nav>
 	<nav>
 		<a href="#">Store</a> <a href="#">Guide</a> <a href="collectPage">PickUp</a>
-		<a href="board/list">Board</a> <a href="myPage"><i
+		<a href="/review/list">Board</a> <a href="myPage"><i
 			class="fa-regular fa-user"></i></a>
 	</nav>
 </header>
 <body>
 	<main>
+	<div class="center-wrap">
 		<h1>이메일 인증</h1>
 		<form action="/checkEmail" method="post" id="frm">
 			<div id="input">
-				<p>아이디</p>
-				<input size="15" type="text" id="id" name="id" value="${id}">
-				<p>이메일</p>
-				<input type="text" name="email" id="email" disabled="disabled" placeholder="이메일을 입력해주세요.">
-				<div>
-					<input type="button" value="인증하기" disabled="disabled" class="button" id="emailAuth">
+				<div id="idEmail">
+					<div>
+						<p>아이디</p>
+						<input size="15" type="text" id="id" name="id" value="${id}" >
+					</div>
+						
+					<div>
+						<p>이메일</p>
+						<input type="text" name="email" id="email" disabled="disabled" placeholder="이메일을 입력해주세요.">
+					</div>
 				</div>
-				<input class="form-control" placeholder="인증 코드 6자리를 입력해주세요" maxlength="6" disabled="disabled" name="authCode" id="authCode" type="text" autofocus/>
-				<span id="emailAuthWarn"></span>
-				<button type="submit" id="check" style="display: none;">비밀번호 재설정</button>
+				
+				<div>
+					<input type="button" value="인증하기" disabled="disabled"
+						class="button" id="emailAuth">
+				</div>
+					<input class="form-control" placeholder="인증 코드 6자리를 입력해주세요" maxlength="6" disabled="disabled" name="authCode" id="authCode" type="text" autofocus/>
+					<span id="emailAuthWarn">&nbsp;</span>
+				<button type="submit" id="check" class="button" disabled="disabled" >비밀번호 재설정</button>
 			</div>
 		</form>
+		<div id="sidemenu">
+			<a href="findId">아이디 찾기</a>
+			<span>&nbsp;|&nbsp;</span>
+			<a href="myPage">로그인</a>
+			<span>&nbsp;|&nbsp;</span>
+			<a href="register">회원가입</a>
+		</div>
+		</div>
 	</main>
 	
 	<script type="text/javascript">
+	const url = window.location.search;
+	
+	const urlParams = new URLSearchParams(url);
+	const idc = urlParams.has('id');
+
+	window.onload = function(){
+		if(idc === true){
+			document.querySelector('#email').disabled=false;
+			document.querySelector('#email').focus();
+		} else {
+			document.querySelector('#id').focus();
+		}
+		
+	}
+	
 	idDupCheck = false;
 	
 	<!-- 아이디 존재 여부 확인 -->
@@ -72,7 +105,8 @@
 				}
 			})
 		})
-	
+		
+	<!-- 아이디와 이메일이 일치하는 회원이 있는지 확인하여 인증하기 버튼 활성화 -->
 		$('#email').keyup(()=>{
 			const id=$('#id').val();
 			const email=$('#email').val();
@@ -117,14 +151,19 @@
 			
 			if(Number(inputCode) === code){
 				$('#emailAuthWarn').html('인증번호가 일치합니다.');
-				$("#emailAuthWarn").css('color', 'green');
+				$("#emailAuthWarn").css('color', 'white');
+				$('#emailAuthWarn').css('font-weight', 'bolder');
 	    		$('#emailAuth').attr('disabled', true);
 	    		$('#email').attr('readonly', true);
-	    		$("#check").css("display", "");
-			} else{
+	    		$("#check").attr('disabled', false);
+			} else if (Number(inputCode) == ""){
+					$('#emailAuthWarn').html('');
+			}	else{
+			
 				$("#emailAuthWarn").html('인증번호가 불일치 합니다. 다시 확인해주세요!');
-	        	$("#emailAuthWarn").css('color', 'red');
-	        	$("#check").css("display", "none");
+	        	$("#emailAuthWarn").css('color', 'black');
+	        	$('#emailAuthWarn').css('font-weight', 'bolder');
+	        	$("#check").attr('disabled', true);
 			}
 		});
 		

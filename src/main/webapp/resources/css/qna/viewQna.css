@@ -4,27 +4,27 @@
     format("woff");
   font-style: normal;
 }
+/*----------------------------------- qna 내용단 -----------------------------------------*/
 body{
 	position:absolute;
 	width:100%;
 	height:100vh;
 }
 #main{
-	margin-top : 70px;
-	height:90%;	
+	margin-top : 160px;
 	display:flex;
 	justify-content:center;
 	align-items:center;
 	flex-direction : column;
 }
-#top_title{
+#main #top_title{
 	display:flex;
 	justify-content:center;
 	align-items:center;
 	flex-direction : column;
 	margin-bottom : 20px;
 }
-#qna{
+#top_title #qna{
 	border-radius: 10px;
     background-color: #93B19A;
     color: white;
@@ -38,14 +38,14 @@ body{
     font-family: "Cafe24Oneprettynight";
     margin-bottom : 20px;
 }
-#title{
+#top_title #title{
 	font-family: "Cafe24Oneprettynight";
 	font-size : 1.5rem;
 	font-weight : bolder;
 	margin-bottom : 20px;
 }
 
-#text_button{
+#main #text_button{
 	width: 800px;
     display: flex;
     justify-content: space-between;
@@ -54,13 +54,13 @@ body{
 	margin-bottom : 20px;
 	
 }
-#id_writeDate{
+#text_button #id_writeDate{
 	display : flex;
 }
 #writeDate{
 	margin-left : 20px;
 }
-
+/* --------------------- 버튼 ---------------------------*/
 #btnlist{
 	background-color : black;
 	border-radius : 3px;
@@ -96,28 +96,23 @@ body{
 	font-family: "Cafe24Oneprettynight";
 	font-weight:bold;	
 }
-#content{
+/* ---------------- 내용 ------------------------*/
+#qnaContent{
 	padding-top: 30px;
-    min-height: 280px;
+    min-height: 320px;
     max-height: 790px;
     padding-bottom: 30px;
-    border-bottom: 1px solid #d1d1d1;
-    border-top: 1px solid #d1d1d1;
+    border-bottom: 2px dashed #4b6850;
+    border-top: 2px solid #4b6850;
     overflow: auto;
-    width:800px;
+    width:830px;
 }
-#url{
-
-	border-bottom: 1px solid #d1d1d1;
-	width:800px;
-	height : 160px;
+#qnaUrl{
+	border-bottom: 2px solid #4b6850;
+	width:830px;
+	height : 170px;
 }
-#image_container{
-	width : 130px;
-	height:130px;
-	margin:15px;
-}
-img{
+#qnaUrl img{
 	width : 130px;
 	height:130px;
 	margin:15px;

@@ -22,7 +22,7 @@
 	</nav>
 	<nav>
 		<a href="#">Store</a> <a href="#">Guide</a> <a href="collectPage">PickUp</a>
-		<a href="board/list">Board</a> <a href="myPage"><i
+		<a href="/review/list">Board</a> <a href="myPage"><i
 			class="fa-regular fa-user"></i></a>
 	</nav>
 </header>
@@ -30,9 +30,10 @@
 <main>
 <h1>${finder.name}님의 아이디는 <span>${user.id}</span>입니다. </h1>
 <input type="hidden" name="id" value="${user.id}"/>
-<a href="findIdlogin?id=${user.id}">이 아이디로 로그인</a>
-<a href="changePwd?id=${user.id}">이 아이디로 비밀번호 재설정</a>
-
+<div id="menu">
+<a href="findIdlogin?id=${user.id}" id="href">이 아이디로 로그인</a>
+<a href="changePwd?id=${user.id}" id="href">이 아이디로 비밀번호 재설정</a>
+</div>
 </main>
 </body>
 </html>

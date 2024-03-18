@@ -18,12 +18,24 @@
 			</nav>
 			<nav>
 				<a href="/map/mainMap">Store</a> <a href="#">Guide</a> <a href="collectPage">PickUp</a>
-				<a href="/board/list">Board</a> <a href="myPage"><i class="fa-regular fa-user"></i></a>
+				<a href="/review/list">Board</a> <a href="myPage"><i class="fa-regular fa-user"></i></a>
 			</nav>
 		</header>
 
 		<body>
+		<section id="progressbackground">
+					<div id="background-blackbox"></div>
+				</section>
 			<main>
+			<div id="sideMenu">
+				<a href="notice/list" id="noticelist">공지 게시판 관리</a>
+					<a href="listQna" id="qnalist">Q&A 게시판 관리</a>
+					<a href="allUser" id="alluserlist">전체 회원 조회</a>
+					<a href="showProgress" id="showprogresslist">progress 관리</a>
+					<a href="showAllCollect" id="showallcollectlist">수거 신청 현황</a>
+					<a href="/logout">로그아웃</a>
+			</div>
+			<div id="mainMenu">
 				<div id="top"></div>
 				<h2>전체 회원 조회</h2>
 				<table border="1" class="table">
@@ -38,7 +50,6 @@
 						<th width="175">이메일</th>
 						<th>은행</th>
 						<th width="150">계좌번호</th>
-						<th>권한</th>
 					</tr>
 					<c:forEach items="${list}" var="item" varStatus="status">
 						<tr>
@@ -52,8 +63,6 @@
 							<td width="175">${item.email}</td>
 							<td>${item.bankName}</td>
 							<td width="150">${item.account}</td>
-							<td>${item.auth}</td>
-
 						</tr>
 					</c:forEach>
 				</table>
@@ -86,6 +95,7 @@
 							</c:choose>
 						</li>
 					</ul>
+				</div>
 				</div>
 			</main>
 		</body>

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.semi.model.vo.Collect;
 import com.semi.model.vo.Paging;
+import com.semi.model.vo.Pagingseven;
 import com.semi.service.CollectService;
 
 @Controller
@@ -38,10 +39,10 @@ public class CollectController {
 	
 	// 회원용 진행상황 페이지용 
 		@GetMapping("showCollect")
-		public String showCollect(Model model, Paging paging) {
-			List<Collect> list = service.showCollect();
+		public String showCollect(Model model, Pagingseven paging) {
+			List<Collect> list = service.showCollect(paging);
 			model.addAttribute("list", list);
-			model.addAttribute("paging", new Paging(paging.getPage(), service.showCollecttotal()));
+			model.addAttribute("paging", new Pagingseven(paging.getPage(), service.showCollecttotal()));
 			return "collect/showCollect";
 		}
 		
@@ -75,7 +76,7 @@ public class CollectController {
 	public String signUp(Collect vo) {	
 		service.registerCollect(vo);
 		
-		return "collect/collect";
+		return "redirect:/showCollect";
 	}
 	
 }
