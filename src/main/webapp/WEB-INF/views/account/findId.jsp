@@ -26,6 +26,7 @@
 </header>
 <body>
 	<main>
+	<div class="center-wrap">
 		<h1>아이디 찾기</h1>
 		<form action="/findId" method="post">
 			<div id="input">
@@ -41,6 +42,14 @@
 			</div>
 			<input type="submit" value="아이디 찾기" class="button">
 		</form>
+		<div id="sidemenu">
+			<a href="changePwd">비밀번호 찾기</a>
+			<span>&nbsp;|&nbsp;</span>
+			<a href="myPage">로그인</a>
+			<span>&nbsp;|&nbsp;</span>
+			<a href="register">회원가입</a>
+		</div>
+		</div>
 	</main>
 </body>
 </html>

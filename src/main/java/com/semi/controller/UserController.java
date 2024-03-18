@@ -197,7 +197,7 @@ public class UserController {
 		
 		String setForm = "primavera240327@gmail.com";
 		String toMail = email;
-		String title = "회원가입 인증 이메일입니다.";
+		String title = "비밀번호 변경 인증 이메일입니다.";
 		String content = "인증 코드는 " + checkNum + "입니다. " +
 					"<br>" + "해당 인증 코드를 인증 코드 확인란에 기입하여 주세요.";
 		

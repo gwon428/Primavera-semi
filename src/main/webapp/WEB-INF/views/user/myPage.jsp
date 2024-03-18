@@ -40,46 +40,6 @@
 					<c:when test="${user == 'anonymousUser'}">
 					
 						<main>
-						<!--
-							<section id="background">
-							</section>
-							
-							<a href="/" class="loginformlogo">Primavera</a>
-							<form action="/login" method="post" class="loginform">
-								<div class="idpwd">
-									<div class="mb-3 row">
-										<label><i class="fa-regular fa-user"></i></label>
-										<div class="col-sm-10">
-											<input size="15" type="text" name="username" placeholder="아이디">
-										</div>
-									</div>
-									<div class="mb-3 row">
-										<label for="staticEmail" class="col-sm-2 col-form-label"><i
-											class="fa-solid fa-lock"></i></label>
-										<div class="col-sm-10">
-											<input type="password" name="password" placeholder="비밀번호">
-										</div>
-									</div>
-				
-								</div>
-						-->
-								<!-- 	<input size="15" type="text" name="username" placeholder="아이디">
-									<input type="password" name="password" placeholder="비밀번호">
-								 -->
-								 
-								 <!-- 
-								<input type="submit" value="로그인" class="loginbutton">
-							</form>
-
-							<div id="anonymousUserMenu">
-								<a href="findId">아이디 찾기</a>
-								<span> | </span>
-								<a href="changePwd">비밀번호 찾기</a>
-								<span> | </span>
-								<a href="register">회원가입</a>
-							</div>
-							-->
-
 			<div class="section">
 				<div class="container">
 					<div class="row full-height justify-content-center">
@@ -96,11 +56,6 @@
 										<div class="card-front">
 											<div class="center-wrap">
 												<div class="section text-center">
-													<!-- 
-													<div id="loginimg">
-														<img src="../../../resources/images/loginform.jpg">
-													</div>
-													 -->
 													 <div id="loginform">
 													<h4 class="mb-4 pb-3">Log In</h4>
 													<div id="form">
@@ -108,14 +63,12 @@
 													<div class="form-group">
 														<input type="text" name="username" class="form-style"
 															placeholder="ID" id="loginId" autocomplete="off">
-														<i class="input-icon uil uil-at"></i>
 													</div>
 													<div class="form-group mt-2">
 														<input type="password" name="password" class="form-style"
 															placeholder="Password" id="logpass" autocomplete="off">
-														<i class="input-icon uil uil-lock-alt"></i>
 													</div>
-														<input type="submit" value="submit" class="btn mt-4" id="submit">
+														<input type="submit" value="LOG IN" class="btn mt-4" id="submit">
 													</form>
 													</div>
 													</div>
@@ -129,7 +82,7 @@
 														<a href="findId" class="link">아이디 찾기</a>
 														<a href="changePwd" class="link">비밀번호 찾기</a> 
 														
-														<a href="register" class="btn mt-4">SIGN IN</a>
+														<a href="register" class="btn mt-4">SIGN UP</a>
 													</div>
 												</div>
 											</div>

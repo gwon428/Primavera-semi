@@ -30,6 +30,7 @@
 </header>
 <body>
 	<main>
+	<div class="center-wrap">
 		<h1>이메일 인증</h1>
 		<form action="/checkEmail" method="post" id="frm">
 			<div id="input">
@@ -50,10 +51,18 @@
 						class="button" id="emailAuth">
 				</div>
 					<input class="form-control" placeholder="인증 코드 6자리를 입력해주세요" maxlength="6" disabled="disabled" name="authCode" id="authCode" type="text" autofocus/>
-					<span id="emailAuthWarn"></span>
-				<button type="submit" id="check" class="button" style="display: none;" >비밀번호 재설정</button>
+					<span id="emailAuthWarn">&nbsp;</span>
+				<button type="submit" id="check" class="button" disabled="disabled" >비밀번호 재설정</button>
 			</div>
 		</form>
+		<div id="sidemenu">
+			<a href="findId">아이디 찾기</a>
+			<span>&nbsp;|&nbsp;</span>
+			<a href="myPage">로그인</a>
+			<span>&nbsp;|&nbsp;</span>
+			<a href="register">회원가입</a>
+		</div>
+		</div>
 	</main>
 	
 	<script type="text/javascript">
@@ -142,14 +151,19 @@
 			
 			if(Number(inputCode) === code){
 				$('#emailAuthWarn').html('인증번호가 일치합니다.');
-				$("#emailAuthWarn").css('color', 'green');
+				$("#emailAuthWarn").css('color', 'white');
+				$('#emailAuthWarn').css('font-weight', 'bolder');
 	    		$('#emailAuth').attr('disabled', true);
 	    		$('#email').attr('readonly', true);
-	    		$("#check").css("display", "");
-			} else{
+	    		$("#check").attr('disabled', false);
+			} else if (Number(inputCode) == ""){
+					$('#emailAuthWarn').html('');
+			}	else{
+			
 				$("#emailAuthWarn").html('인증번호가 불일치 합니다. 다시 확인해주세요!');
-	        	$("#emailAuthWarn").css('color', 'red');
-	        	$("#check").css("display", "none");
+	        	$("#emailAuthWarn").css('color', 'black');
+	        	$('#emailAuthWarn').css('font-weight', 'bolder');
+	        	$("#check").attr('disabled', true);
 			}
 		});
 		

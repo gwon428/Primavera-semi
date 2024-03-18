@@ -5,39 +5,65 @@
   font-style: normal;
 }
 
-h1 {
-	/*헤더를 위해 높이 맞추기*/
-	padding-top:150px;
-	font-size:2.5rem;
-	font-weight:bolder;
-	text-align:center;
-	margin-bottom: 50px;
+main {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: white;
+	
 }
 
-form {
-	height: 550px;
-	border: 1px solid #c0c0c0;
-	border-radius:20px;
-	width: 1000px;
-	margin: 0 auto;
+h1 {
+	font-size: 2.1rem;
+	padding: 20px;
+	color: rgb(44, 61, 47);
+	text-align: center;
+	margin:20px;
 	font-family: "Cafe24Oneprettynight";
 	font-weight: bolder;
 }
 
-form p{
-	margin-bottom: 5px;
+form {
+	height: 600px;
+	width: 700px;
+	margin: 0 auto;
+	font-family: "Cafe24Oneprettynight";
 	font-weight: bolder;
+	
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	
+	padding: 20px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: 0.5px;
+    outline: none;
+    
+    background-color: rgba(44, 61, 47, 0.5);
+    border: none;
+    box-shadow: 0 4px 8px 0 rgba(21,21,21,.2);
+}
+
+form p{
+	margin: 5px;
+	font-weight: bolder;
+	color: #ffffff;
 }
 
 form select{
 	margin-bottom:15px;
 }
+
 #regist{
-	height: 400px;
 	display:flex;
-	justify-content:center;
+	justify-content:space-between;
 	align-items:center;
-	width:660px;
+	width:600px;
 	margin: 10px auto;
 }
 
@@ -45,23 +71,24 @@ form select{
 	margin-top: 10px;
 	display: flex;
 	flex-direction:column;
-	width: 350px;
-	height: 360px;
+	width: 300px;
 	align-items:center;
 	justify-content:space-evenly;
+}
+
+#registerOne input{
+	height: 30px;
 }
 
 #registerTwo{
 	display: flex;
 	flex-direction:column;
-	width: 350px;
-	height: 360px;
+	width: 300px;
 	align-items:center;
 	justify-content:space-evenly;
 }
 
 .addr{
-	height: 80px;
 	display:flex;	
 	flex-direction:column;
 	margin-bottom: 10px;
@@ -73,6 +100,7 @@ form select{
 	margin-bottom: 10px;
 	font-family: "Cafe24Oneprettynight";
 	font-weight: bolder;
+	height: 30px;
 }
 
 .addrPost input{
@@ -84,10 +112,10 @@ form select{
 
 form input{
 	width: 200px;
-	height: 27px;
+	height: 30px;
 }
 
-input:not(.password){
+input {
 	font-family: "Cafe24Oneprettynight";
 	font-weight: bolder;
 }
@@ -99,14 +127,42 @@ input[type=password] {
 	color: black;
 }
 
-#submit{
-	display:flex;
-	align-items:center;
-	justify-content:center;
-	padding-top: 10px;
+#bank{
+	display: flex;
+	flex-direction: row;
 }
-span{
-	background-color: skyblue;
+
+#bankname{
+	display: flex;
+	flex-direction: column;
+	margin-right: 10px;
+}
+
+select{
+	height: 30px;
+	width: 50px;
+}
+
+#account{
+	display: flex;
+	flex-direction: column;
+}
+
+#submit{
+	font-family: "Cafe24Oneprettynight";
+	font-weight: bolder;
+	border-radius: 10px;
+    border: 0.7px solid rgba(0, 0, 0, 0.3);
+     background-color: rgba(365, 365, 365, 0.7);
+    height: 40px;
+    margin-top: 20px;
+}
+
+#submit:hover{
+	outline: 0.7px solid rgba(77, 107, 83, 0.8);
+	background-color: rgba(44, 61, 47, 0.5);
+	color: white;
+	font-weight: bolder;
 }
 
 
@@ -125,7 +181,7 @@ span{
   font-size: 1rem;
   margin-bottom: 3px;
 }
-a {
+#agree_text a {
   font-weight: 700;
   text-decoration-line: underline;
 }
