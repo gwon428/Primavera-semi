@@ -86,7 +86,9 @@
 	<!-- 회원용 마이페이지 - 내가 적은 후기 보기 -->
 	<select id="showReview" parameterType="Pagingseven"
 		resultMap="reviewMap">
-		SELECT * FROM review WHERE id=#{id} LIMIT #{offset},
+		SELECT * FROM review WHERE id=#{id}
+		ORDER BY 1 DESC
+		LIMIT #{offset},
 		#{limit}
 	</select>
 

@@ -12,24 +12,18 @@
 				<meta charset="UTF-8">
 				<script src="https://kit.fontawesome.com/4602e82315.js" crossorigin="anonymous"></script>
 				<title>Insert title here</title>
+				<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 			</head>
 			<header>
-      <nav>
-        <a href="/">Primavera</a>
-      </nav>
-      
-      <nav>
-        <a href="mainMap">Store</a>
-        <a href="#">Guide</a>
-        <a href="collectPage">PickUp</a>
-        <a href="list">Board</a>
-        <span>
-          <a href="/review/list">Review</a>
-          <a href="listQna">Q & A</a>
-          <a href="/notice/list">Notice</a>
-        </span>
-        <a href="myPage"><i class="fa-regular fa-user"></i></a>
-      </nav>
+<nav>
+				<a href="/">Primavera</a>
+			</nav>
+			<nav>
+				<a href="/map/mainMap">Store</a> <a href="#">Guide</a> <a href="collectPage">PickUp</a> <a
+					href="/notice/list">Board</a> <span>
+					<a href="/review/list">Review</a> <a href="listQna">Q & A</a> <a href="/notice/list">Notice</a>
+				</span> <a href="myPage"><i class="fa-regular fa-user"></i></a>
+			</nav>
 			</header>
 
 			<body>
@@ -44,24 +38,39 @@
 								<p> 아이디 </p> <span>${user.id}</span>
 								<input type="hidden" name="id" value="${user.id}">
 							</div>
+							
 							<div id="input">
-								<p>비밀번호 </p>
-								<input type="password" name="password" id="userPwd" value="${pwd}">
+								<div>
+									<p>비밀번호</p>
+									<input type="password" name="password" id="userPwd" value="${pwd}">
+								</div>
+								<span id="pwdreg">&nbsp;</span>
 							</div>
+							
 							<div id="input">
 								<p>이름 </p>
 								<input type="text" name="name" id="userName" value="${user.name}">
+								<span id="namereg">&nbsp;</span>
 							</div>
+							
 							<div id="input">
-								<p>휴대폰 번호 </p>
-								<input type="text" name="phone" id="userPhone" value="${user.phone}">
+								<div>
+									<p>휴대폰 번호 </p><span id="phoneCheckresult"> &nbsp;</span>
+									<input type="text" name="phone" id="userPhone" value="${user.phone}">
+								</div>
+								<span id="phonereg">&nbsp;</span>
 							</div>
+							
 							<div id="input">	
-								<p>이메일 </p>
-								<input type="text" name="email" id="email" value="${user.email}">
+								<div>
+									<p>이메일 </p><span id="emailCheckresult"> &nbsp;</span>
+									<input type="text" name="email" id="email" value="${user.email}">
+								</div>
+								<span id="emailreg">&nbsp;</span>
 							</div>
 							<input type="submit" value="수정" id="updateButton">
 					</form>
+					</div>
 				</main>
 				<script type="text/javascript" src="../../resources/js/updateregExp.js"></script>
 			</body>

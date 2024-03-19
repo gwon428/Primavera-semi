@@ -18,15 +18,14 @@
 </head>
 			<header>
 				<nav>
-					<a href="/">Primavera</a>
-				</nav>
-				<nav>
-					<a href="mainMap">Store</a> <a href="#">Guide</a> <a
-						href="collectPage">PickUp</a> <a href="list">Board</a> <span>
-						<a href="/review/list">Review</a> <a href="listQna">Q & A</a> <a
-						href="/notice/list">Notice</a>
-					</span> <a href="myPage"><i class="fa-regular fa-user"></i></a>
-				</nav>
+				<a href="/">Primavera</a>
+			</nav>
+			<nav>
+				<a href="/map/mainMap">Store</a> <a href="#">Guide</a> <a href="collectPage">PickUp</a> <a
+					href="/notice/list">Board</a> <span>
+					<a href="/review/list">Review</a> <a href="listQna">Q & A</a> <a href="/notice/list">Notice</a>
+				</span> <a href="myPage"><i class="fa-regular fa-user"></i></a>
+			</nav>
 			</header>
 
 	<body>
@@ -92,12 +91,12 @@
 						<p>주소<span></span></p>
 							<div class="addr">
 								<div class="addrPost">
-									<input type="text" name="postCode" id="postCode" placeholder="우편번호">
+									<input type="text" name="postCode" id="postCode" placeholder="우편번호" required>
 									<input type="button" onclick="DaumPostcode()" value="우편번호 찾기">
 								</div>
 								
-								<input type="text" name="roadAddress" id="roadAddress" placeholder="주소">
-								<input type="text" name="detailAddress" id="detailAddress" placeholder="상세주소">
+								<input type="text" name="roadAddress" id="roadAddress" placeholder="주소" required>
+								<input type="text" name="detailAddress" id="detailAddress" placeholder="상세주소" required>
 							</div>
 					</div>
 					
@@ -116,7 +115,7 @@
 							</div>
 							<div id="account">
 								<p>계좌번호</p>
-								<input type="text" name="account" id="account"><br>
+								<input type="text" name="account" id="account" required><br>
 							</div>
 						</div>
 						

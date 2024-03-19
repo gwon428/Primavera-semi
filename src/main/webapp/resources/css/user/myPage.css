@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
 @import url('https://unicons.iconscout.com/release/v2.1.9/css/unicons.css');  
- /*
+ 
  @font-face {
   font-family: "Cafe24Oneprettynight";
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff")
@@ -8,11 +8,13 @@
   font-style: normal;
 }
  
+ /*
 *{
 	font-family: "Cafe24Oneprettynight";
 	font-weight: bolder;
 }
 */
+
 body{
 	font-size: 15px;
 	line-height: 1.7;
@@ -32,12 +34,16 @@ main{
 }
 
 a {
+	font-family: "Cafe24Oneprettynight";
 	cursor: pointer;
+	font-size: 1.2rem;
   transition: all 200ms linear;
 }
 
 a:hover {
+	font-family: "Cafe24Oneprettynight";
 	text-decoration: none;
+	font-size: 1rem;
 }
 
 .link {

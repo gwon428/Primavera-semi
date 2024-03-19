@@ -25,7 +25,7 @@ h1 {
 }
 
 form {
-	height: 450px;
+	height: 650px;
     width: 600px;
     font-family: "Cafe24Oneprettynight";
     font-weight: bolder;
@@ -79,10 +79,11 @@ input {
 	flex-direction: row;
 }
 
-#input p{
+#input span{
 	width: 100px;
 	margin-top: 3px;
 	font-size: 1rem;
+	background-color: pink;
 }
 
 #input span{

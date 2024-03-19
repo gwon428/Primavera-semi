@@ -99,3 +99,7 @@ font-weight: bolder;
 hr{
 	margin-bottom: 60px;
 }
+
+input[type=password] {
+	font-family:'Malgun gothic', dotum, sans-serif;}
+}

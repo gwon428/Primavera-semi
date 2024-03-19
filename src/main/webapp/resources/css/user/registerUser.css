@@ -5,6 +5,14 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "GangwonEdu_OTFBoldA";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: italic;
+}
+
 main {
 	height: 100vh;
 	display: flex;
@@ -268,3 +276,17 @@ select{
 	height: 13px;
 	margin-top: 10px;
 }
+
+.tit {
+  margin-top: 12px;
+  margin-left : 10px;
+  font-size : 17px;
+  font-family: "GangwonEdu_OTFBoldA";
+}
+
+.modal-body{
+    max-height: calc(99vh - 500px);
+    overflow-y: auto;
+    font-family: "Malgun Gothic";
+}
+

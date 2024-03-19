@@ -50,6 +50,7 @@
 		SELECT order_num, id, name, phone, collection_date, prog, kg
 		FROM collect
 		WHERE id=#{id}
+		ORDER BY 1 DESC
 		LIMIT #{offset}, #{limit}
 	</select>
 	

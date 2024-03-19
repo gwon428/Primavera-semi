@@ -90,6 +90,7 @@
 		FROM qna
 		WHERE
 		id=#{id}
+		ORDER BY 1 DESC
 		LIMIT #{offset}, #{limit}
 	</select>
 	
