@@ -19,6 +19,55 @@
 <script src="https://kit.fontawesome.com/4602e82315.js"
 	crossorigin="anonymous"></script>
 <title>Document</title>
+<style>
+@font-face {
+	font-family: "Cafe24Oneprettynight";
+	src:
+		url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff")
+		format("woff");
+	font-style: normal;
+}
+
+.pop_wrap {
+	visibility: hidden;
+	border: 1px solid black;
+	position: fixed;
+	top: 19%;
+	left: 40%;
+	box-sizing: border-box;
+	width: 400px;
+	height: 550px;
+	background-color: white;
+	overflow: hidden;
+	border-radius: 10px;
+}
+
+.pop_inner {
+	line-height: 23px;
+	font-size: 13px;
+	margin: 0 8px;
+}
+
+.pop_inner hr {
+	margin: 3px;
+}
+
+.btn_close {
+	position: absolute;
+	left: 40%;
+	margin-top: 15px;
+	font-family: "Cafe24Oneprettynight";
+	font-weight: bolder;
+	border: 1px solid black;
+	border-radius: 3px;
+	width: 43px;
+}
+
+#pop_head {
+	display: flex;
+	justify-content: space-between;
+}
+</style>
 </head>
 <body>
 	<div class="header-blackbox"></div>
@@ -61,8 +110,10 @@
 				<div class="carousel-inner">
 					<div class="carousel-item active" id="container3">
 						<h1>Company_introduce</h1>
-						<p>"Primavera"는 이탈리아어로 "진정한 봄"으로 새로운 생명의 시작과 자연의 활기를 가지는 의미가지며
-							기후변화와 지구 온난화로 인한 피해를 줄일수 있는 방법을 모색하다 탄소 배출량을 줄일수있는 폐의류를 재사용하는
+						<p class="text1">"Primavera"는 이탈리아어로 "진정한 봄"으로 새로운 생명의 시작과 자연의 활기를 가지는 의미가지며
+							기후변화와 지구 온난화로 인한 피해를 줄일수 있는 방법을 모색하다.
+							<br><br>
+							탄소 배출량을 줄일수있는 폐의류를 재사용하는
 							업사이클링을 시작하게 되었다 현 시점의 환경과 자연을 원모습을 되찾기위해 우리는 지금도 걷고있다</p>
 						<img src="../resources/images/front_img.jpg" class="" alt="...">
 					</div>
@@ -149,7 +200,8 @@
 						<h2>Personal Information Management Officer : 정 손 김</h2>
 						<h2>본사&스토어주소 : 서울 강남구 테헤란로14길 6</h2>
 						<div>
-							<a href="">이용약관</a> <a href="">개인정보처리방침</a>
+							<a href="#pop_info_1" class="btn_open">이용약관</a> <a
+								href="#pop_info_2" class="btn_open">개인정보처리방침</a>
 						</div>
 						<img
 							src="https://assets-global.website-files.com/6477332607fa08930fe00261/6477570d55c46a6f4957b3ef_app%20store.svg"
@@ -157,7 +209,37 @@
 					</div>
 			</footer>
 		</section>
+		<div id="pop_info_1" class="pop_wrap">
+			<div class="pop_inner">
+				<jsp:include page="/WEB-INF/views/collect/agree1.jsp"></jsp:include>
+				<hr>
+				<button type="button" class="btn_close">닫기</button>
+			</div>
+		</div>
+		<div id="pop_info_2" class="pop_wrap">
+			<div class="pop_inner">
+				<jsp:include page="/WEB-INF/views/collect/agree2.jsp"></jsp:include>
+				<hr>
+				<button type="button" class="btn_close">닫기</button>
+			</div>
+		</div>
 	</main>
 	<script src="/resources/js/front.js"></script>
+	<script>
+		var target = document.querySelectorAll('.btn_open');
+		var btnPopClose = document.querySelectorAll('.pop_wrap .btn_close');
+		var targetID;
+		for (var i = 0; i < target.length; i++) {
+			target[i].addEventListener('click', function() {
+				targetID = this.getAttribute('href');
+				document.querySelector(targetID).style.visibility = 'visible';
+			});
+		}
+		for (var j = 0; j < target.length; j++) {
+			btnPopClose[j].addEventListener('click', function() {
+				this.parentNode.parentNode.style.visibility = 'hidden';
+			});
+		}
+	</script>
 </body>
 </html>

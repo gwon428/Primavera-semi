@@ -198,21 +198,17 @@ img {
 }
 
 div.type {
-	display: flex;
-	display: flex;
+	display: ruby;
 	position: relative;
-	left: 451px;
+	left: 395px;
 }
 
-.btn {
-	margin: 20px 0;
-	padding: 7px;
-	font-size: 1rem;
+.btn, .back {
+	font-size: 1.5rem;
 	cursor: pointer;
 	border: 0.5px solid #d1d1d1;
 	background-color: #93b19a;
 	color: white;
-	border: none;
 	font-family: "Cafe24Oneprettynight";
 	border-radius: 6px;
 	width: 75px;
@@ -224,20 +220,20 @@ div.type {
 
 /*-------------------------------회원 일경우----------------------------------*/
 .container2 h1 {
-	width: 77px;
+	width: 114px;
 	left: 489px;
 	position: relative;
-	margin-top: 70px;
-	top: 137px;
+	margin-top: 62px;
+	top: 96px;
 	font-size: 3rem;
 }
 
 .container2 form {
-	width: 635px;
-	position: relative;
-	height: 439px;
-	left: 476px;
-	top: 132px;;
+    width: 879px;
+    position: relative;
+    height: 439px;
+    left: 501px;
+    top: 136px;
 }
 
 .container2 {
@@ -251,18 +247,37 @@ div.type {
 	margin-bottom: 20px;
 }
 
-.container2 a {
-    position: relative;
-    top: 30px;
-    left: 30px;
-}
-
 .container2 #content_input {
-	margin-left: 30px;
+	border: 1px solid;
+	display: flex;
+	margin-left: 29px;
 	position: relative;
-	width: 935px;
-	height: 384px;
+	width: 850px;
 	border-radius: 8px;
 	border-color: #d1d1d1;
-	top: 20px;
+	top: 35px;
+	display: flex;
+	height: auto;
+	min-height: 300px;
+}
+
+.container2 a {
+	background-color: #93b19a;
+	color: white;
+	border-radius: 6px;
+	width: 80px;
+	height: 49px;
+	cursor: pointer;
+	font-family: "Cafe24Oneprettynight";
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	left: 800px;
+	top: 28px;
+}
+
+}
+.containter .form-group {
+	margin: 20px 0;
 }

@@ -9,7 +9,7 @@
 
 </head>
 <body>
-<div class="modal policy" tabindex="-1">
+
 <div class="in">
 
 <div class="txt">
@@ -204,6 +204,6 @@
 </div>
 </div>
 </div>
-</div>	
+
 </body>
 </html>

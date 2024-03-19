@@ -1,6 +1,15 @@
 * {
 	margin: 0%;
 	padding: 0%;
+	font-family: "Cafe24Oneprettynight";
+}
+
+@font-face {
+	font-family: "Cafe24Oneprettynight";
+	src:
+		url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff")
+		format("woff");
+	font-style: normal;
 }
 
 a {
@@ -24,7 +33,7 @@ header {
 
 header a {
 	color: white;
-	font-style: italic;
+	font-family: "Cafe24Oneprettynight";
 }
 
 header nav:nth-child(1) {
@@ -58,6 +67,10 @@ nav>span {
 nav>span a {
 	display: block;
 	text-decoration: none;
+}
+
+nav span a::after {
+	background-color: white;
 }
 
 nav>span a:hover {
@@ -113,7 +126,8 @@ nav a:hover::after, a h1:hover::after {
 	animation: slide1 1.8s;
 }
 
-@keyframes slide1 {from { left:-600px;
+@
+keyframes slide1 {from { left:-600px;
 	
 }
 
@@ -122,7 +136,8 @@ to {
 }
 
 }
-@keyframes out1 {from { left:-600px;
+@
+keyframes out1 {from { left:-600px;
 	
 }
 
@@ -140,7 +155,8 @@ to {
 	animation: slide2 1.9s;
 }
 
-@keyframes slide2 {from { left:50px;
+@
+keyframes slide2 {from { left:50px;
 	
 }
 
@@ -149,7 +165,8 @@ to {
 }
 
 }
-@keyframes out2 {from { left:50px;
+@
+keyframes out2 {from { left:50px;
 	
 }
 
@@ -190,7 +207,8 @@ to {
 	color: #699372;
 }
 
-@keyframes slide3 {from { right:-60px;
+@
+keyframes slide3 {from { right:-60px;
 	
 }
 
@@ -215,12 +233,17 @@ to {
 	border-bottom: solid;
 }
 
+.text1{
+	position: relative;
+	bottom: 101px;
+}
+
 #section2 p {
 	width: 85%;
 	position: absolute;
 	font-size: 1.5rem;
 	padding-left: 1139px;
-	padding-top: 330px;
+	padding-top: 387px;
 }
 
 #container3 img {
@@ -259,11 +282,10 @@ to {
 
 .container1 a {
 	font-size: 2rem;
-	top: 380px;
 	position: relative;
 	font-size: 2rem;
 	left: 580px;
-	top: 380px;
+	top: 354px;
 	color: black;
 }
 
@@ -287,7 +309,8 @@ to {
 	width: 100%;
 }
 
-@keyframes slide4 {from { left:-200px;
+@
+keyframes slide4 {from { left:-200px;
 	
 }
 
@@ -296,7 +319,8 @@ to {
 }
 
 }
-@keyframes out4 {from { left:-200px;
+@
+keyframes out4 {from { left:-200px;
 	
 }
 
@@ -315,7 +339,7 @@ to {
 
 .container2 h1 {
 	position: absolute;
-	top: 2400px;
+	top: 2360px;
 	font-size: 4rem;
 	padding-left: 1020px;
 	border-bottom: solid;
@@ -326,11 +350,12 @@ to {
 	position: relative;
 	width: 580px;
 	font-size: 2rem;
-	left: 1300px;
+	left: 1203px;
 	bottom: 480px;
 }
 
-@keyframes slide5 {from { left:-500px;
+@
+keyframes slide5 {from { left:-500px;
 	
 }
 
@@ -339,7 +364,8 @@ to {
 }
 
 }
-@keyframes out5 {from { left:-500px;
+@
+keyframes out5 {from { left:-500px;
 	
 }
 
@@ -385,7 +411,8 @@ to {
 	animation: slide6 1.5s;
 }
 
-@keyframes slide6 {from { left:-500px;
+@
+keyframes slide6 {from { left:-500px;
 	
 }
 
@@ -394,7 +421,8 @@ to {
 }
 
 }
-@keyframes out6 {from { left:-500px;
+@
+keyframes out6 {from { left:-500px;
 	
 }
 
@@ -413,7 +441,8 @@ to {
 	animation: slide7 2s;
 }
 
-@keyframes slide7 {from { left:1500px;
+@
+keyframes slide7 {from { left:1500px;
 	
 }
 
@@ -422,7 +451,8 @@ to {
 }
 
 }
-@keyframes out7 {from { left:1500px;
+@
+keyframes out7 {from { left:1500px;
 	
 }
 
@@ -581,21 +611,16 @@ body>p {
 .title {
 	font-size: 3rem;
 	position: relative;
-	left: 83px;
-	top: 89px;
+	left: 86px;
+	top: 111px;
 	height: 73px;
 }
 
-footer {
-	display: flex;
-	justify-content: space-around;
-}
-
 .left>h5 {
-	top: 151px;
+	top: 173px;
 	font-size: 0.9rem;
 	position: relative;
-	right: 129px;
+	right: 91px;
 }
 
 footer .left {
@@ -606,22 +631,23 @@ footer .left {
 .left h4 {
 	position: relative;
 	width: 386px;
-	top: 169px;
-	right: 129px;
-	font-size: 1.1rem;
+	top: 181px;
+	right: 93px;
+	font-size: 1.4rem;
 }
 
 .left>p {
 	position: relative;
-	top: 187px;
-	right: 130px;
+	top: 201px;
+	right: 95px;
 }
 
 .left h1 {
 	position: relative;
 	font-size: 1.2rem;
-	right: 130px;
+	right: 97px;
 	top: 220px;
+	color: black;
 }
 
 /* --------------------------------------------------------------------- */
@@ -631,21 +657,17 @@ footer .center {
 }
 
 .center ul {
-	width: 257px;
-	right: 70px;
+	width: 230px;
+	right: 56px;
 	position: relative;
 	font-size: 1.1rem;
-	cursor: pointer;
-	top: 180px;
+	top: 195px;
 	color: black;
 }
 
 .center ul li {
 	margin: 10px;
-}
-
-.center li:hover {
-	opacity: 0.5;
+	font-size: 1.2rem;
 }
 
 .center span {
@@ -661,7 +683,7 @@ footer .center {
 }
 
 .center span :hover {
-	opacity: 0.6;
+	opacity: 0.85;
 }
 
 span a {
@@ -676,7 +698,7 @@ span a::after {
 	left: 0;
 	width: 0%;
 	height: 3px;
-	background-color: white;
+	background-color: rgba(0, 0, 0, 0.568);
 	transition: width 0.5s ease;
 }
 

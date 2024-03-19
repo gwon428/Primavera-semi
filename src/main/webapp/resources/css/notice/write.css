@@ -30,12 +30,10 @@ h1 {
 
 .container {
 	border-top: 1px solid #757575;
-	justify-content: center;
-	align-items: center;
-	width: 631px;
+	width: 629px;
 	position: relative;
-	left: 624px;
-	top: 201px;
+	left: 644px;
+	top: 223px;
 }
 
 form {
@@ -120,13 +118,19 @@ img {
 }
 
 .btn {
-	width: 130px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
 	position: relative;
-	left: 498px;
-	top: 11px;
+	left: 554px;
+	top: -5px;
+	margin: 20px 0;
+	font-size: 1rem;
+	background-color: #93b19a;
+	color: white;
+	border: none;
+	border-radius: 6px;
+	width: 75px;
+	height: 42px;
+	cursor: pointer;
+	font-family: "Cafe24Oneprettynight";
 }
 
 /* ------------------------------------회원 일경우-----------------------------------------  */
