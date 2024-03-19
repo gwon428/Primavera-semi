@@ -58,18 +58,18 @@ img {
 .section1 .h2 {
 	position: absolute;
 	top: 431px;
-	left: 204px;
+	left: 65px;
 	font-size: 5rem;
 	color: white;
 	animation: slide1 1.8s;
 }
 
-@keyframes slide1 {from { left:-600px;
+@keyframes slide1 {from { left:-300px;
 	
 }
 
 to {
-	left: 204px;
+	left: 65px;
 }
 
 }
@@ -210,4 +210,3 @@ td {
 	height: 22px;
 	cursor: pointer;
 }
-

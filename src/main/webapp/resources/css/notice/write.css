@@ -30,12 +30,10 @@ h1 {
 
 .container {
 	border-top: 1px solid #757575;
-	justify-content: center;
-	align-items: center;
-	width: 631px;
+	width: 629px;
 	position: relative;
-	left: 624px;
-	top: 201px;
+	left: 644px;
+	top: 223px;
 }
 
 form {

@@ -26,10 +26,10 @@
 			<a href="list">Board</a> 
 			<span> 
 			<a href="/review/list">Riew</a> 
-			<a href="/listQna">Q & A</a> 
+			<a href="listQna">Q & A</a> 
 			<a href="/notice/list">Notice</a>
 			</span> 
-			<a href="myPage"><i class="fa-regular fa-user"></i></a>
+			<a href="/myPage"><i class="fa-regular fa-user"></i></a>
 		</nav>
 	</header>
 	<!-- ---------------------------------------------------------------------------- -->

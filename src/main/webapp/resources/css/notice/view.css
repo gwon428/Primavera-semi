@@ -199,23 +199,23 @@ img {
 
 div.type {
 	display: ruby;
-    position: relative;
-    left: 477px;
+	position: relative;
+	left: 395px;
 }
 
-.btn {
-    font-size: 1.5rem;
-    cursor: pointer;
-    border: 0.5px solid #d1d1d1;
-    background-color: #93b19a;
-    color: white;
-    font-family: "Cafe24Oneprettynight";
-    border-radius: 6px;
-    width: 75px;
-    height: 65px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.btn, .back {
+	font-size: 1.5rem;
+	cursor: pointer;
+	border: 0.5px solid #d1d1d1;
+	background-color: #93b19a;
+	color: white;
+	font-family: "Cafe24Oneprettynight";
+	border-radius: 6px;
+	width: 75px;
+	height: 65px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 /*-------------------------------회원 일경우----------------------------------*/
@@ -229,11 +229,11 @@ div.type {
 }
 
 .container2 form {
-	width: 858px;
-	position: relative;
-	height: 439px;
-	left: 532px;
-	top: 120px;
+    width: 879px;
+    position: relative;
+    height: 439px;
+    left: 501px;
+    top: 136px;
 }
 
 .container2 {
@@ -248,6 +248,7 @@ div.type {
 }
 
 .container2 #content_input {
+	border: 1px solid;
 	display: flex;
 	margin-left: 29px;
 	position: relative;
@@ -255,6 +256,9 @@ div.type {
 	border-radius: 8px;
 	border-color: #d1d1d1;
 	top: 35px;
+	display: flex;
+	height: auto;
+	min-height: 300px;
 }
 
 .container2 a {
@@ -269,8 +273,8 @@ div.type {
 	justify-content: center;
 	align-items: center;
 	position: relative;
-	left: 777px;
-	top: 173px;
+	left: 800px;
+	top: 28px;
 }
 
 }

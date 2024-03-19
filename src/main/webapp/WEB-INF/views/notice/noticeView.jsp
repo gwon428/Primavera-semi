@@ -74,6 +74,7 @@ div#editor {
 						<button type="submit" class="btn btn-outline-warning">수정</button>
 						<a class="btn btn-outline-danger"
 							href="/notice/deleteNotice?noticeNum=${vo.noticeNum}">삭제</a>
+							<a href="/notice/list" class="back">취소</a>
 					</div>
 				</form>
 			</div>
