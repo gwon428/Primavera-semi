@@ -43,7 +43,7 @@ form {
 	grid-template-rows: 2fr 1fr 0fr 1fr;
 }
 
-#title, #context, #file {
+#title, #context, #file{
 	font-family: "Cafe24Oneprettynight";
 	font-weight: bold;
 	display: flex;

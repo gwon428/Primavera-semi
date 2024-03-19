@@ -126,8 +126,7 @@ nav a:hover::after, a h1:hover::after {
 	animation: slide1 1.8s;
 }
 
-@
-keyframes slide1 {from { left:-600px;
+@keyframes slide1 {from { left:-600px;
 	
 }
 
@@ -155,8 +154,7 @@ to {
 	animation: slide2 1.9s;
 }
 
-@
-keyframes slide2 {from { left:50px;
+@keyframes slide2 {from { left:50px;
 	
 }
 
@@ -165,8 +163,7 @@ to {
 }
 
 }
-@
-keyframes out2 {from { left:50px;
+@keyframes out2 {from { left:50px;
 	
 }
 
@@ -207,8 +204,7 @@ to {
 	color: #699372;
 }
 
-@
-keyframes slide3 {from { right:-60px;
+@keyframes slide3 {from { right:-60px;
 	
 }
 
@@ -233,9 +229,9 @@ to {
 	border-bottom: solid;
 }
 
-.text1{
+.text1 {
 	position: relative;
-	bottom: 101px;
+	bottom: 127px;
 }
 
 #section2 p {
@@ -243,7 +239,7 @@ to {
 	position: absolute;
 	font-size: 1.5rem;
 	padding-left: 1139px;
-	padding-top: 387px;
+	padding-top: 335px;
 }
 
 #container3 img {
@@ -309,8 +305,7 @@ to {
 	width: 100%;
 }
 
-@
-keyframes slide4 {from { left:-200px;
+@keyframes slide4 {from { left:-200px;
 	
 }
 
@@ -319,8 +314,7 @@ to {
 }
 
 }
-@
-keyframes out4 {from { left:-200px;
+@keyframes out4 {from { left:-200px;
 	
 }
 
@@ -354,8 +348,7 @@ to {
 	bottom: 480px;
 }
 
-@
-keyframes slide5 {from { left:-500px;
+@keyframes slide5 {from { left:-500px;
 	
 }
 
@@ -364,8 +357,7 @@ to {
 }
 
 }
-@
-keyframes out5 {from { left:-500px;
+@keyframes out5 {from { left:-500px;
 	
 }
 
@@ -406,13 +398,12 @@ to {
 	position: relative;
 	width: 100%;
 	font-size: 11rem;
-	top: -550px;
+	top: -512px;
 	opacity: 50%;
 	animation: slide6 1.5s;
 }
 
-@
-keyframes slide6 {from { left:-500px;
+@keyframes slide6 {from { left:-500px;
 	
 }
 
@@ -421,8 +412,7 @@ to {
 }
 
 }
-@
-keyframes out6 {from { left:-500px;
+@keyframes out6 {from { left:-500px;
 	
 }
 
@@ -435,14 +425,13 @@ to {
 	position: relative;
 	width: 100%;
 	font-size: 11rem;
-	top: -650px;
+	top: -616px;
 	left: 300px;
 	opacity: 50%;
 	animation: slide7 2s;
 }
 
-@
-keyframes slide7 {from { left:1500px;
+@keyframes slide7 {from { left:1500px;
 	
 }
 
@@ -451,8 +440,7 @@ to {
 }
 
 }
-@
-keyframes out7 {from { left:1500px;
+@keyframes out7 {from { left:1500px;
 	
 }
 

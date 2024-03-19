@@ -1,6 +1,7 @@
 * {
 	margin: 0%;
 	padding: 0%;
+	font-family: "Cafe24Oneprettynight";
 }
 
 @font-face {
@@ -24,7 +25,6 @@
 
 header a {
 	color: white;
-	font-style: italic;
 	cursor: pointer;
 	display: inline-block;
 	position: relative;
@@ -57,11 +57,12 @@ img {
 
 .section1 .h2 {
 	position: absolute;
-	top: 431px;
-	left: 65px;
+	top: 460px;
+	left: 35px;
 	font-size: 5rem;
 	color: white;
 	animation: slide1 1.8s;
+	margin-left: 40px;
 }
 
 @keyframes slide1 {from { left:-300px;
@@ -69,7 +70,7 @@ img {
 }
 
 to {
-	left: 65px;
+	left: 35px;
 }
 
 }
