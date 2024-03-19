@@ -52,8 +52,22 @@
 					<a href="listQna" id="listQna">목록</a>
 				</button>
 				</c:when>
-				<c:otherwise>
-				<c:if test="${user.auth == 'ADMIN'}">
+				
+				<c:when test="${user != 'anonymousUser' && user.auth == 'ADMIN' && qna.id == user.id}">
+				<button value="목록" id="btnlist">
+					<a href="listQna" id="listQna">목록</a>
+				</button>
+				<button value="수정" id="btnupdate">
+					<a href="updateQna" id="updateQna">수정</a>
+				</button>
+				<button value="삭제" id="btndelete">
+					<a href="/deleteQna?qnaNum=${qna.qnaNum}" id="deleteQna">삭제</a>
+				</button>
+				<button value="댓글" id="btnAnswer">
+					<a href="writeAnswer?qnaNum=${qna.qnaNum}" id="AnswerQna">댓글</a>
+				</button>
+				</c:when>
+				<c:when test="${user != 'anonymousUser' && user.auth == 'ADMIN' && qna.id != user.id}">
 				<button value="목록" id="btnlist">
 					<a href="listQna" id="listQna">목록</a>
 				</button>
@@ -63,7 +77,8 @@
 				<button value="댓글" id="btnAnswer">
 					<a href="writeAnswer?qnaNum=${qna.qnaNum}" id="AnswerQna">댓글</a>
 				</button>
-				</c:if>
+				</c:when>
+				<c:otherwise>
 				<c:if test="${qna.id == user.id}">
 				<button value="목록" id="btnlist">
 					<a href="listQna" id="listQna">목록</a>

@@ -75,11 +75,16 @@
 								 -->
 								 <td>${paging.total - (paging.page - 1) * 10 - status.index}</td>
 								<c:choose>
-									<c:when test="${(item.secret == 'Y') && (user == 'anonymousUser'||user.auth == 'MEMBER')}">
+									<c:when test="${(item.secret == 'Y') && (user == 'anonymousUser')}">
 										<td><i class="fa-solid fa-lock"></i>&nbsp;
-										<div id="pwd_check" data-id="${item.id}" data-value="${item.qnaNum}">${item.title}</div></td>
+										<a href="myPage">${item.title}</a></td>
 									</c:when>
 									<c:otherwise>
+									<c:if test="${(item.secret == 'Y') && (user.auth == 'MEMBER')}">
+										<td><i class="fa-solid fa-lock"></i>&nbsp;
+										<div id="pwd_check" data-id="${item.id}" data-value="${item.qnaNum}">${item.title}</div></td>
+									</c:if>
+									
 										<c:if test="${(item.secret == 'Y' && user.auth == 'ADMIN')}">
 											<td><i class="fa-solid fa-lock"></i>&nbsp;
 											<a href="/viewQna?qnaNum=${item.qnaNum}">${item.title}</a></td>

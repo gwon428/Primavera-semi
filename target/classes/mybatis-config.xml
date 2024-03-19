@@ -14,7 +14,6 @@
 		<typeAlias type="com.semi.model.vo.Paging" alias="Paging" />
 		<typeAlias type="com.semi.model.vo.Notice" alias="Notice"/>
 		<typeAlias type="com.semi.model.vo.QnaAnswer" alias="QnaAnswer"/>
-		<typeAlias type="com.semi.model.dto.SearchQnaDTO" alias="SearchQnaDTO"/>
 	</typeAliases>
 
 	<!-- 쿼리문 -->

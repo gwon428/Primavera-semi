@@ -112,25 +112,5 @@
 		WHERE status='N'
 	</select>
 	
-	<!-- searchQna -->
-	<select id="searchQna" parameterType="SearchQnaDTO" resultMap="qnaMap">
-		SELECT *
-		FROM qna
-		<where>
-			<choose>
-				<when test="select == 'allFind'">
-					title LIKE CONCAT('%',#{keyword},'%') 
-				OR id LIKE CONCAT('%',#{keyword},'%')
-				</when>
-				<when test="select == 'titleFind'">
-					title LIKE CONCAT('%',#{keyword},'%')
-				</when>
-				<when test="select == 'idFind'">
-					id LIKE CONCAT('%',#{keyword},'%')
-				</when>
-			</choose>
-		</where>
-		ORDER BY qna_num DESC
-	</select>
 	
 </mapper>

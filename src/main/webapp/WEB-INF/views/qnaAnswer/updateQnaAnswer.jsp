@@ -44,11 +44,11 @@
 	             </div>
 	             <div name="qnaTitle" id="qnaTitle">
 	               <label>제목</label><br>
-	               <textarea>${qnaView.title}</textarea>
+	               <textarea readonly>${qnaView.title}</textarea>
 	             </div>
 	             <div id="qnaContent" name="qnaContent">
 	               <label>내용</label><br>
-	               <textarea>${qnaView.content}</textarea>
+	               <textarea readonly>${qnaView.content}</textarea>
 	             </div>
 	             <c:choose>
 	               <c:when test="${qnaView.url != null}">

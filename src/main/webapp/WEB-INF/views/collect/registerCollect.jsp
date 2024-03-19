@@ -51,11 +51,11 @@
 			</div>
 			<div class="name">
 				<p>*이름</p>
-				<input type="text" name="name" value="${user.name}"/>
+				<input type="text" name="name" value="${user.name}" readonly/>
 			</div>
 			<div class="phone">
 				<p>*전화번호</p>
-				<input type="text" name="phone" value="${user.phone}"/>
+				<input type="text" name="phone" value="${user.phone}" readonly/>
 			</div>
 
 			<div class="addr">

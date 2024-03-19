@@ -52,7 +52,7 @@
 				
 				<div class="updatePhoto">
 					<c:choose>
-						<c:when test="${qnaAnswer.url != null}">
+						<c:when test="${qna.url != null}">
 							<img src="/upload/qna/${qna.url}"/>
 						</c:when>
 					</c:choose>
