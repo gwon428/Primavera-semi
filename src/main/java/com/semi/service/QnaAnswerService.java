@@ -32,7 +32,12 @@ public class QnaAnswerService {
 	}
 	
 	// updateStatus
-	public int updateStatus(String id) {
-		return dao.updateStatus(id);
+	public int updateStatus(int qnaNum) {
+		return dao.updateStatus(qnaNum);
+	}
+	
+	// updateStatusDelete
+	public int updateStatusDelete(int qnaNum) {
+		return dao.updateStatusDelete(qnaNum);
 	}
 }

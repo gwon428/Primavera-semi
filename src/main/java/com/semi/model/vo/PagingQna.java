@@ -6,6 +6,9 @@ import lombok.NoArgsConstructor;
 @Data @NoArgsConstructor
 public class PagingQna {
 	
+	private String keyword;
+	private String select;
+	
 	private int page = 1;  // 현재 페이지 번호
 	
 	private int offset = 0; // 시작 위치

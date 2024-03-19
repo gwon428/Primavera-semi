@@ -6,6 +6,9 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 public class Paging {
+	
+	private String keyword;
+	private String select;
 
 	private int page = 1;
 	private int offset = 0;

@@ -14,38 +14,9 @@
 <link rel="stylesheet" href="../../../resources/css/qna/listQna.css" />
 <script src="https://kit.fontawesome.com/4602e82315.js"
 	crossorigin="anonymous"></script>
-<style>
-#pwd_check{
-	cursor : pointer;
-}
-#modalOpenButton, #modalCloseButton {
-  cursor: pointer;
-}
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
-#modalContainer {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: rgba(0, 0, 0, 0.5);
-}
-
-#modalContent {
-  position: absolute;
-  background-color: #ffffff;
-  width: 300px;
-  height: 150px;
-  padding: 15px;
-}
-
-#modalContainer.hidden {
-  display: none;
-}
-</style>
+<link rel="stylesheet" href="../../../resources/css/qna/listQnaModal.css" />
 
 </head>
 <body>
@@ -110,12 +81,18 @@
 								 -->
 								 <td>${paging.total - (paging.page - 1) * 10 - status.index}</td>
 								<c:choose>
-									<c:when test="${item.secret == 'Y'}">
+									<c:when test="${(item.secret == 'Y') && (user == 'anonymousUser'||user.auth == 'MEMBER')}">
 										<td><i class="fa-solid fa-lock"></i>&nbsp;
-										<div id="pwd_check">${item.title}</div></td>
+										<div id="pwd_check" data-id="${item.id}" data-value="${item.qnaNum}">${item.title}</div></td>
 									</c:when>
 									<c:otherwise>
-										<td><a href="/viewQna?qnaNum=${item.qnaNum}">${item.title}</a></td>
+										<c:if test="${(item.secret == 'Y' && user.auth == 'ADMIN')}">
+											<td><i class="fa-solid fa-lock"></i>&nbsp;
+											<a href="/viewQna?qnaNum=${item.qnaNum}">${item.title}</a></td>
+										</c:if>
+										<c:if test="${user == 'anonymousUser'||item.secret == null}">
+											<td><a href="/viewQna?qnaNum=${item.qnaNum}">${item.title}</a></td>
+										</c:if>
 									</c:otherwise>
 								</c:choose> 
 
@@ -127,7 +104,7 @@
 						</c:forEach>
 					</tbody>
 				</table>
-			</div>
+			</div>			
 			<nav id="paging">
 				<ul class="pagination">
 					<li class="page-item ${paging.prev ? '' : 'disabled'}">
@@ -161,37 +138,37 @@
 					</li>
 				</ul>
 			</nav>
+				<div id="findQna">
+					<form action="listQna" method="get">
+						<select name="select">
+							<option value="allFind">전체</option>
+							<option value="titleFind">제목</option>
+							<option value="idFind">아이디</option>
+						</select>
+						<input type="text" name="keyword">
+						<input type="submit" value="조회">
+					</form>
+				</div>
 		</div>
 		
 				<div id="modalContainer" class="hidden">
 				  <div id="modalContent">
 				  	<h3>비밀글</h3>
 				  	<div id="content">
-				  	<form action="" mehtod="post">
+				  	<form action="pwdCheck" method="post" id="pwdCheck" name="pwdCheck">
 				  		<label>회원 비밀번호</label>
 				  		<input type="password" id="password" name="password">
+				  		<input type="hidden" id="qnaNum" name="qnaNum"> 
+				  		<input type="hidden" id="idCheck" name="idCheck">
+				  		<div id="modal_btn"> 
+					   	 	<button type="submit" id="pwdSubmit">확인</button>
+					    	<button id="modalCloseButton">닫기</button>
+					    </div>
 				  	</form>	
 				    </div>
-				    <button type="submit" id="pwdSubmit">확인</button>
-				    <button id="modalCloseButton">닫기</button>
 				  </div>
 		</div>
-
+	
+<script src="../../../resources/js/qna/listQnaModal.js"></script>
 </body>
-<script>
-const pwdCheck= document.querySelector("#pwd_check");
-const modalCloseButton = document.getElementById('modalCloseButton');
-const modal = document.getElementById('modalContainer');
-
-pwdCheck.addEventListener('click', () => {
-  modal.classList.remove('hidden');
-});
-
-modalCloseButton.addEventListener('click', () => {
-  modal.classList.add('hidden');
-});
-
-
-
-</script>
 </html>

@@ -6,6 +6,9 @@ import java.util.List;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,7 +32,12 @@ public class QnaController {
 	@Autowired
 	private QnaAnswerService qnaAnswerService;
 	
+	@Autowired
+	private BCryptPasswordEncoder bcpe;
+	
+	
 	private String path = "D:\\upload\\qna\\";
+	
 	
 	// 파일 업로드 기능 
 		public String fileUpload(MultipartFile file) throws IllegalStateException, IOException {
@@ -70,18 +78,38 @@ public class QnaController {
 			return "redirect:/listQna";
 		}
 		
+		// find
+	 	/*@GetMapping("find")
+		public String find(Model model,String select, String keyword){
+			// Model은 spring에서 기본적으로 제공하는 것
+			List<Qna> list = service.searchQna(keyword, select);
+			model.addAttribute("list", list);
+			return "qna/find_result";
+		}*/
+		
+		
+		
 		// 리스트 페이징 처리 (select)
 		@GetMapping("listQna")
 	//	public String showFilm(Model model, Paging paging) {
-		public String showFilm(Model model, @RequestParam(value = "page", defaultValue = "1") int page) {
+		public String showFilm(Model model, @RequestParam(value = "page", defaultValue = "1") int page, String select, String keyword) {
 			//System.out.println(paging);
 			
 			// 페이지 거꾸로
 			int total = service.total();
+			
 			Paging paging = new Paging(page, total);
+			paging.setKeyword(keyword);
+			paging.setSelect(select);
+			
+			System.out.println("keyword : " + paging.getKeyword());
+			System.out.println("select : " + paging.getSelect());
 			
 			List<Qna> list = service.showAllQna(paging);
+			System.out.println(list);
+			
 			model.addAttribute("list", list);
+			//model.addAttribute("search", search);
 			//model.addAttribute("paging", new PagingQna(paging.getPage(), service.total()));
 			model.addAttribute("paging", paging);
 			
@@ -159,10 +187,30 @@ public class QnaController {
  		return "qnaAnswer/listQnaAnswer";
  		
 	}
- 	/*
+ 	
+ 	// 비밀글 시 비밀번호 확인 및 페이지 이동
  	@PostMapping("pwdCheck")
- 	public void pwdCheck() {
+ 	public String pwdCheck(String password, String qnaNum, String idCheck) {
+ 		System.out.println("pwdCheck");
+ 		System.out.println(idCheck);
+ 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		UserDetails userDetails = (UserDetails)principal;
  		
+ 		if(bcpe.matches(password, userDetails.getPassword()) && (userDetails.getUsername().equals(idCheck))){
+ 			return "redirect:/viewQna?qnaNum=" + qnaNum;
+ 		}
+ 		else {
+ 			return "redirect:/listQna";
+ 		}
  	}
- 	*/
+ 	
+ 	// find
+ 	@GetMapping("find")
+	public String find(Model model,String select, String keyword){
+		// Model은 spring에서 기본적으로 제공하는 것
+		List<Qna> list = service.searchQna(keyword, select);
+		model.addAttribute("list", list);
+		return "qna/find_result";
+	}
+ 	
 }
