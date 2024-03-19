@@ -17,9 +17,7 @@
 		INSERT INTO
 		review(id, title, content, url, rating)
 		VALUES(#{id}, #{title},
-		#{content},
-		#{url},
-		#{rating})
+		#{content}, #{url}, #{rating})
 	</insert>
 
 	<select id="selectAll" resultMap="reviewMap">
@@ -28,46 +26,73 @@
 
 	<select id="select" parameterType="int" resultMap="reviewMap">
 		SELECT * FROM
-		review
-		WHERE no=#{no}
+		review WHERE no=#{no}
 	</select>
 
 	<update id="updatereview" parameterType="Review">
 		UPDATE review SET
-		title=#{title}, content=#{content}, url=#{url}, rating=#{rating}
-		WHERE
+		title=#{title}, content=#{content}, url=#{url},
+		rating=#{rating} WHERE
 		no=#{no}
 	</update>
 
 	<delete id="deletereview" parameterType="int">
-		DELETE FROM review
-		WHERE
+		DELETE FROM review WHERE
 		no=#{no}
 	</delete>
-
-	<select id="selectPage" parameterType="Paging"
-		resultMap="reviewMap">
-		SELECT * FROM review
-		ORDER BY no DESC
-		LIMIT #{offset}, #{limit}
-	</select>
 
 	<select id="count" resultType="int">
 		SELECT COUNT(*) FROM review
 	</select>
 
+	<select id="selectPage" parameterType="map"
+		resultMap="reviewMap">
+		SELECT * FROM review
+		<where>
+			<if test="searchType != null">
+				<choose>
+					<when test="searchType == 'author'">
+						AND id LIKE CONCAT('%', #{searchKeyword}, '%')
+					</when>
+					<when test="searchType == 'title'">
+						AND title LIKE CONCAT('%', #{searchKeyword}, '%')
+					</when>
+					<when test="searchType == 'content'">
+						AND content LIKE CONCAT('%', #{searchKeyword}, '%')
+					</when>
+					<when test="searchType == 'titleContent'">
+						AND (title LIKE CONCAT('%', #{searchKeyword}, '%')
+						OR content LIKE
+						CONCAT('%', #{searchKeyword}, '%'))
+					</when>
+				</choose>
+			</if>
+		</where>
+		ORDER BY
+		<choose>
+			<when test="paging.sort == 'ratingDesc'">
+				rating DESC, no DESC
+			</when>
+			<when test="paging.sort == 'ratingAsc'">
+				rating ASC, no DESC
+			</when>
+			<otherwise>
+				no DESC
+			</otherwise>
+		</choose>
+		LIMIT #{paging.offset}, #{paging.limit}
+	</select>
+
 	<!-- 회원용 마이페이지 - 내가 적은 후기 보기 -->
 	<select id="showReview" parameterType="Pagingseven"
 		resultMap="reviewMap">
-		SELECT *
-		FROM review
-		WHERE
-		id=#{id}
-		LIMIT #{offset}, #{limit}
+		SELECT * FROM review WHERE id=#{id} LIMIT #{offset},
+		#{limit}
 	</select>
-	
-	<select id="countmyReview" parameterType="String" resultType="int">
-		SELECT COUNT(*) FROM review
-		WHERE id=#{id}
+
+	<select id="countmyReview" parameterType="String"
+		resultType="int">
+		SELECT COUNT(*) FROM review WHERE id=#{id}
 	</select>
+
 </mapper>

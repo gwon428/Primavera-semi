@@ -5,13 +5,14 @@
 }
 
 body {
-    position: absolute;
+	
+    position: absolute;     
     width: 100%;
     height: 100vh;
     background-color: #F5F5F5;
 }
 
-.container {
+.container {	
     margin-top: 70px;
     display: flex;
     flex-direction: column;
@@ -19,7 +20,7 @@ body {
 }
 
 h1 {
-    font-size: 4rem;	
+    font-size: 20px;	
 	color: white;	
 	margin: 20px 0;
 	padding: 10px;		
@@ -30,6 +31,7 @@ h1 {
 }
 
 .form-group, .form-image {
+	min-width: 450px;
     margin: 20px 0;
     width: 100%;
 }

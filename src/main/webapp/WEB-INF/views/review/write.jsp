@@ -28,7 +28,7 @@
 		<h1>Review 쓰기</h1>
 		<div class="container">
 			<form id="reviewForm" action="/review/write" method="post"
-				enctype="multipart/form-data">
+				enctype="multipart/form-data" onsubmit="return validateForm();">
 				<div class="form-group" id="title">
 					<label>제목</label> <input class="form-control" name="title"
 						id="title_input" maxlength="30" placeholder="제목을 입력하세요.(최대 30자)">
@@ -68,7 +68,7 @@
 		    reader.onload = function() {
 		        var output = document.getElementById('image_preview');
 		        output.style.backgroundImage = 'url(' + reader.result + ')';
-		        // 이미지가 로드되면 보이도록 설정
+		        // 이미지가 로드되면 보이도록 설정(미리보기)
 		        output.style.display = 'block';
 		    };
 		    // 선택된 파일을 읽기
@@ -77,20 +77,22 @@
     </script>
 
 	<script>
-            function validateForm() {
-                var title = document.getElementById("title").value;
-                var content = document.getElementById("content").value;
-                if (!title && !content) {
-                    alert("제목과 내용이 입력되지 않았습니다.");
-                } else if (!title) {
-                    alert("제목이 입력되지 않았습니다.");
-                } else if (!content) {
-                    alert("내용이 입력되지 않았습니다.");
-                } else {
-                    document.getElementById("reviewForm").submit();
-                }
-            }
-        </script>
+	    function validateForm() {
+	        var title = document.getElementById("title_input").value;
+	        var content = document.getElementById("content_input").value;
+	        if (!title && !content) {
+	            alert("제목과 내용이 입력되지 않았습니다.");
+	            return false;
+	        } else if (!title) {
+	            alert("제목이 입력되지 않았습니다.");
+	            return false;
+	        } else if (!content) {
+	            alert("내용이 입력되지 않았습니다.");
+	            return false;
+	        }
+	        return true;
+	    }
+	</script>
 
 	<script>
             document.addEventListener("DOMContentLoaded", function() {

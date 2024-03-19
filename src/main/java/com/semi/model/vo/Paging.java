@@ -18,6 +18,9 @@ public class Paging {
 	private boolean prev;
 	private boolean next;
 
+	// 기본값으로 최신순 정렬 설정
+	private String sort = "dateDesc";
+
 	public Paging(int page, int total) {
 
 		this.page = page;
@@ -37,4 +40,3 @@ public class Paging {
 	}
 
 }
-

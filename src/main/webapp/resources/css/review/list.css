@@ -7,11 +7,66 @@
 }
 
 .star-rating .fas {
-	color: #699372;  
+	color: #699372;
 }
 
 .star-rating .far {
-	color: #CCC;	
+	color: #CCC;
+}
+
+.controls {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	margin-top: 50px;
+	margin-bottom: 20px;
+}
+
+select{  	
+	text-align: center;
+	padding: 2px;
+	font-size: 15px;
+	color: white;
+	border: none;
+	font-family: "Cafe24Oneprettynight";
+	background-color: #93b19a;
+	border-radius: 6px;
+	box-shadow: 0 0 5px #999;
+}
+
+select:focus{
+ 	 outline:none;
+}
+
+.sort-dropdown, .search-ui {
+	margin: 0 10px;
+}
+
+.sort-dropdown {
+	margin-right: 300px;
+}
+
+.search-ui {
+	margin-right: 300px;
+}
+
+#searchbtn {		
+	text-align: center;
+	padding: 5px;
+	font-size: 15px;
+	color: white;
+	border: none;
+	font-family: "Cafe24Oneprettynight";
+	background-color: #93b19a;
+	border-radius: 6px;
+	box-shadow: 0 0 5px #999;
+}
+
+#searchbtn:hover {
+	cursor: pointer;
+	background-color: #699372;
+	box-shadow: 0 0 5px #333;
 }
 
 header a, #neck a {
@@ -29,15 +84,15 @@ header a, #neck a {
 	animation: slide 1.8s;
 }
 
-@keyframes slide {
-  from {
-    left: -300px;
-  }
-  to {
-    left: 35px;
-  }
+@keyframes slide {from { left:-300px;
+	
 }
 
+to {
+	left: 35px;
+}
+
+}
 #neck, .cover {
 	width: 100%;
 }
@@ -67,14 +122,17 @@ body, .main {
 }
 
 .header h1 {
-	font-size: 4rem;	
-	color: white;	
-	margin: 20px 0;
-	padding: 10px;		
+	font-size: 30px;
+	color: white;
+	margin: 20px auto;
+	padding: 10px;
 	font-family: "Cafe24Oneprettynight";
 	background-color: #93b19a;
 	border-radius: 6px;
-	box-shadow: 0 0 5px #999;	
+	box-shadow: 0 0 5px #999;
+	text-align: center;
+	display: block;
+	width: fit-content;
 }
 
 .container {
@@ -90,23 +148,21 @@ body, .main {
 	width: 75%;
 	border-collapse: collapse;
 	margin: 20px;
-	table-layout:fixed;	
+	table-layout: fixed;
 }
 
 .table th, .table td {
-	
 	text-align: center;
 	padding: 10px;
 	min-width: 170px;
-	min-height: 170px;	
+	min-height: 170px;
 	vertical-align: middle;
 	border-bottom: 1px solid #EAEAEA;
 	font-weight: bolder;
-	font-size: 20px;	
+	font-size: 20px;
 	overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-	
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
 
 .table tr:first-child th {
@@ -129,14 +185,15 @@ body, .main {
 	width: 150px;
 	height: 150px;
 	object-fit: cover;
-	vertical-align: middle;	
+	vertical-align: middle;
 	border-radius: 6px;
-	box-shadow: 0 0 5px #999;	
+	box-shadow: 0 0 5px #999;
 }
 
 #writebtn {
 	position: relative;
-	left: 700px;
+	align-self: flex-end;
+	left: 100px;
 	margin: 20px 0;
 	padding: 10px;
 	font-size: 20px;
@@ -145,7 +202,7 @@ body, .main {
 	font-family: "Cafe24Oneprettynight";
 	background-color: #93b19a;
 	border-radius: 6px;
-	box-shadow: 0 0 5px #999;    
+	box-shadow: 0 0 5px #999;
 }
 
 .pagination {
@@ -167,22 +224,19 @@ body, .main {
 	font-size: 20px;
 }
 
-#writebtn:hover, #writebtn:focus
-	{		
+#writebtn:hover, #writebtn:focus {
 	cursor: pointer;
 	background-color: #699372;
-	box-shadow: 0 0 5px #333;    
+	box-shadow: 0 0 5px #333;
 }
 
-.review-link:hover, .page-link:hover
-	{
+.review-link:hover, .page-link:hover {
 	color: #699372;
 	text-decoration: underline;
 	cursor: pointer;
 }
 
-.page-link:focus
-	{
+.page-link:focus {
 	color: #699372;
 	text-decoration: underline;
 	cursor: pointer;
