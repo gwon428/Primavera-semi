@@ -34,6 +34,12 @@ public class CollectService {
 		return dao.showAllCollect(paging); 
 	}
 	
+	public List<Collect> showorderby(Paging paging){
+		System.out.println("collect " + paging.getSort());
+		paging.setOffset(paging.getLimit() * (paging.getPage()-1));
+		return dao.showorderby(paging); 
+	}
+	
 	public int showAllCollecttotal() {
 		return dao.showAllCollecttotal();
 	}

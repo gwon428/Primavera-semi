@@ -26,8 +26,8 @@ h1 {
 }
 
 form {
-	height: 600px;
-	width: 700px;
+	height: 550px;
+	width: 900px;
 	margin: 0 auto;
 	font-family: "Cafe24Oneprettynight";
 	font-weight: bolder;
@@ -44,10 +44,11 @@ form {
     letter-spacing: 0.5px;
     outline: none;
     
-    background-color: rgba(44, 61, 47, 0.5);
+    background-color: rgba(44, 61, 47, 0.4);
     border: none;
     box-shadow: 0 4px 8px 0 rgba(21,21,21,.2);
 }
+
 form input{
 	height: 30px;
 	width: 200px;
@@ -59,14 +60,15 @@ form input{
 
 form input:hover{
 	cursor: pointer;
-	border: 1px solid rgba(77, 107, 83, 0.8);
+	border: 1px solid rgb(77, 107, 83);
 	border-radius: 10px;
 }
 
 form input:focus{
-	outline: 0.7px solid rgba(0, 0, 0, 0.6);
+	outline: 1px solid rgba(0, 0, 0, 0.6);
 	border-radius: 10px;
 }
+
 form p{
 	margin: 5px;
 	font-weight: bolder;
@@ -74,7 +76,7 @@ form p{
 }
 
 form select{
-	margin-bottom:15px;
+	margin-bottom: 15px;
 	font-family: "Cafe24Oneprettynight";
 	font-weight: bolder;
 	border-radius: 8px;
@@ -84,17 +86,19 @@ form select{
 	display:flex;
 	justify-content:space-between;
 	align-items:center;
-	width:600px;
+	width: 900px;
+	height: 350px;
 	margin: 10px auto;
 }
 
 #registerOne{
-	margin-top: 10px;
 	display: flex;
 	flex-direction:column;
 	width: 300px;
+	height: 350px;
 	align-items:center;
 	justify-content:space-evenly;
+	margin-left: 45px;
 }
 
 #registerOne input{
@@ -105,10 +109,30 @@ form select{
 	display: flex;
 	flex-direction:column;
 	width: 300px;
+	height: 350px;
 	align-items:center;
-	justify-content:space-evenly;
+	justify-content:space-around;
 }
 
+#registerThree{
+	display: flex;
+	flex-direction:column;
+	width: 300px;
+	height: 323px;
+	align-items:center;
+	justify-content:space-between;
+	align-items: left;
+}
+
+.input{
+	display: flex;
+	flex-direction: column;
+	width: 300px;
+}
+
+.input span{
+	margin-left: 10px;
+}
 .addr{
 	display:flex;	
 	flex-direction:column;
@@ -131,27 +155,27 @@ form select{
 	font-weight: bolder;
 }
 
-form input{
-	width: 200px;
-	height: 30px;
+#bank{
+	display: flex;
+	width: 300px;
+	flex-direction: row;
 }
+
 
 input {
 	font-family: "Cafe24Oneprettynight";
 	font-weight: bolder;
 }
 
+
 input[type=password] {
 	font-family:'Malgun gothic', dotum, sans-serif;}
 }
+
 #userPwd{
 	color: black;
 }
 
-#bank{
-	display: flex;
-	flex-direction: row;
-}
 
 #bankname{
 	display: flex;
@@ -167,6 +191,7 @@ select{
 #account{
 	display: flex;
 	flex-direction: column;
+	width: 140px
 }
 
 #submit{
@@ -226,8 +251,13 @@ select{
 }
 .btn_close {
   position: absolute;
-  left: 40%;
-  margin-top: 5px;
+    left: 43%;
+    margin-top: 7px;
+    font-family: "Cafe24Oneprettynight";
+    font-weight: bolder;
+    border: 1px solid black;
+    border-radius: 3px;
+    width: 43px;
 }
 #pop_head {
   display: flex;

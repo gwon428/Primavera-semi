@@ -23,6 +23,14 @@ public class UserDAO {
 		return session.selectOne("userMapper.idCheck", id);
 	}
 	
+	public User phonecheck(String phone) {
+		return session.selectOne("userMapper.phoneCheck", phone);
+	}
+	
+	public User emailcheck(String email) {
+		return session.selectOne("userMapper.emailCheck", email);
+	}
+	
 	public User checkUser(User user) {
 		return session.selectOne("userMapper.userCheck", user);
 	}
@@ -94,4 +102,6 @@ public class UserDAO {
 	public List<User> showUserorderNum(Paging paging){
 		return session.selectList("userMapper.showUserorderNum", paging);
 	}
+
+	
 }

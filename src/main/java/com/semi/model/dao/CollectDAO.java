@@ -29,6 +29,11 @@ public class CollectDAO {
 		return session.selectList("collectMapper.showAllCollect", paging);
 	}
 	
+	public List<Collect> showorderby(Paging paging){
+		System.out.println("DAO " + paging.getSort());
+		return session.selectList("collectMapper.showAllCollectorderby", paging);
+	}
+	
 	public int showAllCollecttotal() {
 		return session.selectOne("collectMapper.countAllCollect");
 	}

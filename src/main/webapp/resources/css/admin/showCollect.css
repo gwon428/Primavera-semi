@@ -27,7 +27,7 @@ h2{
 }
 
 #mainMenu{
-	width: 700px;
+	width: 710px;
 	height: 500px;
 	position: relative;
 }
@@ -56,7 +56,7 @@ hr{
 
 table {
 	text-align: center;
-	width: 700px;
+	width: 710px;
 }
 
 table tr:first-child  {

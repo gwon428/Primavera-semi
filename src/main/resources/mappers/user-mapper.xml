@@ -20,6 +20,18 @@
 		FROM user
 		WHERE id=#{id}
 	</select>
+
+	<select id="phoneCheck" parameterType="String" resultMap="userMap">
+		SELECT *
+		FROM user
+		WHERE phone=#{phone}
+	</select>
+	
+	<select id="emailCheck" parameterType="String" resultMap="userMap">
+		SELECT *
+		FROM user
+		WHERE email=#{email}
+	</select>
 	
 	<select id="userCheck" parameterType="User" resultMap="userMap">
 		SELECT *
@@ -72,20 +84,6 @@
 	<select id="showAllUser" parameterType="User" resultMap="userMap">
 	SELECT * FROM user
 	WHERE enabled=1
-	LIMIT #{offset}, #{limit}
-	</select>
-	
-	<select id="showUsercolDate" parameterType="User" resultMap="userMap">
-	SELECT * FROM user
-	WHERE enabled=1
-	ORDER BY collection_date
-	LIMIT #{offset}, #{limit}
-	</select>
-
-	<select id="showUserorderNum" parameterType="User" resultMap="userMap">
-	SELECT * FROM user
-	WHERE enabled=1
-	ORDER BY orderNum
 	LIMIT #{offset}, #{limit}
 	</select>
 	

@@ -14,42 +14,53 @@
 				<title>Insert title here</title>
 			</head>
 			<header>
-
-				<nav>
-					<a href="/">Primavera</a>
-				</nav>
-				<nav>
-					<a href="/map/mainMap">Store</a> <a href="#">Guide</a> <a href="collectPage">PickUp</a>
-					<a href="/review/list">Board</a> <a href="myPage"><i class="fa-regular fa-user"></i></a>
-				</nav>
+      <nav>
+        <a href="/">Primavera</a>
+      </nav>
+      
+      <nav>
+        <a href="mainMap">Store</a>
+        <a href="#">Guide</a>
+        <a href="collectPage">PickUp</a>
+        <a href="list">Board</a>
+        <span>
+          <a href="/review/list">Review</a>
+          <a href="listQna">Q & A</a>
+          <a href="/notice/list">Notice</a>
+        </span>
+        <a href="myPage"><i class="fa-regular fa-user"></i></a>
+      </nav>
 			</header>
 
 			<body>
 				<sec:authentication property="principal" var="user" />
 				<main>
+				<div class="center-wrap">
+				
 					<h1>회원 정보 수정</h1>
 					<form action="updateUser" method="post" onsubmit="return validate()">
-						<div id="updateUser">
 							<h2> 기본 정보 </h2>
-							<p> 아이디 : ${user.id}
+							<div id="input">
+								<p> 아이디 </p> <span>${user.id}</span>
 								<input type="hidden" name="id" value="${user.id}">
-							</p>
-							<p>비밀번호 :
+							</div>
+							<div id="input">
+								<p>비밀번호 </p>
 								<input type="password" name="password" id="userPwd" value="${pwd}">
-							</p>
-							<p>이름 :
+							</div>
+							<div id="input">
+								<p>이름 </p>
 								<input type="text" name="name" id="userName" value="${user.name}">
-							</p>
-							<p>휴대폰 번호 :
+							</div>
+							<div id="input">
+								<p>휴대폰 번호 </p>
 								<input type="text" name="phone" id="userPhone" value="${user.phone}">
-							</p>
-							<p>이메일 :
+							</div>
+							<div id="input">	
+								<p>이메일 </p>
 								<input type="text" name="email" id="email" value="${user.email}">
-							</p>
-						</div>
-						<div id="submit">
+							</div>
 							<input type="submit" value="수정" id="updateButton">
-						</div>
 					</form>
 				</main>
 				<script type="text/javascript" src="../../resources/js/updateregExp.js"></script>

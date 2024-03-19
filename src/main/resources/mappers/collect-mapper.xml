@@ -31,13 +31,23 @@
 		LIMIT #{offset}, #{limit}
 	</select>
 	
+	<select id="showAllCollectorderby" resultMap="collectMap">
+		SELECT order_num, id, name, phone, post_code, road_address, 
+		detail_address, collection_date, door_pwd, request, kg 
+		FROM collect
+		<if test="sort != 0">
+			ORDER BY #{sort}
+		</if>
+		LIMIT #{offset}, #{limit}
+	</select>
+	
 	<select id="countAllCollect" resultType="int">
 		SELECT count(*) FROM collect
 	</select>
 	
 	<!-- select : 회원용 진행상황 페이지용 : 로그인 된 회원의 아이디를 조건으로-->
 	<select id="showCollect" parameterType="Pagingseven" resultMap="collectMap">
-		SELECT order_num, id, name, phone, prog, kg
+		SELECT order_num, id, name, phone, collection_date, prog, kg
 		FROM collect
 		WHERE id=#{id}
 		LIMIT #{offset}, #{limit}

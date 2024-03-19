@@ -37,6 +37,14 @@ public class UserService implements UserDetailsService{
 	public User idCheck(String id) {
 		return dao.check(id);
 	}
+
+	public User phoneCheck(String phone) {
+		return dao.phonecheck(phone);
+	}
+
+	public User emailCheck(String email) {
+		return dao.emailcheck(email);
+	}
 	
 	public User userCheck(User user) {
 		return dao.checkUser(user);

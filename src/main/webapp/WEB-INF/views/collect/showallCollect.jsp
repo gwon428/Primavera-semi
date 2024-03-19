@@ -11,19 +11,29 @@
 			<meta charset="UTF-8">
 			<script src="https://kit.fontawesome.com/4602e82315.js" crossorigin="anonymous"></script>
 			<title>Insert title here</title>
+			<!-- jQuery 추가!  -->
+			<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 		</head>
 		<header>
-			<nav>
-				<a href="/">Primavera</a>
-			</nav>
-			<nav>
-				<a href="#">Store</a> <a href="#">Guide</a> <a href="collectPage">PickUp</a>
-				<a href="/review/list">Board</a> <a href="myPage"><i class="fa-regular fa-user"></i></a>
-			</nav>
-		</header>
+	     <nav>
+        <a href="/">Primavera</a>
+      </nav>
+      
+      <nav>
+        <a href="mainMap">Store</a>
+        <a href="#">Guide</a>
+        <a href="collectPage">PickUp</a>
+        <a href="list">Board</a>
+        <span>
+          <a href="/review/list">Review</a>
+          <a href="listQna">Q & A</a>
+          <a href="/notice/list">Notice</a>
+        </span>
+        <a href="myPage"><i class="fa-regular fa-user"></i></a>
+      </nav>
+      </header>
 
 		<body>
-		<sec:authentication property="principal" var="user" />
 				<section id="progressbackground">
 					<div id="background-blackbox"></div>
 				</section>
@@ -39,13 +49,15 @@
 				
 			<div id="mainMenu">
 			<div>
-			<form action="sort" method="get">
-				<select name="sort" id="sort">
-					<option value="colDate">수거신청일순</option>
-					<option value="orderNum">신청순</option>
-				</select>
-			</form>
 				<h2>전체 수거 신청 정보 보기</h2>
+				
+				<select name="sort" id="sort">
+					<option value="1">주문번호 순</option>
+					<option value="3" <c:if test="${param.sort == '3'}">selected</c:if>>이름 순</option>
+					<option value="8" <c:if test="${param.sort == '8'}">selected</c:if>>수거일 순</option>
+					<option value="11" <c:if test="${param.sort == '11'}">selected</c:if>>수거 무게 순</option>
+				</select>
+				
 				<table border=1 class="table">
 					<tr>
 						<th scope="col">주문번호</th>
@@ -63,6 +75,9 @@
 					</tr>
 
 					<c:forEach items="${list}" var="item">
+						
+						
+						<tbody id="tableBody">
 						<tr>
 							<td>${item.orderNum}</td>
 							<td>${item.id}</td>
@@ -77,6 +92,8 @@
 							<td>${item.doorPwd}</td>
 							<td>${item.request}</td>
 						</tr>
+						</tbody>
+						
 					</c:forEach>
 				</table>
 				<div id="page">
@@ -114,38 +131,13 @@
 				</div>
 				
 				</main>
-				<script>
-				function sort(){
-					var sort = $('#sort').val();
-					$.ajax({
-						type: "POST",
-						url: "/allUser",
-						data: "sort=" +sort,
-						
-						success: function(result){
-							for(var i = 0; i<result.data.length; i++){
-								var item = "<tr>"
-									item += "<td class='no'>"+${item.id}+"</td>";
-									item += "<td>"+${item.id}+"</td>";
-									item += "<td>"+${item.name}+"</td>";
-									item += "<td>"+${item.phone}+"</td>";
-									item += "<td>"+${item.postCode}+"</td>";
-									item += "<td class='roadAddr'>" + ${item.roadAddress} + "</td>";
-									item += "<td>" + ${item.detailAddress} + "</td>";
-									item += "<td>"+${item.collectionDate}+"</td>";
-									item += "<td>" + ${item.kg} + "</td>";
-									item += "<td>" + ${item.kg*400} + "</td>";
-									item += "<td>" + ${item.doorPwd} + "</td>";
-									item += "<td>" + ${item.request} + "</td>";
-									item += "</tr>";
-									
-									$('#tableBody').append(item);
-							}
-						}
-					})
-				}
+			<script>					
+				$("#sort").change(() => {
+					var sort = $('#sort option:selected').val();
+					location.href="/showAllCollect?sort="+sort;
+				});
+				
 			</script>
-				</script>
 		</body>
 
 		</html>
