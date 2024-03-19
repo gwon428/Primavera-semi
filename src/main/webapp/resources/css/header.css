@@ -97,7 +97,7 @@ a h1:hover::after {
   size: 2.5rem;
 }
 
-nav>a[href="list"]:hover+span,
+nav>a[href="/notice/list"]:hover+span,
 nav>span:hover {
   display: block;
 }

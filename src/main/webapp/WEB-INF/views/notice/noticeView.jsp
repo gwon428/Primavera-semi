@@ -33,6 +33,7 @@
 			</head>
 
 			<body>
+			<sec:authentication property="principal" var="user" />
 				<div class="header-blackbox"></div>
 				<header>
 					<nav>
@@ -59,7 +60,7 @@
 								<div class="form-group" id="usercontext">
 									<label>content : </label>
 									<textarea class="form-control" cols="1000" row="100" name="content"
-										style="resize: none" id="content_input">${vo.content}</textarea>
+										style="resize: none" id="content_input" readonly>${vo.content}</textarea>
 								</div>
 								<a href="/notice/list">목록으로</a>
 							</form>
@@ -97,9 +98,8 @@
 									</div>
 								</form>
 							</div>
-							</c:when>
-
-							<c:otherwise>
+							</c:if>
+							
 								<div class="container2">
 									<h1>Notice</h1>
 									<form action="updateNotice" method="post" enctype="multipart/form-data">

@@ -39,8 +39,8 @@
 <h1>${finder.name}님의 아이디는 <span>${user.id}</span>입니다. </h1>
 <input type="hidden" name="id" value="${user.id}"/>
 <div id="menu">
-<a href="findIdlogin?id=${user.id}" id="href">이 아이디로 로그인</a>
-<a href="changePwd?id=${user.id}" id="href">이 아이디로 비밀번호 재설정</a>
+<a href="findIdlogin?id=${user.id}" id="href">해당 아이디로 로그인</a>
+<a href="changePwd?id=${user.id}" id="href">해당 아이디로 비밀번호 재설정</a>
 </div>
 </main>
 </body>

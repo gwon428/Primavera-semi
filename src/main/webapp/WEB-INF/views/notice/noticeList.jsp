@@ -24,7 +24,7 @@
 						<a href="/mainMap">Store</a>
 						<a href="#">Guide</a>
 						<a href="/collectPage">PickUp</a>
-						<a href="#">Board</a>
+						<a href="/notice/list">Board</a>
 						<span>
 							<a href="/review/list">Review</a>
 							<a href="/listQna">Q & A</a>

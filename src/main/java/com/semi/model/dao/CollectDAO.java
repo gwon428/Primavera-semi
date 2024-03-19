@@ -30,7 +30,6 @@ public class CollectDAO {
 	}
 	
 	public List<Collect> showorderby(Paging paging){
-		System.out.println("DAO " + paging.getSort());
 		return session.selectList("collectMapper.showAllCollectorderby", paging);
 	}
 	

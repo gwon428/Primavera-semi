@@ -72,7 +72,7 @@
 			</nav>
 			<nav>
 				<a href="/map/mainMap">Store</a> <a href="#">Guide</a> <a href="collectPage">PickUp</a> <a
-					href="list">Board</a> <span>
+					href="/notice/list">Board</a> <span>
 					<a href="/review/list">Review</a> <a href="listQna">Q & A</a> <a href="/notice/list">Notice</a>
 				</span> <a href="myPage"><i class="fa-regular fa-user"></i></a>
 			</nav>
@@ -102,18 +102,23 @@
 					<div class="carousel-inner">
 						<div class="carousel-item active" id="container3">
 							<h1>Company_introduce</h1>
-							<p class="text1">"Primavera"는 이탈리아어로 "진정한 봄"으로 새로운 생명의 시작과 자연의 활기를 가지는 의미가지며
-								기후변화와 지구 온난화로 인한 피해를 줄일수 있는 방법을 모색하다.
+							<p class="text1">'Primavera'는 '진정한 봄'이라는 뜻의 이탈리아어로 새로운 생명의 시작과 자연의 활기를 뜻합니다
 								<br><br>
-								탄소 배출량을 줄일수있는 폐의류를 재사용하는
-								업사이클링을 시작하게 되었다 현 시점의 환경과 자연을 원모습을 되찾기위해 우리는 지금도 걷고있다
+								저희 'Primavaera'는 심각한 지구 온난화와 기후 변화로 인한 피해를 줄이고자
+								탄소 배출량을 줄일 수 있는 폐의류 업사이클링을 통해
+								환경과 자연의 피해를 줄이고 이들의 원래 모습을 되찾기 위한 길을 걷고 있습니다
 							</p>
 							<img src="../resources/images/front_img.jpg" class="" alt="...">
 						</div>
 						<div class="carousel-item" id="container3">
 							<h1>Work_introduce</h1>
-							<p>일상이나 기업에서 버려지는 폐의류를 수거하여 분류한뒤 재사용가능한 의류들의 섬유들을 추출하여 새로운 의류를
-								만들며 추출이 불가능한 의류들은 업사이클링 제품으로 재탄생시켜 오프라인 매장에 판매중이다.</p>
+							<p>업사이클링이란 기존에 버려지는 제품을 새로운 제품으로 재탄생시켜 새로운 가치를 부여하는 작업을 의미합니다.
+							<br><br>
+							'Primavera'는
+							일상이나 기업에서 버려지는 폐의류를 수거하여 분류한 뒤
+							이들을 새로운 제품으로 만들어 새로운 가치를 부여하고
+							오프라인 매장에 판매함으로써 환경과 시장경제에 이바지하고 있습니다
+							</p>
 							<img src="../resources/images/Work_introduce.jpg" class="" alt="...">
 						</div>
 					</div>
@@ -131,7 +136,7 @@
 			</section>
 			<section id="section3">
 				<div class="container1">
-					<h1>User_Guid</h1>
+					<h1>User_Guide</h1>
 					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
 						Architecto modi a deleniti commodi, eligendi, unde, molestias saepe
 						quas minima cupiditate nam. Veritatis officia a magni sequi itaque
@@ -144,8 +149,7 @@
 					<div class="container-blackbox"></div>
 					<h1>Map</h1>
 					<a href="#"><img src="../../resources/images/서울지도 최종본 section3.jpg" alt=""></a>
-					<li>The service area is all over Seoul. For more information,
-						click the map~~</li>
+					<li>The service area is all over Seoul.</li>
 				</div>
 				<div class="Floor">
 					<p>Details of user</p>
@@ -160,17 +164,16 @@
 						<p>커뮤니티에 가입하여 더 많은 최신정보들과 유저들간의 소통을 원한다면</p>
 					</div>
 					<div>
-						<a href="myPage">Login</a> <a href="#">Join Membership</a>
+						<a href="myPage">Login</a> <a href="register">Join Membership</a>
 					</div>
 				</div>
 				<div class="line2"></div>
 				<footer>
-					<p class="title">Primavery</p>
+					<p class="title">Primavera</p>
 					<div class="left">
 						<h5>Let's change the environment</h5>
-						<h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-							Eligendi quis laudantium consequuntur, aspernatur magnam alias nam
-							doloremque sed quas consequatur quos, nostrum labore tempore esse
+						<h4>새로운 생명의 시작과 자연의 활기<br>
+							the beginning of a new life and the exuberance of nature
 						</h4>
 						<p>저희 회사는 서울에 등록된 회사입니다(번호 CSEZ421153)</p>
 						<h1>© 2024</h1>

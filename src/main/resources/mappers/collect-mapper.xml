@@ -35,8 +35,8 @@
 		SELECT order_num, id, name, phone, post_code, road_address, 
 		detail_address, collection_date, door_pwd, request, kg 
 		FROM collect
-		<if test="sort != 0">
-			ORDER BY #{sort}
+		<if test="sorts != 0">
+			ORDER BY #{sorts}
 		</if>
 		LIMIT #{offset}, #{limit}
 	</select>

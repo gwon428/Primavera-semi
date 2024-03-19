@@ -35,7 +35,6 @@ public class CollectService {
 	}
 	
 	public List<Collect> showorderby(Paging paging){
-		System.out.println("collect " + paging.getSort());
 		paging.setOffset(paging.getLimit() * (paging.getPage()-1));
 		return dao.showorderby(paging); 
 	}

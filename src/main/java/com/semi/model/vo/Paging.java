@@ -18,7 +18,7 @@ public class Paging {
 	private int startPage;
 	private int total;
 	
-	private int sort;
+	private int sorts;
 
 	private boolean prev;
 	private boolean next;

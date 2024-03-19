@@ -51,7 +51,7 @@
 			<div>
 				<h2>전체 수거 신청 정보 보기</h2>
 				
-				<select name="sort" id="sort">
+				<select name="sorts" id="sorts">
 					<option value="1">주문번호 순</option>
 					<option value="3" <c:if test="${param.sort == '3'}">selected</c:if>>이름 순</option>
 					<option value="8" <c:if test="${param.sort == '8'}">selected</c:if>>수거일 순</option>
@@ -132,9 +132,9 @@
 				
 				</main>
 			<script>					
-				$("#sort").change(() => {
-					var sort = $('#sort option:selected').val();
-					location.href="/showAllCollect?sort="+sort;
+				$("#sorts").change(() => {
+					var sort = $('#sorts option:selected').val();
+					location.href="/showAllCollect?sorts="+sort;
 				});
 				
 			</script>
