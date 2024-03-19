@@ -5,7 +5,13 @@
   font-weight: normal;
   font-style: italic;
 }
-
+@font-face {
+	font-family: "Cafe24Oneprettynight";
+	src:
+		url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff")
+		format("woff");
+	font-style: normal;
+}
 body {
   width: 100%;
 }
@@ -37,13 +43,13 @@ body {
 
 h2 {
   position: absolute;
-  top: 460px;
-  left: 35px;
-  font-size: 4rem;
-  font-style: italic;
-  color: white;
-  margin-left: 40px;
-  animation : slide 1.8s;
+    top: 460px;
+    left: 35px;
+    font-size: 5rem;
+    color: white;
+    margin-left: 40px;
+    animation: slide 1.8s;
+    font-family: "Cafe24Oneprettynight";
 }
 
 @keyframes slide {

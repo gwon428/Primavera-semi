@@ -149,7 +149,7 @@ textarea#request {
   margin-bottom: 3px;
 }
 
-.btn_open {
+#agree_text .btn_open {
   font-weight: 700;
   text-decoration-line: underline;
 }

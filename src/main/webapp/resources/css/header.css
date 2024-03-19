@@ -1,3 +1,11 @@
+@font-face {
+	font-family: "Cafe24Oneprettynight";
+	src:
+		url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff")
+		format("woff");
+	font-style: normal;
+}
+
 header {
   position: fixed;
   width: 100%;
@@ -11,7 +19,7 @@ header {
 
 header a {
   color: white;
-  font-style: italic;
+  font-family: "Cafe24Oneprettynight";
 }
 
 header nav:nth-child(1) {
@@ -29,7 +37,7 @@ header nav:nth-child(2) a {
   font-size: 1.5rem;
 }
 
-nav>a[href="list"]:hover+span,
+nav>a[href="/notice/list"]:hover+span,
 nav>span:hover {
   display: block;
 }

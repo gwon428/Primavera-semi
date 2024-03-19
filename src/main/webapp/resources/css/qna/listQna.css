@@ -33,11 +33,11 @@ h2 {
 	position: absolute;
 	top: 460px;
 	left: 35px;
-	font-size: 4rem;
-	font-style: italic;
+	font-size: 5rem;
 	color: white;
 	margin-left: 40px;
 	animation: slide 1.8s;
+	font-family: "Cafe24Oneprettynight";
 }
 
 @keyframes slide {
