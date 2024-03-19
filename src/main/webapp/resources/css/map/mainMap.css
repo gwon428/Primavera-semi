@@ -1,25 +1,62 @@
-.word .h1 {
-    position: absolute;
-    top: 460px;
-    left: 35px;
-    font-size: 4rem;
-    font-style: italic;
-    color: white;
-    margin-left: 40px;
-    animation: slide 1.8s;
+@font-face {
+	font-family: "Cafe24Oneprettynight";
+	src:
+		url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff")
+		format("woff");
+	font-style: normal;
 }
 
-@keyframes slide {
-    from { left: -300px; }
-    to { left: 35px; }
+
+.word .h1 {
+	position: absolute;
+	top: 460px;
+	left: 35px;
+	font-size: 5rem;
+	font-family: "Cafe24Oneprettynight";
+	color: white;
+	margin-left: 40px;
+	animation: slide 1.8s;
+}
+
+@keyframes slide {from { left:-300px;
+	
+}
+
+to {
+	left: 35px;
+}
+
+}
+header a {
+	color: white;
+	font-family: "Cafe24Oneprettynight";
+}
+
+header nav:nth-child(1) {
+	margin-left: 50px;
+	font-size: 2.5rem;
+	font-weight: lighter;
+}
+
+header nav:nth-child(2) {
+	padding: 30px;
+}
+
+header nav:nth-child(2) a {
+	padding: 20px;
+	font-size: 1.5rem;
+}
+
+nav>a[href="/notice/list"]:hover+span, nav>span:hover {
+	display: block;
 }
 
 .container {
-    padding-top: 20vh;
+	padding-top: 20vh;
 }
 
 body, #neck, .cover, .map {
-    width: 100%;
+	width: 100%;
 }
 
 .main {
@@ -28,90 +65,89 @@ body, #neck, .cover, .map {
 }
 
 #neck {
-    background-image: url(../../../resources/images/storebackground.jpg);
-    background-size: cover;
-    background-position: center;
-    height: 85vh;
-    margin-bottom: 50px;
+	background-image: url(../../../resources/images/storebackground.jpg);
+	background-size: cover;
+	background-position: center;
+	height: 85vh;
+	margin-bottom: 50px;
 }
 
 .cover {
-    height: 100%;
-    background-color: rgba(50, 36, 30, 0.6);
+	height: 100%;
+	background-color: rgba(50, 36, 30, 0.6);
 }
 
 .image-text-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-left: 500px;
-    margin-top: 20vh;   
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	margin-left: 500px;
+	margin-top: 20vh;
 }
 
 .image-text-wrapper {
-    display: flex;
-    align-items: center;
-    margin-bottom: 50px;
+	display: flex;
+	align-items: center;
+	margin-bottom: 50px;
 }
 
 .image-text-wrapper img {
-    width: 300px;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 15px;
-    box-shadow: 0 0 10px #999;    
+	width: 300px;
+	height: 300px;
+	object-fit: cover;
+	border-radius: 15px;
+	box-shadow: 0 0 10px #999;
 }
 
 .text-section {
-    max-width: 400px;
-    margin-left: 50px;    
+	max-width: 400px;
+	margin-left: 50px;
 }
 
 /* 이미지 슬라이드 부분 */
-@keyframes slideIn {
-    from {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
+@
+keyframes slideIn {from { transform:translateX(-100%);
+	opacity: 0;
 }
 
+to {
+	transform: translateX(0);
+	opacity: 1;
+}
+
+}
 .image-text-wrapper {
-    opacity: 0;
-    transform: translateX(-100%);
+	opacity: 0;
+	transform: translateX(-100%);
 }
 
 .image-text-wrapper.animate {
-    animation: slideIn 2s ease-out forwards;
+	animation: slideIn 2s ease-out forwards;
 }
 
 #map {
-    margin: 50px auto;
-    width: 800px;
-    height: 600px;
-    border-radius: 15px;   
-    padding: 15px;
-    box-shadow: 0 0 10px #999;       
+	margin: 50px auto;
+	width: 800px;
+	height: 600px;
+	border-radius: 15px;
+	padding: 15px;
+	box-shadow: 0 0 10px #999;
 }
 
 /* 맵 슬라이드 부분 */
-
-@keyframes slideUp {
-    from {
-        transform: translateY(100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
+@
+keyframes slideUp {from { transform:translateY(100%);
+	opacity: 0;
 }
 
+to {
+	transform: translateY(0);
+	opacity: 1;
+}
+
+}
 #map.animate {
-    animation: slideUp 2s ease-out forwards;
+	animation: slideUp 2s ease-out forwards;
 }
 
 .wrap {
@@ -124,7 +160,7 @@ body, #neck, .cover, .map {
 	text-align: left;
 	overflow: hidden;
 	font-size: 12px;
-	font-style: italic;
+	font-family: "Cafe24Oneprettynight";
 	line-height: 1.5;
 }
 

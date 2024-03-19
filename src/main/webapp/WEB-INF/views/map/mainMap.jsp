@@ -11,14 +11,11 @@
 <title>지도</title>
 <link rel="stylesheet" href="../../../resources/css/reset.css" />
 <link rel="stylesheet" href="../../../resources/css/header.css" />
-<link href="../../resources/css/map/mainMap.css" rel="stylesheet"
-	type="text/css">
-
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<link rel="stylesheet" href="../../../resources/css/map/mainMap.css" />
 <script src="https://kit.fontawesome.com/4602e82315.js"
 	crossorigin="anonymous"></script>
 </head>
+
 <body class="main">
 	<main>
 		<header>
@@ -27,8 +24,8 @@
 			</nav>
 			<nav>
 				<a href="/map/mainMap">Store</a> <a href="#">Guide</a> <a
-					href="/collectPage">PickUp</a> <a href="/list">Board</a> <span>
-					<a href="/review/list">Review</a> <a href="listQna">Q & A</a> <a
+					href="/collectPage">PickUp</a> <a href="list">Board</a> <span>
+					<a href="/review/list">Review</a> <a href="/listQna">Q & A</a> <a
 					href="/notice/list">Notice</a>
 				</span> <a href="/myPage"><i class="fa-regular fa-user"></i></a>
 			</nav>
