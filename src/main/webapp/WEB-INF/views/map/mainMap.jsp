@@ -23,15 +23,15 @@
 	<main>
 		<header>
 			<nav>
-			<a href="/">Primavera</a>
-		</nav>
-		<nav>
-			<a href="/map/mainMap">Store</a> <a href="#">Guide</a> <a
-				href="/collectPage">PickUp</a> <a href="/list">Board</a> <span>
-				<a href="/review/list">Review</a> <a href="listQna">Q & A</a> <a
-				href="/notice/list">Notice</a>
-			</span> <a href="/myPage"><i class="fa-regular fa-user"></i></a>
-		</nav>
+				<a href="/">Primavera</a>
+			</nav>
+			<nav>
+				<a href="/map/mainMap">Store</a> <a href="#">Guide</a> <a
+					href="/collectPage">PickUp</a> <a href="/list">Board</a> <span>
+					<a href="/review/list">Review</a> <a href="listQna">Q & A</a> <a
+					href="/notice/list">Notice</a>
+				</span> <a href="/myPage"><i class="fa-regular fa-user"></i></a>
+			</nav>
 		</header>
 
 		<div class="word">
@@ -77,6 +77,7 @@
 
 		<div id="map" style="width: 800px; height: 600px;"></div>
 
+
 		<script type="text/javascript"
 			src="//dapi.kakao.com/v2/maps/sdk.js?appkey=04b7f22e5edf17d8f2ce411e6eb1f006"></script>
 		<script>
@@ -99,7 +100,7 @@
 					+ '           </div>'
 					+ '            <div class="desc">'
 					+ '                <div class="ellipsis">서울특별시 송파구 첨단로 242</div>'
-					+ '                <div class="jibun ellipsis">(우) 63309 (지번) 영평동 2181</div>'
+					+ '                <div class="ellipsis"><a href="https://map.kakao.com/link/to/프리마베라 1호점,37.49781, 127.13338" target="_blank">1호점 가는길</a></div>'
 					+ '                <div>070-1312-1454</div>'
 					+ '            </div>' + '        </div>' + '    </div>'
 					+ '</div>' },
@@ -115,7 +116,7 @@
 					+ '           </div>'
 					+ '            <div class="desc">'
 					+ '                <div class="ellipsis">서울특별시 동대문구 첨단로 242</div>'
-					+ '                <div class="jibun ellipsis">(우) 63309 (지번) 영평동 2181</div>'
+					+ '                <div class="ellipsis"><a href="https://map.kakao.com/link/to/프리마베라 2호점,37.574524, 127.03965" target="_blank">2호점 가는길</a></div>'
 					+ '                <div>070-1712-3764</div>'
 					+ '            </div>' + '        </div>' + '    </div>'
 					+ '</div>' },
@@ -131,7 +132,7 @@
 					+ '           </div>'
 					+ '            <div class="desc">'
 					+ '                <div class="ellipsis">서울특별시 구로구 첨단로 242</div>'
-					+ '                <div class="jibun ellipsis">(우) 63309 (지번) 영평동 2181</div>'
+					+ '                <div class="ellipsis"><a href="https://map.kakao.com/link/to/프리마베라 3호점,37.495472, 126.887536" target="_blank">3호점 가는길</a></div>'
 					+ '                <div>070-4512-1214</div>'
 					+ '            </div>' + '        </div>' + '    </div>'
 					+ '</div>' }
@@ -153,14 +154,21 @@
 			        	overlay.setMap(map);			        	
 			        });
 			        
-			        daum.maps.event.addListener(marker, 'mouseout', function() {
-			            overlay.setMap(null);
-			        });
+			     /* 	daum.maps.event.addListener(marker, 'mouseout', function() {
+			     		overlay.setMap(null);
+			        }); */
 			    });
 			    function closeOverlay(overlay) {
 			        overlay.setMap(null);
 			    }
-	</script>		
+				 // 지도에 확대 축소 컨트롤을 생성한다
+				var zoomControl = new kakao.maps.ZoomControl();
+
+				// 지도의 우측에 확대 축소 컨트롤을 추가한다
+				map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
+			
+			    
+	</script>
 
 		<script>
 			document.addEventListener("DOMContentLoaded", function() {
@@ -180,8 +188,8 @@
 			    observer.observe(mapElement);
 			});
 		</script>
-		
-		
+
+
 	</main>
 </body>
 </html>

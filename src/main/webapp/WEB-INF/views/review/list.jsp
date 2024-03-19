@@ -37,14 +37,43 @@
 		<section id="neck">
 			<div class="cover"></div>
 		</section>
+
 		<div class="container">
 			<div class="header">
 				<div class="cover"></div>
 				<h1>REVIEW</h1>
-				<c:if test="${isLoggedIn}">
-					<a href="/review/write" id="writebtn">리뷰 작성</a>
-				</c:if>
-
+				<div class="controls">
+					<div class="sort-dropdown">
+						<form action="/review/list" method="get">
+							<select name="sort" onchange="this.form.submit()">
+								<option value="dateDesc"
+									${paging.sort == 'dateDesc' ? 'selected' : ''}>최신순</option>
+								<option value="ratingDesc"
+									${paging.sort == 'ratingDesc' ? 'selected' : ''}>별점 높은
+									순</option>
+								<option value="ratingAsc"
+									${paging.sort == 'ratingAsc' ? 'selected' : ''}>별점 낮은
+									순</option>
+							</select>
+						</form>
+					</div>
+					<div class="search-ui">
+						<form action="/review/list" method="get">
+							<select name="searchType">
+								<option value="author">작성자</option>
+								<option value="title">제목</option>
+								<option value="content">내용</option>
+								<option value="titleContent">제목 OR 내용</option>
+							</select> <input type="text" name="searchKeyword" placeholder="검색어를 입력하세요">
+							<button type="submit" id="searchbtn">검색</button>
+						</form>
+					</div>
+					<c:if test="${isLoggedIn}">
+						<div class="write-button">
+							<a href="/review/write" id="writebtn">리뷰 작성</a>
+						</div>
+					</c:if>
+				</div>
 			</div>
 			<table class="table">
 				<thead>
@@ -94,7 +123,8 @@
 					<c:forEach begin="${paging.startPage}" end="${paging.endPage}"
 						var="page">
 						<li class="page-item ${paging.page == page ? 'active' : ''}">
-							<a class="page-link" href="/review/list?page=${page}">${page}</a>
+							<a class="page-link"
+							href="/review/list?page=${page}&sort=${paging.sort}">${page}</a>
 						</li>
 					</c:forEach>
 					<li class="page-item ${paging.next ? '' : 'disabled'}"><a

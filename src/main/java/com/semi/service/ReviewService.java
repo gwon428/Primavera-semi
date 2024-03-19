@@ -33,12 +33,12 @@ public class ReviewService {
 		return dao.deletereview(no);
 	}
 
-	public List<Review> selectPage(Paging paging) {
-		paging.setOffset(paging.getLimit() * (paging.getPage() - 1));
-		return dao.selectPage(paging);
-	}
+	public List<Review> selectPage(Paging paging, String searchType, String searchKeyword) {
+        paging.setOffset(paging.getLimit() * (paging.getPage() - 1));
+        return dao.selectPage(paging, searchType, searchKeyword);
+    }
 
-	public int total() {
-		return dao.total();
-	}
+    public int total(String searchType, String searchKeyword) {
+        return dao.total(searchType, searchKeyword);
+    }
 }

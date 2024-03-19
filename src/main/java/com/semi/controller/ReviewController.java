@@ -32,7 +32,7 @@ public class ReviewController {
 	@GetMapping("/review/write")
 	public void write() {
 	}
-	
+
 	@PostMapping("/review/write")
 	public String write(Review b) throws IllegalStateException, IOException {
 
@@ -56,21 +56,21 @@ public class ReviewController {
 	}
 
 	@GetMapping("/review/list")
-	public String list(Model model, @RequestParam(value = "page", defaultValue = "1") int page) {
-		// 총 게시물 수 조회
-		int total = service.total();
-
-		// Paging 객체 생성 시 총 게시물 수를 함께 전달
+	public String list(Model model, @RequestParam(value = "page", defaultValue = "1") int page,
+			@RequestParam(value = "sort", defaultValue = "dateDesc") String sort,
+			@RequestParam(value = "searchType", required = false) String searchType,
+			@RequestParam(value = "searchKeyword", required = false) String searchKeyword) {
+		// 검색 조건 반영한 총 게시물 수 계산
+		int total = service.total(searchType, searchKeyword);
 		Paging paging = new Paging(page, total);
+		paging.setSort(sort);
 
-		// 페이징 처리된 게시물 목록 조회
-		List<Review> boardList = service.selectPage(paging);
+		// 검색 조건을 포함해 서비스 계층에 전달
+		List<Review> boardList = service.selectPage(paging, searchType, searchKeyword);
 		model.addAttribute("list", boardList);
-
-		// 모델에 Paging 객체 추가
 		model.addAttribute("paging", paging);
 
-		// 로그인 상태 확인 후 모델에 추가
+		// 로그인 상태 확인
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		boolean isLoggedIn = authentication != null && authentication.isAuthenticated()
 				&& !(authentication instanceof AnonymousAuthenticationToken);
