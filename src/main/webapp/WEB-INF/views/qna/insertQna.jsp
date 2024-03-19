@@ -21,9 +21,17 @@
 			<a href="index.jsp">Primavera</a>
 		</nav>
 		<nav>
-			<a href="#">Store</a> <a href="#">Guid</a> <a href="collectPage">PickUp</a>
-			<a href="/review/list">Board</a> <a href="myPage"><i
-				class="fa-regular fa-user" id="mypage"></i></a>
+			<a href="/map/mainMap">Store</a>
+			<a href="#">Guide</a>
+			<a href="collectPage">PickUp</a>
+			<a href="list">Board</a>
+		<span>
+			<a href="/review/list">Review</a>
+			<a href="listQna">Q & A</a>
+			<a href="notice/list">Notice</a>
+		</span>
+							
+			<a href="myPage"><i class="fa-regular fa-user" id="mypage"></i></a>
 		</nav>
 	</header>
 

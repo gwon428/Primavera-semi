@@ -6,10 +6,8 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="../../../resources/css/agree.css" /> 
-
 </head>
 <body>
-<!-- <div class="modal policy" tabindex="-1"> -->
 
 <div class="in">
 
@@ -205,7 +203,6 @@
 </div>
 </div>
 </div>
-<!-- </div> -->
 	
 </body>
 </html>

@@ -59,7 +59,7 @@ public class QnaAnswerController {
 			qnaAnswer.setUrl(url);
 		}
 		service.insertQnaAnswer(qnaAnswer);
-		service.updateStatus(qnaAnswer.getId());
+		service.updateStatus(qnaAnswer.getQnaNum());
 		return "redirect:/viewQna?qnaNum="+qnaAnswer.getQnaNum();
 	}
 	
@@ -119,6 +119,7 @@ public class QnaAnswerController {
 			
 			// 삭제
 			service.deleteQnaAnswer(parsingNo);
+			service.updateStatusDelete(parsingNo);
 			return "redirect:/viewQna?qnaNum="+qnaAnswer.getQnaNum();
 		} 
 	  

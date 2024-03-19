@@ -33,7 +33,12 @@ public class QnaAnswerDAO {
 	}
 	
 	// updateStatus
-	public int updateStatus(String id) {
-		return session.update("qnaAnswerMapper.updateStatus", id);
+	public int updateStatus(int qnaNum) {
+		return session.update("qnaAnswerMapper.updateStatus", qnaNum);
+	}
+	
+	// updateStatusDelete
+	public int updateStatusDelete(int qnaNum) {
+		return session.update("qnaAnswerMapper.updateStatusDelete", qnaNum);
 	}
 }

@@ -19,6 +19,7 @@
 <script src="https://kit.fontawesome.com/4602e82315.js"
 	crossorigin="anonymous"></script>
 <title>Document</title>
+
 </head>
 <body>
 	<div class="header-blackbox"></div>
@@ -149,7 +150,7 @@
 						<h2>Personal Information Management Officer : 정 손 김</h2>
 						<h2>본사&스토어주소 : 서울 강남구 테헤란로14길 6</h2>
 						<div>
-							<a href="">이용약관</a> <a href="">개인정보처리방침</a>
+							<a href="#pop_info_1" class="btn_open">이용약관</a> <a href="#pop_info_2" class="btn_open">개인정보처리방침</a>
 						</div>
 						<img
 							src="https://assets-global.website-files.com/6477332607fa08930fe00261/6477570d55c46a6f4957b3ef_app%20store.svg"
@@ -157,7 +158,9 @@
 					</div>
 			</footer>
 		</section>
+		
 	</main>
 	<script src="/resources/js/front.js"></script>
+	
 </body>
 </html>

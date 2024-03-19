@@ -19,16 +19,46 @@
 	</insert>
 	
 	<!-- selectAll -->
-	<select id="showAllQna" parameterType="PagingQna" resultMap="qnaMap">
+	<select id="showAllQna" parameterType="Paging" resultMap="qnaMap">
 		SELECT qna_num, title, id, write_date, status, secret
 		FROM qna
+		
+		<where>
+			<choose>
+				<when test="select == 'allFind'">
+					title LIKE CONCAT('%',#{keyword},'%') 
+				OR id LIKE CONCAT('%',#{keyword},'%')
+				</when>
+				<when test="select == 'titleFind'">
+					title LIKE CONCAT('%',#{keyword},'%')
+				</when>
+				<when test="select == 'idFind'">
+					id LIKE CONCAT('%',#{keyword},'%')
+				</when>
+			</choose>
+		</where>
+		
 		ORDER BY qna_num DESC
 		LIMIT #{offset}, #{limit}
 	</select>
 	
 	<!-- selectCount -->
-	<select id="countQna" resultType="int">
+	<select id="countQna" parameterType="Paging" resultType="int">
 		SELECT count(*) FROM qna
+		<where>
+			<choose>
+				<when test="select == 'allFind'">
+					title LIKE CONCAT('%',#{keyword},'%') 
+				OR id LIKE CONCAT('%',#{keyword},'%')
+				</when>
+				<when test="select == 'titleFind'">
+					title LIKE CONCAT('%',#{keyword},'%')
+				</when>
+				<when test="select == 'idFind'">
+					id LIKE CONCAT('%',#{keyword},'%')
+				</when>
+			</choose>
+		</where>
 	</select>
 	
 	<!--  select : 한 개의 게시물 누르면 정보 보기 -->
@@ -82,5 +112,25 @@
 		WHERE status='N'
 	</select>
 	
+	<!-- searchQna -->
+	<select id="searchQna" parameterType="SearchQnaDTO" resultMap="qnaMap">
+		SELECT *
+		FROM qna
+		<where>
+			<choose>
+				<when test="select == 'allFind'">
+					title LIKE CONCAT('%',#{keyword},'%') 
+				OR id LIKE CONCAT('%',#{keyword},'%')
+				</when>
+				<when test="select == 'titleFind'">
+					title LIKE CONCAT('%',#{keyword},'%')
+				</when>
+				<when test="select == 'idFind'">
+					id LIKE CONCAT('%',#{keyword},'%')
+				</when>
+			</choose>
+		</where>
+		ORDER BY qna_num DESC
+	</select>
 	
 </mapper>
