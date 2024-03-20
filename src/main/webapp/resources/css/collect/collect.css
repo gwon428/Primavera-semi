@@ -60,7 +60,7 @@ h2 {
     left: 35px;
   }
 }
-
+/* ------------------------ 메인 -----------------------------*/
 #main {
   height: 100vh;
   display: flex;
@@ -91,9 +91,12 @@ h2 {
   display: grid;
   justify-content: center;
   align-items: center;
+  width : 70%;
   overflow: hidden;
   margin: 0 20px;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  /*grid-template-columns: 1fr 1fr 1fr 1fr;*/
+  grid-auto-columns: 35%;
+  grid-auto-flow: column;
 }
 
 i {
@@ -108,24 +111,26 @@ i {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transform: translateX(0px);
-  transition: 2s;
+  transform: translateX(170px);
+  transition: 4s;
   margin: 0 20px;
 }
 
 .image-content.header-main-bottom-right {
-  transform: translateX(-100px);
+  transform: translateX(-260px);
 }
 
 img {
   height: 400px;
   width: 400px;
   padding-bottom: 20px;
+  border-radius : 3px;
 }
 
 .card-body {
   display: flex;
   justify-content: center;
+  height: 33px;
 }
 
 p {
