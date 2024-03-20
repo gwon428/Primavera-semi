@@ -57,8 +57,16 @@ public class UserService implements UserDetailsService{
 	}
 	
 	public int updateUser(User user) {
+		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		User userDetails = (User)principal;
+		
 		String inputPw = bcpe.encode(user.getPassword());
 		user.setPassword(inputPw);
+		
+		userDetails.setName(user.getName());
+		userDetails.setPhone(user.getPhone());
+		userDetails.setEmail(user.getEmail());
+		
 		return dao.updateUser(user);
 	}
 

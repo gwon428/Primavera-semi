@@ -76,25 +76,56 @@ input {
 
 #input{
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
+	text-align: center;
+}
+
+#reg {
+	display: flex;
+	flex-direction: column;
 }
 
 #input span{
-	width: 100px;
+	height: 25px;
+	width: 360px;
 	margin-top: 3px;
 	font-size: 1rem;
-	background-color: pink;
-}
-
-#input span{
 	margin-left: 10px;
-	width: 200px;
+	font-size: 1rem;
 }
 
 #updateButton{
 	margin: 0 auto;
+	font-family: "Cafe24Oneprettynight";
+	font-weight: bolder;
+	border-radius: 10px;
+    border: 0.7px solid rgba(0, 0, 0, 0.3);
+     background-color: rgba(365, 365, 365, 0.7);
+    height: 40px;
+    margin-top: 20px;
+}
+
+#updateButton:hover{
+	outline: 0.7px solid rgba(77, 107, 83, 0.8);
+	background-color: rgba(44, 61, 47, 0.5);
+	color: white;
+	font-weight: bolder;
 }
 
 input[type=password] {
 	font-family:'Malgun gothic', dotum, sans-serif;}
+}
+
+#pwdreg{
+	width: 350px;
+}
+
+div p {
+	color: black;
+	font-size: 1.2rem;
+	padding-bottom: 5px;
+}
+
+[id^="result"]{
+	font-size: 1rem;
 }

@@ -137,12 +137,13 @@
 			<section id="section3">
 				<div class="container1">
 					<h1>User_Guide</h1>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-						Architecto modi a deleniti commodi, eligendi, unde, molestias saepe
-						quas minima cupiditate nam. Veritatis officia a magni sequi itaque
-						quibusdam, consectetur minus? Lorem ipsum dolor sit amet
-						consectetur, adipisicing elit. Dolor, culpa dicta exercitationem
-						nobis enim quo perferendis non libero incidunt ad, aspernatur</p>
+					<p>지속 가능한 옷은 이미 옷장에 있는 옷입니다. <br>
+
+
+프리마베라는 버려지는 의류에 새로운 가치를 부여합니다. <br><br>
+Sustainable clothes are clothes you already have in your closet.
+Primavera gives new value to discarded clothing.
+					</p>
 					<a href="#"> > You want more details, don't you?</a>
 				</div>
 				<div class="container2">

@@ -33,38 +33,44 @@
 				
 					<h1>회원 정보 수정</h1>
 					<form action="updateUser" method="post" onsubmit="return validate()">
-							<h2> 기본 정보 </h2>
 							<div id="input">
-								<p> 아이디 </p> <span>${user.id}</span>
-								<input type="hidden" name="id" value="${user.id}">
+								<div>
+								<p style="margin-bottom:10px;"> 아이디 </p>
+								<input type="text" name="id" value="${user.id}" readonly>
+								</div>
+								<span>&nbsp;</span>
 							</div>
 							
 							<div id="input">
 								<div>
 									<p>비밀번호</p>
-									<input type="password" name="password" id="userPwd" value="${pwd}">
+									<input type="password" name="password" id="userPwd" value="${pwd}" required>
 								</div>
-								<span id="pwdreg">&nbsp;</span>
+								<div id="reg">
+								<span id="pwdreg" style="width:360px;">&nbsp;</span>
+								</div>
 							</div>
 							
 							<div id="input">
+								<div>
 								<p>이름 </p>
-								<input type="text" name="name" id="userName" value="${user.name}">
+								<input type="text" name="name" id="userName" value="${user.name}" required>
+								</div>
 								<span id="namereg">&nbsp;</span>
 							</div>
 							
 							<div id="input">
 								<div>
-									<p>휴대폰 번호 </p><span id="phoneCheckresult"> &nbsp;</span>
-									<input type="text" name="phone" id="userPhone" value="${user.phone}">
+									<p>휴대폰 번호 </p><p id="phoneCheckresult" style="font-size: 1rem;"> &nbsp;</p>
+									<input type="text" name="phone" id="userPhone" value="${user.phone}" required>
 								</div>
 								<span id="phonereg">&nbsp;</span>
 							</div>
 							
 							<div id="input">	
 								<div>
-									<p>이메일 </p><span id="emailCheckresult"> &nbsp;</span>
-									<input type="text" name="email" id="email" value="${user.email}">
+									<p>이메일 </p> <p id="emailCheckresult" style="font-size: 1rem;"> &nbsp;</p> 
+									<input type="text" name="email" id="email" value="${user.email}" required>
 								</div>
 								<span id="emailreg">&nbsp;</span>
 							</div>

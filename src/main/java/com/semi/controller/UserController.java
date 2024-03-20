@@ -88,6 +88,66 @@ public class UserController {
 	}
 	
 	@ResponseBody
+	@PostMapping("/editphone")
+	public int editphone(String phone) {
+		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		User user = (User)principal;
+		
+		User editphone = service.phoneCheck(phone);
+		
+		boolean check = false;
+		
+		if(editphone!=null) {
+			// 누군가의 전화번호인 경우
+			check = user.getPhone().equals(editphone.getPhone());
+		} else {
+			check = false;
+		}
+		
+		if(check) {
+			// 본인 번호일 때
+			return 2;
+		} else if(editphone == null) {
+			// 본인 번호가 아니고, 기존 사용자의 번호도 아닐 때
+			// 사용 가능할 때
+				return 1;
+		}
+		
+		return 3;
+	}
+	
+	@ResponseBody
+	@PostMapping("/editemail")
+	public int editemail(String email) {
+		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		User user = (User)principal;
+		
+		User editemail = service.emailCheck(email);
+		
+		boolean check = false;
+		
+		if(editemail!=null) {
+			// 누군가의 전화번호인 경우
+			check = user.getEmail().equals(editemail.getEmail());
+		} else {
+			check = false;
+		}
+		
+		if(check) {
+			// 본인 번호일 때
+			return 2;
+		} else if(editemail == null) {
+			// 본인 번호가 아니고, 기존 사용자의 번호도 아닐 때
+			// 사용 가능할 때
+			return 1;
+		}
+		
+		return 3;
+	}
+	
+
+	
+	@ResponseBody
 	@PostMapping("/checkUser")
 	public boolean checkUser(User user) {
 		
@@ -113,11 +173,12 @@ public class UserController {
 	public String updateCheck(String password, Model model) {
 		
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-		UserDetails userDetails = (UserDetails)principal;
+		User userDetails = (User)principal;
 		
 		model.addAttribute("pwd", password);
 		
 		if(bcpe.matches(password, userDetails.getPassword())) {
+			model.addAttribute("user", userDetails);
 			return "user/updateUser";
 		} else {
 			return "user/updateCheck";
@@ -125,13 +186,14 @@ public class UserController {
 	}
 	
 	@PostMapping("/updateUser")
-	public String update(@AuthenticationPrincipal User user, HttpServletRequest request, Authentication authentication) {
+	public String update(@AuthenticationPrincipal User user, HttpServletRequest request, Authentication authentication, Model model) {
 		
 		// 변경할 비밀번호를 다시 암호화해서 sql에 넣어야 함..!
 		HttpSession session = request.getSession();
 		if(service.updateUser(user)==1) {
 			session.setAttribute("user", user);
-		} 
+		}
+		model.addAttribute("user", user);
 		return "redirect:/";
 	}
 	
@@ -189,7 +251,7 @@ public class UserController {
 			// 찾기를 성공했을 경우 나오는 페이지
 			return "account/findIdResult";
 		} else {
-			// 해당 사용자가 없다고 출력할 페이지..
+			// 해당 사용자가 없다고 출력할 페이지
 			return "account/findFail";
 		}
 	}	
