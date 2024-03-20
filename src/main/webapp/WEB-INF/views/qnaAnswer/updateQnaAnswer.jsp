@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="../../../resources/css/header.css" />
 <link rel="stylesheet" href="../../../resources/css/qnaAnswer/updateQnaAnswer.css" />
 <script src="https://kit.fontawesome.com/4602e82315.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
 <div class="header-blackbox"></div>
@@ -76,7 +77,9 @@
 				<div class="updatePhoto">
 					<c:choose>
 						<c:when test="${qnaAnswer.url != null}">
-							<img src="/upload/qnaAnswer/${qnaAnswer.url}"/>
+							<img src="/upload/qnaAnswer/${qnaAnswer.url}" id="qnaAnswerPhoto"/>
+							<div id="photoDelete"><i class="fa-solid fa-circle-xmark" onclick="photoDelete()"></i></div>
+							<input type="hidden" value="${qnaAnswer.delImg}" name="delImg" id="delImg"/>
 						</c:when>
 					</c:choose>
 					<div class="updateAnswer" id="img">
@@ -97,5 +100,6 @@
 	</div>
 </div>
 <script src="../../../resources/js/qnaAnswer/updateQnaAnswer.js"></script>
+
 </body>
 </html>

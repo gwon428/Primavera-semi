@@ -136,3 +136,28 @@ body {
 	border-radius : 3px;
 	
 }
+/* -------------------- 사진 삭제 시 관련 --------------------------*/
+.updatePhoto {
+	position: relative;
+}
+#photoDelete{
+	background-color: rgba(0, 0, 0, 0.3);
+    width: 140px;
+    height: 140px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+	display: none;
+	position: absolute;	
+	left: 24px;
+}
+#photoDelete i{
+	font-size: 2.3rem;
+	cursor : pointer;
+}
+#qnaPhoto:hover {
+	cursor: pointer;
+}
+#qnaPhoto:hover + #photoDelete, #photoDelete:hover {
+	display: flex;
+}

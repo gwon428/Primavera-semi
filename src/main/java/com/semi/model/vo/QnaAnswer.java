@@ -15,5 +15,6 @@ public class QnaAnswer {
 	private String url;
 	private Date answerDate;
 	
+	private boolean delImg;
 	private MultipartFile file;
 }

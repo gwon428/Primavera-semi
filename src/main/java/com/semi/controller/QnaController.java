@@ -102,15 +102,12 @@ public class QnaController {
 			paging.setKeyword(keyword);
 			paging.setSelect(select);
 			
-			System.out.println("keyword : " + paging.getKeyword());
-			System.out.println("select : " + paging.getSelect());
-			
 			List<Qna> list = service.showAllQna(paging);
-			System.out.println(list);
 			
-			model.addAttribute("list", list);
+			
 			//model.addAttribute("search", search);
 			//model.addAttribute("paging", new PagingQna(paging.getPage(), service.total()));
+			model.addAttribute("list", list);
 			model.addAttribute("paging", paging);
 			
 			return "qna/listQna";
@@ -140,19 +137,23 @@ public class QnaController {
 		
 	@PostMapping("updateQna")
 		public String update(Qna qna) throws IllegalStateException, IOException {
-			if(!qna.getFile().isEmpty()) {
-				if(qna.getUrl()!=null) {
-					File file = new File(path+qna.getUrl());
-					file.delete();
-				}
+				
+			// 이미지 수정했을 경우 
+			if(!qna.getFile().getOriginalFilename().equals("")) {
 				String url = fileUpload(qna.getFile());
 				qna.setUrl(url);
-			}
+			} else if(qna.isDelImg()) {
+				// 이미지 삭제했을 경우
+				File file = new File(path+qna.getUrl());
+				file.delete();
+				qna.setUrl(null);	
+			} 
+//			
 			service.update(qna);
+			
 			return "redirect:/viewQna?qnaNum="+qna.getQnaNum();
 		}
-  
-
+		
 	// 삭제(delete)
  @GetMapping("/deleteQna")
 	public String delete(String qnaNum) {

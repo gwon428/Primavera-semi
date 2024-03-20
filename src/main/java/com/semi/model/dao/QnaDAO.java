@@ -40,6 +40,7 @@ public class QnaDAO {
 		return session.update("qnaMapper.update", qna);
 	}
 	
+
 	// 작성한 Qna 삭제 
 	public int delete(int qnaNum) {
 		return session.delete("qnaMapper.delete", qnaNum);

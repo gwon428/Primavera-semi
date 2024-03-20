@@ -76,7 +76,7 @@
 		url=#{url}
 		WHERE qna_num=${qnaNum}
 	</update>
-	
+		
 	<!-- delete -->
 	<delete id="delete" parameterType="int">
 	DELETE FROM qna

@@ -109,7 +109,10 @@
 					<li class="page-item ${paging.prev ? '' : 'disabled'}">
 					
 					<c:choose>
-						<c:when test="${paging.startPage == 1}">
+						<c:when test="${(paging.startPage == 1)&&(paging.select != null) && (paging.keyword != null)}">
+							<a class="page-link" href="/listQna?select=${paging.select}&keyword=${paging.keyword}&page=${paging.startPage=1}">Previous</a>
+						</c:when>
+						<c:when test="${(paging.startPage == 1)&&(paging.select == null) && (paging.keyword == null)}">
 							<a class="page-link" href="/listQna?page=${paging.startPage=1}">Previous</a>
 						</c:when>
 						<c:otherwise>
@@ -121,19 +124,34 @@
 
 					<c:forEach begin="${paging.startPage}" end="${paging.endPage}"
 						var="page">
-						<li class="page-item"><a
-							class="page-link ${paging.page== page ? 'active' : ''} "
-							href="/listQna?page=${page}" id="page_num">${page}</a></li>
+						<li class="page-item">
+							<c:choose>
+							<c:when test="${(paging.select != null) && (paging.keyword != null)}">
+								<a class="page-link ${paging.page== page ? 'active' : ''}" href="/listQna?select=${paging.select}&keyword=${paging.keyword}&page=${page}" id="page_num">
+									${page}
+								</a>
+							</c:when>
+							<c:otherwise>
+								<a class="page-link ${paging.page== page ? 'active' : ''}" href="/listQna?page=${page}" id="page_num">
+									${page}
+								</a>
+							</c:otherwise>
+							</c:choose>
+						</li>
 					</c:forEach>
 
-					<li class="page-item ${paging.next ? '' : 'disabled'}"><c:choose>
-						<c:when test="${paging.endPage < 10}">
+					<li class="page-item ${paging.next ? '' : 'disabled'}">
+					<c:choose>
+						<c:when test="${(paging.endPage < 10)&&(paging.select != null) && (paging.keyword != null)}">
+							<a class="page-link" href="/listQna?select=${paging.select}&keyword=${paging.keyword}&page=${paging.endPage=paging.endPage}">Next</a>
+						</c:when>
+						<c:when test="${(paging.endPage < 10)&&(paging.select == null) && (paging.keyword == null)}">
 							<a class="page-link" href="/listQna?page=${paging.endPage=paging.endPage}">Next</a>
 						</c:when>
 						<c:otherwise>
 							<a class="page-link" href="/listQna?page=${paging.endPage + 1}">Next</a>
-						</c:otherwise>
-						</c:choose>	
+						</c:otherwise>						
+					</c:choose>	
 					</li>
 				</ul>
 			</nav>

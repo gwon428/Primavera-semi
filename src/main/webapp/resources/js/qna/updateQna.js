@@ -27,3 +27,14 @@ function labelText(){
 		var text = document.querySelector("#photo");
 		text.style.display = "none";
 	}
+
+/* ------ 수정 시 사진 삭제 ----------*/
+function photoDelete(){
+	const qnaPhoto= document.querySelector("#qnaPhoto");
+	const photoDeleteBtn = document.querySelector("#photoDelete");
+	
+	qnaPhoto.style.visibility = 'hidden';
+	photoDeleteBtn.style.display = 'flex';
+	delImg.value = true;
+	
+}

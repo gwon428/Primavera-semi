@@ -89,7 +89,9 @@ public class QnaAnswerController {
 		
 	@PostMapping("updateAnswer")
 		public String update(QnaAnswer qnaAnswer) throws IllegalStateException, IOException {
-			if(!qnaAnswer.getFile().isEmpty()) {
+		
+		/*
+		if(!qnaAnswer.getFile().isEmpty()) {
 				if(qnaAnswer.getUrl()!=null) {
 					File file = new File(path+qnaAnswer.getUrl());
 					file.delete();
@@ -97,7 +99,19 @@ public class QnaAnswerController {
 				String url = fileUploads(qnaAnswer.getFile());
 				qnaAnswer.setUrl(url);
 			}
+		*/
+		
+		if(!qnaAnswer.getFile().getOriginalFilename().equals("")) {
+			String url = fileUploads(qnaAnswer.getFile());
+			qnaAnswer.setUrl(url);
+		} else if(qnaAnswer.isDelImg()) {
+			// 이미지 삭제했을 경우
+			File file = new File(path+qnaAnswer.getUrl());
+			file.delete();
+			qnaAnswer.setUrl(null);	
+		} 
 			service.updateQnaAnswer(qnaAnswer);
+		
 			return "redirect:/viewQna?qnaNum="+qnaAnswer.getQnaNum();
 		}
 	
