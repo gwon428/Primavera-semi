@@ -19,6 +19,7 @@
 	crossorigin="anonymous"></script>
 <script src="https://kit.fontawesome.com/4602e82315.js"
 	crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <title>Document</title>
 <style>
 @font-face {
@@ -194,7 +195,7 @@
 						exuberance of nature
 					</h4>
 					<p>저희 회사는 서울에 등록된 회사입니다(번호 CSEZ421153)</p>
-					<h1>© 2024</h1>
+					<h1>Since 2024</h1>
 				</div>
 				<div class="center">
 					<ul>
@@ -202,16 +203,19 @@
 						<li>T : 010-XXXX-XXXX</li>
 						<li>E : Primavera@com.kh.kr</li>
 					</ul>
-					<span> <a href="">instagram</a> <a href="">facebook</a> <a
-						href="">twitter</a> <a href="">YouTube</a>
+					<span> <a href="https://www.instagram.com/">instagram</a> <a
+						href="https://www.facebook.com/?locale=ko_KR">facebook</a> <a
+						href="https://twitter.com/?lang=ko">twitter</a> <a
+						href="https://www.youtube.com/">YouTube</a>
 					</span>
 				</div>
 				<div class="right">
 					<div class="right">
 						<h2>Ceo : 애드워드 권</h2>
-						<h2>Personal Information Management Officer : 
-						<br>
-						스미스 정 | 소피아 손 |데이비스 킴</h2>
+						<h2>
+							Personal Information Management Officer : <br> 스미스 정 | 소피아 손
+							|데이비스 킴
+						</h2>
 						<br>
 						<h2>본사&스토어주소 : 서울 강남구 테헤란로14길 6</h2>
 						<div>
@@ -239,23 +243,6 @@
 			</div>
 		</div>
 	</main>
-	<script src="../../webapp/resources/js/front.js"></script>
-	<script>
-		var target = document.querySelectorAll('.btn_open');
-		var btnPopClose = document.querySelectorAll('.pop_wrap .btn_close');
-		var targetID;
-		for (var i = 0; i < target.length; i++) {
-			target[i].addEventListener('click', function() {
-				targetID = this.getAttribute('href');
-				document.querySelector(targetID).style.visibility = 'visible';
-			});
-		}
-		for (var j = 0; j < target.length; j++) {
-			btnPopClose[j].addEventListener('click', function() {
-				this.parentNode.parentNode.style.visibility = 'hidden';
-			});
-		}
-	</script>
+	<script src="/resources/js/front.js"></script>
 </body>
-
 </html>

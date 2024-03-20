@@ -10,6 +10,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="../../../resources/css/reset.css" />
+<link rel="stylesheet" href="../../../resources/css/header.css" />
 <link rel="stylesheet" href="../../../resources/css/notice/view.css" />
 <style>
 h1 {
@@ -35,7 +36,6 @@ div#editor {
 </head>
 
 <body>
-	<sec:authentication property="principal" var="user" />
 	<div class="header-blackbox"></div>
 	<header>
 		<nav>
@@ -44,11 +44,12 @@ div#editor {
 		<nav>
 			<a href="/map/mainMap">Store</a> <a href="#">Guide</a> <a
 				href="collectPage">PickUp</a> <a href="list">Board</a> <span>
-				<a href="/review/list">Board</a> <a href="listQna">Q & A</a> <a
+				<a href="/review/list">Review</a> <a href="listQna">Q & A</a> <a
 				href="/notice/list">Notice</a>
 			</span> <a href="myPage"><i class="fa-regular fa-user"></i></a>
 		</nav>
 	</header>
+	<!--  -->
 	<sec:authentication property="principal" var="user" />
 	<c:choose>
 		<c:when test="${user == 'anonymousUser' || user.auth == 'MEMBER'}">
@@ -71,7 +72,7 @@ div#editor {
 			</div>
 		</c:when>
 		<c:otherwise>
-			<c:if test="${user.auth == 'ADMIN' || user.auth ==! 'ADMIN'}">
+			<c:if test="${user.auth == 'ADMIN' || user.auth ==! 'ADMIN' }">
 				<div class="container">
 					<h1>게시물 정보</h1>
 					<form action="updateNotice" method="post"
@@ -100,15 +101,10 @@ div#editor {
 							<a class="btn btn-outline-danger"
 								href="/notice/deleteNotice?noticeNum=${vo.noticeNum}">삭제</a> <a
 								href="/notice/list" class="back">취소</a>
-
 						</div>
-
 					</form>
-
 				</div>
-
 			</c:if>
-
 		</c:otherwise>
 	</c:choose>
 </body>

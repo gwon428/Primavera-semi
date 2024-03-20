@@ -57,11 +57,11 @@ nav>a[href="/notice/list"]:hover+span, nav>span:hover {
 
 nav>span {
 	display: none;
-	position: absolute;
-	right: 73px;
-	top: 70px;
-	padding: 11px;
-	background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    right: 56px;
+    top: 70px;
+    padding: 11px;
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 nav>span a {
@@ -605,10 +605,9 @@ body>p {
 }
 
 .left>h5 {
-	top: 173px;
-	font-size: 0.9rem;
-	position: relative;
-	right: 91px;
+    top: 170px;
+    position: relative;
+    right: 90px;
 }
 
 footer .left {
@@ -619,22 +618,22 @@ footer .left {
 .left h4 {
 	position: relative;
 	width: 386px;
-	top: 181px;
+	top: 207px;
 	right: 93px;
 	font-size: 1.4rem;
 }
 
 .left>p {
-	position: relative;
-	top: 201px;
-	right: 95px;
+    position: relative;
+    top: 242px;
+    right: 95px;
 }
 
 .left h1 {
 	position: relative;
 	font-size: 1.2rem;
-	right: 97px;
-	top: 220px;
+    right: 94px;
+    top: 264px;
 	color: black;
 }
 

@@ -42,21 +42,27 @@ h1 {
 	</header>
 	<div class="container">
 		<h1>Notice 등록</h1>
-		<form action="writeNotice" method="post" enctype="multipart/form-data">
+		<form action="writeNotice" method="post" enctype="multipart/form-data" onsubmit="return validate()">
 			<div class="form-group" id="title">
-			<label>title</label> 
+			<label for="ADMIN_title">title</label> 
 			<input class="form-control" name="title" id="title_input">
 			</div>
 			<div class="form-group" id="context">
-			<label>content</label>
+			<label for="ADMIN_content">content</label>
 			<textarea class="form-control" row="10" name="content" id="content_input"></textarea>
 			</div>
 			<div class="form-group" id="file">
-			<label for="file">파일 업로드</label> 
+			<label for="ADMIN_file">파일 업로드</label> 
 			<input class="form-control" type="file" id="file" name="file" accept="image/*">
 			</div>
+			
 			<button type="submit" class="btn btn-outline-warning">등록</button>
+			
+			<a href="/notice/list" class="back">취소</a></div>
+			
 		</form>
 	</div>
+		<script src="../../../../resources/js/notice/write.js"></script>
+	
 </body>
 </html>

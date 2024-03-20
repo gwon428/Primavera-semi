@@ -1,3 +1,9 @@
+* {
+	margin: 0%;
+	padding: 0%;
+	font-family: "Cafe24Oneprettynight";
+}
+
 @font-face {
 	font-family: "Cafe24Oneprettynight";
 	src:
@@ -117,20 +123,29 @@ img {
 	height: 92px;
 }
 
-.btn {
-	position: relative;
-	left: 554px;
-	top: -5px;
-	margin: 20px 0;
-	font-size: 1rem;
-	background-color: #93b19a;
-	color: white;
-	border: none;
-	border-radius: 6px;
-	width: 75px;
-	height: 42px;
-	cursor: pointer;
-	font-family: "Cafe24Oneprettynight";
+.btn,
+div a{
+    font-size: 1.5rem;
+    cursor: pointer;
+    border: 0.5px solid #d1d1d1;
+    background-color: #93b19a;
+    color: white;
+    font-family: "Cafe24Oneprettynight";
+    border-radius: 6px;
+    width: 75px;
+    height: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 468px;
+    position: relative;
+}
+
+
+.back{
+    left: 550px;
+    position: relative;
+    bottom: 65px;
 }
 
 /* ------------------------------------회원 일경우-----------------------------------------  */

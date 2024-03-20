@@ -16,6 +16,7 @@
 		parameterType="Paging">
 		SELECT *
 		FROM notice
+		ORDER BY 1 desc
 		LIMIT #{offset}, #{limit}
 	</select>
 
@@ -33,6 +34,7 @@
 		SELECT * FROM
 		notice
 		WHERE notice_num=#{noticeNum}
+		
 	</select>
 
 	<select id="total" resultType="int">
