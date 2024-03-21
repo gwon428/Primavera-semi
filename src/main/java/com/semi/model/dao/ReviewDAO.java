@@ -37,18 +37,18 @@ public class ReviewDAO {
 	}
 
 	public List<Review> selectPage(Paging paging, String searchType, String searchKeyword) {
-		Map<String, Object> params = new HashMap<>();
-		params.put("paging", paging);
-		params.put("searchType", searchType);
-		params.put("searchKeyword", searchKeyword);
-		return session.selectList("reviewMapper.selectPage", params);
+	    Map<String, Object> params = new HashMap<>();
+	    params.put("paging", paging);
+	    params.put("searchType", searchType);
+	    params.put("searchKeyword", searchKeyword);
+	    return session.selectList("reviewMapper.selectPage", params);
 	}
 
 	public int total(String searchType, String searchKeyword) {
-		Map<String, Object> params = new HashMap<>();
-		params.put("searchType", searchType);
-		params.put("searchKeyword", searchKeyword);
-		return session.selectOne("reviewMapper.count", params);
+	    Map<String, Object> params = new HashMap<>();
+	    params.put("searchType", searchType);
+	    params.put("searchKeyword", searchKeyword);
+	    return session.selectOne("reviewMapper.count", params);
 	}
 
 }

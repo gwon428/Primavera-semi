@@ -48,7 +48,8 @@ select:focus{
 }
 
 .search-ui {
-	margin-right: 300px;
+	margin-right: 300px;	
+	font-family: "Cafe24Oneprettynight";
 }
 
 #searchbtn {		
@@ -70,18 +71,18 @@ select:focus{
 }
 
 header a, #neck a {
-	font-family: italic;
+	font-family: "Cafe24Oneprettynight";
 }
 
 .word .h1 {
-	position: absolute;
-	top: 460px;
-	left: 35px;
-	font-size: 4rem;
-	font-family: italic;
-	color: white;
-	margin-left: 40px;
-	animation: slide 1.8s;
+    position: absolute;
+    top: 460px;
+    left: 35px;
+    font-size: 5rem;
+    font-family: "Cafe24Oneprettynight";
+    color: white;
+    margin-left: 40px;
+    animation: slide 1.8s;
 }
 
 @keyframes slide {from { left:-300px;
@@ -117,8 +118,28 @@ body, .main {
 	color: #333;
 }
 
-.header {
-	padding-bottom: 5vh;
+header a {
+	color: white;
+	font-family: "Cafe24Oneprettynight";
+}
+
+header nav:nth-child(1) {
+	margin-left: 50px;
+	font-size: 2.5rem;
+	font-weight: lighter;
+}
+
+header nav:nth-child(2) {
+	padding: 30px;
+}
+
+header nav:nth-child(2) a {
+	padding: 20px;
+	font-size: 1.5rem;
+}
+
+nav>a[href="/notice/list"]:hover+span, nav>span:hover {
+	display: block;
 }
 
 .header h1 {
