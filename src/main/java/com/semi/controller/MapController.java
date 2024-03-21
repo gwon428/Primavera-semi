@@ -16,4 +16,9 @@ public class MapController {
 		return "map/map";
 	}
 	
+	@GetMapping("map2")
+	public String map2() {
+		return "map/map2";
+	}
+	
 }
