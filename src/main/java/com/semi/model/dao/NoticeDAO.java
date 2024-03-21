@@ -20,7 +20,6 @@ public class NoticeDAO {
 
 	// 공지사항 리스트
 	public List<Notice> selectAll(Paging paging) {
-		System.out.println(paging);
 		return session.selectList("noticeMapper.selectAll", paging);
 	}
 

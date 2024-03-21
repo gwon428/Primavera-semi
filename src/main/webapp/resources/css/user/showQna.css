@@ -50,11 +50,6 @@ h2{
 	color:red;
 }
 
-#content{
-	text-overflow:ellipsis;
-	overflow:hidden;
-	white-space:nowrap;
-}
 hr{
 	margin-bottom: 60px;
 }
@@ -62,6 +57,7 @@ hr{
 table {
 	text-align: center;
 	width: 700px;
+	table-layout: fixed;
 }
 
 table tr:first-child  {
@@ -70,11 +66,6 @@ table tr:first-child  {
 table tr:first-child th {
 	padding-top: 20px;
 }
-
-th #contentth{
- 	width: 40px;
- 	background-color: blue;
- }
  
 th{
 	height: 30px;
@@ -99,10 +90,6 @@ td{
 	font-weight: bolder;
 }
 
-.roadAddr{
-	width: 230px;
-}
-
 .pagination{
 	align-items: center;
 	margin: 0 auto;
@@ -118,10 +105,4 @@ td{
 #myqna{
 	color: red;
 	font-weight: bolder;
-}
-
-#content{
-	text-overflow:ellipsis;
-	overflow:hidden;
-	white-space:nowrap;
 }

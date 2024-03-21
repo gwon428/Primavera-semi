@@ -302,8 +302,6 @@ public class UserController {
 	@PostMapping("updatePwd")
 	public String updatePwd(User user, HttpServletRequest request, Authentication authentication) {
 		HttpSession session = request.getSession();
-		System.out.println("비밀번호 재설정 .. " + user);
-		
 		if(service.updatePwd(user)==1) {
 			session.setAttribute("user", user);
 		}

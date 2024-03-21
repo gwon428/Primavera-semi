@@ -18,16 +18,16 @@
 <title>수거 신청 현황 보기</title>
 </head>
 <header>
-<nav>
+			<nav>
 				<a href="/">Primavera</a>
 			</nav>
 			<nav>
-				<a href="/map/mainMap">Store</a> <a href="#">Guide</a> <a href="collectPage">PickUp</a> <a
+				<a href="mainMap">Store</a> <a href="#">Guide</a> <a href="collectPage">PickUp</a> <a
 					href="/notice/list">Board</a> <span>
 					<a href="/review/list">Review</a> <a href="listQna">Q & A</a> <a href="/notice/list">Notice</a>
 				</span> <a href="myPage"><i class="fa-regular fa-user"></i></a>
 			</nav>
-</header>
+			</header>
 <body>
 <sec:authentication property="principal" var="user" />
 <!-- 회원용 수거 신청 진행 상황 페이지 -->

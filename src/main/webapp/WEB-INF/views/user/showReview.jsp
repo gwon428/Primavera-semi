@@ -16,11 +16,11 @@
 <title>내가 쓴 후기</title>
 </head>
 			<header>
-	    <nav>
+			<nav>
 				<a href="/">Primavera</a>
 			</nav>
 			<nav>
-				<a href="/map/mainMap">Store</a> <a href="#">Guide</a> <a href="collectPage">PickUp</a> <a
+				<a href="mainMap">Store</a> <a href="#">Guide</a> <a href="collectPage">PickUp</a> <a
 					href="/notice/list">Board</a> <span>
 					<a href="/review/list">Review</a> <a href="listQna">Q & A</a> <a href="/notice/list">Notice</a>
 				</span> <a href="myPage"><i class="fa-regular fa-user"></i></a>
@@ -42,7 +42,7 @@
 			<table border=1 class="table">
 				<tr>
 					<th scope="col" style="width: 100px;">리뷰 번호</th>
-					<th scope="col">제목</th>
+					<th style="padding-right: 10px;">제목</th>
 					<th scope="col">내용</th>
 					<th scope="col">작성날짜</th>
 					<th scope="col">별점</th>
@@ -51,7 +51,7 @@
 				<c:forEach items="${list}" var="item">
 					<tr>
 						<td>${item.no}</td>
-						<td id="title" style="text-overflow:ellipsis; overflow:hidden; white-space:nowrap;"><a href="/review/view?no=${item.no}">${item.title}</a></td>
+						<td id="title" style="text-overflow:ellipsis; overflow:hidden; white-space:nowrap; padding-right: 10px;"><a href="/review/view?no=${item.no}">${item.title}</a></td>
 						<td id="content" style="text-overflow:ellipsis; overflow:hidden; white-space:nowrap;">${item.content}</td>
 						<td id="date"><fmt:formatDate value="${item.date}" pattern="yyyy-MM-dd HH:mm" /></td>
 						<td>${item.rating}</td>

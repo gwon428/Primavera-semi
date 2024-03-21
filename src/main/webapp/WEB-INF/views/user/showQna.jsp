@@ -17,11 +17,11 @@
 <title>내 Q&A</title>
 </head>
 			<header>
-     <nav>
+			<nav>
 				<a href="/">Primavera</a>
 			</nav>
 			<nav>
-				<a href="/map/mainMap">Store</a> <a href="#">Guide</a> <a href="collectPage">PickUp</a> <a
+				<a href="mainMap">Store</a> <a href="#">Guide</a> <a href="collectPage">PickUp</a> <a
 					href="/notice/list">Board</a> <span>
 					<a href="/review/list">Review</a> <a href="listQna">Q & A</a> <a href="/notice/list">Notice</a>
 				</span> <a href="myPage"><i class="fa-regular fa-user"></i></a>
@@ -43,7 +43,7 @@
 			<table border=1 class="table">
 				<tr>
 					<th>질문번호</th>
-					<th>제목</th>
+					<th style="padding-right: 10px;">제목</th>
 					<th scope="col">내용</th>
 					<th>작성일</th>
 					<th>답변상태</th>
@@ -51,9 +51,9 @@
 
 				<c:forEach items="${list}" var="item">
 					<tr>
-						<td class="no">${item.qnaNum}</td>
-						<td><a href="/viewQna?qnaNum=${item.qnaNum}">${item.title}</a></td>
-						<td id="content">${item.content}</td>
+						<td class="no" style="text-overflow:ellipsis; overflow:hidden; white-space:nowrap;">${item.qnaNum}</td>
+						<td id="title" style="text-overflow:ellipsis; overflow:hidden; white-space:nowrap; padding-right: 10px;"><a href="/viewQna?qnaNum=${item.qnaNum}">${item.title}</a></td>
+						<td id="content" style="text-overflow:ellipsis; overflow:hidden; white-space:nowrap;">${item.content}</td>
 						<td><fmt:formatDate value="${item.writeDate}"
 								pattern="yy-MM-dd" /></td>
 						<td>${item.status}</td>
