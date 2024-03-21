@@ -98,7 +98,7 @@
 
 								<td>${item.id}</td>
 								<td><fmt:formatDate value="${item.writeDate}"
-										pattern="yy-MM-dd HH:ss" /></td>
+										pattern="yy-MM-dd HH:mm" /></td>
 								<td>${item.status}</td>
 							</tr>
 						</c:forEach>

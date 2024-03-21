@@ -44,7 +44,7 @@
 				<tr>
 					<th>질문번호</th>
 					<th>제목</th>
-					<th>아이디</th>
+					<th scope="col">내용</th>
 					<th>작성일</th>
 					<th>답변상태</th>
 				</tr>
@@ -53,7 +53,7 @@
 					<tr>
 						<td class="no">${item.qnaNum}</td>
 						<td><a href="/viewQna?qnaNum=${item.qnaNum}">${item.title}</a></td>
-						<td>${item.id}</td>
+						<td id="content">${item.content}</td>
 						<td><fmt:formatDate value="${item.writeDate}"
 								pattern="yy-MM-dd" /></td>
 						<td>${item.status}</td>

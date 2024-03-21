@@ -111,9 +111,3 @@ td{
 	color: red;
 	font-weight: bolder;
 }
-
-#content{
-	text-overflow:ellipsis;
-	overflow:hidden;
-	white-space:nowrap;
-}

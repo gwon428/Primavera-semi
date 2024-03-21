@@ -46,9 +46,6 @@
 	<table border=1 class="table">
 		<tr>
 			<th>주문번호</th>
-			<th>아이디</th>
-			<th>이름</th>
-			<th>전화번호</th>
 			<th style="width: 210px;">진행상황</th>
 			<th style="width: 180px;">수거일</th>
 			<th style="width:250px;">수거 신청 무게</th>
@@ -58,9 +55,6 @@
 		<c:forEach items="${list}" var="item">
 			<tr>
 				<td class="no">${item.orderNum}</td>
-				<td>${item.id}</td>
-				<td>${item.name}</td>
-				<td>${item.phone}</td>
 				<td>${item.prog}</td>
 				<td>${item.collectionDate}</td>
 				<td>${item.kg}</td>

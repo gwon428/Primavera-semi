@@ -41,7 +41,7 @@
 			<h2>My Review</h2>
 			<table border=1 class="table">
 				<tr>
-					<th scope="col" style="width: 50px;">no</th>
+					<th scope="col" style="width: 100px;">리뷰 번호</th>
 					<th scope="col">제목</th>
 					<th scope="col">내용</th>
 					<th scope="col">작성날짜</th>
@@ -51,7 +51,7 @@
 				<c:forEach items="${list}" var="item">
 					<tr>
 						<td>${item.no}</td>
-						<td id="title"><a href="/review/view?no=${item.no}">${item.title}</a></td>
+						<td id="title" style="text-overflow:ellipsis; overflow:hidden; white-space:nowrap;"><a href="/review/view?no=${item.no}">${item.title}</a></td>
 						<td id="content" style="text-overflow:ellipsis; overflow:hidden; white-space:nowrap;">${item.content}</td>
 						<td id="date"><fmt:formatDate value="${item.date}" pattern="yyyy-MM-dd HH:mm" /></td>
 						<td>${item.rating}</td>

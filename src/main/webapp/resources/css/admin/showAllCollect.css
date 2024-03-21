@@ -188,4 +188,7 @@ td{
     margin-top: 30px
 }
 
-
+select{
+	font-family: "Cafe24Oneprettynight";
+	font-weight: bolder;
+}

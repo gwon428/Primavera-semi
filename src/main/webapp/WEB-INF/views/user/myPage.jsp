@@ -73,7 +73,7 @@
 														<a href="findId" class="link">아이디 찾기</a>
 														<a href="changePwd" class="link">비밀번호 찾기</a> 
 														
-														<a href="register" class="btn mt-4">SIGN UP</a>
+														<a href="register" class="btn mt-4" style="font-family: 'Poppins', sans-serif;">SIGN UP</a>
 													</div>
 												</div>
 											</div>

@@ -50,6 +50,11 @@ h2{
 	color:red;
 }
 
+#content{
+	text-overflow:ellipsis;
+	overflow:hidden;
+	white-space:nowrap;
+}
 hr{
 	margin-bottom: 60px;
 }
@@ -66,6 +71,11 @@ table tr:first-child th {
 	padding-top: 20px;
 }
 
+th #contentth{
+ 	width: 40px;
+ 	background-color: blue;
+ }
+ 
 th{
 	height: 30px;
 	font-weight: bolder;
@@ -76,7 +86,6 @@ th{
 	margin-bottom: 15px;
 	width: 140px;
 }
-
 
 td{
 	width: 90px;
@@ -109,4 +118,10 @@ td{
 #myqna{
 	color: red;
 	font-weight: bolder;
+}
+
+#content{
+	text-overflow:ellipsis;
+	overflow:hidden;
+	white-space:nowrap;
 }

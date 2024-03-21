@@ -213,8 +213,7 @@ public class UserController {
 			SecurityContextHolder.clearContext();
 			return "redirect:/";
 		} else {
-			System.out.println("탈퇴 안되염. . ");
-			return "";
+			return "user/deleteCheck";
 		}
 	}
 	
