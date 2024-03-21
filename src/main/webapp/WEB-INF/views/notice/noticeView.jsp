@@ -8,7 +8,10 @@
 
 <head>
 <meta charset="UTF-8">
+<script src="https://kit.fontawesome.com/4602e82315.js"
+	crossorigin="anonymous"></script>
 <title>Insert title here</title>
+
 <link rel="stylesheet" href="../../../resources/css/reset.css" />
 <link rel="stylesheet" href="../../../resources/css/header.css" />
 <link rel="stylesheet" href="../../../resources/css/notice/view.css" />
@@ -42,8 +45,8 @@ div#editor {
 			<a href="/">Primavera</a>
 		</nav>
 		<nav>
-			<a href="/map/mainMap">Store</a> <a href="#">Guide</a> <a
-				href="collectPage">PickUp</a> <a href="list">Board</a> <span>
+			<a href="/mainMap">Store</a> <a href="#">Guide</a> <a
+				href="collectPage">PickUp</a> <a href="/notice/list">Board</a> <span>
 				<a href="/review/list">Review</a> <a href="listQna">Q & A</a> <a
 				href="/notice/list">Notice</a>
 			</span> <a href="myPage"><i class="fa-regular fa-user"></i></a>
@@ -66,10 +69,18 @@ div#editor {
 						<textarea class="form-control" cols="1000" row="100"
 							name="content" style="resize: none" id="content_input" readonly>${vo.content}</textarea>
 					</div>
-						<c:if test="${url =! ''}">
-						<a href="/upload/notice/${vo.url}" id="fileupload"for="file" download>첨부파일 : ${vo.url}</a> <input
-							class="form-control" type="file" id="file" name="file"
-							accept="/*"> 
+					<!-- 
+					<c:if test="${url =! ''}">
+					<a href="/upload/notice/${vo.url}" id="fileupload" download>첨부파일 : ${vo.url}</a> <input
+						class="form-control" type="file" id="file" name="file"
+						accept="/*"> 
+					</c:if>
+					 -->
+					 <c:if test="${vo.url != null}">
+						<a href="/upload/notice/${vo.url}" id="fileupload"for="file" download>첨부파일 : ${vo.url}</a>
+					</c:if>
+					<c:if test="${vo.url == null}">
+						<a href="" id="fileupload" style="cursor:default;"></a>
 					</c:if>
 					<a href="/notice/list" id="list">목록</a>
 				</form>

@@ -79,6 +79,9 @@ public class NoticeController {
 	
 	@GetMapping("noticeView")
 	public void view(String noticeNum, Model model) {
+		Notice voo = service.select(Integer.parseInt(noticeNum));
+		System.out.println("controller : " + service.select(Integer.parseInt(noticeNum)));
+		System.out.println("controller geturl : " + voo.getUrl());
 		model.addAttribute("vo", service.select(Integer.parseInt(noticeNum)));
 	}
 	

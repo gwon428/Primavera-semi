@@ -19,7 +19,6 @@ public class NoticeService {
 	public List<Notice> selectAll(Paging paging) {
 
 		paging.setOffset(paging.getLimit() * (paging.getPage() - 1));
-
 		return dao.selectAll(paging);
 	}
 

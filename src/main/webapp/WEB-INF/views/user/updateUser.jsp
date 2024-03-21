@@ -35,7 +35,7 @@
 					<form action="updateUser" method="post" onsubmit="return validate()">
 							<div id="input">
 								<div>
-								<p style="margin-bottom:10px;"> 아이디 </p>
+								<p> 아이디 </p>
 								<input type="text" name="id" value="${user.id}" readonly>
 								</div>
 								<span>&nbsp;</span>
