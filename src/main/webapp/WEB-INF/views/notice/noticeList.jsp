@@ -6,7 +6,6 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
-
 <head>
 <meta charset="UTF-8" />
 <title>Insert title here</title>
@@ -76,20 +75,33 @@
 					</table>
 					<nav>
 						<ul class="pagination">
-							<li class="page-item ${paging.prev ? '' : 'disabled' }"><a
-								class="page-link"
-								href="/notice/list?page=${paging.startPage - 1}">Previous</a></li>
-							<c:forEach begin="${paging.startPage}" end="${paging.endPage}"
-								var="page">
-								<li class="page-item"><a
-									class="page-link ${page == page ? 'active' : ''}"
-									href="/notice/list?page=${page}">${page}</a></li>
-							</c:forEach>
+						<li class="page-item ${paging.prev ? '' : 'disabled'}">
+							<c:choose>
+								<c:when test="${paging.startPage == 1}">
+									<a class="page-link" href="/notice/list?page=${paging.startPage=1}">Previous</a>
+								</c:when>
+								<c:otherwise>
+									<a class="page-link" href="/notice/list?page=${paging.startPage-1}">Previous</a>
+								</c:otherwise>
+							</c:choose>
+						</li>
 
-							<li class="page-item ${paging.next ? '' : 'disabled'}"><a
-								class="page-link" href="/notice/list?page=${paging.endPage + 1}">Next</a>
-							</li>
-						</ul>
+						<c:forEach begin="${paging.startPage}" end="${paging.endPage}" var="page">
+							<li class="page-item"><a class="page-link ${paging.page== page ? 'active' : ''} "
+									href="/notice/list?page=${page}">${page}</a></li>
+						</c:forEach>
+
+						<li class="page-item ${paging.next ? '' : 'disabled'}">
+							<c:choose>
+								<c:when test="${paging.endPage < 10}">
+									<a class="page-link" href="/notice/list?page=${paging.endPage=paging.endPage}">Next</a>
+								</c:when>
+								<c:otherwise>
+									<a class="page-link" href="/notice/list?page=${paging.endPage + 1}">Next</a>
+								</c:otherwise>
+							</c:choose>
+						</li>
+					</ul>
 					</nav>
 				</div>
 			</section>

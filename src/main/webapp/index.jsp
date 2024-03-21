@@ -214,7 +214,7 @@
 						<h2>Ceo : 애드워드 권</h2>
 						<h2>
 							Personal Information Management Officer : <br> 스미스 정 | 소피아 손
-							|데이비스 킴
+							| 제임스 킴
 						</h2>
 						<br>
 						<h2>본사&스토어주소 : 서울 강남구 테헤란로14길 6</h2>

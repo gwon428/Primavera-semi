@@ -52,6 +52,7 @@ h1 {
 			<textarea class="form-control" row="10" name="content" id="content_input"></textarea>
 			</div>
 			<div class="form-group" id="file">
+			
 			<label for="ADMIN_file">파일 업로드</label> 
 			<input class="form-control" type="file" id="file" name="file" accept="image/*">
 			</div>
@@ -63,6 +64,5 @@ h1 {
 		</form>
 	</div>
 		<script src="../../../../resources/js/notice/write.js"></script>
-	
 </body>
 </html>

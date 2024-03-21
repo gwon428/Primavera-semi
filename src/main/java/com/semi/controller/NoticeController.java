@@ -95,6 +95,7 @@ public class NoticeController {
 			n.setUrl(url);
 		}
 		service.update(n);
+		
 		return "redirect:/notice/list";
 	}
 

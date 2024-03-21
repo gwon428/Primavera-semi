@@ -66,8 +66,12 @@ div#editor {
 						<textarea class="form-control" cols="1000" row="100"
 							name="content" style="resize: none" id="content_input" readonly>${vo.content}</textarea>
 					</div>
-
-					<a href="/notice/list">목록으로</a>
+						<c:if test="${url =! ''}">
+						<a href="/upload/notice/${vo.url}" id="fileupload"for="file" download>첨부파일 : ${vo.url}</a> <input
+							class="form-control" type="file" id="file" name="file"
+							accept="/*"> 
+					</c:if>
+					<a href="/notice/list" id="list">목록</a>
 				</form>
 			</div>
 		</c:when>
@@ -76,7 +80,7 @@ div#editor {
 				<div class="container">
 					<h1>게시물 정보</h1>
 					<form action="updateNotice" method="post"
-						enctype="multipart/form-data">
+						enctype="multipart/form-data" onsubmit="return valdate()">
 						<input type="hidden" name="noticeNum" value="${vo.noticeNum}">
 						<input type="hidden" name="url" value="${vo.url}">
 						<div class="form-group" id="title">
@@ -87,26 +91,26 @@ div#editor {
 							<label>content</label>
 							<textarea class="form-control" row="10" name="content"
 								style="resize: none;" id="content_input">${vo.content}</textarea>
-							<a href="/upload/${vo.url}" download> <!-- <img src="/upload/notice/${vo.url}" /> -->
-							</a>
+							<!--	<a href="/upload/notice/${vo.url}" download></a> <!-- <img src="/upload/notice/${vo.url}" />	-->
 						</div>
 						<!--  다운로드 가능  -->
 						<div class="form-group" id="file">
-							<label for="file">파일 업로드</label> <input class="form-control"
-								type="file" id="file" name="file" accept="image/*">
+							<a href="/upload/notice/${vo.url}" for="file" download>파일 업로드
+								: ${vo.url}</a> <input class="form-control" type="file" id="file"
+								name="file" accept="/*">
 						</div>
 
 						<div class="type">
 							<button type="submit" class="btn btn-outline-warning">수정</button>
 							<a class="btn btn-outline-danger"
 								href="/notice/deleteNotice?noticeNum=${vo.noticeNum}">삭제</a> <a
-								href="/notice/list" class="back">취소</a>
+								href="/notice/list" class="back">목록</a>
 						</div>
 					</form>
 				</div>
 			</c:if>
 		</c:otherwise>
 	</c:choose>
+	<script src="../../../../resources/js/notice/view.js"></script>
 </body>
-
 </html>

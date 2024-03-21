@@ -77,6 +77,8 @@ div #context label {
 	margin-right: 70px;
 	border-radius: 3px;
 	border-color: #d1d1d1;
+	font-size: 1rem;
+    font-weight: bold;
 }
 
 #content_input {
@@ -86,6 +88,8 @@ div #context label {
 	margin-right: -31px;
 	border-radius: 8px;
 	border-color: #d1d1d1;
+	font-size: 1rem;
+    font-weight: bold;
 }
 
 #file_input {

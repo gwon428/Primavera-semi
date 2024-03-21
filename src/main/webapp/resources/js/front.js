@@ -49,3 +49,5 @@ var target = document.querySelectorAll('.btn_open');
 				this.parentNode.parentNode.style.visibility = 'hidden';
 			});
 		}
+	
+		

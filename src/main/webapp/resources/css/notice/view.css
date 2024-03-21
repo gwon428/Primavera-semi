@@ -107,7 +107,7 @@ div #context label {
 	cursor: pointer;
 	position: relative;
 	top: 8px;
-	left: 110px;
+	left: -30px;
 }
 
 #title label {
@@ -115,9 +115,12 @@ div #context label {
 	right: 16px;
 }
 
-#file label {
+#file a {
 	position: relative;
-	right: 202px;
+	width: 382px;
+	right: 32px;
+	white-space: nowrap;
+	overflow: hidden;
 }
 
 img {
@@ -157,16 +160,33 @@ div.type {
 }
 
 .container2 form {
-    width: 879px;
-    position: relative;
-    height: 439px;
-    left: 501px;
-    top: 136px;
+	width: 879px;
+	position: relative;
+	height: 439px;
+	left: 501px;
+	top: 136px;
 }
 
 .container2 {
 	font-family: "Cafe24Oneprettynight";
 	font-size: 1.5rem;
+}
+
+#list {
+	position: relative;
+	left: 800px;
+	top: -41px;
+	background-color: #93b19a;
+	color: white;
+	border-radius: 6px;
+	width: 80px;
+	height: 49px;
+	cursor: pointer;
+	font-family: "Cafe24Oneprettynight";
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
 }
 
 .container2 #context {
@@ -189,20 +209,16 @@ div.type {
 	font-size: 19px;
 }
 
-.container2 a {
-	background-color: #93b19a;
-	color: white;
-	border-radius: 6px;
-	width: 80px;
-	height: 49px;
+#fileupload {
+	color: black;
+	width: 753px;
+	height: 48px;
 	cursor: pointer;
 	font-family: "Cafe24Oneprettynight";
-	display: flex;
-	justify-content: center;
-	align-items: center;
 	position: relative;
-	left: 800px;
+	left: 30px;
 	top: 28px;
+	font-size: 19px;
 }
 
 }
