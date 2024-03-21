@@ -94,18 +94,47 @@ img{
     <input type="radio" name="slide" id="slide1" checked>
     <input type="radio" name="slide" id="slide2">
     <input type="radio" name="slide" id="slide3">
-    <input type="radio" name="slide" id="slide4">
     <ul id="imgholder" class="imgs">
         <li><img src="../../../resources/images/bag1.jpg" alt="Wallet"></li>
-        <li><img src="../../../resources/images/clothes2.jpg" alt="Wallet"></li>
+        <li><img src="../../../resources/images/bag2.jpg" alt="Wallet"></li>
         <li><img src="../../../resources/images/bag3.jpg" alt="Wallet"></li>
-        <li><img src="../../../resources/images/clothes1.jpg" alt="Bag"></li>
     </ul>
     <div class="bullets">
         <label for="slide1">&nbsp;</label>
         <label for="slide2">&nbsp;</label>
         <label for="slide3">&nbsp;</label>
-        <label for="slide4">&nbsp;</label>
+    </div>
+</div>
+<br>
+<div class="slider">
+    <input type="radio" name="slide" id="slide1" checked>
+    <input type="radio" name="slide" id="slide2">
+    <input type="radio" name="slide" id="slide3">
+    <ul id="imgholder" class="imgs">
+        <li><img src="../../../resources/images/clothes1.jpg" alt="Wallet"></li>
+        <li><img src="../../../resources/images/clothes2.jpg" alt="Wallet"></li>
+        <li><img src="../../../resources/images/clothes3.jpg" alt="Wallet"></li>
+    </ul>
+    <div class="bullets">
+        <label for="slide1">&nbsp;</label>
+        <label for="slide2">&nbsp;</label>
+        <label for="slide3">&nbsp;</label>
+    </div>
+</div>
+<br>
+<div class="slider">
+    <input type="radio" name="slide" id="slide1" checked>
+    <input type="radio" name="slide" id="slide2">
+    <input type="radio" name="slide" id="slide3">
+    <ul id="imgholder" class="imgs">
+        <li><img src="../../../resources/images/wallet1.jpg" alt="Wallet"></li>
+        <li><img src="../../../resources/images/wallet2.jpg" alt="Wallet"></li>
+        <li><img src="../../../resources/images/wallet3.jpg" alt="Wallet"></li>
+    </ul>
+    <div class="bullets">
+        <label for="slide1">&nbsp;</label>
+        <label for="slide2">&nbsp;</label>
+        <label for="slide3">&nbsp;</label>
     </div>
 </div>
 
