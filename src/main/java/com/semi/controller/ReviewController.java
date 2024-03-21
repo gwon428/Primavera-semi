@@ -2,6 +2,9 @@ package com.semi.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.UUID;
 
@@ -16,6 +19,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.semi.model.vo.Review;
 import com.semi.model.vo.Paging;
@@ -56,25 +60,32 @@ public class ReviewController {
 	}
 
 	@GetMapping("/review/list")
-	public String list(Model model, @RequestParam(value = "page", defaultValue = "1") int page,
+	public String list(Model model, 
+			@RequestParam(value = "page", defaultValue = "1") int page,
 			@RequestParam(value = "sort", defaultValue = "dateDesc") String sort,
 			@RequestParam(value = "searchType", required = false) String searchType,
-			@RequestParam(value = "searchKeyword", required = false) String searchKeyword) {
-		// 검색 조건 반영한 총 게시물 수 계산
+			@RequestParam(value = "searchKeyword", required = false) String searchKeyword) throws UnsupportedEncodingException {
+
 		int total = service.total(searchType, searchKeyword);
 		Paging paging = new Paging(page, total);
 		paging.setSort(sort);
 
-		// 검색 조건을 포함해 서비스 계층에 전달
 		List<Review> boardList = service.selectPage(paging, searchType, searchKeyword);
 		model.addAttribute("list", boardList);
 		model.addAttribute("paging", paging);
 
-		// 로그인 상태 확인
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		boolean isLoggedIn = authentication != null && authentication.isAuthenticated()
 				&& !(authentication instanceof AnonymousAuthenticationToken);
 		model.addAttribute("isLoggedIn", isLoggedIn);
+
+		// 검색 조건을 model에 추가
+		model.addAttribute("searchType", searchType);
+		String encodedSearchKeyword = "";
+		if (searchKeyword != null && !searchKeyword.isEmpty()) {
+			encodedSearchKeyword = URLEncoder.encode(searchKeyword, StandardCharsets.UTF_8.toString());
+		}
+		model.addAttribute("encodedSearchKeyword", encodedSearchKeyword);
 
 		return "review/list";
 	}
@@ -97,20 +108,19 @@ public class ReviewController {
 	}
 
 	@PostMapping("/updatereview")
-	public String update(Review b) throws IllegalStateException, IOException {
-		if (b.getFile() != null && !b.getFile().isEmpty()) {
-			if (b.getUrl() != null && !b.getUrl().isEmpty()) {
-				File file = new File(path + b.getUrl());
-				if (file.exists()) {
-					file.delete();
-				}
-			}
-			String url = fileUploadreview(b.getFile());
-			b.setUrl(url);
+	public String update(Review b, @RequestParam("file") MultipartFile file, RedirectAttributes redirectAttributes)
+			throws IllegalStateException, IOException {
+		if (!file.isEmpty()) {
+			// 새 이미지 파일 업로드
+			String newUrl = fileUploadreview(file);
+			// 새로운 이미지 URL을 Review 객체에 설정
+			b.setUrl(newUrl);
+		} else {
+			// 파일이 제공되지 않은 경우, 기존 URL을 유지
+			b.setUrl(b.getUrl());
 		}
 
 		service.updatereview(b);
-
 		return "redirect:/review/view?no=" + b.getNo();
 	}
 

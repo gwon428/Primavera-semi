@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 public class Paging {
-	
+
 	private String keyword;
 	private String select;
 
@@ -17,31 +17,28 @@ public class Paging {
 	private int endPage;
 	private int startPage;
 	private int total;
-	
+
+	private String searchType;
+	private String searchKeyword;
+
 	private int sorts;
 
 	private boolean prev;
 	private boolean next;
 
-	// 기본값으로 최신순 정렬 설정
 	private String sort = "dateDesc";
 
 	public Paging(int page, int total) {
-
 		this.page = page;
 		this.total = total;
-		this.endPage = (int) (Math.ceil((double) page / this.pageSize)) * this.pageSize;
-		this.startPage = this.endPage - this.pageSize + 1;
+	
+		int totalPages = (int) Math.ceil((double) total / this.limit);
 
-		// ex > 100개의 공지사항은 끝쪽수로 나눈게 우리는 라스트 페이지인거다 !
-		int lastPage = (int) (Math.ceil((double) total / this.limit));
+		this.startPage = ((page - 1) / pageSize) * pageSize + 1;
 
-		if (lastPage < this.endPage) {
-			this.endPage = lastPage;
-		}
-
+		this.endPage = Math.min(startPage + pageSize - 1, totalPages);
+	
 		this.prev = this.startPage > 1;
-		this.next = this.endPage < lastPage;
+		this.next = this.endPage < totalPages;
 	}
-
 }

@@ -77,34 +77,86 @@ body, #neck, .cover, .map {
 	background-color: rgba(50, 36, 30, 0.6);
 }
 
-.image-text-container {
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-	margin-left: 500px;
-	margin-top: 20vh;
-}
-
-.image-text-wrapper {
+.slider1 {
 	display: flex;
 	align-items: center;
 	margin-bottom: 50px;
 }
 
-.image-text-wrapper img {
-	width: 300px;
+.slides1 .slide1 {
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.slides1 img {
+   width: 300px;
 	height: 300px;
 	object-fit: cover;
 	border-radius: 15px;
 	box-shadow: 0 0 10px #999;
 }
 
-.text-section {
-	max-width: 400px;
+.text {
+    max-width: 400px;
 	margin-left: 50px;
 }
 
-/* 이미지 슬라이드 부분 */
+.slider2 {
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.slides2 .slide2 {
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.slides2 img {
+   width: 300px;
+	height: 300px;
+	object-fit: cover;
+	border-radius: 15px;
+	box-shadow: 0 0 10px #999;
+}
+
+.text {
+    max-width: 400px;
+	margin-left: 50px;
+}
+
+.slider3 {
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.slides3 .slide3 {
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.slides3 img {
+   width: 300px;
+	height: 300px;
+	object-fit: cover;
+	border-radius: 15px;
+	box-shadow: 0 0 10px #999;
+}
+
+.text {
+    max-width: 400px;
+	margin-left: 50px;
+}
+/* 
+이미지 슬라이드 부분
 @
 keyframes slideIn {from { transform:translateX(-100%);
 	opacity: 0;
@@ -124,7 +176,7 @@ to {
 .image-text-wrapper.animate {
 	animation: slideIn 2s ease-out forwards;
 }
-
+  */
 #map {
 	margin: 50px auto;
 	width: 800px;
@@ -135,8 +187,7 @@ to {
 }
 
 /* 맵 슬라이드 부분 */
-@
-keyframes slideUp {from { transform:translateY(100%);
+@keyframes slideUp {from { transform:translateY(100%);
 	opacity: 0;
 }
 
@@ -217,12 +268,21 @@ to {
 	position: relative;
 	margin: 13px 0 0 90px;
 	height: 75px;
+	font-weight: bold;
+	font-size: 14px;
 }
 
 .desc .ellipsis {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
+}
+
+.desc .ellipsis1 {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;	
+	text-decoration : underline;
 }
 
 .info .img {

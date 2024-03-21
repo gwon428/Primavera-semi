@@ -30,22 +30,27 @@
 	</header>
 	<div class="container">
 		<h1>Review</h1>
-		<form action="/updatereview" method="post"
-			enctype="multipart/form-data">
+		<form id="reviewForm" action="/updatereview" method="post"
+			enctype="multipart/form-data" onsubmit="return validateForm();">
 			<input type="hidden" name="no" value="${vo.no}"> <input
 				type="hidden" name="url" value="${vo.url}">
 
 			<c:if test="${not empty vo.url}">
 				<div class="form-image">
-					<a href="/upload/review/${vo.url}" download><img
-						src="/upload/review/${vo.url}" /></a>
+					<img id="imagePreview" src="/upload/review/${vo.url}"
+						alt="Review Image">
 				</div>
 			</c:if>
 
+			<c:if test="${vo.id == currentUserId}">
+				<label for="fileInput" class="btn btn-info">이미지 수정</label>
+				<input type="file" id="fileInput" name="file" accept="image/*"
+					style="display: none;" onchange="previewImage(event)">
+			</c:if>
+
 			<div class="form-group">
-				<label>제목</label> <input
-					class="form-control ${vo.id != currentUserId ? 'read-only' : ''}"
-					name="title" value="${vo.title}"
+				<label>제목</label> <input class="form-control" name="title"
+					maxlength="30" placeholder="제목을 입력하세요.(최대 30자)" value="${vo.title}"
 					${vo.id != currentUserId ? 'readonly' : ''}>
 			</div>
 
@@ -55,23 +60,25 @@
 					<c:forEach begin="1" end="5" var="i">
 						<i class="${i <= vo.rating ? 'fas' : 'far'} fa-star"
 							data-rating="${i}"></i>
-						<input type="hidden" name="rating" id="rating-input" value="1">
 					</c:forEach>
+					<input type="hidden" name="rating" id="rating-input"
+						value="${vo.rating}"}>
 				</div>
 			</div>
 
 			<div class="form-group">
 				<label>내용</label>
-				<textarea
-					class="form-control ${vo.id != currentUserId ? 'read-only' : ''}"
-					rows="10" name="content"
+				<textarea class="form-control" rows="10" name="content"
+					maxlength="300" placeholder="내용을 입력하세요.(최대 300자)"
 					${vo.id != currentUserId ? 'readonly' : ''}>${vo.content}</textarea>
 			</div>
 
 			<a href="/review/list" class="btn-list">글목록</a>
+
 			<c:if test="${vo.id == currentUserId}">
 				<button type="submit" class="btn-info">수정</button>
 			</c:if>
+
 			<sec:authorize
 				access="hasAuthority('ADMIN') or ${vo.id == currentUserId}">
 				<a class="btn-delete" href="/deletereview?no=${vo.no}">삭제</a>
@@ -79,6 +86,36 @@
 		</form>
 	</div>
 
+	<script>
+		function previewImage(event) {
+	        var reader = new FileReader();
+	        reader.onload = function(){
+	            var output = document.getElementById('imagePreview');
+	            output.src = reader.result;
+	        };
+	        reader.readAsDataURL(event.target.files[0]);
+	    }
+	</script>
+
+	<script>
+	    function validateForm() {
+	        var title = document.getElementsByName("title")[0].value.trim();
+	        var content = document.getElementsByName("content")[0].value.trim();
+	
+	        if (!title && !content) {
+	            alert("제목과 내용이 입력되지 않았습니다.");
+	            return false;
+	        } else if (!title) {
+	            alert("제목이 입력되지 않았습니다.");
+	            return false;
+	        } else if (!content) {
+	            alert("내용이 입력되지 않았습니다.");
+	            return false;
+	        }
+	        return true;
+	    }
+	</script>
+	
 	<script>
         document.addEventListener("DOMContentLoaded", function() {
             const stars = document.querySelectorAll(".star-rating i");

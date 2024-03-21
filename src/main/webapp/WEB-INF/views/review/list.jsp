@@ -4,6 +4,8 @@
 	uri="http://www.springframework.org/security/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -84,7 +86,7 @@
 						<th>제목</th>
 						<th>작성자</th>
 						<th>별점</th>
-						<th>작성일</th>
+						<th>작성일/수정일</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -114,25 +116,28 @@
 				</tbody>
 
 			</table>
+		
 			<nav>
 				<ul class="pagination">
 					<li class="page-item ${paging.prev ? '' : 'disabled'}"><a
-						class="page-link"
-						href="/reviewboard/list?page=${paging.startPage - 1}">Previous</a>
+						class="page-link" href="/review/list?page=${paging.startPage - 1}">Previous</a>
 					</li>
 
 					<c:forEach begin="${paging.startPage}" end="${paging.endPage}"
-						var="page">
-						<li class="page-item ${paging.page == page ? 'active' : ''}">
-							<a class="page-link"
-							href="/review/list?page=${page}&sort=${paging.sort}">${page}</a>
+						var="pageNum">
+						<li class="page-item ${pageNum == paging.page ? 'active' : ''}"><a
+							class="page-link" href="/review/list?page=${pageNum}&sort=${paging.sort}&searchType=${paging.searchType}&searchKeyword=${encodedSearchKeyword}">${pageNum}</a>
 						</li>
 					</c:forEach>
+
 					<li class="page-item ${paging.next ? '' : 'disabled'}"><a
 						class="page-link" href="/review/list?page=${paging.endPage + 1}">Next</a>
 					</li>
 				</ul>
 			</nav>
+
+
+
 		</div>
 	</main>
 </body>
