@@ -95,9 +95,25 @@ public class NoticeController {
 			n.setUrl(url);
 		}
 		service.update(n);
+		
 		return "redirect:/notice/list";
 	}
 
+	@PostMapping("/upload")
+	public String upload(MultipartFile file) throws IllegalStateException, IOException {
+		System.out.println("파일 사이즈 : " + file.getSize());
+		System.out.println("파일 이름 : " + file.getOriginalFilename());
+		System.out.println("파일 파라미터명 : " + file.getName());
+
+		noticeFileUpload(file);
+
+		return "redirect:/";
+	}
+	
+	
+	
+	
+	
 	// /notice/delete
 	@GetMapping("deleteNotice")
 	public String delete(String noticeNum) {
