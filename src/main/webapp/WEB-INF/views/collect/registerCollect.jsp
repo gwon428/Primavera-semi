@@ -19,7 +19,10 @@
 	</script>
 <script src="../../../resources/js/registerCollectDaum.js"></script>
 <script src="https://kit.fontawesome.com/4602e82315.js" crossorigin="anonymous"></script>
-	
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css"/>
+<script src = "http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
+
 </head>
 <body>
 <sec:authentication property="principal" var="user" />
@@ -30,7 +33,7 @@
 				<a href="/">Primavera</a>
 			</nav>
 			<nav>
-				<a href="/map/mainMap">Store</a> <a href="#">Guide</a> <a href="collectPage">PickUp</a> <a
+				<a href="mainMap">Store</a> <a href="#">Guide</a> <a href="collectPage">PickUp</a> <a
 					href="/notice/list">Board</a> <span>
 					<a href="/review/list">Review</a> <a href="listQna">Q & A</a> <a href="/notice/list">Notice</a>
 				</span> <a href="myPage"><i class="fa-regular fa-user" id="mypage"></i></a>
@@ -70,8 +73,7 @@
 
 			<div class="collectDate">
 				<p>*수거일</p>
-				<input type="date" name="collectionDate" id="collectionDate" max="2025-12-31"
-					min="2024-02-22" />
+				<input type="text" name="collectionDate" id="collectionDate" />
 			</div>
 			<div class="kg">
 				<p>*수거 신청 무게</p>
@@ -120,6 +122,5 @@
 	</form>
 	</div>
 	<script src="../../../resources/js/collect/register.js"></script>
-	
 </body>
 </html>

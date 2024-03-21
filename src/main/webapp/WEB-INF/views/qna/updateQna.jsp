@@ -20,7 +20,7 @@
 				<a href="/">Primavera</a>
 			</nav>
 			<nav>
-				<a href="/map/mainMap">Store</a> <a href="#">Guide</a> <a href="collectPage">PickUp</a> <a
+				<a href="mainMap">Store</a> <a href="#">Guide</a> <a href="collectPage">PickUp</a> <a
 					href="/notice/list">Board</a> <span>
 					<a href="/review/list">Review</a> <a href="listQna">Q & A</a> <a href="/notice/list">Notice</a>
 				</span> <a href="myPage"><i class="fa-regular fa-user" id="mypage"></i></a>
@@ -42,7 +42,7 @@
 				<div class="updateQna">
 					<label>*제목</label>
 					<br>
-					<textarea class="form-control" row="10" name="title" style="resize:none;" id="title">${qna.title}</textarea>
+					<textarea class="form-control" row="10" name="title" style="resize:none;" id="title" maxlength="30">${qna.title}</textarea>
 				</div>
 				<div class="updateQna">
 					<label>*내용</label>

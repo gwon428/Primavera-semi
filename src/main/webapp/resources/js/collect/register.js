@@ -48,4 +48,16 @@ for (var j = 0; j < target.length; j++) {
 	});
 }
 
-
+$(function(){
+		
+		$("#collectionDate").datepicker({
+			 dateFormat: 'yy-mm-dd',
+			 minDate: 0,
+			 maxDate: new Date('2025-12-31'),
+			 changeMonth:true,
+			 changeYear:true,
+			 nextText : '다음 달',
+			 prevText : '이전 달'
+		});	
+		
+	});
