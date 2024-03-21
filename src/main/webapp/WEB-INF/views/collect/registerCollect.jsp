@@ -10,8 +10,8 @@
 <title>Insert title here</title>
 
 <link rel="stylesheet" href="../../../resources/css/reset.css" />
-<link rel="stylesheet" href="../../../resources/css/header.css" />
 <link rel="stylesheet" href="../../../resources/css/collect/register.css" />
+<link rel="stylesheet" href="../../../resources/css/header.css" />
 
 <script
 		src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"
@@ -25,24 +25,17 @@
 <sec:authentication property="principal" var="user" />
 
 <div class="header-blackbox"></div>
-	<header>
-		<nav>
-			<a href="index.jsp">Primavera</a>
-		</nav>
-		<nav>
-			<a href="/map/mainMap">Store</a>
-			<a href="#">Guide</a>
-			<a href="collectPage">PickUp</a>
-			<a href="list">Board</a>
-		<span>
-			<a href="/review/list">Review</a>
-			<a href="listQna">Q & A</a>
-			<a href="notice/list">Notice</a>
-		</span>
-							
-			<a href="myPage"><i class="fa-regular fa-user" id="mypage"></i></a>
-		</nav>
-	</header>
+		<header style="font-weight: normal;">
+			<nav>
+				<a href="/">Primavera</a>
+			</nav>
+			<nav>
+				<a href="/map/mainMap">Store</a> <a href="#">Guide</a> <a href="collectPage">PickUp</a> <a
+					href="/notice/list">Board</a> <span>
+					<a href="/review/list">Review</a> <a href="listQna">Q & A</a> <a href="/notice/list">Notice</a>
+				</span> <a href="myPage"><i class="fa-regular fa-user" id="mypage"></i></a>
+			</nav>
+		</header>
 <!-- -----------------------main----------------------------- -->
 <div id="back">
 <div id="back_black"></div>
@@ -58,11 +51,11 @@
 			</div>
 			<div class="name">
 				<p>*이름</p>
-				<input type="text" name="name" value="${user.name}"/>
+				<input type="text" name="name" value="${user.name}" readonly/>
 			</div>
 			<div class="phone">
 				<p>*전화번호</p>
-				<input type="text" name="phone" value="${user.phone}"/>
+				<input type="text" name="phone" value="${user.phone}" readonly/>
 			</div>
 
 			<div class="addr">

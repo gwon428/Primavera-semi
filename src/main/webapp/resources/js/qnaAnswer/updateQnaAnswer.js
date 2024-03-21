@@ -24,3 +24,13 @@ function labelText(){
 		var text = document.querySelector("#photo");
 		text.style.display = "none";
 	}
+/* ------------------ qnaAnswer에서 사진 삭제 ---------------------------*/
+function photoDelete(){
+	const qnaAnswerPhoto= document.querySelector("#qnaAnswerPhoto");
+	const photoDeleteBtn = document.querySelector("#photoDelete");
+	
+	qnaAnswerPhoto.style.visibility = 'hidden';
+	photoDeleteBtn.style.display = 'flex';
+	delImg.value = true;
+	
+}

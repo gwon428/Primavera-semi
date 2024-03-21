@@ -25,19 +25,19 @@
 		<div class="header-blackbox"></div>
 		<header>
 			<nav>
-				<a href="index.jsp">Primavera</a>
+				<a href="/">Primavera</a>
 			</nav>
 			<nav>
-				<a href="#">Store</a> <a href="#">Guid</a> 
-				<a href="collectPage">PickUp</a>
-				<a href="list">Board</a> 
+				<a href="/map/mainMap">Store</a> 
+				<a href="#">Guide</a> 
+				<a href="collectPage">PickUp</a> 
+				<a href="/notice/list">Board</a> 
 				<span>
-         		<a href="/review/list">Review</a>
-          		<a href="listQna">Q & A</a>
-          		<a href="notice/list">Notice</a>
-        		</span>
-				<a href="myPage"><i
-					class="fa-regular fa-user" id="mypage"></i></a>
+					<a href="/review/list">Review</a> 
+					<a href="listQna">Q & A</a> 
+					<a href="/notice/list">Notice</a>
+				</span> 
+				<a href="myPage"><i class="fa-regular fa-user" id="mypage"></i></a>
 			</nav>
 		</header>
 		<section id="top">
@@ -81,11 +81,16 @@
 								 -->
 								 <td>${paging.total - (paging.page - 1) * 10 - status.index}</td>
 								<c:choose>
-									<c:when test="${(item.secret == 'Y') && (user == 'anonymousUser'||user.auth == 'MEMBER')}">
+									<c:when test="${(item.secret == 'Y') && (user == 'anonymousUser')}">
 										<td><i class="fa-solid fa-lock"></i>&nbsp;
-										<div id="pwd_check" data-id="${item.id}" data-value="${item.qnaNum}">${item.title}</div></td>
+										<a href="myPage">${item.title}</a></td>
 									</c:when>
 									<c:otherwise>
+									<c:if test="${(item.secret == 'Y') && (user.auth == 'MEMBER')}">
+										<td><i class="fa-solid fa-lock"></i>&nbsp;
+										<div id="pwd_check" data-id="${item.id}" data-value="${item.qnaNum}">${item.title}</div></td>
+									</c:if>
+									
 										<c:if test="${(item.secret == 'Y' && user.auth == 'ADMIN')}">
 											<td><i class="fa-solid fa-lock"></i>&nbsp;
 											<a href="/viewQna?qnaNum=${item.qnaNum}">${item.title}</a></td>
@@ -110,7 +115,10 @@
 					<li class="page-item ${paging.prev ? '' : 'disabled'}">
 					
 					<c:choose>
-						<c:when test="${paging.startPage == 1}">
+						<c:when test="${(paging.startPage == 1)&&(paging.select != null) && (paging.keyword != null)}">
+							<a class="page-link" href="/listQna?select=${paging.select}&keyword=${paging.keyword}&page=${paging.startPage=1}">Previous</a>
+						</c:when>
+						<c:when test="${(paging.startPage == 1)&&(paging.select == null) && (paging.keyword == null)}">
 							<a class="page-link" href="/listQna?page=${paging.startPage=1}">Previous</a>
 						</c:when>
 						<c:otherwise>
@@ -122,19 +130,34 @@
 
 					<c:forEach begin="${paging.startPage}" end="${paging.endPage}"
 						var="page">
-						<li class="page-item"><a
-							class="page-link ${paging.page== page ? 'active' : ''} "
-							href="/listQna?page=${page}" id="page_num">${page}</a></li>
+						<li class="page-item">
+							<c:choose>
+							<c:when test="${(paging.select != null) && (paging.keyword != null)}">
+								<a class="page-link ${paging.page== page ? 'active' : ''}" href="/listQna?select=${paging.select}&keyword=${paging.keyword}&page=${page}" id="page_num">
+									${page}
+								</a>
+							</c:when>
+							<c:otherwise>
+								<a class="page-link ${paging.page== page ? 'active' : ''}" href="/listQna?page=${page}" id="page_num">
+									${page}
+								</a>
+							</c:otherwise>
+							</c:choose>
+						</li>
 					</c:forEach>
 
-					<li class="page-item ${paging.next ? '' : 'disabled'}"><c:choose>
-						<c:when test="${paging.endPage < 10}">
+					<li class="page-item ${paging.next ? '' : 'disabled'}">
+					<c:choose>
+						<c:when test="${(paging.endPage < 10)&&(paging.select != null) && (paging.keyword != null)}">
+							<a class="page-link" href="/listQna?select=${paging.select}&keyword=${paging.keyword}&page=${paging.endPage=paging.endPage}">Next</a>
+						</c:when>
+						<c:when test="${(paging.endPage < 10)&&(paging.select == null) && (paging.keyword == null)}">
 							<a class="page-link" href="/listQna?page=${paging.endPage=paging.endPage}">Next</a>
 						</c:when>
 						<c:otherwise>
 							<a class="page-link" href="/listQna?page=${paging.endPage + 1}">Next</a>
-						</c:otherwise>
-						</c:choose>	
+						</c:otherwise>						
+					</c:choose>	
 					</li>
 				</ul>
 			</nav>
@@ -146,7 +169,7 @@
 							<option value="idFind">아이디</option>
 						</select>
 						<input type="text" name="keyword">
-						<input type="submit" value="조회">
+						<input type="submit" value="조회" id="searchOk">
 					</form>
 				</div>
 		</div>

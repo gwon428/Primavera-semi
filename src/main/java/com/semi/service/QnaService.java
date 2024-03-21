@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.semi.model.dao.QnaDAO;
-import com.semi.model.dto.SearchQnaDTO;
 import com.semi.model.vo.Paging;
 import com.semi.model.vo.PagingQna;
 import com.semi.model.vo.Qna;
@@ -55,11 +54,5 @@ public class QnaService {
 		return dao.totalStatus();
 	}
 	
-	// search 기능
-	public List<Qna> searchQna(String keyword, String select){
-		SearchQnaDTO dto = new SearchQnaDTO();
-		dto.setKeyword(keyword);
-		dto.setSelect(select);
-		return dao.searchQna(dto);
-	}
+	
 }

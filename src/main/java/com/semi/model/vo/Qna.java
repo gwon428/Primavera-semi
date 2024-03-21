@@ -19,5 +19,6 @@ public class Qna {
 	private String status;
 	private String secret;
 	
+	private boolean delImg;
 	private MultipartFile file;
 }

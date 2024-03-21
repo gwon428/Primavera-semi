@@ -6,7 +6,6 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.semi.model.dto.SearchQnaDTO;
 import com.semi.model.vo.Collect;
 import com.semi.model.vo.Paging;
 import com.semi.model.vo.PagingQna;
@@ -41,6 +40,7 @@ public class QnaDAO {
 		return session.update("qnaMapper.update", qna);
 	}
 	
+
 	// 작성한 Qna 삭제 
 	public int delete(int qnaNum) {
 		return session.delete("qnaMapper.delete", qnaNum);
@@ -54,8 +54,5 @@ public class QnaDAO {
 		return session.selectOne("qnaMapper.countStatus");
 	}
 	
-	// search 기능
-	public List<Qna> searchQna(SearchQnaDTO search){
-		return session.selectList("qnaMapper.searchQna", search);
-	}
+	
 }

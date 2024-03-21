@@ -31,7 +31,7 @@
   padding: 15px;
   border-radius : 10px;
   display:flex;
-	flex-direction:column;
+  flex-direction:column;
 }
 #modalContent h3{
 	font-family: "Cafe24Oneprettynight";

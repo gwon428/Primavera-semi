@@ -12,26 +12,21 @@
 <link rel="stylesheet" href="../../../resources/css/header.css" />
 <link rel="stylesheet" href="../../../resources/css/qnaAnswer/updateQnaAnswer.css" />
 <script src="https://kit.fontawesome.com/4602e82315.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
 <div class="header-blackbox"></div>
-    <header>
-      <nav>
-        <a href="#">Primavera</a>
-      </nav>
-      <nav>
-        <a href="mainMap">Store</a>
-        <a href="#">Guide</a>
-        <a href="collectPage">PickUp</a>
-        <a href="list">Board</a>
-        <span>
-          <a href="/review/list">Review</a>
-          <a href="listQna">Q & A</a>
-          <a href="/notice/list">Notice</a>
-        </span>
-        <a href="myPage"><i class="fa-regular fa-user"></i></a>
-      </nav>
-    </header>
+		<header>
+			<nav>
+				<a href="/">Primavera</a>
+			</nav>
+			<nav>
+				<a href="/map/mainMap">Store</a> <a href="#">Guide</a> <a href="collectPage">PickUp</a> <a
+					href="/notice/list">Board</a> <span>
+					<a href="/review/list">Review</a> <a href="listQna">Q & A</a> <a href="/notice/list">Notice</a>
+				</span> <a href="myPage"><i class="fa-regular fa-user" id="mypage"></i></a>
+			</nav>
+		</header>
 <!-- -----------------------------------main----------------------------- -->
 <div id="main">
      <div id="allContent">
@@ -50,11 +45,11 @@
 	             </div>
 	             <div name="qnaTitle" id="qnaTitle">
 	               <label>제목</label><br>
-	               <textarea>${qnaView.title}</textarea>
+	               <textarea readonly>${qnaView.title}</textarea>
 	             </div>
 	             <div id="qnaContent" name="qnaContent">
 	               <label>내용</label><br>
-	               <textarea>${qnaView.content}</textarea>
+	               <textarea readonly>${qnaView.content}</textarea>
 	             </div>
 	             <c:choose>
 	               <c:when test="${qnaView.url != null}">
@@ -82,7 +77,9 @@
 				<div class="updatePhoto">
 					<c:choose>
 						<c:when test="${qnaAnswer.url != null}">
-							<img src="/upload/qnaAnswer/${qnaAnswer.url}"/>
+							<img src="/upload/qnaAnswer/${qnaAnswer.url}" id="qnaAnswerPhoto"/>
+							<div id="photoDelete"><i class="fa-solid fa-circle-xmark" onclick="photoDelete()"></i></div>
+							<input type="hidden" value="${qnaAnswer.delImg}" name="delImg" id="delImg"/>
 						</c:when>
 					</c:choose>
 					<div class="updateAnswer" id="img">
@@ -103,5 +100,6 @@
 	</div>
 </div>
 <script src="../../../resources/js/qnaAnswer/updateQnaAnswer.js"></script>
+
 </body>
 </html>

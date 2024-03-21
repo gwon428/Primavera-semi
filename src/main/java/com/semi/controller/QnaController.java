@@ -92,7 +92,7 @@ public class QnaController {
 		// 리스트 페이징 처리 (select)
 		@GetMapping("listQna")
 	//	public String showFilm(Model model, Paging paging) {
-		public String showFilm(Model model, @RequestParam(value = "page", defaultValue = "1") int page, String select, String keyword) {
+		public String showFilm(Model model, @RequestParam(value = "page", defaultValue = "1") int page, String select, String keyword){
 			//System.out.println(paging);
 			
 			// 페이지 거꾸로
@@ -102,15 +102,12 @@ public class QnaController {
 			paging.setKeyword(keyword);
 			paging.setSelect(select);
 			
-			System.out.println("keyword : " + paging.getKeyword());
-			System.out.println("select : " + paging.getSelect());
-			
 			List<Qna> list = service.showAllQna(paging);
-			System.out.println(list);
 			
-			model.addAttribute("list", list);
+			
 			//model.addAttribute("search", search);
 			//model.addAttribute("paging", new PagingQna(paging.getPage(), service.total()));
+			model.addAttribute("list", list);
 			model.addAttribute("paging", paging);
 			
 			return "qna/listQna";
@@ -140,19 +137,23 @@ public class QnaController {
 		
 	@PostMapping("updateQna")
 		public String update(Qna qna) throws IllegalStateException, IOException {
-			if(!qna.getFile().isEmpty()) {
-				if(qna.getUrl()!=null) {
-					File file = new File(path+qna.getUrl());
-					file.delete();
-				}
+				
+			// 이미지 수정했을 경우 
+			if(!qna.getFile().getOriginalFilename().equals("")) {
 				String url = fileUpload(qna.getFile());
 				qna.setUrl(url);
-			}
+			} else if(qna.isDelImg()) {
+				// 이미지 삭제했을 경우
+				File file = new File(path+qna.getUrl());
+				file.delete();
+				qna.setUrl(null);	
+			} 
+//			
 			service.update(qna);
+			
 			return "redirect:/viewQna?qnaNum="+qna.getQnaNum();
 		}
-  
-
+		
 	// 삭제(delete)
  @GetMapping("/deleteQna")
 	public String delete(String qnaNum) {
@@ -190,7 +191,7 @@ public class QnaController {
  	
  	// 비밀글 시 비밀번호 확인 및 페이지 이동
  	@PostMapping("pwdCheck")
- 	public String pwdCheck(String password, String qnaNum, String idCheck) {
+ 	public String pwdCheck(String password, String qnaNum, String idCheck){
  		System.out.println("pwdCheck");
  		System.out.println(idCheck);
  		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
@@ -204,13 +205,6 @@ public class QnaController {
  		}
  	}
  	
- 	// find
- 	@GetMapping("find")
-	public String find(Model model,String select, String keyword){
-		// Model은 spring에서 기본적으로 제공하는 것
-		List<Qna> list = service.searchQna(keyword, select);
-		model.addAttribute("list", list);
-		return "qna/find_result";
-	}
+
  	
 }

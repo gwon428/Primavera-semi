@@ -19,23 +19,17 @@ uri="http://java.sun.com/jsp/jstl/core"%>
   <body>
     <sec:authentication property="principal" var="user" />
     <div class="header-blackbox"></div>
-    <header>
-      <nav>
-        <a href="#">Primavera</a>
-      </nav>
-      <nav>
-        <a href="mainMap">Store</a>
-        <a href="#">Guide</a>
-        <a href="collectPage">PickUp</a>
-        <a href="list">Board</a>
-        <span>
-          <a href="/review/list">Review</a>
-          <a href="listQna">Q & A</a>
-          <a href="/notice/list">Notice</a>
-        </span>
-        <a href="myPage"><i class="fa-regular fa-user"></i></a>
-      </nav>
-    </header>
+		<header>
+			<nav>
+				<a href="/">Primavera</a>
+			</nav>
+			<nav>
+				<a href="/map/mainMap">Store</a> <a href="#">Guide</a> <a href="collectPage">PickUp</a> <a
+					href="/notice/list">Board</a> <span>
+					<a href="/review/list">Review</a> <a href="listQna">Q & A</a> <a href="/notice/list">Notice</a>
+				</span> <a href="myPage"><i class="fa-regular fa-user" id="mypage"></i></a>
+			</nav>
+		</header>
 <!-- -----------------------------------main----------------------------- -->
 
     <div id="main">
@@ -55,11 +49,11 @@ uri="http://java.sun.com/jsp/jstl/core"%>
               </div>
               <div name="qnaTitle" id="qnaTitle">
                 <label>제목</label><br>
-                <textarea>${qnaView.title}</textarea>
+                <textarea readonly>${qnaView.title}</textarea>
               </div>
               <div id="qnaContent" name="qnaContent">
                 <label>내용</label><br>
-                <textarea>${qnaView.content}</textarea>
+                <textarea readonly>${qnaView.content}</textarea>
               </div>
               <c:choose>
                 <c:when test="${qnaView.url != null}">

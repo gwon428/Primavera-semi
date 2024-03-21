@@ -1,8 +1,7 @@
 @font-face {
-	font-family: "Cafe24Oneprettynight";
-	src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff")
-		format("woff");
-	font-style: normal;
+  font-family: "Cafe24Oneprettynight";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff") format("woff");
+  font-style: normal;
 }
 
 header {
@@ -14,7 +13,7 @@ header {
   align-items: center;
   background-color: rgba(0, 0, 0, 0.6);
   z-index: 100;
-  
+
 }
 
 header a {
@@ -101,6 +100,7 @@ nav a:hover::after,
 a h1:hover::after {
   width: 100%;
 }
+
 #mapage {
   size: 2.5rem;
 }
