@@ -28,10 +28,16 @@
 				<a href="/">Primavera</a>
 			</nav>
 			<nav>
-				<a href="/map/mainMap">Store</a> <a href="#">Guide</a> <a href="collectPage">PickUp</a> <a
-					href="/notice/list">Board</a> <span>
-					<a href="/review/list">Review</a> <a href="listQna">Q & A</a> <a href="/notice/list">Notice</a>
-				</span> <a href="myPage"><i class="fa-regular fa-user" id="mypage"></i></a>
+				<a href="/map/mainMap">Store</a> 
+				<a href="#">Guide</a> 
+				<a href="collectPage">PickUp</a> 
+				<a href="/notice/list">Board</a> 
+				<span>
+					<a href="/review/list">Review</a> 
+					<a href="listQna">Q & A</a> 
+					<a href="/notice/list">Notice</a>
+				</span> 
+				<a href="myPage"><i class="fa-regular fa-user" id="mypage"></i></a>
 			</nav>
 		</header>
 		<section id="top">
@@ -97,7 +103,7 @@
 
 								<td>${item.id}</td>
 								<td><fmt:formatDate value="${item.writeDate}"
-										pattern="yy-MM-dd HH:ss" /></td>
+										pattern="yy-MM-dd HH:mm" /></td>
 								<td>${item.status}</td>
 							</tr>
 						</c:forEach>
@@ -163,7 +169,7 @@
 							<option value="idFind">아이디</option>
 						</select>
 						<input type="text" name="keyword">
-						<input type="submit" value="조회">
+						<input type="submit" value="조회" id="searchOk">
 					</form>
 				</div>
 		</div>

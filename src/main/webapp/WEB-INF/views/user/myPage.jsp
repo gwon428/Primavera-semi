@@ -7,31 +7,32 @@
 			<head>
 				<meta charset="UTF-8">
 				<link rel="stylesheet" href="/resources/css/reset.css" />
-				<link href="../../resources/css/header.css" rel="stylesheet" type="text/css">
 				<link href="../../resources/css/user/myPage.css" rel="stylesheet" type="text/css">
+				<link href="../../resources/css/header.css" rel="stylesheet" type="text/css">
 				<script src="https://kit.fontawesome.com/4602e82315.js" crossorigin="anonymous"></script>
 				<title>Insert title here</title>
 			</head>
 			
 
-			<header>
-      <nav>
-        <a href="/">Primavera</a>
-      </nav>
-      
-      <nav>
-        <a href="/map/mainMap">Store</a>
-        <a href="#">Guide</a>
-        <a href="collectPage">PickUp</a>
-        <a href="list">Board</a>
-        <span>
-          <a href="/review/list">Review</a>
-          <a href="listQna">Q & A</a>
-          <a href="/notice/list">Notice</a>
-        </span>
-        <a href="myPage"><i class="fa-regular fa-user"></i></a>
-      </nav>
-    </header>
+			<div class="header-blackbox"></div>
+		<header>
+			<nav>
+				<a href="/">Primavera</a>
+			</nav>
+			<nav>
+				<a href="/map/mainMap">Store</a> 
+				<a href="#">Guide</a> 
+				<a href="collectPage">PickUp</a> 
+				<a href="/notice/list">Board</a> 
+				<span>
+					<a href="/review/list">Review</a> 
+					<a href="listQna">Q & A</a> 
+					<a href="/notice/list">Notice</a>
+				</span> 
+				<a href="myPage"><i class="fa-regular fa-user" id="mypage"></i></a>
+			</nav>
+		</header>
+		<!-- -----------------------------------main----------------------------- -->
 	
 			<body>
 				<sec:authentication property="principal" var="user" />
