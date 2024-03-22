@@ -18,7 +18,9 @@
 	crossorigin="anonymous"></script>
 <script src="https://kit.fontawesome.com/4602e82315.js"
 	crossorigin="anonymous"></script>
-	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://kit.fontawesome.com/4602e82315.js"
+	crossorigin="anonymous"></script>
 <title>Document</title>
 <style>
 @font-face {
@@ -28,6 +30,7 @@
 		format("woff");
 	font-style: normal;
 }
+
 .pop_wrap {
 	visibility: hidden;
 	border: 1px solid black;
@@ -41,14 +44,17 @@
 	overflow: hidden;
 	border-radius: 10px;
 }
+
 .pop_inner {
 	line-height: 23px;
 	font-size: 13px;
 	margin: 0 8px;
 }
+
 .pop_inner hr {
 	margin: 3px;
 }
+
 .btn_close {
 	position: absolute;
 	left: 40%;
@@ -60,18 +66,37 @@
 	width: 43px;
 	margin-left: 16px;
 }
+
 #pop_head {
 	display: flex;
 	justify-content: space-between;
 }
+
 .modal-body {
 	max-height: calc(99vh - 500px);
 	overflow-y: auto;
 	font-family: "Malgun Gothic";
 }
+
+.cursor {
+	position: relative;
+	pointer-events: none;
+}
+
+.cursor img {
+	position: absolute;
+	width: 70px;
+	height: 70px;
+	border-radius: 50%;
+	z-index: 999 !important;
+	pointer-events: none;
+}
 </style>
 </head>
 <body>
+	<div class="cursor">
+		<img src="../../../resources/images/mouse2.png">
+	</div>
 	<div class="header-blackbox"></div>
 	<header>
 		<nav>
@@ -146,13 +171,12 @@
 		<section id="section3">
 			<div class="container1">
 				<h1>User_Guide</h1>
-				<p>지속 가능한 옷은 이미 옷장에 있는 옷입니다. <br>
-
-
-프리마베라는 버려지는 의류에 새로운 가치를 부여합니다. <br><br>
-Sustainable clothes are clothes you already have in your closet.
-Primavera gives new value to discarded clothing.
-					</p>
+				<p>
+					지속 가능한 옷은 이미 옷장에 있는 옷입니다. <br> 프리마베라는 버려지는 의류에 새로운 가치를 부여합니다.
+					<br>
+					<br> Sustainable clothes are clothes you already have in your
+					closet. Primavera gives new value to discarded clothing.
+				</p>
 				<a href="#"> > You want more details, don't you?</a>
 			</div>
 			<div class="container2">
@@ -237,5 +261,15 @@ Primavera gives new value to discarded clothing.
 		</div>
 	</main>
 	<script src="/resources/js/front.js"></script>
+	<script>
+	document.addEventListener('mousemove', (e) => {
+	    let mouseX = e.pageX + 7; // document의 x좌표값
+	    let mouseY = e.pageY + 7; // document의 y좌표값
+
+	    let cursor = document.querySelector('.cursor');
+	    cursor.style.left = mouseX + 'px';
+	    cursor.style.top = mouseY + 'px';
+	})
+	</script>
 </body>
 </html>

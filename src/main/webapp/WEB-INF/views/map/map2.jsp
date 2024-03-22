@@ -125,7 +125,7 @@
             </p>
         </div>
     </div>
-    <div class="card" tabindex="0"><img src="../../../resources/images/clothes2.jpg" alt="A City skyline at sunset" />
+    <div id="card" class="card" tabindex="0"><img src="../../../resources/images/clothes2.jpg" alt="A City skyline at sunset" />
         <div class="text">
             <h2 data-splitting="">Loose Long Denim Pants</h2>
             <p data-splitting=""> 
@@ -147,8 +147,6 @@
             - 남/녀 공용 오버사이즈 스웨트 셔츠 실루엣
             <br>
             - 깔끔한 디자인의 페이디드 블랙 컬러
-            <br>
-            - 
             </p>
         </div>
     </div>

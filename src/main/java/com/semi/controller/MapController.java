@@ -11,9 +11,9 @@ public class MapController {
 		return "map/mainMap";
 	}
 	
-	@GetMapping("map")
-	public String map() {
-		return "map/map";
+	@GetMapping("map1")
+	public String map1() {
+		return "map/map1";
 	}
 	
 	@GetMapping("map2")
