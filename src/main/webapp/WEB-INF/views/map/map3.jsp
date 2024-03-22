@@ -9,8 +9,7 @@
 <link rel="stylesheet" href="../../../resources/css/header.css" />
 <link rel="stylesheet" href="../../../resources/css/map/map1.css" />
  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
- <script src="https://kit.fontawesome.com/4602e82315.js"
-	crossorigin="anonymous"></script>
+ <script src="https://kit.fontawesome.com/4602e82315.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <div class="header-blackbox"></div>
@@ -127,11 +126,11 @@
       </div>
       <div class="color">
       <p>
-       - 전면 투웨이 집업 형태로 편안함 추구
+       * 전면 투웨이 집업 형태로 편안함 추구
             <br>
-            - 집업 상단의 시그니처 포인트 자수 디자인
+            * 집업 상단의 시그니처 포인트 자수 디자인
             <br>
-            - 빈티지 느낌의 차콜 컬러 
+            * 빈티지 느낌의 차콜 컬러 
       </p>
       </div>
 
@@ -150,11 +149,11 @@
       </div>
       <div class="color">
       <p>
-       - 넉넉한 밑위 기장과 스트레이트 루즈 핏 
+       * 넉넉한 밑위 기장과 스트레이트 루즈 핏 
             <br>
-            - 깔끔한 밑단
+            * 깔끔한 밑단
             <br>
-            - 인디고 컬러
+            * 인디고 컬러
       </p>
         
       </div>
@@ -175,9 +174,9 @@
       </div>
       <div class="color">
       <p>
-       - 남/녀 공용 오버사이즈 스웨트 셔츠 실루엣
+       * 남/녀 공용 오버사이즈 스웨트 셔츠 실루엣
             <br>
-            - 깔끔한 디자인의 페이디드 블랙 컬러
+            * 깔끔한 디자인의 페이디드 블랙 컬러
       </p>
       
       </div>
@@ -200,11 +199,11 @@
       </div>
       <div class="color">
       <p>
-        - 아코디언 4단 분리 지갑
+        * 아코디언 4단 분리 지갑
             <br>
-            - 카드, 지폐, 동전, 명함 등 분리 수납 가능
+            * 카드, 지폐, 동전, 명함 등 분리 수납 가능
             <br>
-            - 모던 블랙 컬러
+            * 모던 블랙 컬러
       </p>
       </div>
 
@@ -223,11 +222,12 @@
       </div>
       <div class="color">
       <p>
-      - 카드 이탈 방지 가드 적용
+      * 카드 이탈 방지 가드 적용
             <br>
-            - 최대 8장 카드 수납 가능
+            * 최대 8장 카드 수납 가능
             <br>
-            - 세이지 그린 컬러 
+            * 세이지 그린 컬러 
+             
       </p>
       </div>
    
@@ -247,11 +247,11 @@
       </div>
       <div class="color">
       <p>
-       - 생활 방수 가능한 멀티 반지갑
+       * 생활 방수 가능한 멀티 반지갑
             <br>
-            - 지폐 수납칸 1개, 지퍼칸 1개, 카드칸 8개 구성
+            * 지폐 수납칸 1개, 지퍼칸 1개, 카드칸 8개 구성
             <br>
-            - 블랙 컬러에 핑크 엣지 코드 마감 포인트 
+            * 블랙 컬러에 핑크 엣지 코드 마감 포인트 
       </p>
       
       </div>
@@ -303,10 +303,6 @@
           lastScroll = st;
       });
     });
-/*
-window.addEventListener('scroll', function(){
-	  console.log( window.scrollY )
-});*/
 </script>
 </body>
 </html>

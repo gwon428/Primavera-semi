@@ -21,4 +21,9 @@ public class MapController {
 		return "map/map2";
 	}
 	
+	@GetMapping("map3")
+	public String map3() {
+		return "map/map3";
+	}
+	
 }
