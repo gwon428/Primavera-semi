@@ -76,8 +76,7 @@
 	</update>
 	
 	<update id="deleteUser" parameterType="User">
-		UPDATE user
-		SET enabled = 0
+		DELETE FROM user
 		WHERE id=#{id}
 	</update>
 	
@@ -89,7 +88,6 @@
 	
 	<select id="count" resultType="int">
 	SELECT count(*) FROM user
-	WHERE enabled=1
 	</select>
 	
 	<select id="findId" parameterType="User" resultMap="userMap">

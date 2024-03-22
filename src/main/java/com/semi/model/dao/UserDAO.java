@@ -52,7 +52,7 @@ public class UserDAO {
 	}
 
 	public int deleteUser(UserDetails userDetails) {
-		return session.update("userMapper.deleteUser", userDetails);
+		return session.delete("userMapper.deleteUser", userDetails);
 	}
 
 	public List<User> showAllUser(Paging paging) {
