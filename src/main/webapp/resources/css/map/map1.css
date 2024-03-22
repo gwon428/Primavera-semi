@@ -341,6 +341,7 @@ font-family: "Cafe24Oneprettynight";
 	margin-top: 10px;
 	color : white;
 	font-family: "Cafe24Oneprettynight";
+	text-align: left;
 }
 .titleAni{
 	animation: slide 3s;
