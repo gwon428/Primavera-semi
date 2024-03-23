@@ -52,7 +52,7 @@ $(function(){
 		
 		$("#collectionDate").datepicker({
 			 dateFormat: 'yy-mm-dd',
-			 minDate: 0,
+			 minDate: 0 + "2D",
 			 maxDate: new Date('2025-12-31'),
 			 changeMonth:true,
 			 changeYear:true,

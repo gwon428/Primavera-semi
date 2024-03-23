@@ -54,7 +54,7 @@
 		
 		<c:forEach items="${list}" var="item">
 			<tr>
-				<td class="no">${item.orderNum}</td>
+				<td class="no"><a href="/viewCollect?orderNum=${item.orderNum}" style="text-decoration:underline">${item.orderNum}</a></td>
 				<td>${item.prog}</td>
 				<td>${item.collectionDate}</td>
 				<td>${item.kg}</td>

@@ -68,6 +68,19 @@ public class CollectDAO {
 		return session.insert("collectMapper.registerCollect", vo);
 	}
 	
+	// 신청 확인
+	public Collect selectCollect(int orderNum) {
+		return session.selectOne("collectMapper.selectCollect", orderNum);
+	}
 	
+	// 신청 변경
+	public int updateCollect(Collect vo) {
+		return session.update("collectMapper.updateCollect", vo);
+	}
+	
+	// 신청 삭제
+	public int deleteCollect(int orderNum) {
+		return session.delete("collectMapper.deleteCollect", orderNum);
+	}
 	
 }

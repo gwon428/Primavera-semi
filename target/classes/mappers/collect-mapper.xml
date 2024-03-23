@@ -23,6 +23,33 @@
 		#{roadAddress}, #{detailAddress}, #{collectionDate}, #{doorPwd}, #{request}, #{kg})
 	</insert>
 	
+	<!-- select : 수거 신청글 확인 -->
+	<select id="selectCollect" parameterType="int" resultMap="collectMap">
+		SELECT * 
+		FROM collect
+		WHERE order_num = #{orderNum}
+	</select>
+	
+	<!-- update : 수거 신청사항 변경 -->
+	<update id="updateCollect" parameterType="Collect">
+		UPDATE collect
+		SET post_code = #{postCode},
+			road_address = #{roadAddress},
+			detail_address = #{detailAddress},
+			collection_date = #{collectionDate},
+			door_pwd = #{doorPwd},
+			request = #{request},
+			kg = #{kg}
+		WHERE order_num = #{orderNum}
+	</update>
+		
+	<!-- delete : 수거 신청 삭제 -->
+	<delete id="deleteCollect" parameterType="int">
+		DELETE FROM collect
+		WHERE order_num = #{orderNum}
+	</delete>
+	
+	
 	<!-- select : 관리자용 수거신청현황용(prog제외) -->
 	<select id="showAllCollect" resultMap="collectMap">
 		SELECT order_num, id, name, phone, post_code, road_address, 

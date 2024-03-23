@@ -1,5 +1,7 @@
 package com.semi.controller;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.semi.model.vo.Collect;
 import com.semi.model.vo.Paging;
 import com.semi.model.vo.Pagingseven;
+import com.semi.model.vo.Qna;
 import com.semi.service.CollectService;
 
 @Controller
@@ -90,5 +93,38 @@ public class CollectController {
 
 		return "redirect:/showCollect";
 	}
-
+	
+	// 신청 확인(select)
+	@GetMapping("viewCollect")
+	public String selectCollect(Model model, String orderNum) {
+		int num = Integer.parseInt(orderNum);
+		Collect collect = service.selectCollect(num);
+		model.addAttribute("collect", collect);
+		return "/collect/viewCollect";
+	}
+	
+	
+	// 변경(update)
+	@GetMapping("updatePage")
+	public String updatePage(Model model, String orderNum) {
+		int num = Integer.parseInt(orderNum);
+		Collect collect = service.selectCollect(num);
+		model.addAttribute("collect", collect);
+		return "collect/updateCollect";
+	}
+		
+	@PostMapping("updateCollect")
+		public String updateCollect(Collect collect) {
+			service.updateCollect(collect);
+			return "redirect:/viewCollect?orderNum="+collect.getOrderNum();
+		}
+	
+	
+	// 삭제(delete)
+	@GetMapping("/deleteCollect")
+	public String deleteCollect(String orderNum) {	
+		int num = Integer.parseInt(orderNum);
+		service.deleteCollect(num);
+		return "collect/showCollect";
+	} 
 }
