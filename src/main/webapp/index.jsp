@@ -78,25 +78,11 @@
 	font-family: "Malgun Gothic";
 }
 
-.cursor {
-	position: relative;
-	pointer-events: none;
-}
 
-.cursor img {
-	position: absolute;
-	width: 70px;
-	height: 70px;
-	border-radius: 50%;
-	z-index: 999 !important;
-	pointer-events: none;
-}
 </style>
 </head>
 <body>
-	<div class="cursor">
-		<img src="../../../resources/images/mouse2.png">
-	</div>
+	
 	<div class="header-blackbox"></div>
 	<header>
 		<nav>
@@ -261,15 +247,6 @@
 		</div>
 	</main>
 	<script src="/resources/js/front.js"></script>
-	<script>
-	document.addEventListener('mousemove', (e) => {
-	    let mouseX = e.pageX + 7; // document의 x좌표값
-	    let mouseY = e.pageY + 7; // document의 y좌표값
-
-	    let cursor = document.querySelector('.cursor');
-	    cursor.style.left = mouseX + 'px';
-	    cursor.style.top = mouseY + 'px';
-	})
-	</script>
+	
 </body>
 </html>
