@@ -115,6 +115,7 @@ public class CollectController {
 		
 	@PostMapping("updateCollect")
 		public String updateCollect(Collect collect) {
+		System.out.println("orderNum : " + collect.getOrderNum());
 			service.updateCollect(collect);
 			return "redirect:/viewCollect?orderNum="+collect.getOrderNum();
 		}
@@ -125,6 +126,6 @@ public class CollectController {
 	public String deleteCollect(String orderNum) {	
 		int num = Integer.parseInt(orderNum);
 		service.deleteCollect(num);
-		return "collect/showCollect";
+		return "redirect:/showCollect";
 	} 
 }

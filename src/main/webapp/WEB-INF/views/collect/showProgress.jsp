@@ -127,6 +127,7 @@
 									<td>
 										<select name="prog" id="prog">
 											<option value="신청 완료">신청 완료</option>
+											<option value="신청 확인">신청 확인</option>
 											<option value="수거 완료">수거 완료</option>
 											<option value="수거 물품 확인">수거 물품 확인</option>
 											<option value="입금 진행중">입금 진행중</option>
