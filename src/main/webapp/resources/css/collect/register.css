@@ -126,6 +126,9 @@ textarea {
 	width: 170px;
     height: 35px;
 }
+textarea#doorPwd{
+	resize:none;
+}
 textarea#request {
   resize: none;
   width: 310px;

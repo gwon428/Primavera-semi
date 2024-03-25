@@ -279,3 +279,10 @@ header{
 .m_top{
 	margin-top: 50px;
 }
+#viewTitle{
+	position: absolute;
+    top: 256px;
+    left: 630px;
+    font-size: 1.7rem;
+    font-weight: bold;
+}

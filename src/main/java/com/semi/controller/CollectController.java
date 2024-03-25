@@ -100,7 +100,7 @@ public class CollectController {
 		int num = Integer.parseInt(orderNum);
 		Collect collect = service.selectCollect(num);
 		model.addAttribute("collect", collect);
-		return "/collect/viewCollect";
+		return "collect/viewCollect";
 	}
 	
 	

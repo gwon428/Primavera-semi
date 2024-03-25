@@ -10,17 +10,7 @@ public class MapController {
 	public String mainMap() {
 		return "map/mainMap";
 	}
-	
-	@GetMapping("map1")
-	public String map1() {
-		return "map/map1";
-	}
-	
-	@GetMapping("map2")
-	public String map2() {
-		return "map/map2";
-	}
-	
+		
 	@GetMapping("map3")
 	public String map3() {
 		return "map/map3";

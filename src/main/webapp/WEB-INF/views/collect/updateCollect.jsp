@@ -37,6 +37,7 @@ input{
 	margin-top :8px;
 	font-family: "Cafe24Oneprettynight";
 	font-weight:bold;
+	height: 23px;
 }
 input#roadAddress, input#detailAddress{
 	width:70%;
@@ -52,6 +53,7 @@ textarea{
 	font-weight:bold;
 	margin-top :8px;
 	width:85%;
+	resize:none;
 }
 textarea#doorPwd{
 	height:25px;
@@ -62,6 +64,16 @@ textarea#request{
 .tabs .tab-header > div:hover,
 .tabs .tab-header > div.active {
   color:#00acee;
+}
+#viewTitle{
+	position: absolute;
+    top: 256px;
+    left: 630px;
+    font-size: 1.7rem;
+    font-weight: bold;
+}
+button#updateBtn{
+	--background: #00acee;
 }
 </style>
 <title>Insert title here</title>
@@ -85,7 +97,7 @@ textarea#request{
 			</nav>
 		</header>
 		<!-- -----------------------------------main----------------------------- -->
-
+<h3 id="viewTitle">신청 정보 수정</h3>
 <body>
 <!-- 내용 -->
 <div id="contents">
@@ -163,7 +175,8 @@ textarea#request{
       <h2>공동 현관 비밀번호</h2>
       <c:choose>
 	      <c:when test="${collect.doorPwd == ''}">
-	      	<p>*미기입</p>
+	      	<textarea name="doorPwd" id="doorPwd" cols="50" rows="2"
+					placeholder="미기입"></textarea>
 	      </c:when>
 	      <c:otherwise>
 	      	<textarea name="doorPwd" id="doorPwd" cols="50" rows="2"
@@ -173,7 +186,8 @@ textarea#request{
       <h2 style="margin-top:20px;">요청사항</h2>
       <c:choose>
       	<c:when test="${collect.request == ''}">
-      		<p>*미기입</p>
+      		<textarea name="request" id="request" cols="40" rows="10"
+					placeholder="미기입"></textarea>
       	</c:when>
       	<c:otherwise>
       		 <textarea name="request" id="request" cols="40" rows="10"
@@ -188,7 +202,7 @@ textarea#request{
 	<div id="btn">
 		<div class="button-list">
 			<button type="submit" id="updateBtn">수정 완료</button>
-			<button class="reverse dark" onclick="location.href='/viewCollect?orderNum=${collect.orderNum}';">
+			<button type="button" class="reverse dark" onclick="location.href='/viewCollect?orderNum=${collect.orderNum}';">
 				수정 취소
 			</button>
 		</div>

@@ -37,9 +37,10 @@
 			</nav>
 		</header>
 		<!-- -----------------------------------main----------------------------- -->
-
+<h3 id="viewTitle">상세 신청 정보</h3>
 <body>
 <!-- 내용 -->
+
 <div id="contents">
 <div class="tabs">
   <div class="tab-header">
@@ -146,6 +147,7 @@
 	</c:when>
 	</c:choose>
 </div>
+
 <!-- 내용 -->	
 <script src="../../../resources/js/collect/viewCollect.js"></script>
 
