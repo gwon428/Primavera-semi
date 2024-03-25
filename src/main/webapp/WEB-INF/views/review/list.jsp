@@ -121,11 +121,11 @@
 
 								<nav>
 									<ul class="pagination">
-										<li class="page-item ${page > 1 ? '' : 'disabled'}"><a class="page-link" href="<c:url value='/review/list'>
+										<li class="page-item ${paging.page > 1 ? '' : 'disabled'}"><a class="page-link" href="<c:url value='/review/list'>
                 <c:param name='page' value='${paging.page - 1}' />
                 <c:param name='sort' value='${paging.sort}' />
                 <c:param name='searchType' value='${searchType}' />
-                <c:param name='searchKeyword' value='${encodedSearchKeyword}' />
+                <c:param name='searchKeyword' value='${searchKeyword}' />
             </c:url>">Previous</a>
 										</li>
 
@@ -135,17 +135,17 @@
                     <c:param name='page' value='${pageNum}' />
                     <c:param name='sort' value='${paging.sort}' />
                     <c:param name='searchType' value='${searchType}' />
-                    <c:param name='searchKeyword' value='${encodedSearchKeyword}' />
+                    <c:param name='searchKeyword' value='${searchKeyword}' />
                 </c:url>">${pageNum}</a>
 											</li>
 										</c:forEach>
 
-										<li class="page-item ${page < totalPages ? '' : 'disabled'}">
+										<li class="page-item ${paging.page < totalPages ? '' : 'disabled'}">
 											<a class="page-link" href="<c:url value='/review/list'>
                 <c:param name='page' value='${paging.page + 1}' />
                 <c:param name='sort' value='${paging.sort}' />
                 <c:param name='searchType' value='${searchType}' />
-                <c:param name='searchKeyword' value='${encodedSearchKeyword}' />
+                <c:param name='searchKeyword' value='${searchKeyword}' />
             </c:url>">Next</a>
 										</li>
 									</ul>
