@@ -6,9 +6,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class MapController {
 
-	@GetMapping("/mainMap")
+	@GetMapping("mainMap")
 	public String mainMap() {
 		return "map/mainMap";
 	}
-	
+
+	@GetMapping("Guide")
+	public String Guide() {
+		return "Guide/Guide";
+	}
 }

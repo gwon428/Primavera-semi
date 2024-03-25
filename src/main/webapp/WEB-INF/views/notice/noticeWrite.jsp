@@ -10,6 +10,8 @@
 <link rel="stylesheet" href="../../../resources/css/reset.css" />
 <link rel="stylesheet" href="../../../resources/css/header.css" />
 <link rel="stylesheet" href="../../../resources/css/notice/write.css" />
+<script src="https://kit.fontawesome.com/4602e82315.js"
+	crossorigin="anonymous"></script>
 </head>
 <style>
 h1 {
@@ -28,16 +30,16 @@ h1 {
 			<a href="/">Primavera</a>
 		</nav>
 		<nav>
-			<a href="/map/mainMap">Store</a> 
-			<a href="#">Guide</a>
-			<a href="collectPage">PickUp</a>
-			<a href="list">Board</a> 
+			<a href="/mainMap">Store</a> 
+			<a href="/Guide">Guide</a>
+			<a href="/collectPage">PickUp</a>
+			<a href="/list">Board</a> 
 			<span> 
-			<a href="/review/list">Board</a> 
+			<a href="/review/list">Review</a> 
 			<a href="/listQna">Q & A</a> 
 			<a href="/notice/list">Notice</a>
 			</span> 
-			<a href="myPage"><i class="fa-regular fa-user"></i></a>
+			<a href="/myPage"><i class="fa-regular fa-user"></i></a>
 		</nav>
 	</header>
 	<div class="container">
@@ -45,7 +47,7 @@ h1 {
 		<form action="writeNotice" method="post" enctype="multipart/form-data" onsubmit="return validate()">
 			<div class="form-group" id="title">
 			<label for="ADMIN_title">title</label> 
-			<input class="form-control" name="title" id="title_input">
+			<input class="form-control" name="title" id="title_input" maxlength="30" placeholder="제목을 입력하세요.(최대 30자)">
 			</div>
 			<div class="form-group" id="context">
 			<label for="ADMIN_content">content</label>
