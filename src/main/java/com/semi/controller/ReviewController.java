@@ -64,7 +64,7 @@ public class ReviewController {
 	        @RequestParam(value = "sort", defaultValue = "dateDesc") String sort,
 	        @RequestParam(value = "searchType", required = false) String searchType,
 	        @RequestParam(value = "searchKeyword", required = false) String searchKeyword) throws UnsupportedEncodingException {
-
+		
 	    int total = service.total(searchType, searchKeyword);
 	    Paging paging = new Paging(page, total);
 	    paging.setSort(sort);
@@ -85,12 +85,8 @@ public class ReviewController {
 		boolean isLoggedIn = authentication != null && authentication.isAuthenticated()
 				&& !(authentication instanceof AnonymousAuthenticationToken);
 		model.addAttribute("isLoggedIn", isLoggedIn);
-		model.addAttribute("searchType", searchType);
-		String encodedSearchKeyword = "";
-		if (searchKeyword != null && !searchKeyword.isEmpty()) {
-			encodedSearchKeyword = URLEncoder.encode(searchKeyword, StandardCharsets.UTF_8.toString());
-		}
-		model.addAttribute("encodedSearchKeyword", encodedSearchKeyword);
+		model.addAttribute("searchType", searchType);		
+		model.addAttribute("searchKeyword", searchKeyword);
 
 		return "review/list";
 	} 
