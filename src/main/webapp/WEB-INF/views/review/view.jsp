@@ -28,6 +28,9 @@
 			</span> <a href="/myPage"><i class="fa-regular fa-user"></i></a>
 		</nav>
 	</header>
+
+
+
 	<div class="container">
 		<h1>Review</h1>
 		<form id="reviewForm" action="/updatereview" method="post"
@@ -36,7 +39,7 @@
 				type="hidden" name="url" value="${vo.url}">
 
 			<c:if test="${not empty vo.url}">
-				<div class="form-image">
+				<div class="form-image" id="imageContainer">
 					<img id="imagePreview" src="/upload/review/${vo.url}"
 						alt="Review Image">
 				</div>
@@ -46,8 +49,14 @@
 				<label for="fileInput" class="btn btn-info">이미지 수정</label>
 				<input type="file" id="fileInput" name="file" accept="image/*"
 					style="display: none;" onchange="previewImage(event)">
-			</c:if>
 
+			</c:if>
+			
+			<c:if test="${vo.id == currentUserId}">
+				<button type="button" class="btn btn-delete" onclick="removeImagePreviewAndFile()">이미지
+					삭제</button>
+			</c:if>
+			
 			<div class="form-group">
 				<label>제목</label> <input class="form-control" name="title"
 					maxlength="30" placeholder="제목을 입력하세요.(최대 30자)" value="${vo.title}"
@@ -87,11 +96,26 @@
 	</div>
 
 	<script>
-		function previewImage(event) {
+		function removeImagePreviewAndFile() {
+		    var imageContainer = document.getElementById('imageContainer');
+		    if (imageContainer) {
+		        imageContainer.style.display = 'none';
+		    }
+	
+		    var fileInput = document.getElementById('fileInput');
+		    if (fileInput) {
+		        fileInput.value = "";
+		    }
+		}
+	</script>
+
+	<script>
+	    function previewImage(event) {
 	        var reader = new FileReader();
-	        reader.onload = function(){
+	        reader.onload = function() {
 	            var output = document.getElementById('imagePreview');
-	            output.src = reader.result;
+	            output.src = reader.result;            
+	            document.getElementById('imageContainer').style.display = 'block';
 	        };
 	        reader.readAsDataURL(event.target.files[0]);
 	    }

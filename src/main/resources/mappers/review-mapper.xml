@@ -55,7 +55,8 @@
 					content LIKE CONCAT('%', #{searchKeyword}, '%')
 				</when>
 				<when test="searchType == 'titleContent'">
-					(title LIKE CONCAT('%', #{searchKeyword}, '%') OR content LIKE
+					(title LIKE CONCAT('%', #{searchKeyword}, '%') OR
+					content LIKE
 					CONCAT('%', #{searchKeyword}, '%'))
 				</when>
 			</choose>
@@ -67,43 +68,34 @@
 		resultMap="reviewMap">
 		SELECT * FROM review
 		<where>
-			<choose>
-				<when test="searchType == 'author'">
-					id LIKE CONCAT('%', #{searchKeyword}, '%')
-				</when>
-				<when test="searchType == 'title'">
-					title LIKE CONCAT('%', #{searchKeyword}, '%')
-				</when>
-				<when test="searchType == 'content'">
-					content LIKE CONCAT('%', #{searchKeyword}, '%')
-				</when>
-				<when test="searchType == 'titleContent'">
-					(title LIKE CONCAT('%', #{searchKeyword}, '%') OR content LIKE
-					CONCAT('%', #{searchKeyword}, '%'))
-				</when>
-			</choose>
+			<if test="searchType != null">
+				<choose>
+					<when test="searchType == 'author'"> AND id LIKE CONCAT('%', #{searchKeyword}, '%')
+					</when>
+					<when test="searchType == 'title'"> AND title LIKE CONCAT('%', #{searchKeyword}, '%')
+					</when>
+					<when test="searchType == 'content'"> AND content LIKE CONCAT('%', #{searchKeyword},
+						'%') </when>
+					<when test="searchType == 'titleContent'"> AND (title LIKE CONCAT('%', #{searchKeyword}, '%')
+						OR content LIKE CONCAT('%', #{searchKeyword}, '%')) </when>
+				</choose>
+			</if>
 		</where>
+		ORDER BY
 		<choose>
-			<when test="sort == 'ratingDesc'">
-				ORDER BY rating DESC, no DESC
-			</when>
-			<when test="sort == 'ratingAsc'">
-				ORDER BY rating ASC, no DESC
-			</when>
-			<otherwise>
-				ORDER BY no DESC
-			</otherwise>
+			<when test="paging.sort == 'ratingDesc'"> rating DESC, no DESC </when>
+			<when test="paging.sort == 'ratingAsc'"> rating ASC, no DESC </when>
+			<otherwise> no DESC </otherwise>
 		</choose>
 		LIMIT #{paging.offset}, #{paging.limit}
 	</select>
 
-
-	<!-- 회원용 마이페이지 - 내가 적은 후기 보기 -->
 	<select id="showReview" parameterType="Pagingseven"
 		resultMap="reviewMap">
 		SELECT * FROM review WHERE id=#{id}
 		ORDER BY 1 DESC
-		LIMIT #{offset},
+		LIMIT
+		#{offset},
 		#{limit}
 	</select>
 

@@ -116,28 +116,43 @@
 				</tbody>
 
 			</table>
-		
+
 			<nav>
 				<ul class="pagination">
-					<li class="page-item ${paging.prev ? '' : 'disabled'}"><a
-						class="page-link" href="/review/list?page=${paging.startPage - 1}">Previous</a>
+					<li class="page-item ${page > 1 ? '' : 'disabled'}"><a
+						class="page-link"
+						href="<c:url value='/review/list'>
+                <c:param name='page' value='${paging.page - 1}' />
+                <c:param name='sort' value='${paging.sort}' />
+                <c:param name='searchType' value='${searchType}' />
+                <c:param name='searchKeyword' value='${encodedSearchKeyword}' />
+            </c:url>">Previous</a>
 					</li>
 
-					<c:forEach begin="${paging.startPage}" end="${paging.endPage}"
-						var="pageNum">
-						<li class="page-item ${pageNum == paging.page ? 'active' : ''}"><a
-							class="page-link" href="/review/list?page=${pageNum}&sort=${paging.sort}&searchType=${paging.searchType}&searchKeyword=${encodedSearchKeyword}">${pageNum}</a>
+					<c:forEach var="pageNum" begin="${paging.startPage}"
+						end="${paging.endPage}">
+						<li class="page-item ${pageNum == paging.page ? 'active' : ''}">
+							<a class="page-link"
+							href="<c:url value='/review/list'>
+                    <c:param name='page' value='${pageNum}' />
+                    <c:param name='sort' value='${paging.sort}' />
+                    <c:param name='searchType' value='${searchType}' />
+                    <c:param name='searchKeyword' value='${encodedSearchKeyword}' />
+                </c:url>">${pageNum}</a>
 						</li>
 					</c:forEach>
 
-					<li class="page-item ${paging.next ? '' : 'disabled'}"><a
-						class="page-link" href="/review/list?page=${paging.endPage + 1}">Next</a>
+					<li class="page-item ${page < totalPages ? '' : 'disabled'}">
+						<a class="page-link"
+						href="<c:url value='/review/list'>
+                <c:param name='page' value='${paging.page + 1}' />
+                <c:param name='sort' value='${paging.sort}' />
+                <c:param name='searchType' value='${searchType}' />
+                <c:param name='searchKeyword' value='${encodedSearchKeyword}' />
+            </c:url>">Next</a>
 					</li>
 				</ul>
 			</nav>
-
-
-
 		</div>
 	</main>
 </body>

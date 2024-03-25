@@ -68,10 +68,8 @@
 		    reader.onload = function() {
 		        var output = document.getElementById('image_preview');
 		        output.style.backgroundImage = 'url(' + reader.result + ')';
-		        // 이미지가 로드되면 보이도록 설정(미리보기)
 		        output.style.display = 'block';
 		    };
-		    // 선택된 파일을 읽기
 		    reader.readAsDataURL(event.target.files[0]);
 		}
     </script>

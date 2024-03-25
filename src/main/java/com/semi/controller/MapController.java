@@ -9,6 +9,6 @@ public class MapController {
 	@GetMapping("mainMap")
 	public String mainMap() {
 		return "map/mainMap";
-	}
+	}	
 	
 }
