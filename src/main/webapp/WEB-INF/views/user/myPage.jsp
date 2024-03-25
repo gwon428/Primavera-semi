@@ -10,7 +10,12 @@
 				<link href="../../resources/css/user/myPage.css" rel="stylesheet" type="text/css">
 				<link href="../../resources/css/header.css" rel="stylesheet" type="text/css">
 				<script src="https://kit.fontawesome.com/4602e82315.js" crossorigin="anonymous"></script>
+				<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.1/kakao.min.js"
+  				integrity="sha384-kDljxUXHaJ9xAb2AzRd59KxjrFjzHa5TAoFQ6GbYTCAG0bjM55XohjjDT7tDDC01" crossorigin="anonymous"></script>
+				<script>
+				kakao.init('2aa4500445d4b2a832d23e0d819fb737');
 				<title>Insert title here</title>
+				<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 			</head>
 
 
@@ -64,21 +69,30 @@
 																						placeholder="Password"
 																						id="logpass" autocomplete="off">
 																				</div>
+																				
 																				<input type="submit" value="LOG IN"
 																					class="btn mt-4" id="submit">
+																					
+																					<div id="kakaologin">
+																						<a class="kakao" href="https://kauth.kakao.com/oauth/authorize?client_id=2aa4500445d4b2a832d23e0d819fb737&redirect_uri=http://localhost:8080/kakaologin&response_type=code" style="color: black;">
+																						<img src="../../../resources/images/kakao_i.png" id="kakaologo"/><p> KAKAO</p>
+																					</a>
+																				</div>
 																			</form>
+																			
+																			
 																		</div>
 																	</div>
 																</div>
 															</div>
 														</div>
+														
 														<div class="card-back">
 															<div class="center-wrap">
 																<div class="section text-center">
 																	<div id="loginform" class="signinmenu">
 																		<a href="findId" class="link">아이디 찾기</a>
 																		<a href="changePwd" class="link">비밀번호 찾기</a>
-
 																		<a href="register" class="btn mt-4"
 																			style="font-family: 'Poppins', sans-serif;">SIGN
 																			UP</a>
@@ -139,8 +153,27 @@
 										<a href="showCollect">진행상황</a>
 									</div>
 									<div id="MenuTwo">
-										<a href="updateUser">회원 정보 수정</a>
-										<a href="deleteUser">회원 탈퇴</a>
+										<c:choose>
+											<c:when test="${user.password != null}">
+												<a href="userUpdate">회원 정보 수정</a>
+											</c:when>
+											<c:otherwise>
+												<a href="../updatekakaoUser" >초기 회원 정보 수정</a>
+											</c:otherwise>
+										</c:choose>
+										
+										<c:choose>
+										<c:when test="${user.kakao == 'Y' && user.password == null}">
+											<!-- 나중에 kakao 회원 유무와 동시에 &&으로 phone이 null이 아닌 경우를 동시에 걸면
+											카카오 로그인은 했는데 회원 정보 수정을 한번도 하지 않은 경우로 판단하여 확인 절차없이 바로 탈퇴하도록
+											 -->
+											<a href='kakaounlink' onclick="deleteKakao(e)">카카오 회원 탈퇴</a>
+										</c:when>
+										<c:otherwise>
+											<a href="deleteUser">회원 탈퇴</a>
+										</c:otherwise>
+										
+										</c:choose>
 										<a href="/logout">로그아웃</a>
 									</div>
 								</div>
@@ -148,6 +181,26 @@
 						</c:if>
 					</c:otherwise>
 				</c:choose>
-			</body>
+				<script>
+					function deleteKakao(e) {
 
+						Kakao.API.request({
+							url: '/v1/user/unlink',
+						});
+						.then(function(res){
+							alert('success: ' + JSON.stringify(res));
+							return true;
+						});
+						.catch(function(err){
+							alert('fail: ' + JSON.stringify(err));
+							return false;
+						});
+						
+						alert("!");
+						// 카카오 회원 탈퇴 + db에서 삭제 로직
+					}
+					
+				</script>
+			</body>
+		
 			</html>

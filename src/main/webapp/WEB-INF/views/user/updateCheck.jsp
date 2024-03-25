@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 	<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 		<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -32,7 +33,7 @@
 
 		<div id="sideMenu">
 			<a href="showReview" id="showReview">My Review</a> <a href="showQna">내 Q&A</a> <a
-				href="showCollect">진행 상황</a> <a href="updateUser" id="update">회원
+				href="showCollect">진행 상황</a> <a href="userUpdate" id="update">회원
 				정보 수정</a> <a href="deleteUser">회원 탈퇴</a> <a href="logout">로그아웃</a>
 		</div>
 

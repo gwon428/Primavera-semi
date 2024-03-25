@@ -23,6 +23,7 @@ public class User implements UserDetails {
 	private String bankName;
 	private String account;
 	private String auth;
+	private String kakao;
 	
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {

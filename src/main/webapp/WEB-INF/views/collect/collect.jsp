@@ -132,7 +132,12 @@
 						<a href="../myPage" id="registerPage">Pick Up</a>
 					</c:when>
 					<c:otherwise>
+						<c:if test="${user.password == null}">
+							<a href="../updatekakaoUser" id="registerPage">Pick Up</a>
+						</c:if>
+						<c:if test="${user.password != null}">
 						<a href="registerCollect" id="registerPage">Pick Up</a>
+						</c:if>
 					</c:otherwise>
 				</c:choose>
 			</div>
