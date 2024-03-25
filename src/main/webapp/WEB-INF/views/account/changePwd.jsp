@@ -82,7 +82,6 @@
 
 					idDupCheck = false;
 
-					<!-- 아이디 존재 여부 확인 -->
 					$('#id').keyup(() => {
 						const id = $('#id').val();
 
@@ -105,27 +104,26 @@
 						})
 					})
 
-						< !--아이디와 이메일이 일치하는 회원이 있는지 확인하여 인증하기 버튼 활성화-- >
-							$('#email').keyup(() => {
-								const id = $('#id').val();
-								const email = $('#email').val();
+					$('#email').keyup(() => {
+						const id = $('#id').val();
+						const email = $('#email').val();
 
-								$.ajax({
-									type: "post",
-									url: "/checkUser",
-									data: $('#frm').serialize(),
+						$.ajax({
+							type: "post",
+							url: "/checkUser",
+							data: $('#frm').serialize(),
 
-									success: function (result) {
-										if (result) {
-											$('#emailAuth').attr('disabled', false);
-										} else {
-											$('#emailAuth').attr('disabled', true);
-										}
+							success: function (result) {
+								if (result) {
+									$('#emailAuth').attr('disabled', false);
+								} else {
+									$('#emailAuth').attr('disabled', true);
+								}
 
-									}
-								})
+							}
+						})
 
-							})
+					})
 
 					$("#emailAuth").click(function () {
 						const email = $("#email").val();

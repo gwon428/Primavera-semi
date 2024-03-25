@@ -73,7 +73,7 @@ public class UserController {
 		session.setAttribute("kakaoName", userInfo.getName());
 		session.setAttribute("kakaoId", userInfo.getId());
 
-		return "collect/collect";
+		return "user/myPage";
 	}
 
 	/*------------------------------------------ 회원가입 ------------------------------------------*/

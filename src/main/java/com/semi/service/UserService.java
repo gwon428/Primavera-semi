@@ -212,31 +212,6 @@ public class UserService implements UserDetailsService {
 	/*------------------------------------------ 회원 탈퇴 ------------------------------------------*/
 	// 카카오 회원 탈퇴
 	public void unlink(String link) {
-		/*
-		String reqURL = "https://kapi.kakao.com/v1/user/unlink";
-		try {
-			URL url = new URL(reqURL);
-			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-			conn.setRequestMethod("POST");
-			conn.setRequestProperty("Authorization", "Bearer " + link);
-
-			int responseCode = conn.getResponseCode();
-
-			BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-
-			String result = "";
-			String line = "";
-
-			while ((line = br.readLine()) != null) {
-				result += line;
-			}
-			System.out.println(result);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		 */
-		
-		// DB에서도 삭제
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		UserDetails userDetails = (UserDetails) principal;
 		dao.deleteUser(userDetails);
