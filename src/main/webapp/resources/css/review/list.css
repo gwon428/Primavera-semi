@@ -23,7 +23,7 @@
 	margin-bottom: 20px;
 }
 
-select{  	
+select {
 	text-align: center;
 	padding: 2px;
 	font-size: 15px;
@@ -35,8 +35,8 @@ select{
 	box-shadow: 0 0 5px #999;
 }
 
-select:focus{
- 	 outline:none;
+select:focus {
+	outline: none;
 }
 
 .sort-dropdown, .search-ui {
@@ -48,11 +48,11 @@ select:focus{
 }
 
 .search-ui {
-	margin-right: 300px;	
+	margin-right: 300px;
 	font-family: "Cafe24Oneprettynight";
 }
 
-#searchbtn {		
+#searchbtn {
 	text-align: center;
 	padding: 5px;
 	font-size: 15px;
@@ -74,14 +74,36 @@ header a, #neck a {
 	font-family: "Cafe24Oneprettynight";
 }
 
+.word {
+	width: 100%;
+	height: 100%;
+	background: #FF7777;
+	-webkit-font-smoothing: antialiased;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.word .h1 {
+	position: absolute;
+	top: 460px;
+	left: 35px;
+	font-size: 5rem;
+	color: white;
+	margin-left: 40px;
+}
+
+
+
 .word .h1 {
     position: absolute;
     top: 460px;
     left: 35px;
     font-size: 5rem;
-    font-family: "Cafe24Oneprettynight";
+    
     color: white;
     margin-left: 40px;
+    font-family: "Cafe24Oneprettynight";
     animation: slide 1.8s;
 }
 
@@ -94,6 +116,7 @@ to {
 }
 
 }
+
 #neck, .cover {
 	width: 100%;
 }

@@ -40,7 +40,6 @@ public class ReviewController {
 	@PostMapping("/review/write")
 	public String write(Review b) throws IllegalStateException, IOException {
 
-		// 로그인 아이디 받아오기
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		UserDetails userDetails = (UserDetails) principal;
 		b.setId(userDetails.getUsername());
@@ -61,25 +60,31 @@ public class ReviewController {
 
 	@GetMapping("/review/list")
 	public String list(Model model, 
-			@RequestParam(value = "page", defaultValue = "1") int page,
-			@RequestParam(value = "sort", defaultValue = "dateDesc") String sort,
-			@RequestParam(value = "searchType", required = false) String searchType,
-			@RequestParam(value = "searchKeyword", required = false) String searchKeyword) throws UnsupportedEncodingException {
+	        @RequestParam(value = "page", defaultValue = "1") int page,
+	        @RequestParam(value = "sort", defaultValue = "dateDesc") String sort,
+	        @RequestParam(value = "searchType", required = false) String searchType,
+	        @RequestParam(value = "searchKeyword", required = false) String searchKeyword) throws UnsupportedEncodingException {
 
-		int total = service.total(searchType, searchKeyword);
-		Paging paging = new Paging(page, total);
-		paging.setSort(sort);
+	    int total = service.total(searchType, searchKeyword);
+	    Paging paging = new Paging(page, total);
+	    paging.setSort(sort);
 
-		List<Review> boardList = service.selectPage(paging, searchType, searchKeyword);
-		model.addAttribute("list", boardList);
-		model.addAttribute("paging", paging);
+	    int totalPages = (int) Math.ceil((double) total / paging.getLimit());
+
+	    if (page < 1 || page > totalPages) {
+	        page = 1;
+	        paging = new Paging(page, total);
+	    }
+
+	    List<Review> reviewList = service.selectPage(paging, searchType, searchKeyword);
+	    model.addAttribute("list", reviewList);
+	    model.addAttribute("paging", paging);
+	    model.addAttribute("totalPages", totalPages);
 
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		boolean isLoggedIn = authentication != null && authentication.isAuthenticated()
 				&& !(authentication instanceof AnonymousAuthenticationToken);
 		model.addAttribute("isLoggedIn", isLoggedIn);
-
-		// 검색 조건을 model에 추가
 		model.addAttribute("searchType", searchType);
 		String encodedSearchKeyword = "";
 		if (searchKeyword != null && !searchKeyword.isEmpty()) {
@@ -88,11 +93,10 @@ public class ReviewController {
 		model.addAttribute("encodedSearchKeyword", encodedSearchKeyword);
 
 		return "review/list";
-	}
+	} 
 
 	@GetMapping("/review/view")
-	public String view(String no, Model model) {
-		// 현재 로그인한 사용자의 아이디 가져오기
+	public String view(String no, Model model) {	
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		String currentLoggedInUserId = "";
 		if (principal instanceof UserDetails) {
@@ -100,28 +104,28 @@ public class ReviewController {
 		} else {
 			currentLoggedInUserId = principal.toString();
 		}
-		// 모델에 현재 로그인한 사용자의 아이디 추가
 		model.addAttribute("currentUserId", currentLoggedInUserId);
-		// 게시물 정보를 모델에 추가
 		model.addAttribute("vo", service.select(Integer.parseInt(no)));
 		return "review/view";
 	}
 
 	@PostMapping("/updatereview")
-	public String update(Review b, @RequestParam("file") MultipartFile file, RedirectAttributes redirectAttributes)
-			throws IllegalStateException, IOException {
-		if (!file.isEmpty()) {
-			// 새 이미지 파일 업로드
-			String newUrl = fileUploadreview(file);
-			// 새로운 이미지 URL을 Review 객체에 설정
-			b.setUrl(newUrl);
-		} else {
-			// 파일이 제공되지 않은 경우, 기존 URL을 유지
-			b.setUrl(b.getUrl());
-		}
+	public String update(Review review, @RequestParam("file") MultipartFile file,
+	                     RedirectAttributes redirectAttributes) throws IllegalStateException, IOException {
+	    
+	    if (!file.isEmpty()) {
+	        String newUrl = fileUploadreview(file);
+	        review.setUrl(newUrl);
+	    } else {
+	        File oldFile = new File(path + review.getUrl());
+	        if (oldFile.exists()) {
+	            oldFile.delete();
+	        }
+	        review.setUrl(null);
+	    }
 
-		service.updatereview(b);
-		return "redirect:/review/view?no=" + b.getNo();
+	    service.updatereview(review);
+	    return "redirect:/review/view?no=" + review.getNo();
 	}
 
 	@PostMapping("/uploadreview")
@@ -160,7 +164,6 @@ public class ReviewController {
 		return "/error";
 	}
 
-	// 파일 업로드
 	public String fileUploadreview(MultipartFile file) throws IllegalStateException, IOException {
 		UUID uuid = UUID.randomUUID();
 		String filename = uuid.toString() + "_" + file.getOriginalFilename();

@@ -40,5 +40,6 @@ public class Paging {
 	
 		this.prev = this.startPage > 1;
 		this.next = this.endPage < totalPages;
+		
 	}
 }
