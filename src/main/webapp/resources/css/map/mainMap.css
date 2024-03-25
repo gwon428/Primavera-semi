@@ -76,7 +76,7 @@ body, #neck, .cover, .map {
 	height: 100%;
 	background-color: rgba(50, 36, 30, 0.6);
 }
-
+/* ------------------------------ 메인 콘텐츠 -----------------------------------*/
 .slider1 {
 	display: flex;
 	align-items: center;
@@ -177,6 +177,7 @@ to {
 	animation: slideIn 2s ease-out forwards;
 }
   */
+ /*---------------------------------------- map -----------------------------------*/
 #map {
 	margin: 50px auto;
 	width: 800px;

@@ -82,6 +82,20 @@ public class CollectService {
 	public int registerCollect(Collect vo) {
 		return dao.registerCollect(vo);
 	}
-
+	
+	// 신청 확인
+	public Collect selectCollect(int orderNum) {
+		return dao.selectCollect(orderNum);
+	}
+	
+	// 신청 변경
+	public int updateCollect(Collect vo) {
+		return dao.updateCollect(vo);
+	}
+		
+	// 신청 삭제
+	public int deleteCollect(int orderNum) {
+		return dao.deleteCollect(orderNum);
+	}
 
 }

@@ -15,4 +15,10 @@ public class MapController {
 	public String Guide() {
 		return "Guide/Guide";
 	}
+		
+	@GetMapping("map3")
+	public String map3() {
+		return "map/map3";
+	}
+	
 }

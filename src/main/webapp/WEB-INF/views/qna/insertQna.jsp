@@ -44,7 +44,7 @@
 			</c:if> 
 		</div>
 			<div class="insertQna" id="title">
-				<label>*제목</label> <input class="form-control" name="title" id="title_input">
+				<label>*제목</label> <input class="form-control" name="title" id="title_input" maxlength="30" placeholder="제목을 입력하세요.(최대 30자)">
 			</div>
 			<div class="insertQna" id="content">
 				<label>*내용</label>

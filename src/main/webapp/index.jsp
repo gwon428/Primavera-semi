@@ -230,8 +230,17 @@
 					<button type="button" class="btn_close">닫기</button>
 				</div>
 			</div>
-		</main>
-		<script src="/resources/js/front.js"></script>
+			<<<<<<< HEAD </main>
+				<script src="/resources/js/front.js"></script>
 	</body>
 
 	</html>
+	=======
+	</div>
+	</main>
+	<script src="/resources/js/front.js"></script>
+
+	</body>
+
+	</html>
+	>>>>>>> hand

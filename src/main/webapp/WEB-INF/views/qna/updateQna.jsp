@@ -42,7 +42,7 @@
 				<div class="updateQna">
 					<label>*제목</label>
 					<br>
-					<textarea class="form-control" row="10" name="title" style="resize:none;" id="title">${qna.title}</textarea>
+					<textarea class="form-control" row="10" name="title" style="resize:none;" id="title" maxlength="30">${qna.title}</textarea>
 				</div>
 				<div class="updateQna">
 					<label>*내용</label>

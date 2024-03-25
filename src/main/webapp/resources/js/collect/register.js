@@ -26,7 +26,7 @@ function validate() {
 		alert("약관 내용에 동의해주세요.");
 	    return false;
 	}
-	    alert("수거 신청에 성공하였습니다.");
+	    alert("수거 신청에 성공하였습니다.\n\n[알림] 진행 상황이 '신청 확인'이 된 이후에는 신청 수정 및 신청 취소가 불가합니다.\n(신청별 진행상황은 '마이페이지 > 진행 상황'에서 확인해주세요.)");
 	    return true; 
 }
 	      
@@ -48,4 +48,16 @@ for (var j = 0; j < target.length; j++) {
 	});
 }
 
-
+$(function(){
+		
+		$("#collectionDate").datepicker({
+			 dateFormat: 'yy-mm-dd',
+			 minDate: 0 + "2D",
+			 maxDate: new Date('2025-12-31'),
+			 changeMonth:true,
+			 changeYear:true,
+			 nextText : '다음 달',
+			 prevText : '이전 달'
+		});	
+		
+	});
