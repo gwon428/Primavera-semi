@@ -10,5 +10,9 @@ public class MapController {
 	public String mainMap() {
 		return "map/mainMap";
 	}
-	
+
+	@GetMapping("Guide")
+	public String Guide() {
+		return "Guide/Guide";
+	}
 }

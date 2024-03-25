@@ -45,11 +45,11 @@ div#editor {
 			<a href="/">Primavera</a>
 		</nav>
 		<nav>
-			<a href="/mainMap">Store</a> <a href="#">Guide</a> <a
+			<a href="/mainMap">Store</a> <a href="/Guide">Guide</a> <a
 				href="collectPage">PickUp</a> <a href="/notice/list">Board</a> <span>
 				<a href="/review/list">Review</a> <a href="listQna">Q & A</a> <a
 				href="/notice/list">Notice</a>
-			</span> <a href="myPage"><i class="fa-regular fa-user"></i></a>
+			</span> <a href="/myPage"><i class="fa-regular fa-user"></i></a>
 		</nav>
 	</header>
 	<!--  -->
@@ -96,7 +96,7 @@ div#editor {
 						<input type="hidden" name="url" value="${vo.url}">
 						<div class="form-group" id="title">
 							<label>title</label> <input class="form-control" name="title"
-								value="${vo.title}" id="title_input">
+								value="${vo.title}" id="title_input" maxlength="30" placeholder="제목을 입력하세요.(최대 30자)">
 						</div>
 						<div class="form-group" id="context">
 							<label>content</label>
