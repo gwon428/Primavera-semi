@@ -137,14 +137,11 @@
 	<select id="showAllUser" parameterType="User"
 		resultMap="userMap">
 		SELECT * FROM user
-		WHERE enabled=1
 		LIMIT #{offset}, #{limit}
 	</select>
 
 	<select id="count" resultType="int">
 		SELECT count(*) FROM user
-		WHERE
-		enabled=1
 	</select>
 
 </mapper>

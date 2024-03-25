@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" href="/resources/css/reset.css" />
 <link rel="stylesheet" href="../../../resources/css/Guide/Guide.css" />
-<script src="https://kit.fontawesome.com/4602e82315.js"
+<script src="https://kit.fontawesome.com/cbb1359000.js"
 	crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <title>Insert title here</title>
@@ -20,7 +20,7 @@
         <a href="/">Primavera</a>
       </nav>
       <nav>
-        <a href="/map/mainMap">Store</a> <a href="/Guide">Guide</a>
+        <a href="/mainMap">Store</a> <a href="/Guide">Guide</a>
         <a href="collectPage">PickUp</a> <a href="/notice/list">Board</a>
         <span>
           <a href="/review/list">Review</a> <a href="listQna">Q & A</a>

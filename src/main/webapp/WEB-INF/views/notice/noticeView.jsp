@@ -8,7 +8,7 @@
 
 <head>
 <meta charset="UTF-8">
-<script src="https://kit.fontawesome.com/4602e82315.js"
+<script src="https://kit.fontawesome.com/cbb1359000.js"
 	crossorigin="anonymous"></script>
 <title>Insert title here</title>
 

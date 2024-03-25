@@ -12,7 +12,7 @@
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
 			integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
 			crossorigin="anonymous"></script>
-		<script src="https://kit.fontawesome.com/4602e82315.js" crossorigin="anonymous"></script>
+		<script src="https://kit.fontawesome.com/cbb1359000.js" crossorigin="anonymous"></script>
 		<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 		<title>Document</title>
 		<style>
@@ -150,7 +150,7 @@
 						Sustainable clothes are clothes you already have in your closet.
 						Primavera gives new value to discarded clothing.
 					</p>
-					<a href="#"> > You want more details, don't you?</a>
+					<a href="Guide"> > You want more details, don't you?</a>
 				</div>
 				<div class="container2">
 					<div class="container-blackbox"></div>

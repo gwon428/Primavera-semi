@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="../../../resources/css/header.css" />
 <link rel="stylesheet" href="../../../resources/css/notice/list.css" />
 </head>
-<script src="https://kit.fontawesome.com/4602e82315.js"
+<script src="https://kit.fontawesome.com/cbb1359000.js"
 	crossorigin="anonymous"></script>
 
 <body>

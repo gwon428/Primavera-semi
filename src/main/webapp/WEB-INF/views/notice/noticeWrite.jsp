@@ -10,7 +10,7 @@
 				<link rel="stylesheet" href="../../../resources/css/reset.css" />
 				<link rel="stylesheet" href="../../../resources/css/header.css" />
 				<link rel="stylesheet" href="../../../resources/css/notice/write.css" />
-				<script src="https://kit.fontawesome.com/4602e82315.js" crossorigin="anonymous"></script>
+				<script src="https://kit.fontawesome.com/cbb1359000.js" crossorigin="anonymous"></script>
 			</head>
 			<style>
 				h1 {
@@ -33,7 +33,7 @@
 						<a href="/mainMap">Store</a>
 						<a href="/Guide">Guide</a>
 						<a href="/collectPage">PickUp</a>
-						<a href="/list">Board</a>
+						<a href="/notice/list">Board</a>
 						<span>
 							<a href="/review/list">Review</a>
 							<a href="/listQna">Q & A</a>

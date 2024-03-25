@@ -14,7 +14,7 @@
 					<link rel="stylesheet"
 						href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 					<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-					<script src="https://kit.fontawesome.com/4602e82315.js" crossorigin="anonymous"></script>
+					<script src="https://kit.fontawesome.com/cbb1359000.js" crossorigin="anonymous"></script>
 				</head>
 
 				<body>
@@ -24,7 +24,7 @@
 							<a href="/">Primavera</a>
 						</nav>
 						<nav>
-							<a href="mainMap">Store</a> <a href="#">Guide</a> <a href="collectPage">PickUp</a> <a
+							<a href="mainMap">Store</a> <a href="Guide">Guide</a> <a href="collectPage">PickUp</a> <a
 								href="/notice/list">Board</a> <span>
 								<a href="/review/list">Review</a> <a href="listQna">Store</a> <a
 									href="/notice/list">Notice</a>

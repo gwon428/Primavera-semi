@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 	<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 		<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -11,26 +10,27 @@
 				<link href="../../resources/css/header.css" rel="stylesheet" type="text/css">
 				<link href="../../resources/css/user/deleteCheck.css" rel="stylesheet" type="text/css">
 				<meta charset="UTF-8">
-				<script src="https://kit.fontawesome.com/4602e82315.js" crossorigin="anonymous"></script>
+				<script src="https://kit.fontawesome.com/cbb1359000.js" crossorigin="anonymous"></script>
 				<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 				<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.1/kakao.min.js"
-  				integrity="sha384-kDljxUXHaJ9xAb2AzRd59KxjrFjzHa5TAoFQ6GbYTCAG0bjM55XohjjDT7tDDC01" crossorigin="anonymous"></script>
+					integrity="sha384-kDljxUXHaJ9xAb2AzRd59KxjrFjzHa5TAoFQ6GbYTCAG0bjM55XohjjDT7tDDC01"
+					crossorigin="anonymous"></script>
 				<script>
-				kakao.init('2aa4500445d4b2a832d23e0d819fb737');
+					kakao.init('2aa4500445d4b2a832d23e0d819fb737');
 				</script>
 				<title>Insert title here</title>
 			</head>
 
 			<header>
-			<nav>
-				<a href="/">Primavera</a>
-			</nav>
-			<nav>
-				<a href="mainMap">Store</a> <a href="#">Guide</a> <a href="collectPage">PickUp</a> <a
-					href="/notice/list">Board</a> <span>
-					<a href="/review/list">Review</a> <a href="listQna">Q & A</a> <a href="/notice/list">Notice</a>
-				</span> <a href="myPage"><i class="fa-regular fa-user"></i></a>
-			</nav>
+				<nav>
+					<a href="/">Primavera</a>
+				</nav>
+				<nav>
+					<a href="mainMap">Store</a> <a href="Guide">Guide</a> <a href="collectPage">PickUp</a> <a
+						href="/notice/list">Board</a> <span>
+						<a href="/review/list">Review</a> <a href="listQna">Q & A</a> <a href="/notice/list">Notice</a>
+					</span> <a href="myPage"><i class="fa-regular fa-user"></i></a>
+				</nav>
 			</header>
 
 			<body>
@@ -38,8 +38,8 @@
 				<main>
 					<div id="sideMenu">
 						<a href="showReview" id="showReview">My Review</a> <a href="showQna">내 Q&A</a> <a
-				href="showCollect">진행 상황</a> <a href="userUpdate" id="update">회원
-				정보 수정</a> <a href="deleteUser" id="delete">회원 탈퇴</a> <a href="logout">로그아웃</a>
+							href="showCollect">진행 상황</a> <a href="userUpdate" id="update">회원
+							정보 수정</a> <a href="deleteUser" id="delete">회원 탈퇴</a> <a href="logout">로그아웃</a>
 					</div>
 
 					<div id="mainMenu">
@@ -53,27 +53,27 @@
 								<p>아이디 : ${user.id}</p>
 								<input type="password" name="password" placeholder="비밀번호">
 							</div>
-							<input type="submit" value="탈퇴" class="deleteButton" >
+							<input type="submit" value="탈퇴" class="deleteButton">
 						</form>
 					</div>
 				</main>
 				<script>
-					function unlinkApp(){
-						
+					function unlinkApp() {
+
 						kakao.API.request({
 							url: '/v1/user/unlink',
 						})
-						.then(function(res){
-							alert('success: ' + JSON.stringify(res));
-							return true;
-						})
-						.catch(function(err){
-							alert('fail: ' + JSON.stringify(err));
-							return false;
-						});
+							.then(function (res) {
+								alert('success: ' + JSON.stringify(res));
+								return true;
+							})
+							.catch(function (err) {
+								alert('fail: ' + JSON.stringify(err));
+								return false;
+							});
 					}
-				
-					
+
+
 				</script>
 			</body>
 
