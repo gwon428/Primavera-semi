@@ -121,7 +121,7 @@
 
 								<nav>
 									<ul class="pagination">
-										<li class="page-item ${page > 1 ? '' : 'disabled'}"><a class="page-link" href="<c:url value='/review/list'>
+										<li class="page-item ${page > 1 ? '' : 'disabled'}"><a class="page-link" href="<c:url value='#'>
                 <c:param name='page' value='${paging.page - 1}' />
                 <c:param name='sort' value='${paging.sort}' />
                 <c:param name='searchType' value='${searchType}' />
@@ -141,7 +141,7 @@
 										</c:forEach>
 
 										<li class="page-item ${page < totalPages ? '' : 'disabled'}">
-											<a class="page-link" href="<c:url value='/review/list'>
+											<a class="page-link" href="<c:url value='#'>
                 <c:param name='page' value='${paging.page + 1}' />
                 <c:param name='sort' value='${paging.sort}' />
                 <c:param name='searchType' value='${searchType}' />
