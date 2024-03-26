@@ -121,7 +121,9 @@
 
 					</form>
 				</div>
+				
 				<script src="../../../resources/js/collect/register.js"></script>
+				
 			</body>
 
 			</html>

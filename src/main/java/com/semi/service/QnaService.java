@@ -26,22 +26,22 @@ public class QnaService {
 		return dao.total();
 	}
 	
-	// qna 등록 - insert
+	// qna 등록(insert)
 	public int insert(Qna qna) {
 		return dao.insert(qna);
 	}
 	
-	// 작성한 QnA 전문 보이게 - selectOne
+	// Qna 확인(selectOne)
 	public Qna select(int qnaNum) {
 		return dao.select(qnaNum);
 	}
 	
-	// 작성한 Qna 수정
+	// Qna 수정(update)
 	public int update(Qna qna) {
 		return dao.update(qna);
 	}
 	
-	// 작성한 Qna 삭제 
+	// Qna 삭제(delete)
 	public int delete(int qnaNum) {
 		return dao.delete(qnaNum);
 	}

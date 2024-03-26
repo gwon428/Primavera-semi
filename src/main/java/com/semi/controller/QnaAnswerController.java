@@ -40,7 +40,7 @@ public class QnaAnswerController {
 		return filename;
 	}
 	
-	// insert
+	//QnaAnswer 작성(insert)
 	@GetMapping("writeAnswer")
 	public String insert(int qnaNum, Model model) {
 		model.addAttribute("qna", qnaNum);
@@ -52,8 +52,6 @@ public class QnaAnswerController {
 	
 	@PostMapping("insertAnswer")
 	public String insertAnswer(QnaAnswer qnaAnswer) throws IllegalStateException, IOException {
-		System.out.println("qnaAnswer : " + qnaAnswer);
-		
 		if(!qnaAnswer.getFile().isEmpty()) {
 			String url = fileUploads(qnaAnswer.getFile());
 			qnaAnswer.setUrl(url);
@@ -63,23 +61,11 @@ public class QnaAnswerController {
 		return "redirect:/viewQna?qnaNum="+qnaAnswer.getQnaNum();
 	}
 	
-	
-	// select
-	//@GetMapping("viewAnswer")
-//	public String selectQnaAnswer(int qnaNum, Model model) {
-//		//int qnanum = Integer.parseInt(qnaNum);
-//		QnaAnswer qnaAnswer = service.selectQnaAnswer(qnaNum);
-//		model.addAttribute("qnaAnswer", qnaAnswer);
-//		System.out.println("qnaAnswer : " + qnaAnswer.getContent());
-//		return "qnaAnswer/viewAnswer";
-//	}
-	
-	
-	//수정(update)
+
+	//QnaAnswer 수정(update)
 	@GetMapping("updateQnaAnswer")
 	public String updateQna(Model model, String qnaNum) {
 		int answerNum = Integer.parseInt(qnaNum);
-		//model.addAttribute("qnaAnswer", answerNum );
 		QnaAnswer qnaAnswer = service.selectQnaAnswer(answerNum);
 		model.addAttribute("qnaAnswer", qnaAnswer);
 		// 질문 바인딩
@@ -89,18 +75,7 @@ public class QnaAnswerController {
 		
 	@PostMapping("updateAnswer")
 		public String update(QnaAnswer qnaAnswer) throws IllegalStateException, IOException {
-		
-		/*
-		if(!qnaAnswer.getFile().isEmpty()) {
-				if(qnaAnswer.getUrl()!=null) {
-					File file = new File(path+qnaAnswer.getUrl());
-					file.delete();
-				}
-				String url = fileUploads(qnaAnswer.getFile());
-				qnaAnswer.setUrl(url);
-			}
-		*/
-		
+			
 		if(!qnaAnswer.getFile().getOriginalFilename().equals("")) {
 			String url = fileUploads(qnaAnswer.getFile());
 			qnaAnswer.setUrl(url);
@@ -111,27 +86,20 @@ public class QnaAnswerController {
 			qnaAnswer.setUrl(null);	
 		} 
 			service.updateQnaAnswer(qnaAnswer);
-		
 			return "redirect:/viewQna?qnaNum="+qnaAnswer.getQnaNum();
 		}
 	
 	
-	// 삭제(delete)
+	//QnaAnswer 삭제(delete)
 	 @GetMapping("/deleteQnaAnswer")
 		public String delete(String qnaNum) {
-			
 			int parsingNo = Integer.parseInt(qnaNum);
-			
-			// 업로드한 파일도 삭제! 필요!!!!
-			// 필요한 정보 가져오기
 			QnaAnswer qnaAnswer = service.selectQnaAnswer(parsingNo);
 			if(qnaAnswer.getUrl()!=null) {
-				// url이 null이 아닌 경우 정보 삭제!
 				File file = new File(path+qnaAnswer.getUrl());
 				file.delete();
 			}
 			
-			// 삭제
 			service.deleteQnaAnswer(parsingNo);
 			service.updateStatusDelete(parsingNo);
 			return "redirect:/viewQna?qnaNum="+qnaAnswer.getQnaNum();

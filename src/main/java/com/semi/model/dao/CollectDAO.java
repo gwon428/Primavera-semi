@@ -16,11 +16,6 @@ public class CollectDAO {
 	@Autowired
 	private SqlSessionTemplate session;
 	
-	// 전체 수거 신청 리스트 보기
-//	public List<Collect> showAllCollect(Paging paging){
-//		return session.selectList("collectMapper.showAllCollect", paging);
-//	}
-	
 	public int total() {
 		return session.selectOne("collectMapper.count");
 	}
@@ -37,7 +32,6 @@ public class CollectDAO {
 		return session.selectOne("collectMapper.countAllCollect");
 	}
 	
-	
 	// 회원용 진행상황 페이지용 
 	public List<Collect> showCollect(Pagingseven paging){
 		return session.selectList("collectMapper.showCollect", paging);
@@ -46,7 +40,6 @@ public class CollectDAO {
 	public int showCollecttotal(String id) {
 		return session.selectOne("collectMapper.Collect", id);
 	}
-	
 	
 	// 관리자용 progress 관리 페이지용(조건x)
 	public List<Collect> showProgress(Paging paging){

@@ -75,9 +75,6 @@
 									<!--  현재 주소에 있는 거 긁어서 같이 넘기고,거기서 계속 넘기면 다시 유지해서 올 수 있음 -->
 									<c:forEach items="${list}" var="item" varStatus="status">
 										<tr>
-											<!-- 
-								<td>${status.count}</td>
-								 -->
 											<td>${paging.total - (paging.page - 1) * 10 - status.index}</td>
 											<c:choose>
 												<c:when test="${(item.secret == 'Y') && (user == 'anonymousUser')}">

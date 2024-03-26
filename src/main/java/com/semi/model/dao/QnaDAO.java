@@ -25,23 +25,23 @@ public class QnaDAO {
 		return session.selectOne("qnaMapper.countQna");
 	}
 	
-	// qna 등록 - insert
+	// qna 등록(insert)
 	public int insert(Qna qna) {
 		return session.insert("qnaMapper.insertQna", qna);
 	}
 	
-	// 작성한 QnA 전문 보이게 - selectOne
+	// QnA 확인 (selectOne)
 	public Qna select(int qnaNum) {
 		return session.selectOne("qnaMapper.select", qnaNum);
 	}
 	
-	// 작성한 Qna 수정
+	// Qna 수정
 	public int update(Qna qna) {
 		return session.update("qnaMapper.update", qna);
 	}
 	
 
-	// 작성한 Qna 삭제 
+	// Qna 삭제 
 	public int delete(int qnaNum) {
 		return session.delete("qnaMapper.delete", qnaNum);
 	}
@@ -53,6 +53,5 @@ public class QnaDAO {
 	public int totalStatus() {
 		return session.selectOne("qnaMapper.countStatus");
 	}
-	
-	
+
 }
