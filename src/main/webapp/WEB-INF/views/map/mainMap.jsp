@@ -334,6 +334,7 @@
 		var zoomControl = new kakao.maps.ZoomControl();
 		map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 	</script>
+	<!-- 
 	<script>
 		let slideIndex = 1;
 		showSlides(slideIndex);
@@ -361,7 +362,7 @@
 			plusSlides(1);
 		});
 	</script>
-
+ -->
 	<script>
 		$(function() {
 			var bag = $("#bag");
