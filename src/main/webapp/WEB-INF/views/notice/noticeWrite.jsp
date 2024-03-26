@@ -8,7 +8,7 @@
 
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Primavera</title>
 <link rel="stylesheet" href="../../../resources/css/reset.css" />
 <link rel="stylesheet" href="../../../resources/css/header.css" />
 <link rel="stylesheet" href="../../../resources/css/notice/write.css" />

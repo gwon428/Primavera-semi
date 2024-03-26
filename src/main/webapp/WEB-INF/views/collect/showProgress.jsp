@@ -15,7 +15,7 @@
 				<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR&display=swap" rel="stylesheet">
 
 				<script src="https://kit.fontawesome.com/cbb1359000.js" crossorigin="anonymous"></script>
-				<title>Insert title here</title>
+				<title>Primavera</title>
 				<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 			</head>
 			<header>

@@ -16,6 +16,7 @@
 <link rel="stylesheet" href="../../../resources/css/review/list.css" />
 <script src="https://kit.fontawesome.com/cbb1359000.js"
 	crossorigin="anonymous"></script>
+	<title>Primavera</title>
 </head>
 
 <body class="main">

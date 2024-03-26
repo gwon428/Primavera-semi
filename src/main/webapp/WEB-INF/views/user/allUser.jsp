@@ -10,7 +10,7 @@
 			<link href="../../resources/css/user/allUser.css" rel="stylesheet" type="text/css">
 			<meta charset="UTF-8">
 			<script src="https://kit.fontawesome.com/cbb1359000.js" crossorigin="anonymous"></script>
-			<title>전체 회원 보기</title>
+			<title>Primavera</title>
 		</head>
 		<header>
 			<nav>

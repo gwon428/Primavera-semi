@@ -11,7 +11,7 @@
 <script src="https://kit.fontawesome.com/cbb1359000.js"
 	crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<title>Insert title here</title>
+<title>Primavera</title>
 </head>
 <body>
  <div class="header-blackbox"></div>

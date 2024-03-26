@@ -51,7 +51,7 @@ public class UserController {
 
 	// 마이페이지로 이동
 	// 비회원 시 : 로그인, 회원가입, 아이디 찾기, 비밀번호 찾기
-	// 회원 : 내 review, 내 Q&A, 진행상황, 회원정보수정, 회원탈퇴, 로그아웃
+	// 회원 : 내 review, My Q&A, 진행상황, 회원정보수정, 회원탈퇴, 로그아웃
 	// 관리자 : 공지 게시판, Q&A 관리, 전체 회원 조회, progress 관리, 수거신청 현황, 로그아웃
 	@GetMapping("myPage")
 	public String myPage() {
@@ -179,12 +179,16 @@ public class UserController {
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		User user = (User) principal;
 
+		if(phone == null) {
+			return 3;
+		}
+		
 		User editphone = service.phoneCheck(phone);
 
 		boolean check = false;
 
-		if (editphone != null) {
-			check = user.getPhone().equals(editphone.getPhone());
+		if (editphone != null && user.getPhone() != null) {
+			check = true;
 		} else {
 			check = false;
 		}
@@ -194,6 +198,7 @@ public class UserController {
 		} else if (editphone == null) {
 			return 1;
 		}
+		
 		return 3;
 	}
 
@@ -208,8 +213,8 @@ public class UserController {
 
 		boolean check = false;
 
-		if (editemail != null) {
-			check = user.getEmail().equals(editemail.getEmail());
+		if (editemail != null && user.getEmail() != null) {
+			check = true;
 		} else {
 			check = false;
 		}
@@ -223,7 +228,6 @@ public class UserController {
 	}
 
 	@ResponseBody
-	@PostMapping("/checkUser")
 	public boolean checkUser(User user) {
 
 		User finder = service.userCheck(user);

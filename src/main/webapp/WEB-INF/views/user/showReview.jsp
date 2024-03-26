@@ -10,7 +10,7 @@
 				<link href="../../resources/css/header.css" rel="stylesheet" type="text/css">
 				<link href="../../resources/css/user/showReview.css" rel="stylesheet" type="text/css">
 				<script src="https://kit.fontawesome.com/cbb1359000.js" crossorigin="anonymous"></script>
-				<title>내가 쓴 후기</title>
+				<title>Primavera</title>
 			</head>
 			<header>
 				<nav>
@@ -30,8 +30,8 @@
 				<main>
 
 					<div id="sideMenu">
-						<a href="showReview" id="showReview">My Review</a> <a href="showQna">내 Q&A</a> <a
-							href="showCollect">진행 상황</a> <a href="userUpdate">회원
+						<a href="showReview" id="showReview">My Review</a> <a href="showQna">My Q&A</a> <a
+							href="showCollect">My Pick Up</a> <a href="userUpdate">회원
 							정보 수정</a> <a href="deleteUser">회원 탈퇴</a> <a href="logout">로그아웃</a>
 					</div>
 
@@ -51,7 +51,8 @@
 									<td>${item.no}</td>
 									<td id="title"
 										style="text-overflow:ellipsis; overflow:hidden; white-space:nowrap; padding-right: 10px;">
-										<a href="/review/view?no=${item.no}">${item.title}</a></td>
+										<a href="/review/view?no=${item.no}">${item.title}</a>
+									</td>
 									<td id="content"
 										style="text-overflow:ellipsis; overflow:hidden; white-space:nowrap;">
 										${item.content}</td>

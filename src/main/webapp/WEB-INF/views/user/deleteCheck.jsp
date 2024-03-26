@@ -18,7 +18,7 @@
 				<script>
 					kakao.init('2aa4500445d4b2a832d23e0d819fb737');
 				</script>
-				<title>Insert title here</title>
+				<title>Primavera</title>
 			</head>
 
 			<header>
@@ -37,8 +37,8 @@
 				<sec:authentication property="principal" var="user" />
 				<main>
 					<div id="sideMenu">
-						<a href="showReview" id="showReview">My Review</a> <a href="showQna">내 Q&A</a> <a
-							href="showCollect">진행 상황</a> <a href="userUpdate" id="update">회원
+						<a href="showReview" id="showReview">My Review</a> <a href="showQna">My Q&A</a> <a
+							href="showCollect">My Pick Up</a> <a href="userUpdate" id="update">회원
 							정보 수정</a> <a href="deleteUser" id="delete">회원 탈퇴</a> <a href="logout">로그아웃</a>
 					</div>
 

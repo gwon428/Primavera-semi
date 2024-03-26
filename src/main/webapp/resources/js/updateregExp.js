@@ -1,4 +1,3 @@
-
 let pwdCheck = true;
 let nameCheck = true;
 let phoneCheck = true;
@@ -147,6 +146,7 @@ function validate(){
 		userPhone.focus();
 		return false;
 	} else if (phoneDupCheck){
+		alert(phoneDupCheck);
 		userPhone.focus();
 		return false;	
 	} else if(!emailCheck){

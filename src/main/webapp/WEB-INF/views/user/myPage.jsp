@@ -15,8 +15,8 @@
 					crossorigin="anonymous"></script>
 				<script>
 					kakao.init('2aa4500445d4b2a832d23e0d819fb737');
-				<title>Insert title here</title>
-				<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+					<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+				<title>Primavera</title>
 			</head>
 
 
@@ -153,9 +153,9 @@
 
 								<div id="Menu">
 									<div id="MenuOne">
-										<a href="showReview">내가 적은 후기</a>
-										<a href="showQna">내 Q&A</a>
-										<a href="showCollect">진행상황</a>
+										<a href="showReview">My Review</a>
+										<a href="showQna">My Q&A</a>
+										<a href="showCollect">My Pick Up</a>
 									</div>
 									<div id="MenuTwo">
 										<c:choose>
@@ -192,16 +192,16 @@
 						Kakao.API.request({
 							url: '/v1/user/unlink',
 						});
-						.then(function(res){
-							alert('success: ' + JSON.stringify(res));
-							return true;
+					.then(function(res){
+						alert('success: ' + JSON.stringify(res));
+					return true;
 						});
-						.catch(function(err){
-							alert('fail: ' + JSON.stringify(err));
-							return false;
+					.catch(function(err){
+						alert('fail: ' + JSON.stringify(err));
+					return false;
 						});
-						
-						alert("!");
+
+					alert("!");
 						// 카카오 회원 탈퇴 + db에서 삭제 로직
 					}
 

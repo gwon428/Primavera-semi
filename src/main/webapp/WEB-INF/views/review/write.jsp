@@ -8,6 +8,7 @@
 		<link rel="stylesheet" href="../../../resources/css/header.css" />
 		<link rel="stylesheet" href="../../../resources/css/review/write.css" />
 		<script src="https://kit.fontawesome.com/cbb1359000.js" crossorigin="anonymous"></script>
+		<title>Primavera</title>
 	</head>
 
 	<body>

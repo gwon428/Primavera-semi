@@ -9,7 +9,7 @@
 
 <head>
 <meta charset="UTF-8">
-<title>지도</title>
+<title>Primavera</title>
 <link rel="stylesheet" href="../../../resources/css/reset.css" />
 <link rel="stylesheet" href="../../../resources/css/header.css" />
 <link rel="stylesheet" href="../../../resources/css/map/mainMap.css" />

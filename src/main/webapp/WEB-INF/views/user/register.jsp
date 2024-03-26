@@ -9,7 +9,7 @@
 		<link href="../../resources/css/user/registerUser.css" rel="stylesheet" type="text/css">
 		<script src="https://kit.fontawesome.com/cbb1359000.js" crossorigin="anonymous"></script>
 
-		<title>Insert title here</title>
+		<title>Primavera</title>
 
 		<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 	</head>

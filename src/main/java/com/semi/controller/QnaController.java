@@ -157,8 +157,6 @@ public class QnaController {
  	// 비밀글 시 비밀번호 확인 및 페이지 이동
  	@PostMapping("pwdCheck")
  	public String pwdCheck(String password, String qnaNum, String idCheck){
- 		System.out.println("pwdCheck");
- 		System.out.println(idCheck);
  		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		UserDetails userDetails = (UserDetails)principal;
  		

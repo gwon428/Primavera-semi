@@ -14,7 +14,7 @@
 			crossorigin="anonymous"></script>
 		<script src="https://kit.fontawesome.com/cbb1359000.js" crossorigin="anonymous"></script>
 		<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-		<title>Document</title>
+		<title>Primavera</title>
 		<style>
 			@font-face {
 				font-family: "Cafe24Oneprettynight";

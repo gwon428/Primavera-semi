@@ -10,7 +10,7 @@
 				<link href="../../resources/css/header.css" rel="stylesheet" type="text/css">
 				<link href="../../resources/css/account/findIdResult.css" rel="stylesheet" type="text/css">
 				<script src="https://kit.fontawesome.com/cbb1359000.js" crossorigin="anonymous"></script>
-				<title>Insert title here</title>
+				<title>Primavera</title>
 			</head>
 			<header>
 				<nav>

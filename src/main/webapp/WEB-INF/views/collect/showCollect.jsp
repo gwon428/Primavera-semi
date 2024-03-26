@@ -11,7 +11,7 @@
 				<link href="../../resources/css/admin/showCollect.css" rel="stylesheet" type="text/css">
 				<meta charset="UTF-8">
 				<script src="https://kit.fontawesome.com/cbb1359000.js" crossorigin="anonymous"></script>
-				<title>수거 신청 현황 보기</title>
+				<title>Primavera</title>
 			</head>
 			<header>
 				<nav>
@@ -33,13 +33,13 @@
 
 				<main>
 					<div id="sideMenu">
-						<a href="showReview" id="showReview">My Review</a> <a href="showQna">내 Q&A</a> <a
-							href="showCollect" id="showCollect">진행 상황</a> <a href="userUpdate">회원
+						<a href="showReview" id="showReview">My Review</a> <a href="showQna">My Q&A</a> <a
+							href="showCollect" id="showCollect">My Pick Up</a> <a href="userUpdate">회원
 							정보 수정</a> <a href="deleteUser">회원 탈퇴</a> <a href="logout">로그아웃</a>
 					</div>
 
 					<div id="mainMenu">
-						<h2>진행 상황</h2>
+						<h2>My Pick Up</h2>
 						<table border=1 class="table">
 							<tr>
 								<th>주문번호</th>

@@ -12,7 +12,7 @@
 					<link href="../../resources/css/admin/listQnaAnswer.css" rel="stylesheet" type="text/css">
 					<meta charset="UTF-8">
 					<script src="https://kit.fontawesome.com/cbb1359000.js" crossorigin="anonymous"></script>
-					<title>Q&A 관리</title>
+					<title>Primavera</title>
 				</head>
 				<header>
 					<nav>

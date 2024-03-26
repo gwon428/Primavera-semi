@@ -80,7 +80,7 @@
 						--background: #00acee;
 					}
 				</style>
-				<title>Insert title here</title>
+				<title>Primavera</title>
 			</head>
 			<div class="header-blackbox"></div>
 			<header>

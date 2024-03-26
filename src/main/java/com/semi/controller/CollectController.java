@@ -57,7 +57,6 @@ public class CollectController {
 	@ResponseBody
 	@PostMapping("update_ok")
 	public String updateProgress(Collect collect) {
-		System.out.println("신청들어옴");
 		service.updateProgress(collect);
 		return "collect";
 	}

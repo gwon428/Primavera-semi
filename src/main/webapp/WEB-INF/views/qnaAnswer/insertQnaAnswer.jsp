@@ -6,7 +6,7 @@
 
       <head>
         <meta charset="UTF-8" />
-        <title>Insert title here</title>
+        <title>Primavera</title>
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
         <link rel="stylesheet" href="../../../resources/css/reset.css" />
         <link rel="stylesheet" href="../../../resources/css/header.css" />

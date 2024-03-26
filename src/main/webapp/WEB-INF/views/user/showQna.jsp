@@ -11,7 +11,7 @@
 				<link href="../../resources/css/user/showQna.css" rel="stylesheet" type="text/css">
 				<meta charset="UTF-8">
 				<script src="https://kit.fontawesome.com/cbb1359000.js" crossorigin="anonymous"></script>
-				<title>내 Q&A</title>
+				<title>Primavera</title>
 			</head>
 			<header>
 				<nav>
@@ -31,13 +31,13 @@
 
 				<main>
 					<div id="sideMenu">
-						<a href="showReview" id="showReview">My Review</a> <a href="showQna" id="myqna">내 Q&A</a> <a
-							href="showCollect">진행 상황</a> <a href="userUpdate">회원
+						<a href="showReview" id="showReview">My Review</a> <a href="showQna" id="myqna">My Q&A</a> <a
+							href="showCollect">My Pick Up</a> <a href="userUpdate">회원
 							정보 수정</a> <a href="deleteUser">회원 탈퇴</a> <a href="logout">로그아웃</a>
 					</div>
 
 					<div id="mainMenu">
-						<h2>내 Q&A</h2>
+						<h2>My Q&A</h2>
 						<table border=1 class="table">
 							<tr>
 								<th>질문번호</th>
@@ -53,7 +53,8 @@
 										${item.qnaNum}</td>
 									<td id="title"
 										style="text-overflow:ellipsis; overflow:hidden; white-space:nowrap; padding-right: 10px;">
-										<a href="/viewQna?qnaNum=${item.qnaNum}">${item.title}</a></td>
+										<a href="/viewQna?qnaNum=${item.qnaNum}">${item.title}</a>
+									</td>
 									<td id="content"
 										style="text-overflow:ellipsis; overflow:hidden; white-space:nowrap;">
 										${item.content}</td>

@@ -44,9 +44,7 @@ public class ReviewController {
 		UserDetails userDetails = (UserDetails) principal;
 		b.setId(userDetails.getUsername());
 
-		System.out.println("review  : " + b);
 		if (b == null || b.getFile() == null) {
-			System.out.println("Error: Review 객체 또는 파일이 null입니다.");
 			return "redirect:/error";
 		}
 
@@ -126,10 +124,6 @@ public class ReviewController {
 
 	@PostMapping("/uploadreview")
 	public String upload(MultipartFile file) throws IllegalStateException, IOException {
-		System.out.println("파일 사이즈 : " + file.getSize());
-		System.out.println("파일 이름 : " + file.getOriginalFilename());
-		System.out.println("파일 파라미터명 : " + file.getName());
-
 		fileUploadreview(file);
 
 		return "redirect:/";

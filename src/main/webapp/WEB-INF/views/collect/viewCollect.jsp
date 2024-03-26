@@ -12,7 +12,7 @@
 
 				<link href="../../resources/css/collect/viewCollect.css" rel="stylesheet" type="text/css">
 				<script src="https://kit.fontawesome.com/cbb1359000.js" crossorigin="anonymous"></script>
-				<title>Insert title here</title>
+				<title>Primavera</title>
 			</head>
 			<div class="header-blackbox"></div>
 			<header>
