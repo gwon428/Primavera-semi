@@ -135,16 +135,26 @@
 												</div>
 											</c:when>
 										</c:choose>
-										<div id="answer_btn">
-											<button value="수정" class="btnAnswer" id="btnupdate">
-												<a href="updateQnaAnswer?qnaNum=${qnaAnswer.qnaNum}"
-													id="updateQnaAnswer">수정</a>
-											</button>
-											<button value="삭제" class="btnAnswer" id="btndelete">
-												<a href="/deleteQnaAnswer?qnaNum=${qnaAnswer.qnaNum}"
-													id="deleteQnaAnswer">삭제</a>
-											</button>
-										</div>
+										<c:choose>
+											<c:when test="${(user == 'anonymousUser') || (user.auth == 'MEMBER')}">
+												<div style="margin-bottom : 50px;"></div>
+											</c:when>
+											<c:otherwise>
+											<c:if test="${user.auth == 'ADMIN'}">
+												<div id="answer_btn">
+													<button value="수정" class="btnAnswer" id="btnupdate">
+														<a href="updateQnaAnswer?qnaNum=${qnaAnswer.qnaNum}"
+															id="updateQnaAnswer">수정</a>
+													</button>
+													<button value="삭제" class="btnAnswer" id="btndelete">
+														<a href="/deleteQnaAnswer?qnaNum=${qnaAnswer.qnaNum}"
+															id="deleteQnaAnswer">삭제</a>
+													</button>
+												</div>
+											</c:if>
+											</c:otherwise>
+										</c:choose>
+										
 									</div>
 								</c:when>
 							</c:choose>

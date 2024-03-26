@@ -115,7 +115,6 @@
 						<nav id="paging">
 							<ul class="pagination">
 								<li class="page-item ${paging.prev ? '' : 'disabled'}">
-
 									<c:choose>
 										<c:when
 											test="${(paging.startPage == 1)&&(paging.select != null) && (paging.keyword != null)}">

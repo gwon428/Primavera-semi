@@ -67,7 +67,7 @@
 							</div>
 							<div class="btn">
 								<button type="submit" class="btn_final" id="btn_insert" onclick="add()">등 록</button>
-								<button value="목록" class="btn_final" id="btn_list"><a href="listQna" id="listQna">취
+								<button type="button" value="목록" class="btn_final" id="btn_list"><a href="listQna" id="listQna">취
 										소</a></button>
 							</div>
 						</form>
