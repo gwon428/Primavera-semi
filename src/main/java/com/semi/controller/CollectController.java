@@ -1,7 +1,5 @@
 package com.semi.controller;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +12,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.semi.model.vo.Collect;
 import com.semi.model.vo.Paging;
 import com.semi.model.vo.Pagingseven;
-import com.semi.model.vo.Qna;
 import com.semi.service.CollectService;
 
 @Controller

@@ -57,19 +57,16 @@ $('#userPhone').keyup((e) => {
 						$('#phoneCheckresult').text("전화번호 사용 가능").css("color", "rgba(0, 0, 0, 0.5)");
 						phoneDupCheck = false;
 						phoneCheck = true;
-						console.log("케이스 1 : " + phoneCheck);
 						break;
 					case 2:
 						$('#phoneCheckresult').text("기존 전화번호와 동일합니다.").css("color", "rgba(0, 0, 0, 0.5)");
 						phoneDupCheck = false;
 						phoneCheck = true;
-						console.log("케이스 2 : " + phoneCheck);
 						break;
 					case 3:
 						$('#phoneCheckresult').text("전화번호 사용 불가").css("color", "black");
 						phoneDupCheck = true;
 						phoneCheck = false;
-						console.log("케이스 3 : " + phoneCheck);
 						break;
 				}
 				
@@ -78,13 +75,11 @@ $('#userPhone').keyup((e) => {
 				$('#phonereg').text("유효한 전화번호를 입력해주세요.").css("color", "rgba(0, 0, 0, 0.5)");
 				phoneCheck = false;
 				phoneDupCheck = false;
-				console.log("정규표현식 안 맞앙 " + phoneCheck);
 				
 			} else if (phone === ""){
 				$('#phoneCheckresult').html('&nbsp;');
 				phoneDupCheck = false;
 				phoneCheck = false;
-				console.log("비어있자녀" + phoneCheck);
 			}
 			
 		}
@@ -112,19 +107,16 @@ $('#email').keyup((e) => {
 						$('#emailCheckresult').text("이메일 사용 가능").css("color", "rgba(0, 0, 0, 0.5)");
 						emailDupCheck = false;
 						emailCheck = true;
-						console.log("케이스 1 : " + emailCheck);
 						break;
 					case 2:
 						$('#emailCheckresult').text("기존 이메일과 동일합니다.").css("color", "rgba(0, 0, 0, 0.5)");
 						emailDupCheck = false;
 						emailCheck = true;
-						console.log("케이스 2 : " + emailCheck);
 						break;
 					case 3:
 						$('#emailCheckresult').text("이메일 사용 불가").css("color", "black");
 						emailDupCheck = true;
 						emailCheck = false;
-						console.log("케이스 3 : " + emailCheck);
 						break;
 				}
 				
@@ -133,13 +125,11 @@ $('#email').keyup((e) => {
 				$('#emailreg').text("유효한 이메일을 입력해주세요.").css("color", "rgba(0, 0, 0, 0.5)");
 				emailCheck = false;
 				emailDupCheck = false;
-				console.log("정규표현식 안 맞아 : " + emailCheck);
 				
 			} else if (email === ""){
 				$('#emailCheckresult').html('&nbsp;');
 				emailDupCheck = false;
 				emailCheck = false;
-				console.log("비어있어 " + emailCheck);
 			}
 		}
 	})
@@ -154,19 +144,15 @@ function validate(){
 		userName.focus();
 		return false;
 	} else if (!phoneCheck){
-		alert("phoneCheck!");
 		userPhone.focus();
 		return false;
 	} else if (phoneDupCheck){
-		alert("phoneDupCheck!");
 		userPhone.focus();
 		return false;	
 	} else if(!emailCheck){
-		alert("emailCheck");
 		email.focus();
 		return false;
 	} else if (emailDupCheck){
-		alert("emailDupCheck");
 		email.focus();
 		return false;
 	}

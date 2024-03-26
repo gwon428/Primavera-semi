@@ -163,8 +163,6 @@
 							$("#check").attr('disabled', true);
 						}
 					});
-
-
 				</script>
 			</body>
 

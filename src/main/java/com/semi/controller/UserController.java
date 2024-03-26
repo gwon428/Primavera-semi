@@ -184,21 +184,16 @@ public class UserController {
 		boolean check = false;
 
 		if (editphone != null) {
-			// 누군가의 전화번호인 경우
 			check = user.getPhone().equals(editphone.getPhone());
 		} else {
 			check = false;
 		}
 
 		if (check) {
-			// 본인 번호일 때
 			return 2;
 		} else if (editphone == null) {
-			// 본인 번호가 아니고, 기존 사용자의 번호도 아닐 때
-			// 사용 가능할 때
 			return 1;
 		}
-
 		return 3;
 	}
 
@@ -214,25 +209,19 @@ public class UserController {
 		boolean check = false;
 
 		if (editemail != null) {
-			// 누군가의 전화번호인 경우
 			check = user.getEmail().equals(editemail.getEmail());
 		} else {
 			check = false;
 		}
 
 		if (check) {
-			// 본인 번호일 때
 			return 2;
 		} else if (editemail == null) {
-			// 본인 번호가 아니고, 기존 사용자의 번호도 아닐 때
-			// 사용 가능할 때
 			return 1;
 		}
-
 		return 3;
 	}
 
-	// 회원정보 수정 시 본인일 경우 전화번호, 이메일 중복 확인에서 본인의 전화번호, 이메일 제외
 	@ResponseBody
 	@PostMapping("/checkUser")
 	public boolean checkUser(User user) {

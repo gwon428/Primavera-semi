@@ -9,7 +9,6 @@ $("#btn").click(()=>{
 				window.location.reload();
 			},
 			error: function(){
-				console.log("에러 발생!");
 			}
 		})
 	})
