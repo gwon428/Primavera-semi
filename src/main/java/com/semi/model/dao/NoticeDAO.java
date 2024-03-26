@@ -9,16 +9,12 @@ import org.springframework.stereotype.Repository;
 import com.semi.model.vo.Notice;
 import com.semi.model.vo.Paging;
 
-//DAO에서는 데이터 바인딩
-
 @Repository
 public class NoticeDAO {
 
-	// sql과 연결 !!
 	@Autowired
 	private SqlSessionTemplate session;
 
-	// 공지사항 리스트
 	public List<Notice> selectAll(Paging paging) {
 		return session.selectList("noticeMapper.selectAll", paging);
 	}

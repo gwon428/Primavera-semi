@@ -69,13 +69,6 @@ div#editor {
 						<textarea class="form-control" cols="1000" row="100"
 							name="content" style="resize: none" id="content_input" readonly>${vo.content}</textarea>
 					</div>
-					<!-- 
-					<c:if test="${url =! ''}">
-					<a href="/upload/notice/${vo.url}" id="fileupload" download>첨부파일 : ${vo.url}</a> <input
-						class="form-control" type="file" id="file" name="file"
-						accept="/*"> 
-					</c:if>
-					 -->
 					 <c:if test="${vo.url != null}">
 						<a href="/upload/notice/${vo.url}" id="fileupload"for="file" download>첨부파일 : ${vo.url}</a>
 					</c:if>
@@ -102,15 +95,12 @@ div#editor {
 							<label>content</label>
 							<textarea class="form-control" row="10" name="content"
 								style="resize: none;" id="content_input">${vo.content}</textarea>
-							<!--	<a href="/upload/notice/${vo.url}" download></a> <!-- <img src="/upload/notice/${vo.url}" />	-->
 						</div>
-						<!--  다운로드 가능  -->
 						<div class="form-group" id="file">
 							<a href="/upload/notice/${vo.url}" for="file" download>파일 업로드
 								: ${vo.url}</a> <input class="form-control" type="file" id="file"
 								name="file" accept="/*">
 						</div>
-
 						<div class="type">
 							<button type="submit" class="btn btn-outline-warning">수정</button>
 							<a class="btn btn-outline-danger"
