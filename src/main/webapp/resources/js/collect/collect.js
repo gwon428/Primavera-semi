@@ -15,13 +15,13 @@ navIcons[1].addEventListener("click", function () {
 
 
 $(document).ready(function(){
-					$('.baa').each(function() {
-						$(this).click(function() {
-							let layer = $(this).parent().next();
-							layer.toggle(
-								function() {layer.addClass('hide')},
-								function() {layer.addClass('show')}
-							);
-						})
-					});
-				});
+	$('.baa').each(function() {
+	$(this).click(function() {
+	let layer = $(this).parent().next();
+	layer.toggle(
+		function() {layer.addClass('hide')},
+		function() {layer.addClass('show')}
+			);
+		})
+	});
+});

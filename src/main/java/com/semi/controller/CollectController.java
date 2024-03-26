@@ -23,16 +23,10 @@ public class CollectController {
 	@Autowired
 	private CollectService service;
 
-	// 수거 페이지
-	@GetMapping("collectPage")
-	public String collectPage(Model model) {
-		return "collect/collect";
-	}
-
+	
 	/*----------------------------------------------------------*/
-
+	// 관리자 및 사용자 페이지 관련
 	// 관리자용 수거신청현황 페이지 (prog제외)
-
 	@GetMapping("showAllCollect")
 	public String showallCollect(Model model, Paging paging) {
 		List<Collect> list = service.showorderby(paging);
@@ -41,15 +35,6 @@ public class CollectController {
 		return "collect/showallCollect";
 	}
 
-//		@ResponseBody
-//		@GetMapping("showAllCollect")
-//		public List<Collect> showorderby(Model model, Paging paging) {
-//			List<Collect> list = service.showorderby(paging);
-//			model.addAttribute("list", list);
-//			model.addAttribute("paging", new Paging(paging.getPage(), service.showAllCollecttotal()));
-//			System.out.println(list);
-//			return list;
-//		}
 
 	// 회원용 진행상황 페이지용
 	@GetMapping("showCollect")
@@ -81,6 +66,12 @@ public class CollectController {
 	}
 
 	/*----------------------------------------------------------*/
+	// 수거 페이지 이동
+	@GetMapping("collectPage")
+	public String collectPage(Model model) {
+		return "collect/collect";
+	}
+	
 	// 수거 신청 페이지
 	@GetMapping("registerCollect")
 	public String registerCollect(Model model) {
@@ -90,7 +81,6 @@ public class CollectController {
 	@PostMapping("signUpCollect")
 	public String signUp(Collect vo) {
 		service.registerCollect(vo);
-
 		return "redirect:/showCollect";
 	}
 	
@@ -103,7 +93,6 @@ public class CollectController {
 		return "collect/viewCollect";
 	}
 	
-	
 	// 변경(update)
 	@GetMapping("updatePage")
 	public String updatePage(Model model, String orderNum) {
@@ -115,7 +104,6 @@ public class CollectController {
 		
 	@PostMapping("updateCollect")
 		public String updateCollect(Collect collect) {
-		System.out.println("orderNum : " + collect.getOrderNum());
 			service.updateCollect(collect);
 			return "redirect:/viewCollect?orderNum="+collect.getOrderNum();
 		}
