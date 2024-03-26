@@ -15,14 +15,11 @@ public class NoticeService {
 	@Autowired
 	private NoticeDAO dao;
 
-	// 공지사항 리스트
 	public List<Notice> selectAll(Paging paging) {
-
 		paging.setOffset(paging.getLimit() * (paging.getPage() - 1));
 		return dao.selectAll(paging);
 	}
 
-	//
 	public Notice select(int noticeNum) {
 		return dao.select(noticeNum);
 	}
@@ -42,5 +39,5 @@ public class NoticeService {
 	public int delete(int notice_num) {
 		return dao.delete(notice_num);
 	}
-	
+
 }
