@@ -49,6 +49,7 @@ h2 {
 	margin-left: 40px;
 	animation: slide 1.8s;
 	font-family: "Cafe24Oneprettynight";
+	font-weight: normal;
 }
 
 @keyframes slide {

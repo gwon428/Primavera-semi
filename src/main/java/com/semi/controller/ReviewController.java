@@ -59,40 +59,40 @@ public class ReviewController {
 	}
 
 	@GetMapping("/review/list")
-	public String list(Model model, 
-	        @RequestParam(value = "page", defaultValue = "1") int page,
-	        @RequestParam(value = "sort", defaultValue = "dateDesc") String sort,
-	        @RequestParam(value = "searchType", required = false) String searchType,
-	        @RequestParam(value = "searchKeyword", required = false) String searchKeyword) throws UnsupportedEncodingException {
-		
-	    int total = service.total(searchType, searchKeyword);
-	    Paging paging = new Paging(page, total);
-	    paging.setSort(sort);
+	public String list(Model model, @RequestParam(value = "page", defaultValue = "1") int page,
+			@RequestParam(value = "sort", defaultValue = "dateDesc") String sort,
+			@RequestParam(value = "searchType", required = false) String searchType,
+			@RequestParam(value = "searchKeyword", required = false) String searchKeyword)
+			throws UnsupportedEncodingException {
 
-	    int totalPages = (int) Math.ceil((double) total / paging.getLimit());
+		int total = service.total(searchType, searchKeyword);
+		Paging paging = new Paging(page, total);
+		paging.setSort(sort);
 
-	    if (page < 1 || page > totalPages) {
-	        page = 1;
-	        paging = new Paging(page, total);
-	    }
+		int totalPages = (int) Math.ceil((double) total / paging.getLimit());
 
-	    List<Review> reviewList = service.selectPage(paging, searchType, searchKeyword);
-	    model.addAttribute("list", reviewList);
-	    model.addAttribute("paging", paging);
-	    model.addAttribute("totalPages", totalPages);
+		if (page < 1 || page > totalPages) {
+			page = 1;
+			paging = new Paging(page, total);
+		}
+
+		List<Review> reviewList = service.selectPage(paging, searchType, searchKeyword);
+		model.addAttribute("list", reviewList);
+		model.addAttribute("paging", paging);
+		model.addAttribute("totalPages", totalPages);
 
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		boolean isLoggedIn = authentication != null && authentication.isAuthenticated()
 				&& !(authentication instanceof AnonymousAuthenticationToken);
 		model.addAttribute("isLoggedIn", isLoggedIn);
-		model.addAttribute("searchType", searchType);		
+		model.addAttribute("searchType", searchType);
 		model.addAttribute("searchKeyword", searchKeyword);
 
 		return "review/list";
-	} 
+	}
 
 	@GetMapping("/review/view")
-	public String view(String no, Model model) {	
+	public String view(String no, Model model) {
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		String currentLoggedInUserId = "";
 		if (principal instanceof UserDetails) {
@@ -106,22 +106,22 @@ public class ReviewController {
 	}
 
 	@PostMapping("/updatereview")
-	public String update(Review review, @RequestParam("file") MultipartFile file,
-	                     RedirectAttributes redirectAttributes) throws IllegalStateException, IOException {
-	    
-	    if (!file.isEmpty()) {
-	        String newUrl = fileUploadreview(file);
-	        review.setUrl(newUrl);
-	    } else {
-	        File oldFile = new File(path + review.getUrl());
-	        if (oldFile.exists()) {
-	            oldFile.delete();
-	        }
-	        review.setUrl(null);
-	    }
+	public String update(Review review, @RequestParam("file") MultipartFile file, RedirectAttributes redirectAttributes)
+			throws IllegalStateException, IOException {
 
-	    service.updatereview(review);
-	    return "redirect:/review/view?no=" + review.getNo();
+		if (!file.isEmpty()) {
+			String newUrl = fileUploadreview(file);
+			review.setUrl(newUrl);
+		} else {
+			File oldFile = new File(path + review.getUrl());
+			if (oldFile.exists()) {
+				oldFile.delete();
+			}
+			review.setUrl(null);
+		}
+
+		service.updatereview(review);
+		return "redirect:/review/view?no=" + review.getNo();
 	}
 
 	@PostMapping("/uploadreview")
