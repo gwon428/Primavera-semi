@@ -43,15 +43,19 @@ public class NoticeController {
 	@PostMapping("/writeNotice")
 	public String noticeWrite(Notice n) throws IllegalStateException, IOException {
 		if (!n.getFile().isEmpty()) {
-
 			String url = noticeFileUpload(n.getFile());
-
 			n.setUrl(url);
 		}
 		service.insert(n);
 		return "redirect:/notice/list";
 	}
 
+	@PostMapping("/upload")
+	public String upload(MultipartFile file) throws IllegalStateException, IOException {
+		noticeFileUpload(file);
+		return "redirect:/";
+	}
+	
 	public String noticeFileUpload(MultipartFile file) throws IllegalStateException, IOException {
 
 		UUID uuid = UUID.randomUUID();
@@ -77,11 +81,7 @@ public class NoticeController {
 		return "redirect:/notice/list";
 	}
 
-	@PostMapping("/upload")
-	public String upload(MultipartFile file) throws IllegalStateException, IOException {
-		noticeFileUpload(file);
-		return "redirect:/";
-	}
+
 
 	@GetMapping("noticeView")
 	public void view(String noticeNum, Model model) {
