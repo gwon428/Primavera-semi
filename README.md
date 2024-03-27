@@ -18,7 +18,7 @@
 
 
 ### (4) 개발 환경 및 기술 스택
-## :낙엽수: SKILL
+## 🌳 SKILL
 <div style="display:flex; flex-direction:column; align-items:flex-start;">
     <!-- Database -->
     <p><strong>Database</strong></p>
@@ -50,7 +50,7 @@
         <img src="https://img.shields.io/badge/fontawesome-339AF0?style=for-the-badge&logo=fontawesome&logoColor=white">
     </div>
 </div>
-## :망치: TOOL
+## 🔨 TOOL
 <div style="display:flex; flex-direction:column; align-items:flex-start;">
     <div>
         <img src="https://img.shields.io/badge/visualstudiocode-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white">
