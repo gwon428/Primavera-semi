@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import
+	url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap')
+	;
 
 * {
 	font-family: 'Poppins', sans-serif;
@@ -52,16 +54,33 @@ h2 {
 	font-weight: normal;
 }
 
-@keyframes slide {
-	from {
-		left: -300px;
+@keyframes slide {from { left:-300px;
+	
+}
 
-	}
+to {
+	left: 35px;
+}
 
-	to {
-		left: 35px;
-	}
+}
 
+@keyframes slideIn {from { transform:translateX(-100%);
+	opacity: 0;
+}
+
+to {
+	transform: translateX(0);
+	opacity: 1;
+}
+
+}
+.title {
+	opacity: 0;
+	transform: translateX(-100%);
+}
+
+.title.animate {
+	animation: slideIn 2s ease-out forwards;
 }
 
 #contents {
@@ -215,8 +234,7 @@ h2 {
 	font-size: 1.7rem;
 }
 
-.container .card .contentBx .size,
-.container .card .contentBx .color {
+.container .card .contentBx .size, .container .card .contentBx .color {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -241,8 +259,8 @@ h2 {
 	transition-delay: 0.6s;
 }
 
-.container .card .contentBx .size h3,
-.container .card .contentBx .color h3 {
+.container .card .contentBx .size h3, .container .card .contentBx .color h3
+	{
 	color: #fff;
 	font-weight: 300;
 	font-size: 15px;
@@ -316,7 +334,8 @@ h2 {
 @font-face {
 	font-family: "Cafe24Oneprettynight";
 	src:
-		url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff") format("woff");
+		url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff")
+		format("woff");
 	font-style: normal;
 }
 
@@ -353,10 +372,6 @@ h3 {
 	color: white;
 	font-family: "Cafe24Oneprettynight";
 	text-align: left;
-}
-
-.titleAni {
-	animation: slide 3s;
 }
 
 #map {
@@ -402,7 +417,7 @@ h3 {
 	box-shadow: 0px 1px 2px #888;
 }
 
-.info .title {
+.info .title1 {
 	padding: 5px 0 0 10px;
 	height: 30px;
 	background: #eee;

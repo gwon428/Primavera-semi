@@ -255,7 +255,7 @@
 					position : new kakao.maps.LatLng(37.49781, 127.13338),
 					content : '<div class="wrap">'
 							+ '    <div class="info">'
-							+ '        <div class="title">'
+							+ '        <div class="title1">'
 							+ '            프리마베라 1호점'
 							+ '            '
 							+ '        </div>'
@@ -274,7 +274,7 @@
 					position : new kakao.maps.LatLng(37.594792, 127.001803),
 					content : '<div class="wrap">'
 							+ '    <div class="info">'
-							+ '        <div class="title">'
+							+ '        <div class="title1">'
 							+ '            프리마베라 2호점'
 							+ '            '
 							+ '        </div>'
@@ -293,7 +293,7 @@
 					position : new kakao.maps.LatLng(37.495472, 126.887536),
 					content : '<div class="wrap">'
 							+ '    <div class="info">'
-							+ '        <div class="title">'
+							+ '        <div class="title1">'
 							+ '            프리마베라 3호점'
 							+ '            '
 							+ '        </div>'
@@ -334,70 +334,21 @@
 		var zoomControl = new kakao.maps.ZoomControl();
 		map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 	</script>
-	<script>
-		let slideIndex = 1;
-		showSlides(slideIndex);
-		function plusSlides(n) {
-			showSlides(slideIndex += n);
-		}
-		function showSlides(n) {
-			let i;
-			let slides = document.querySelectorAll(".slide");
-			if (n > slides.length) {
-				slideIndex = 1
-			}
-			if (n < 1) {
-				slideIndex = slides.length
-			}
-			for (i = 0; i < slides.length; i++) {
-				slides[i].style.display = "none";
-			}
-			slides[slideIndex - 1].style.display = "flex";
-		}
-		document.getElementById('prev').addEventListener('click', function() {
-			plusSlides(-1);
-		});
-		document.getElementById('next').addEventListener('click', function() {
-			plusSlides(1);
-		});
-	</script>
 
 	<script>
-		$(function() {
-			var bag = $("#bag");
-			var clothes = $("#clothes");
-			var wallet = $("#wallet");
-			var lastScroll = 0;
-			$(window).scroll(function(event) {
-				var st = $(this).scrollTop();
-				bag.removeClass("titleAni");
-				clothes.removeClass("titleAni");
-				wallet.removeClass("titleAni");
-				if (st > lastScroll) {
-					if (st > 750) {
-						bag.addClass("titleAni");
-					}
-					if (st >= 1750) {
-						clothes.addClass("titleAni");
-					}
-					if (st > 2650) {
-						wallet.addClass("titleAni");
-					}
-				} else {
-					if (st < 850) {
-						bag.addClass("titleAni");
-					}
-					if (st < 1750) {
-						clothes.addClass("titleAni");
-					}
-					if (st < 2620) {
-						wallet.addClass("titleAni");
-					}
-				}
-				lastScroll = st;
-			});
-		});
-	</script>
+            document.addEventListener("DOMContentLoaded", function() {
+                var observer = new IntersectionObserver(function(entries) {
+                    entries.forEach(entry => {
+                        if(entry.isIntersecting) {
+                            entry.target.classList.add('animate');
+                        }
+                    });
+                });
+                document.querySelectorAll('.title').forEach(item => {
+                    observer.observe(item);
+                });
+            });
+        </script>
+        
 </body>
-
 </html>
