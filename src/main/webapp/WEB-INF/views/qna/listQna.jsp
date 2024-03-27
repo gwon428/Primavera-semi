@@ -95,7 +95,7 @@
 															<a href="/viewQna?qnaNum=${item.qnaNum}">${item.title}</a>
 														</td>
 													</c:if>
-													<c:if test="${user == 'anonymousUser'||item.secret == null}">
+													<c:if test="${user == 'anonymousUser'||item.secret == null || item.secret == 'N'}">
 														<td><a href="/viewQna?qnaNum=${item.qnaNum}">${item.title}</a>
 														</td>
 													</c:if>
