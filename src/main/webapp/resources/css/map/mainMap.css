@@ -64,6 +64,28 @@ h2 {
 
 }
 
+@keyframes slideIn {
+	from {
+		transform: translateX(-100%);
+		opacity: 0;
+	}
+
+	to {
+		transform: translateX(0);
+		opacity: 1;
+	}
+
+}
+
+.title {
+	opacity: 0;
+	transform: translateX(-100%);
+}
+
+.title.animate {
+	animation: slideIn 2s ease-out forwards;
+}
+
 #contents {
 	display: flex;
 	justify-content: center;
@@ -249,6 +271,7 @@ h2 {
 	letter-spacing: 2px;
 	margin-right: 10px;
 }
+
 /*
 .container .card .contentBx .size span {
 	width: 26px;
@@ -354,10 +377,6 @@ h3 {
 	text-align: left;
 }
 
-.titleAni {
-	animation: slide 3s;
-}
-
 #map {
 	margin: 50px auto;
 	width: 800px;
@@ -401,7 +420,7 @@ h3 {
 	box-shadow: 0px 1px 2px #888;
 }
 
-.info .title {
+.info .title1 {
 	padding: 5px 0 0 10px;
 	height: 30px;
 	background: #eee;
