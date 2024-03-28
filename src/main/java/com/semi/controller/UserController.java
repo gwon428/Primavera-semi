@@ -228,10 +228,9 @@ public class UserController {
 	}
 
 	@ResponseBody
+	@PostMapping("/checkUser")
 	public boolean checkUser(User user) {
-
 		User finder = service.userCheck(user);
-
 		if (finder == null)
 			return false;
 		return true;

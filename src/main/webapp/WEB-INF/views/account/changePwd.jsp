@@ -92,11 +92,9 @@
 
 							success: function (result) {
 								if (result) {
-									// 아이디가 존재할 경우 이메일 인증 버튼 활성화
 									$('#email').attr('disabled', false);
 									idDupCheck = true;
 								} else {
-									// 아이디가 존재하지 않을 경우 이메일 인증 버튼 비활성화
 									$('#email').attr('disabled', true);
 									idDupCheck = false;
 								}
