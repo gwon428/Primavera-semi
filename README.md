@@ -12,7 +12,19 @@
 
 
 ### (2) 팀 소개
-
+<div sytle="border : 1px solid black; width : 100px; height:100px">
+    <h3>권예빈</h3>
+    <a href = ></a>
+</div>
+<div>
+    <h3>김현수</h3>
+</div>
+<div>
+    <h3>손민정</h3>
+</div>
+<div>
+    <h3>정대윤</h3>
+</div>
 
 ### (3) 작업 흐름
 
