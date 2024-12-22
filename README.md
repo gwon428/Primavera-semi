@@ -23,6 +23,32 @@
 | <img src="https://avatars.githubusercontent.com/u/152463087?v=4" width="100px" height="100px">|<img src="https://avatars.githubusercontent.com/u/152463185?v=4" width="100px" height="100px">|<img src="https://avatars.githubusercontent.com/u/152463277?v=4" width="100px" height="100px">|<img src="https://avatars.githubusercontent.com/u/152463186?v=4" width="100px" height="100px">
 | [gwon428](https://github.com/gwon428) | [hnsso](https://github.com/hnsso) | [sohnminjeong](https://github.com/sohnminjeong) | [eodbs11](https://github.com/eodbs11)
 
+### 역할 분담
+##### ▶️ 권예빈 (팀장)
+- **UI**
+    - 페이지 : 로그인, 회원가입, 회원 마이 페이지, 관리자 페이지, 자유 게시판, 쪽지, 채팅
+- **기능**
+    - Spring Security 활용 _ 로그인 및 로그아웃, 회원가입 및 탈퇴, 아이디 및 비밀번호 찾기, 이메일 인증, 회원 정보 수정, 비밀번호 암호화
+  
+##### ▶️ 김현수
+- **UI**
+    - 페이지 : 메인 화면
+- **기능**
+    - 공지 게시판 CRUD
+ 
+##### ▶️ 손민정
+- **UI**
+    - 페이지 : 픽업 신청 페이지, Q&A 페이지, STORE 페이지
+    - 공통 컴포넌트 : 개인정보 동의 모달창
+- **기능**
+    - 픽업 신청 CRUD, Q&A 게시판 CRUD
+  
+##### ▶️ 정대윤
+- **UI**
+    - 페이지 : STORE 페이지, REVIEW 페이지
+- **기능**
+    - 리뷰 게시판
+ 
 
 ### (4) 개발 환경 및 기술 스택
 ## 🌳 SKILL
@@ -99,4 +125,4 @@
 
 
 
-## 주요 기능
+
