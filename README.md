@@ -77,6 +77,11 @@
 
 
 ## 화면 구성
+| 메인 페이지 | 스토어 페이지
+| --- | ---
+| <img width="400px" src="https://github.com/user-attachments/assets/bc4ed874-11c5-44da-983f-5d1e1355af2b" /> | <img width="400px" src="https://github.com/user-attachments/assets/224a3ba4-728e-46ee-b23b-27e6e59e7561" />
+| 가이드 페이지 | 픽업 신청 페이지
+| <img width="400px" alt="image" src="https://github.com/user-attachments/assets/7dc04be9-b8d3-4b08-9a76-539dd553a7dd" /> | 
 
 
 
