@@ -69,9 +69,10 @@
 </div>
 
 ### (5) 논리적 모델링
-
+<img width="621" alt="스크린샷 2024-12-23 오전 4 43 48" src="https://github.com/user-attachments/assets/919aa612-e5c4-4c66-a234-540973b6b2e2" />
 
 ### (6) 메뉴 구조도
+<img width="571" alt="image" src="https://github.com/user-attachments/assets/edd43318-f6ed-43c7-aa0e-d4e5267a0ec9" />
 
 
 
