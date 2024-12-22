@@ -80,8 +80,22 @@
 | 메인 페이지 | 스토어 페이지
 | --- | ---
 | <img width="400px" src="https://github.com/user-attachments/assets/bc4ed874-11c5-44da-983f-5d1e1355af2b" /> | <img width="400px" src="https://github.com/user-attachments/assets/224a3ba4-728e-46ee-b23b-27e6e59e7561" />
+
 | 가이드 페이지 | 픽업 신청 페이지
-| <img width="400px" alt="image" src="https://github.com/user-attachments/assets/7dc04be9-b8d3-4b08-9a76-539dd553a7dd" /> | 
+| --- | ---
+| <img width="400px" alt="image" src="https://github.com/user-attachments/assets/7dc04be9-b8d3-4b08-9a76-539dd553a7dd" /> | <img width="400px" alt="image" src="https://github.com/user-attachments/assets/6b43d084-500d-4d10-93f4-155f97ab09e7" />
+
+| 리뷰 게시판 | Q&A 게시판
+| --- | ---
+| <img width="400px" alt="image" src="https://github.com/user-attachments/assets/26709789-75c3-42a9-b53f-ec3366c7627b" /> | <img width="400px" alt="image" src="https://github.com/user-attachments/assets/3a4eccf1-5c85-4ced-ae98-1cf8e63ecd05" />
+
+| 공지 게시판 | 로그인 페이지
+| --- | ---
+| <img width="400px" alt="image" src="https://github.com/user-attachments/assets/6f8280b3-5c10-4935-a279-83652e893dad" /> | <img width="400px" src="https://github.com/user-attachments/assets/1237c9b6-2759-4fdf-88c5-def6b8e2f1b2" />
+
+| 회원 마이페이지 | 관리자 마이페이지
+| --- | ---
+| <img width="400px" alt="image" src="https://github.com/user-attachments/assets/529e8809-789d-424c-9740-e2a73db4678d" /> | <img width="400px" alt="image" src="https://github.com/user-attachments/assets/7688e5dc-d897-4bab-ac2a-2161203af256" /> 
 
 
 
