@@ -1,6 +1,6 @@
-<h2>[Recoa]_Resident-Communication-Apartment</h2>
+<h2>[Primavera]_친환경 업사이클링 사이트</h2>
 
-## 📋 목차
+## 목차
 - [프로젝트 소개](#프로젝트-소개)
 - [화면 구성](#화면-구성)
 - [주요 기능](#주요-기능)
